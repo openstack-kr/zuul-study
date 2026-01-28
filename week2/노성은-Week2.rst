@@ -9,7 +9,8 @@ zuul-study week2 노성은
    1. CI/CD, OpenStack, Zuul에 대한 이해
    2. ~~
 
-CI/CD, OpenStack, Zuul 에 대한 이해
+-------------------
+1. CI/CD, OpenStack, Zuul 에 대한 이해
 -------------------
 
 여기에 설명을 작성합니다. 목록을 만들 수도 있습니다:
