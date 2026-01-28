@@ -1,8 +1,5 @@
 zuul-study week2 노성은
 =====================
-
-   * CI/CD, openstack, zuul에 대한 이해
-   * zuul 튜토리얼 진행
      
 .. contents:: 목차
    :depth: 2
