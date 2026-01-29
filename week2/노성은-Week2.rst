@@ -5,7 +5,7 @@ zuul-study week2 노성은
    :depth: 4
    :local:
 
-1. CI/CD, OpenStack, Zuul 에 대한 이해
+CI/CD, OpenStack, Zuul 에 대한 이해
 -------------------
 
 a. CI CD
