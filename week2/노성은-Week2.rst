@@ -9,6 +9,15 @@ zuul-study week2 노성은
 
   : CI/CD, OpenStack, Zuul에 대한 이해를 위해 자료를 찾아보고, 정리하며 학습해보았다.
 
+  [참고 문헌]
+
+  [https://aws.amazon.com/ko/what-is/ci-cd/](https://aws.amazon.com/ko/what-is/ci-cd/)
+  [https://it.donga.com/101955/](https://it.donga.com/101955/)
+  [https://docs.openstack.org/ko_KR/](https://docs.openstack.org/ko_KR/)
+  https://www.openstack.org/software/
+  https://www.fortinet.com/kr/resources/cyberglossary/openstack
+  [https://wikidocs.net/229965](https://wikidocs.net/229965)
+
 |
 
 .. contents:: 목차
