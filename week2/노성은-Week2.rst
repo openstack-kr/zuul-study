@@ -1,6 +1,8 @@
 zuul-study week2 노성은
 =====================
-     
+
+https://www.notion.so/CI-CD-OpenStack-Zuul-2f437a3845a7809dba2cd8842af4fb46?source=copy_link
+
 .. contents:: 목차
    :depth: 4
    :local:
