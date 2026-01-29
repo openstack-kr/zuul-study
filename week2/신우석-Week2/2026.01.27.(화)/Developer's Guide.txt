@@ -1,0 +1,96 @@
+IRC Account
+: IRC의 필요 이유 
+>> OpenDev에서 코드를 수정하는 것은 Gerrit만 있으면 되지만, 다른 개발자들과 협업&질문은 IRC사용
+ - OFTC라는 IRC 네트워크 사용 
+############### 일단 지금은 굳이 안봐도 될듯?
+
+Extra Gerrit account
+- 서버가 올바른지 확인하는 세가지 키 타입들
+- 포트 막힘 문제 : 기본은 ssh사용
+	>> https로 변경해서 사용 (명령어가 있음)
+
+Development Workflow
+- bug
+	: launchpad / storyboard에서 확인가능
+	: 4가지 핵심 tasks
+		- 새로운 버그 확정 : new → confirm
+		- 일관성 해결 : In progress
+		- incomplete bugs 리뷰 : 정보를 더 모아라
+		- In-process 버그들 리뷰 : 작업 중 아니면 다시 되돌리기
+	: 버그 작업 후 커밋 메시지에 '특정 키워드'를 적어야함
+
+- specificatoins and blueprints (설계 제안 및 추적 절차)
+	- specs : 설계도(layout)
+	- blueprints : 설계의 실행상태를 보여줌
+
+- Starting a change : 최신상태시작
+	- git remote update
+	- git checkout master
+	- git pull --ff-only origin master
+
+- Git branch names
+	- 새기능 : bp/abc, 버그 : bug/123 선호
+
+- Committing changes
+	- 새로운 기능(blueprint), 버그일 때 특정 메시지
+	- change-Id : 보통 git review -s 쓰면 해결 (안되면 git commit --amend)
+	- master or main 브랜치에서 작업 X >> 항상 별도의 작업용 브렌치 ㄱㄱ
+
+- Using signed-off-by : 저작권관련 이슈
+################# 일단 넘어가자
+
+- Running Unit Tests
+	- python unit test >> tox
+#### 이거 좀 중요한거 같은데 일단 넘어감
+
+- Previewing a change : 미리보기
+	- git show
+
+- Submitting a change for Review
+	: gerrit으로 전송 
+	- git review
+
+- Updating a change
+
+- Understanding Changes and Patch Sets
+	- change : 하나의 작업 단위
+	- patch set : 한 작업의 다양한 버전들
+
+- Squashing Changes
+	- 오타같은 자잘한 커밋들 합치기
+	- 이미 했던 여러개의 커밋들을 하나의 커밋으로 합치는거인듯
+## 중요한거 같은데 와닿지가 않음,,
+
+- Adding a Dependency : 아직 승인되지않은 커밋을 내가 작업하고 싶을 때
+	- 이미 있는 change(review)에서 작업
+	- 이미 있는 parent change가 바뀌어도 그대로 작업 가능 (이러면 내 작업은 child change)
+	- git review는 rebase과정이 포함, 안하고 싶으면 추가 옵션 (근데 결국 최종적으론 해야함)
+
+- Rebasing a commit : 서버의 target branch와 내 코드 사이에 충돌 발생 시 rebase(=기준점 맞추기)
+	- 하는 방법은 알아서
+
+- Cross-Repository Dependencies
+	: 서로 다른 repository에 있는 각각의 change들이 서로 영향
+	- manual setup (코드가 합쳐지기 전)
+		: work in progress 상태로 만들기
+	- CRD (다른 저장소의 코드에 의존)
+		: commit msg에 표기 (Depends-On: <Gerrit 리뷰 주소>)
+#### 아직은 잘 모르겠음
+
+- Gate Pipeline : CRD시 순서(queue) 만들기
+	- depend-on에 따라 순서
+
+- Check Pipeline : 시각화?
+	- 실제 테스트인 듯
+
+- Multiple Changes
+	- 
+
+- Cycles
+	- 서로가 서로를 depend-on
+	- 아무런 메시지를 안남기는거 꼭 알기
+
+- Limitations and caveats : depend-on이 안되는 경우도 많다~
+
+Code Review
+	

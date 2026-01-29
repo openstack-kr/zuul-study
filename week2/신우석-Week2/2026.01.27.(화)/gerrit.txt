@@ -1,0 +1,14 @@
+gerrit? :  코드 리뷰와 git 저장소 관리를 돕는 웹 기반 도구
+	- 코드 리뷰 시스템
+	- 게이트키퍼
+	- CI/CD 도구와의 강력한 연동
+
+- repository
+	- All-projects : 글로벌정책 >> 주로 권한 설정
+	- All-user : 각 사용자에 대한 메타 데이터 저장소
+	- zuul-config : zuul 동작 방식을 정의하는 설정 저장소 >> 어떤 테스트(job)?, 어떤 순서(pipeline)?
+
+** gerrit 지문 문제
+
+
+**결국 어떤 코드가 올라오면 규칙(pipeline, project, job)에 따라서 여러 job을 실행하는거

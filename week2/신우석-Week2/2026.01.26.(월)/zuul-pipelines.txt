@@ -1,0 +1,22 @@
+: 업무 메뉴얼 >> 어떤 상황(이벤트)에서 어떤 일(job)을 해야하는가
+
+: pipeline은 크게 두가지 과정으로 이루어진다. (check와 gate)
+
+- check : 이 코드가 빌드는 되는지, 기초적인 버그는 없는지 확인
+- gate : 실제 메인 저장소에 합쳐지기 직전에 거치는 마지막 검증 단계
+
+>> 각 구성요소
+	- name : 이름 명시 (check인지 gate인지)
+	- description : 설명
+	- magager : 동작방식
+		- dependent : 여러 코드가 동시에 통과되면 순서대로 줄을 세워 앞의 코드가 합쳐진 상태에서도 
+				   내 코드가 안전한지 확인
+		- independent : 여러 사람이 코드를 올려도 각각 독립적으로 테스트를 돌림
+	- require : 요구사항
+	- trigger : 언제 실행되는가?
+	- start , success, failure 등등
+	- 각각에서 gerrit이라는 명령어로 gerrit 서버와 연결할 수 있다.
+		- require: gerrit: >> 신호 받기
+		- trigger: gerrit: >> 조건 확인
+		- success / failure: gerrit: >> 결과 보고
+		 

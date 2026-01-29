@@ -1,0 +1,18 @@
+: 어떤 저장소(project)에서 어떤 일(job)을 할 것인가?
+ >> 어떤 project가 어떤 pipeline을 탈 것인가
+
+- project:
+    name: ^.*$
+    check:
+      jobs: []
+    gate:
+      jobs: []
+
+- name은 특정 프로젝트 (저장소, ex) zuul-config)
+- 전역 기본 설정 (^.*$)
+-  check, gate : 어느 단계(pipeline)에서 실행?
+- jobs
+	- [] : 어떤 테스트(job)도 돌리지 마라
+	- noop: 빈 상태 통과 / 성공도장 
+	 >> 원래 gate는 최소 하나 이상의 job이 성공해야 병합 가능
+	 >> 딱히 돌릴 테스트가 없을 때 성공한 걸로 간주

@@ -1,0 +1,21 @@
+ssh -v -p 29418 tlsntjr@review.opendev.org
+	* 기본형태 : ssh [계정명]@[서버주소]
+	 : 그 컴퓨터의 터미널(명령줄)로 들어간다.
+	* -p 29418 : 포트지정
+	* 키 기반 인증  (vs 비밀번호 방식)
+	* -v : 상세하게 로그 보여주기
+
+ssh-add : 키 추가/삭제 관련 명령어
+
+ssh-keygen -y -f ~/.ssh/id_ed25519
+	* -y : 기존 비밀키를 바탕으로 공개키 만들기 >> 원래는 새로운 키 쌍을 만듦
+	* -f : 파일경로 지정
+
+git review -s : 처음 들어가면 하는거
+	* -s : setup 
+
+git checkout -b sandbox-test
+	* -b : 브런치하나 파고 거기로 접속(checkout)
+
+git commit -s -m "My first test commit to sandbox"
+	* -s : 서명, 오픈스택에서 아주 중요
