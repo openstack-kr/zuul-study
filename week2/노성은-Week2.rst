@@ -12,11 +12,14 @@ zuul-study week2 노성은
   [참고 문헌]
 
   https://aws.amazon.com/ko/what-is/ci-cd/](https://aws.amazon.com/ko/what-is/ci-cd/
-  https://it.donga.com/101955/](https://it.donga.com/101955/
+  https://it.donga.com/101955/
+  https://it.donga.com/101955/
   https://docs.openstack.org/ko_KR/](https://docs.openstack.org/ko_KR/
   https://www.openstack.org/software/
   https://www.fortinet.com/kr/resources/cyberglossary/openstack
   https://wikidocs.net/229965](https://wikidocs.net/229965
+  https://docs.openstack.org/contributors/ko_KR/common/zuul-status.html
+  Zuul - A Project Gating System — Zuul documentation](https://zuul-ci.org/docs/zuul/latest/
 
 |
 
