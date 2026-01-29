@@ -2,7 +2,7 @@ zuul-study week2 노성은
 =====================
      
 .. contents:: 목차
-   :depth: 2
+   :depth: 4
    :local:
 
 1. CI/CD, OpenStack, Zuul 에 대한 이해
