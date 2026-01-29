@@ -39,7 +39,7 @@ a. CI CD
   - ‘코드 커밋 → 빌드 → 테스트 → 배포’의 자동화
 
     1. **Code Push**: 개발자들이 개발하여 브랜치에 코드를 push 한다.
-    2. **Trigger & CI:** `git push`가 감지되면 CI 서버가 Trigger되어 자동으로 Build, Test, Lint를 실행합니다.
+    2. **Trigger & CI:** `git push`가 감지되면 CI 서버가 Trigger되어 자동으로 Build, Test, Lint를 실행한다.
     3. **Feedback & Merge:**
         - 에러 발생 시: 개발자에게 알림이 전송되며, 개발자는 에러를 수정하여 다시 푸시한다.
         - 성공 시: 코드가 메인 브랜치에 병합(Merge)된다.
