@@ -1,11 +1,11 @@
 zuul-study week2 노성은
 =====================
 
-[전체 내용 정리 페이지] 
-: https://www.notion.so/CI-CD-OpenStack-Zuul-2f437a3845a7809dba2cd8842af4fb46?source=copy_link
+  [전체 내용 정리 페이지] 
+  : https://www.notion.so/CI-CD-OpenStack-Zuul-2f437a3845a7809dba2cd8842af4fb46?source=copy_link
 
-[week2 수행 내용]
-: CI/CD, OpenStack, Zuul에 대한 이해를 위해 자료를 찾아보고, 정리하며 학습해보았다.
+  [week2 수행 내용]
+  : CI/CD, OpenStack, Zuul에 대한 이해를 위해 자료를 찾아보고, 정리하며 학습해보았다.
 
 .. contents:: 목차
    :depth: 4
