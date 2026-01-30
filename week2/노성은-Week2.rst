@@ -323,9 +323,12 @@ d. Q&A
 Q1. CI → CD(전달) → CD(배포) 인건지.. CI → CD(전달) or CI → CD(배포) 인건지 (두 가지 CD는 연속된 단계인가 or 각각 개별 단계인가)
 
 - **"CI → CD(전달) OR CI → CD(배포)"** 즉, **둘 중 하나를 선택하는 개념**에 가깝다
+
 - 두 전략은 “어디까지 자동화할 것인가?”에 대한 전략의 차이
 - Continuous Delivery: CI + Staging 배포 + **수동 승인** + 운영 배포
+
 - Continuous Deployment: CI + Staging 배포 + **자동** + 운영 배포
+
     ⇒ Zuul은 지속적 배포(Deployment)에 가깝다
 
 Q2. 서버 빌려주는 건 openstack이 한다고 했는데, nodepool은 왜 필요한가
