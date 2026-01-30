@@ -328,6 +328,7 @@ Q1. CI → CD(전달) → CD(배포) 인건지.. CI → CD(전달) or CI → CD(
 - Continuous Deployment: CI + Staging 배포 + **자동** + 운영 배포
 ⇒ Zuul은 지속적 배포(Deployment)에 가깝다
 
+
 Q2. 서버 빌려주는 건 openstack이 한다고 했는데, nodepool은 왜 필요한가
 
 - 실제 서버(vm)를 만들어내고 빌려주는 주체는  openstack이 맞다.  nodepool은 zuul과 openstack 중간의 관리자 역할을 한다.
