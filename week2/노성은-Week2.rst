@@ -334,8 +334,9 @@ Q1. CI → CD(전달) → CD(배포) 인건지.. CI → CD(전달) or CI → CD(
 Q2. 서버 빌려주는 건 openstack이 한다고 했는데, nodepool은 왜 필요한가
 
 - 실제 서버(vm)를 만들어내고 빌려주는 주체는  openstack이 맞다.  nodepool은 zuul과 openstack 중간의 관리자 역할을 한다.
-- 속도 문제, 관리의 편리성 - nodepool은 openstack이 만드는 서버를 미리 사입해서, 창고에 쟁여두는 ‘도매상’ 역할.
+- 속도 문제, 관리의 편리성 
 
+  - nodepool은 openstack이 만드는 서버를 미리 사입해서, 창고에 쟁여두는 ‘도매상’ 역할.
   - 서버 만드는 것: openstack
   - 서버 미리 받아두고 관리: nodepool
   - 쓰는 것: zuul
