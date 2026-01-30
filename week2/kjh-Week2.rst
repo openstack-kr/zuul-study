@@ -1,8 +1,10 @@
 Zuul 기초 정리
 =============
 
-(https://zuul-ci.org/docs/zuul/latest/tutorials/quick-start.html)
+( https://zuul-ci.org/docs/zuul/latest/tutorials/quick-start.html )
+
 이 문서는 Zuul 공식 문서의 튜토리얼을 직접 실습하며 정리한 Zuul의 핵심 개념과 전체 구조를 설명한다.
+
 Zuul은 단일 저장소 중심의 기존의 CI와는 다른, 여러 프로젝트가 하나의 시스템으로
 함께 동작하는지를 검증하기 위해 설계된 멀티 레포지토리 중심 CI 도구이다.
 
@@ -36,7 +38,9 @@ Zuul에서 코드 변경이 테스트되고 실행되는 전체 흐름은 다음
 
 Zuul 공식 튜토리얼에서 제공하는 예제 인프라 디렉터리이다.
 
+
 Docker는 Zuul 인프라를 실행하기 위한 제어 환경이다.
+
 Docker로 실행되는 주요 컴포넌트는 다음과 같다.
 
 - Zuul Scheduler
@@ -44,7 +48,7 @@ Docker로 실행되는 주요 컴포넌트는 다음과 같다.
 - Zuul Web
 - Gerrit
 - Database
-- Nodepool 서비스
+- Nodepool
 
 Docker 컨테이너는 호스트 커널을 공유하므로 완전히 격리된 실행 환경을 제공하지는 못한다.
 
@@ -101,6 +105,7 @@ Pipeline은 다음을 정의한다.
 ``dependent``
   변경사항을 누적하여 순차적으로 테스트한다.
   (A → A+B → A+B+C)
+
   Gate pipeline에서 필수적으로 사용된다.
 
 ``supercedent``
@@ -230,7 +235,9 @@ Zuul에서는 다음과 같이 동작한다.
 ~~~~~~~~~~~~
 
 Playbook은 Inventory에 정의된 노드에서 수행할 작업을 정의한다.
+
 Zuul pipeline, job 등을 통해 실제로 최종 수행되는 작업이다.
+
 모듈: https://docs.ansible.com/projects/ansible/2.9/modules/list_of_all_modules.html
 
 ::
@@ -252,7 +259,7 @@ Zuul pipeline, job 등을 통해 실제로 최종 수행되는 작업이다.
     tasks:
       - name: Install dependencies		
         apt:					# apt 설치관리자 모듈
-          name:				# 설치할 패키지
+          name:
             - python3-pip
             - git
           state: present
