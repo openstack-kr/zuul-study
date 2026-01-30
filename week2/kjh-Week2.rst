@@ -59,7 +59,7 @@ Docker 컨테이너는 호스트 커널을 공유하므로 완전히 격리된 �
 
   zuul-config/
   ├── zuul.d/
-  │   ├── tenant.yaml
+  │   ├── tenant.yaml     # 프로젝트 목록 정의
   │   ├── pipelines.yaml
   │   ├── jobs.yaml
   │   └── project.yaml
@@ -116,12 +116,12 @@ Pipeline은 다음을 정의한다.
 ::
 
   - pipeline:
-      name: check
-      manager: independent
-      trigger:
+      name: check           # 호출용 pipeline name
+      manager: independent  
+      trigger:              # trigger 설정
         gerrit:
           - event: patchset-created
-      success:
+      success:              # job결과 성공/실패시 작업
         gerrit:
           Verified: 1
       failure:
@@ -140,17 +140,17 @@ Job은 pipeline과 project로부터 호출되어 실제로 실행될 playbook과
 ::
 
   - job:
-      name: unit-test
-      parent: base
-      nodeset:
+      name: unit-test   # 호출용 job name
+      parent: base      # 상속할 job, base가 기본
+      nodeset:          # 사용할 nodeset 정의
         nodes:
           - name: primary
             label: ubuntu-jammy
-      vars:
+      vars:             # playbook에 전달되는 변수
         python_version: "3.11"
         tox_env: py311
       timeout: 3600
-      run: playbooks/unit-test.yaml
+      run: playbooks/unit-test.yaml   # 실제 실행될 playbook파일
 
 
 4.2 Project.yaml
@@ -162,9 +162,9 @@ Project.yaml는 실제 프로젝트와 pipeline과 job을 연결한다.
 
   - project:
       name: test1
-      check:
+      check:                 # 호출용 pipeline name
         jobs:
-          - unit-test:
+          - unit-test:       # 호출용 job name
               branches: "^main$"
               files: "^src/.*"
       gate:
@@ -231,13 +231,29 @@ Zuul에서는 다음과 같이 동작한다.
 
 Playbook은 Inventory에 정의된 노드에서 수행할 작업을 정의한다.
 Zuul pipeline, job 등을 통해 실제로 최종 수행되는 작업이다.
+모듈: https://docs.ansible.com/projects/ansible/2.9/modules/list_of_all_modules.html
 
 ::
 
   - hosts: all
     tasks:
-      - name: Run unit tests
-        command: pytest -v
+      - name: Run unit tests   # 로그용 playbook name, 호출용x
+        command: pytest -v     # 실제 작업 내용, 모듈 사용가능
         args:
           chdir: "{{ zuul.project.src_dir }}"
+        register: test_result			# pytest의 결과를 저장
+        failed_when: test_result.rc != 0		# rc (return code)에 따라 실패처리, 기본값: != 0
 
+
+::
+
+  - hosts: all
+    become: yes				# 관리자권한 (sudo)
+    tasks:
+      - name: Install dependencies		
+        apt:					# apt 설치관리자 모듈
+          name:				# 설치할 패키지
+            - python3-pip
+            - git
+          state: present
+          update_cache: yes
