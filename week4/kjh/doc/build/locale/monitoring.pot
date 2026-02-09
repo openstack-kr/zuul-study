@@ -1,0 +1,694 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/monitoring.rst:4
+msgid "Monitoring"
+msgstr ""
+
+#: ../../source/monitoring.rst:9
+msgid "Statsd reporting"
+msgstr ""
+
+#: ../../source/monitoring.rst:11
+msgid "Zuul comes with support for the statsd protocol, when enabled and configured (see below), the Zuul scheduler will emit raw metrics to a statsd receiver which let you in turn generate nice graphics."
+msgstr ""
+
+#: ../../source/monitoring.rst:16
+#: ../../source/monitoring.rst:856
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/monitoring.rst:18
+msgid "Statsd support uses the ``statsd`` python module.  Note that support is optional and Zuul will start without the statsd python module present."
+msgstr ""
+
+#: ../../source/monitoring.rst:22
+msgid "Configuration is in the :attr:`statsd` section of ``zuul.conf``."
+msgstr ""
+
+#: ../../source/monitoring.rst:25
+#: ../../source/monitoring.rst:865
+msgid "Metrics"
+msgstr ""
+
+#: ../../source/monitoring.rst:27
+msgid "These metrics are emitted by the Zuul :ref:`scheduler`:"
+msgstr ""
+
+#: ../../source/monitoring.rst:32
+msgid "Zuul will report counters for each type of event it receives from each of its configured drivers."
+msgstr ""
+
+#: ../../source/monitoring.rst:37
+msgid "Holds metrics specific to connections. This hierarchy includes:"
+msgstr ""
+
+#: ../../source/monitoring.rst:42
+msgid "The number of bytes stored in ZooKeeper for all items in this connection's change cache."
+msgstr ""
+
+#: ../../source/monitoring.rst:48
+msgid "The number of bytes required to for the change cache (the decompressed value of ``data_size_compressed``)."
+msgstr ""
+
+#: ../../source/monitoring.rst:54
+msgid "A timer metric reporting the time from when the scheduler receives a trigger event from a driver until the corresponding item is enqueued in a pipeline.  This measures the performance of the scheduler in dispatching events."
+msgstr ""
+
+#: ../../source/monitoring.rst:62
+msgid "A timer metric reporting the time from when a trigger event was received from the remote system to when the corresponding item is enqueued in a pipeline.  This includes :stat:`zuul.tenant.<tenant>.event_enqueue_processing_time` and any driver-specific pre-processing of the event."
+msgstr ""
+
+#: ../../source/monitoring.rst:71
+msgid "The size of the tenant's management event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:76
+msgid "A timer metric reporting the time taken to reconfigure a tenant. This is performed by one scheduler after a tenant reconfiguration event is received.  During this time, all processing of that tenant's pipelines are halted.  This measures that time."
+msgstr ""
+
+#: ../../source/monitoring.rst:81
+msgid "Once the first scheduler completes a tenant reconfiguration, other schedulers may update their layout in the background without interrupting processing.  That is not reported in this metric."
+msgstr ""
+
+#: ../../source/monitoring.rst:88
+msgid "The size of the tenant's trigger event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:92
+msgid "Holds metrics specific to jobs. This hierarchy includes:"
+msgstr ""
+
+#: ../../source/monitoring.rst:96
+msgid "A set of metrics for each pipeline named as defined in the Zuul config."
+msgstr ""
+
+#: ../../source/monitoring.rst:102
+msgid "The time elapsed from when a trigger event was received from the remote system to when the corresponding item is enqueued in a pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:109
+msgid "The amount of time spent waiting for the initial merge operation(s).  This will always include a request to a Zuul merger to speculatively merge the change, but it may also include a second request submitted in parallel to identify the files altered by the change.  Includes :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.merger_merge_op_time` and :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.merger_files_changes_op_time`."
+msgstr ""
+
+#: ../../source/monitoring.rst:121
+msgid "The amount of time the merger spent performing a merge operation.  This does not include any of the round-trip time from the scheduler to the merger, or any other merge operations."
+msgstr ""
+
+#: ../../source/monitoring.rst:129
+msgid "The amount of time the merger spent performing a files-changes operation to detect changed files (this is sometimes performed if the source does not provide this information). This does not include any of the round-trip time from the scheduler to the merger, or any other merge operations."
+msgstr ""
+
+#: ../../source/monitoring.rst:138
+msgid "The amount of time spent generating a dynamic configuration layout."
+msgstr ""
+
+#: ../../source/monitoring.rst:143
+msgid "The amount of time spent freezing the inheritance hierarchy and parameters of a job."
+msgstr ""
+
+#: ../../source/monitoring.rst:149
+msgid "The amount of time waiting for a secondary Zuul merger operation to collect additional information about the repo state of required projects.  Includes :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.merger_repo_state_op_time`."
+msgstr ""
+
+#: ../../source/monitoring.rst:157
+msgid "The amount of time the merger spent performing a repo state operation to collect additional information about the repo state of required projects.  This does not include any of the round-trip time from the scheduler to the merger, or any other merge operations."
+msgstr ""
+
+#: ../../source/monitoring.rst:166
+msgid "The amount of time spent waiting for each node request to be fulfilled."
+msgstr ""
+
+#: ../../source/monitoring.rst:172
+msgid "How long a job waited for an executor to start running it after the build was requested."
+msgstr ""
+
+#: ../../source/monitoring.rst:178
+msgid "The total amount of time elapsed from when a trigger event was received from the remote system until the item's first job is run.  This is only emitted once per queue item, even if its buildset is reset due to a speculative execution failure."
+msgstr ""
+
+#: ../../source/monitoring.rst:187
+msgid "Number of jobs triggered by the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:192
+msgid "The number of items currently being processed by this pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:198
+msgid "The configured window size for the pipeline.  Note that this will not change during operation.  This value is used to initialize each :term:`project queue`, and as changes in that queue succeed or fail, that queue's window will adjust."
+msgstr ""
+
+#: ../../source/monitoring.rst:206
+msgid "The total time taken to refresh and process the pipeline. This is emitted every time a scheduler examines a pipeline regardless of whether it takes any actions."
+msgstr ""
+
+#: ../../source/monitoring.rst:213
+msgid "The time taken to process the event queues for the pipeline. This is emitted only if there are events to process."
+msgstr ""
+
+#: ../../source/monitoring.rst:219
+msgid "The time taken to process the pipeline.  This is emitted only if there were events to process."
+msgstr ""
+
+#: ../../source/monitoring.rst:225
+msgid "The number of bytes stored in ZooKeeper to represent the serialized state of the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:231
+msgid "The number of bytes required to represent the serialized state of the pipeline (the decompressed value of ``data_size_compressed``)."
+msgstr ""
+
+#: ../../source/monitoring.rst:237
+msgid "This hierarchy holds more specific metrics for each :term:`project queue` in the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:242
+msgid "The name of the queue.  If the queue is automatically generated for a single project, the name of the project is used by default.  Embedded ``.`` characters will be translated to ``_``, and ``/`` to ``.``."
+msgstr ""
+
+#: ../../source/monitoring.rst:247
+msgid "If the queue is configured as per-branch, the metrics below are omitted and instead found under :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.queue.<queue>.branch`."
+msgstr ""
+
+#: ../../source/monitoring.rst:254
+msgid "The number of items currently in this queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:259
+msgid "The window size for the queue.  This will change as individual changes in the queue succeed or fail."
+msgstr ""
+
+#: ../../source/monitoring.rst:265
+msgid "A timer metric reporting how long each item has been in the queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:271
+msgid "The number of changes processed by the queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:275
+msgid "If the queue is configured as per-branch, this hierarchy will be present and will hold stats for each branch seen."
+msgstr ""
+
+#: ../../source/monitoring.rst:281
+msgid "The name of the branch.  Embedded ``.`` characters will be translated to ``_``, and ``/`` to ``.``."
+msgstr ""
+
+#: ../../source/monitoring.rst:284
+msgid "Underneath this key are per-branch values of the metrics above."
+msgstr ""
+
+#: ../../source/monitoring.rst:289
+msgid "This hierarchy holds more specific metrics for each project participating in the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:294
+msgid "The canonical hostname for the triggering project. Embedded ``.`` characters will be translated to ``_``."
+msgstr ""
+
+#: ../../source/monitoring.rst:299
+msgid "The name of the triggering project.  Embedded ``/`` or ``.`` characters will be translated to ``_``."
+msgstr ""
+
+#: ../../source/monitoring.rst:304
+msgid "The name of the triggering branch.  Embedded ``/`` or ``.`` characters will be translated to ``_``."
+msgstr ""
+
+#: ../../source/monitoring.rst:309
+msgid "Subtree detailing per-project job statistics:"
+msgstr ""
+
+#: ../../source/monitoring.rst:313
+msgid "The triggered job name."
+msgstr ""
+
+#: ../../source/monitoring.rst:318
+msgid "A counter for each type of result (e.g., ``SUCCESS`` or ``FAILURE``, ``ERROR``, etc.) for the job.  If the result is ``SUCCESS`` or ``FAILURE``, Zuul will additionally report the duration of the build as a timer."
+msgstr ""
+
+#: ../../source/monitoring.rst:327
+msgid "How long the job waited for an executor to start running it after the build was requested."
+msgstr ""
+
+#: ../../source/monitoring.rst:333
+msgid "The number of items of this project currently being processed by this pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:339
+msgid "A timer metric reporting how long each item for this project has been in the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:345
+msgid "The number of changes for this project processed by the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:351
+msgid "The time spent reading data from ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:357
+msgid "The number of ZNodes read from ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:363
+msgid "The number of Zuul data model objects read from ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:369
+msgid "The amount of data read from ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:375
+msgid "The time taken to refresh the state from ZooKeeper."
+msgstr ""
+
+#: ../../source/monitoring.rst:380
+msgid "A timer metric reporting how long each item has been in the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:386
+msgid "The number of changes processed by the pipeline."
+msgstr ""
+
+#: ../../source/monitoring.rst:391
+msgid "The size of the pipeline's trigger event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:396
+msgid "The size of the pipeline's result event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:401
+msgid "The size of the pipeline's management event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:406
+msgid "The time spent writing data to ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:412
+msgid "The number of ZNodes written to ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:418
+msgid "The number of Zuul data model objects written to ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:424
+msgid "The amount of data written to ZooKeeper during a single pipeline processing run."
+msgstr ""
+
+#: ../../source/monitoring.rst:429
+msgid "Holds metrics emitted by individual executors.  The ``<executor>`` component of the key will be replaced with the hostname of the executor."
+msgstr ""
+
+#: ../../source/monitoring.rst:436
+msgid "Incremented to represent the status of a Zuul executor's merger operations. ``<result>`` can be either ``SUCCESS`` or ``FAILURE``. A failed merge operation which would be accounted for as a ``FAILURE`` is what ends up being returned by Zuul as a ``MERGE_CONFLICT``."
+msgstr ""
+
+#: ../../source/monitoring.rst:444
+msgid "Incremented each time the executor starts a build."
+msgstr ""
+
+#: ../../source/monitoring.rst:449
+msgid "The number of builds starting on this executor and a timer containing how long jobs were in this state. These are builds which have not yet begun their first pre-playbook."
+msgstr ""
+
+#: ../../source/monitoring.rst:453
+msgid "The timer needs special thoughts when interpreting it because it aggregates all jobs. It can be useful when aggregating it over a longer period of time (maybe a day) where fast rising graphs could indicate e.g. IO problems of the machines the executors are running on. But it has to be noted that a rising graph also can indicate a higher usage of complex jobs using more required projects. Also comparing several executors might give insight if the graphs differ a lot from each other. Typically the jobs are equally distributed over all executors (in the same zone when using the zone feature) and as such the starting jobs timers (aggregated over a large enough interval) should not differ much."
+msgstr ""
+
+#: ../../source/monitoring.rst:467
+msgid "The number of builds currently running on this executor.  This includes starting builds."
+msgstr ""
+
+#: ../../source/monitoring.rst:473
+msgid "The number of currently paused builds on this executor."
+msgstr ""
+
+#: ../../source/monitoring.rst:477
+msgid "Subtree detailing per-phase execution statistics:"
+msgstr ""
+
+#: ../../source/monitoring.rst:481
+msgid "``<phase>`` represents a phase in the execution of a job. This can be an *internal* phase (such as ``setup`` or ``cleanup``) as well as *job* phases such as ``pre``, ``run`` or ``post``."
+msgstr ""
+
+#: ../../source/monitoring.rst:488
+msgid "A counter for each type of result. These results do not, by themselves, determine the status of a build but are indicators of the exit status provided by Ansible for the execution of a particular phase."
+msgstr ""
+
+#: ../../source/monitoring.rst:493
+msgid "Example of possible counters for each phase are: ``RESULT_NORMAL``, ``RESULT_TIMED_OUT``, ``RESULT_UNREACHABLE``, ``RESULT_ABORTED``."
+msgstr ""
+
+#: ../../source/monitoring.rst:499
+msgid "The one-minute load average of this executor, multiplied by 100."
+msgstr ""
+
+#: ../../source/monitoring.rst:504
+msgid "Indicates if the executor is paused. 1 means paused else 0."
+msgstr ""
+
+#: ../../source/monitoring.rst:509
+msgid "The used disk on this executor, as a percentage multiplied by 100."
+msgstr ""
+
+#: ../../source/monitoring.rst:514
+msgid "The used inodes on this executor, as a percentage multiplied by 100."
+msgstr ""
+
+#: ../../source/monitoring.rst:519
+msgid "The used RAM (excluding buffers and cache) on this executor, as a percentage multiplied by 100."
+msgstr ""
+
+#: ../../source/monitoring.rst:525
+msgid "The used RAM (excluding buffers and cache) on this executor allowed by the cgroup, as percentage multiplied by 100."
+msgstr ""
+
+#: ../../source/monitoring.rst:531
+msgid "The maximum amount of processes that can be running on this executor."
+msgstr ""
+
+#: ../../source/monitoring.rst:536
+msgid "The current amount of running processes on this executor."
+msgstr ""
+
+#: ../../source/monitoring.rst:540
+msgid "Holds metrics related to Zuul requests and responses from Nodepool."
+msgstr ""
+
+#: ../../source/monitoring.rst:542
+msgid "States are one of:"
+msgstr ""
+
+#: ../../source/monitoring.rst:544
+msgid "*requested*"
+msgstr ""
+
+#: ../../source/monitoring.rst:545
+msgid "Node request submitted by Zuul to Nodepool"
+msgstr ""
+
+#: ../../source/monitoring.rst:546
+msgid "*canceled*"
+msgstr ""
+
+#: ../../source/monitoring.rst:547
+msgid "Node request was canceled by Zuul"
+msgstr ""
+
+#: ../../source/monitoring.rst:548
+msgid "*failed*"
+msgstr ""
+
+#: ../../source/monitoring.rst:549
+msgid "Nodepool failed to fulfill a node request"
+msgstr ""
+
+#: ../../source/monitoring.rst:550
+msgid "*fulfilled*"
+msgstr ""
+
+#: ../../source/monitoring.rst:551
+msgid "Nodes were assigned by Nodepool"
+msgstr ""
+
+#: ../../source/monitoring.rst:556
+msgid "Records the elapsed time from request to completion for states `failed` and `fulfilled`.  For example, ``zuul.nodepool.request.fulfilled.mean`` will give the average time for all fulfilled requests within each ``statsd`` flush interval."
+msgstr ""
+
+#: ../../source/monitoring.rst:562
+msgid "A lower value for `fulfilled` requests is better.  Ideally, there will be no `failed` requests."
+msgstr ""
+
+#: ../../source/monitoring.rst:568
+msgid "Incremented when nodes are assigned or removed as described in the states above."
+msgstr ""
+
+#: ../../source/monitoring.rst:574
+msgid "Increments for the node count of each request.  For example, a request for 3 nodes would use the key ``zuul.nodepool.requests.requested.size.3``; fulfillment of 3 node requests can be tracked with ``zuul.nodepool.requests.fulfilled.size.3``."
+msgstr ""
+
+#: ../../source/monitoring.rst:580
+msgid "The timer is implemented for ``fulfilled`` and ``failed`` requests.  For example, the timer ``zuul.nodepool.requests.failed.size.3.mean`` gives the average time of 3-node failed requests within the ``statsd`` flush interval.  A lower value for `fulfilled` requests is better. Ideally, there will be no `failed` requests."
+msgstr ""
+
+#: ../../source/monitoring.rst:590
+msgid "Increments for the label of each request.  For example, requests for `centos7` nodes could be tracked with ``zuul.nodepool.requests.requested.centos7``."
+msgstr ""
+
+#: ../../source/monitoring.rst:594
+msgid "The timer is implemented for ``fulfilled`` and ``failed`` requests.  For example, the timer ``zuul.nodepool.requests.fulfilled.label.centos7.mean`` gives the average time of ``centos7`` fulfilled requests within the ``statsd`` flush interval.  A lower value for `fulfilled` requests is better.  Ideally, there will be no `failed` requests."
+msgstr ""
+
+#: ../../source/monitoring.rst:607
+msgid "The number of outstanding nodepool requests from Zuul.  Ideally this will be at zero, meaning all requests are fulfilled. Persistently high values indicate more testing node resources would be helpful."
+msgstr ""
+
+#: ../../source/monitoring.rst:615
+msgid "The number of outstanding nodepool requests from Zuul drilled down by <tenant>. If a tenant for a node request cannot be determined, it is reported as ``unknown``. This relates to ``zuul.nodepool.current_requests``."
+msgstr ""
+
+#: ../../source/monitoring.rst:622
+msgid "Holds metrics about resource usage by tenant or project if resources of nodes are reported by nodepool."
+msgstr ""
+
+#: ../../source/monitoring.rst:627
+msgid "Holds metrics about resources currently in use by a build."
+msgstr ""
+
+#: ../../source/monitoring.rst:631
+#: ../../source/monitoring.rst:657
+msgid "Holds resource usage metrics by tenant."
+msgstr ""
+
+#: ../../source/monitoring.rst:636
+msgid "Counter with the summed usage by tenant as <resource> seconds and gauge with the currently in use resources by tenant."
+msgstr ""
+
+#: ../../source/monitoring.rst:641
+msgid "Holds resource usage metrics by project."
+msgstr ""
+
+#: ../../source/monitoring.rst:646
+msgid "Counter with the summed usage by project as <resource> seconds and gauge with the currently used resources by project."
+msgstr ""
+
+#: ../../source/monitoring.rst:651
+msgid "Holds metrics about resources allocated in total. This includes resources that are currently in use, allocated but not yet in use, and scheduled to be deleted."
+msgstr ""
+
+#: ../../source/monitoring.rst:662
+msgid "Gauge with the currently used resources by tenant."
+msgstr ""
+
+#: ../../source/monitoring.rst:667
+msgid "Holds metrics related to Zuul mergers."
+msgstr ""
+
+#: ../../source/monitoring.rst:672
+msgid "The number of Zuul merger processes online."
+msgstr ""
+
+#: ../../source/monitoring.rst:677
+msgid "The number of merge jobs running."
+msgstr ""
+
+#: ../../source/monitoring.rst:682
+msgid "The number of merge jobs waiting for a merger.  This should ideally be zero; persistent higher values indicate more merger resources would be useful."
+msgstr ""
+
+#: ../../source/monitoring.rst:688
+#: ../../source/monitoring.rst:721
+msgid "Holds metrics related to unzoned executors."
+msgstr ""
+
+#: ../../source/monitoring.rst:690
+msgid "This is a copy of :stat:`zuul.executors.unzoned`.  It does not include information about zoned executors."
+msgstr ""
+
+#: ../../source/monitoring.rst:693
+msgid "The metrics at this location are deprecated and will be removed in a future version.  Please begin using :stat:`zuul.executors.unzoned` instead."
+msgstr ""
+
+#: ../../source/monitoring.rst:700
+msgid "The number of Zuul executor processes online."
+msgstr ""
+
+#: ../../source/monitoring.rst:705
+msgid "The number of Zuul executor processes accepting new jobs."
+msgstr ""
+
+#: ../../source/monitoring.rst:710
+msgid "The number of executor jobs running."
+msgstr ""
+
+#: ../../source/monitoring.rst:715
+msgid "The number of jobs allocated nodes, but queued waiting for an executor to run on.  This should ideally be at zero; persistent higher values indicate more executor resources would be useful."
+msgstr ""
+
+#: ../../source/monitoring.rst:726
+msgid "The number of unzoned Zuul executor processes online."
+msgstr ""
+
+#: ../../source/monitoring.rst:731
+msgid "The number of unzoned Zuul executor processes accepting new jobs."
+msgstr ""
+
+#: ../../source/monitoring.rst:737
+msgid "The number of unzoned executor jobs running."
+msgstr ""
+
+#: ../../source/monitoring.rst:742
+msgid "The number of jobs allocated nodes, but queued waiting for an unzoned executor to run on.  This should ideally be at zero; persistent higher values indicate more executor resources would be useful."
+msgstr ""
+
+#: ../../source/monitoring.rst:749
+msgid "Holds metrics related to zoned executors."
+msgstr ""
+
+#: ../../source/monitoring.rst:754
+msgid "The number of Zuul executor processes online in this zone."
+msgstr ""
+
+#: ../../source/monitoring.rst:759
+msgid "The number of Zuul executor processes accepting new jobs in this zone."
+msgstr ""
+
+#: ../../source/monitoring.rst:765
+msgid "The number of executor jobs running in this zone."
+msgstr ""
+
+#: ../../source/monitoring.rst:770
+msgid "The number of jobs allocated nodes, but queued waiting for an executor in this zone to run on.  This should ideally be at zero; persistent higher values indicate more executor resources would be useful."
+msgstr ""
+
+#: ../../source/monitoring.rst:777
+msgid "Holds metrics related to the Zuul scheduler."
+msgstr ""
+
+#: ../../source/monitoring.rst:781
+msgid "Holds metrics about the event queue lengths in the Zuul scheduler."
+msgstr ""
+
+#: ../../source/monitoring.rst:786
+msgid "The size of the current reconfiguration event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:791
+msgid "The size of the current connection event queue."
+msgstr ""
+
+#: ../../source/monitoring.rst:796
+msgid "A timer metric reporting the time taken for one scheduler run handler iteration."
+msgstr ""
+
+#: ../../source/monitoring.rst:802
+msgid "Each time the scheduler performs a query against the SQL database in order to determine an estimated time for a job, it emits this timer of the duration of the query.  Note this is a performance metric of how long the SQL query takes; it is not the estimated time value itself."
+msgstr ""
+
+#: ../../source/monitoring.rst:810
+msgid "Holds metrics related to the Zuul web component."
+msgstr ""
+
+#: ../../source/monitoring.rst:814
+msgid "Holds metrics from a specific zuul-web server."
+msgstr ""
+
+#: ../../source/monitoring.rst:818
+msgid "Metrics related to the web server thread pool."
+msgstr ""
+
+#: ../../source/monitoring.rst:823
+msgid "The number of idle workers."
+msgstr ""
+
+#: ../../source/monitoring.rst:828
+msgid "The number of requests queued for workers."
+msgstr ""
+
+#: ../../source/monitoring.rst:833
+#: ../../source/monitoring.rst:899
+msgid "The number of log streamers currently in operation."
+msgstr ""
+
+#: ../../source/monitoring.rst:836
+msgid "As an example, given a job named `myjob` in `mytenant` triggered by a change to `myproject` on the `master` branch in the `gate` pipeline which took 40 seconds to build, the Zuul scheduler will emit the following statsd events:"
+msgstr ""
+
+#: ../../source/monitoring.rst:841
+msgid "``zuul.tenant.mytenant.pipeline.gate.project.example_com.myproject.master.job.myjob.SUCCESS`` +1"
+msgstr ""
+
+#: ../../source/monitoring.rst:842
+msgid "``zuul.tenant.mytenant.pipeline.gate.project.example_com.myproject.master.job.myjob.SUCCESS``  40 seconds"
+msgstr ""
+
+#: ../../source/monitoring.rst:843
+msgid "``zuul.tenant.mytenant.pipeline.gate.all_jobs`` +1"
+msgstr ""
+
+#: ../../source/monitoring.rst:847
+msgid "Prometheus monitoring"
+msgstr ""
+
+#: ../../source/monitoring.rst:849
+msgid "Zuul comes with support to start a prometheus_ metric server to be added as prometheus's target."
+msgstr ""
+
+#: ../../source/monitoring.rst:858
+msgid "To enable the service, set the ``prometheus_port`` in a service section of ``zuul.conf``. For example setting :attr:`scheduler.prometheus_port` to 9091 starts a HTTP server to expose metrics to a prometheus services at: http://scheduler:9091/metrics"
+msgstr ""
+
+#: ../../source/monitoring.rst:867
+msgid "These metrics are exposed by default:"
+msgstr ""
+
+#: ../../source/monitoring.rst:884
+msgid "On web servers the following additional metrics are exposed:"
+msgstr ""
+
+#: ../../source/monitoring.rst:889
+msgid "The number of idle workers in the thread pool."
+msgstr ""
+
+#: ../../source/monitoring.rst:894
+msgid "The number of requests queued for thread pool workers."
+msgstr ""
+
+#: ../../source/monitoring.rst:904
+msgid "Liveness Probes"
+msgstr ""
+
+#: ../../source/monitoring.rst:906
+msgid "The Prometheus server also supports liveness and ready probes at the following URIS:"
+msgstr ""
+
+#: ../../source/monitoring.rst:911
+msgid "Returns 200 as long as the process is running."
+msgstr ""
+
+#: ../../source/monitoring.rst:915
+msgid "Returns 200 if the process is in `RUNNING` or `PAUSED` states. Otherwise, returns 503.  Note that 503 is returned for `INITIALIZED`, so this may be used to determine when a component has completely finished loading configuration."
+msgstr ""
+
+#: ../../source/monitoring.rst:922
+msgid "This always returns 200, but includes the component status as the text body of the response."
+msgstr ""

@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components.rst:4
+msgid "Component Overview"
+msgstr ""
+
+#: ../../source/components.rst:8
+msgid "Zuul is a distributed system consisting of several components, each of which is described below."
+msgstr ""
+
+#: ../../source/components.rst:54
+msgid "Each of the Zuul processes may run on the same host, or different hosts."
+msgstr ""
+
+#: ../../source/components.rst:57
+msgid "Previous versions of Zuul used Nodepool to provide build nodes; new installations should use Zuul's internal resource management and not Nodepool."
+msgstr ""
+
+#: ../../source/components.rst:61
+msgid "Zuul requires an external ZooKeeper cluster running at least ZooKeeper version 3.5.1, and all Zuul and Nodepool components need to be able to connect to the hosts in that cluster on a TLS-encrypted TCP port, typically 2281."
+msgstr ""
+
+#: ../../source/components.rst:66
+msgid "Both the Nodepool (or Zuul) launchers and Zuul executors need to be able to communicate with the hosts which Nodepool (or Zuul) provides. If these are on private networks, the executors will need to be able to route traffic to them."
+msgstr ""
+
+#: ../../source/components.rst:71
+msgid "Only Zuul fingergw and Zuul web need to be publicly accessible; executors never do. Executors should be accessible on TCP port 7900 by fingergw and web."
+msgstr ""
+
+#: ../../source/components.rst:75
+msgid "A database is required and configured in ``database`` section of ``/etc/zuul/zuul.conf``. Both Zuul scheduler and Zuul web will need access to it."
+msgstr ""
+
+#: ../../source/components.rst:79
+msgid "If statsd is enabled, the executors and schedulers need to be able to emit data to statsd.  Statsd can be configured to run on each host and forward data, or services may emit to a centralized statsd collector. Statsd listens on UDP port 8125 by default."
+msgstr ""
+
+#: ../../source/components.rst:84
+msgid "A minimal Zuul system may consist of a :ref:`scheduler` and :ref:`executor` both running on the same host.  Larger installations should consider running multiple schedulers, executors and mergers, with each component running on a dedicated host."
+msgstr ""

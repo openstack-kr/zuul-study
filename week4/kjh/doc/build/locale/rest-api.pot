@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/rest-api.rst:4
+msgid "REST API"
+msgstr ""
+
+#: ../../source/rest-api.rst:8
+msgid "This page is a work-in-progress as the OpenAPI spec is not yet complete."
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "**Example request:**"
+msgstr ""
+
+#: ../../source/rest-api.rst:0
+msgid "Status Codes"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Response not yet documented"
+msgstr ""
+
+#: ../../source/rest-api.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "**Get a badge describing the result of the latest buildset found.**"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "The tenant name"
+msgstr ""
+
+#: ../../source/rest-api.rst:0
+msgid "Query Parameters"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "A project name"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "A pipeline name"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "A branch name"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Badge describing the result of the latest buildset found."
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "No buildset found"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "**List the executed builds**"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of builds  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"_id\": \"string\",            \"artifacts\": [                {                    \"metadata\": {},                    \"name\": \"string\",                    \"url\": \"string\"                }            ],            \"duration\": \"string\",            \"end_time\": \"string\",            \"error_detail\": \"string\",            \"final\": \"string\",            \"held\": \"string\",            \"job_name\": \"string\",            \"log_url\": \"string\",            \"nodeset\": \"string\",            \"provides\": [                {                    \"name\": \"string\"                }            ],            \"ref\": {                \"branch\": \"string\",                \"change\": \"string\",                \"newrev\": \"string\",                \"oldrev\": \"string\",                \"patchset\": \"string\",                \"project\": \"string\",                \"ref\": \"string\",                \"ref_url\": \"string\"            },            \"result\": \"string\",            \"start_time\": \"string\",            \"uuid\": \"string\",            \"voting\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of builds"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "**Example response:**"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Tenant not found"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns a buildset  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     {        \"_id\": \"string\",        \"builds\": [            {                \"_id\": \"string\",                \"artifacts\": [                    {                        \"metadata\": {},                        \"name\": \"string\",                        \"url\": \"string\"                    }                ],                \"duration\": \"string\",                \"end_time\": \"string\",                \"error_detail\": \"string\",                \"final\": \"string\",                \"held\": \"string\",                \"job_name\": \"string\",                \"log_url\": \"string\",                \"nodeset\": \"string\",                \"provides\": [                    {                        \"name\": \"string\"                    }                ],                \"ref\": {                    \"branch\": \"string\",                    \"change\": \"string\",                    \"newrev\": \"string\",                    \"oldrev\": \"string\",                    \"patchset\": \"string\",                    \"project\": \"string\",                    \"ref\": \"string\",                    \"ref_url\": \"string\"                },                \"result\": \"string\",                \"start_time\": \"string\",                \"uuid\": \"string\",                \"voting\": \"string\"            }        ],        \"event_id\": \"string\",        \"event_timestamp\": \"string\",        \"events\": [            {                \"description\": \"string\",                \"event_time\": \"string\",                \"event_type\": \"string\"            }        ],        \"first_build_start_time\": \"string\",        \"last_build_end_time\": \"string\",        \"message\": \"string\",        \"pipeline\": \"string\",        \"refs\": [            {                \"branch\": \"string\",                \"change\": \"string\",                \"newrev\": \"string\",                \"oldrev\": \"string\",                \"patchset\": \"string\",                \"project\": \"string\",                \"ref\": \"string\",                \"ref_url\": \"string\"            }        ],        \"result\": \"string\",        \"uuid\": \"string\"    }"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns a buildset"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of buildsets  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"_id\": \"string\",            \"event_id\": \"string\",            \"event_timestamp\": \"string\",            \"first_build_start_time\": \"string\",            \"last_build_end_time\": \"string\",            \"message\": \"string\",            \"pipeline\": \"string\",            \"refs\": [                {                    \"branch\": \"string\",                    \"change\": \"string\",                    \"newrev\": \"string\",                    \"oldrev\": \"string\",                    \"patchset\": \"string\",                    \"project\": \"string\",                    \"ref\": \"string\",                    \"ref_url\": \"string\"                }            ],            \"result\": \"string\",            \"uuid\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of buildsets"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of flavors  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"canonical_name\": \"string\",            \"description\": \"string\",            \"name\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of flavors"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of images  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"branch\": \"string\",            \"build_artifacts\": [                {                    \"build_tenant\": true,                    \"build_uuid\": \"string\",                    \"canonical_name\": \"string\",                    \"format\": \"string\",                    \"is_locked\": true,                    \"lock_holder\": \"string\",                    \"md5sum\": \"string\",                    \"sha256\": \"string\",                    \"state\": \"string\",                    \"state_time\": \"string\",                    \"timestamp\": \"string\",                    \"uploads\": [                        {                            \"artifact_uuid\": \"string\",                            \"canonical_name\": \"string\",                            \"endpoint_name\": \"string\",                            \"external_id\": \"string\",                            \"is_locked\": true,                            \"lock_holder\": \"string\",                            \"state\": \"string\",                            \"state_time\": \"string\",                            \"timestamp\": \"string\",                            \"uuid\": \"string\",                            \"validated\": \"string\"                        }                    ],                    \"url\": \"string\",                    \"uuid\": \"string\",                    \"validated\": \"string\"                }            ],            \"canonical_name\": \"string\",            \"name\": \"string\",            \"project_canonical_name\": \"string\",            \"type\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of images"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of jobs  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"description\": \"string\",            \"name\": \"string\",            \"tags\": [                \"string\"            ],            \"variants\": [                {                    \"branches\": [                        \"string\"                    ],                    \"parent\": \"string\"                }            ]        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of jobs"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the project public key that is used to encrypt secrets  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     -----BEGIN PUBLIC KEY-----    MIICI...    -----END PUBLIC KEY-----"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the project public key that is used to encrypt secrets"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Tenant or Project not found"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the project public key that executor adds to SSH agent  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACA"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the project public key that executor adds to SSH agent"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of providers  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"canonical_name\": \"string\",            \"flavors\": [                {                    \"canonical_name\": \"string\",                    \"name\": \"string\"                }            ],            \"images\": [                {                    \"build_artifacts\": [                        {                            \"build_tenant\": true,                            \"build_uuid\": \"string\",                            \"canonical_name\": \"string\",                            \"format\": \"string\",                            \"is_locked\": true,                            \"lock_holder\": \"string\",                            \"md5sum\": \"string\",                            \"sha256\": \"string\",                            \"state\": \"string\",                            \"state_time\": \"string\",                            \"timestamp\": \"string\",                            \"uploads\": [                                {                                    \"artifact_uuid\": \"string\",                                    \"canonical_name\": \"string\",                                    \"endpoint_name\": \"string\",                                    \"external_id\": \"string\",                                    \"is_locked\": true,                                    \"lock_holder\": \"string\",                                    \"state\": \"string\",                                    \"state_time\": \"string\",                                    \"timestamp\": \"string\",                                    \"uuid\": \"string\",                                    \"validated\": \"string\"                                }                            ],                            \"url\": \"string\",                            \"uuid\": \"string\",                            \"validated\": \"string\"                        }                    ],                    \"canonical_name\": \"string\",                    \"name\": \"string\",                    \"type\": \"string\"                }            ],            \"labels\": [                {                    \"canonical_name\": \"string\",                    \"name\": \"string\"                }            ],            \"name\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of providers"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of semaphores"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "**Return the tenant status. Note: the output format is not currently documented and subject to change without notice.**"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "**Return the status for a single change. Note: the output format is not currently documented and subject to change without notice.**"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of system events  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"description\": \"string\",            \"event_id\": \"string\",            \"event_time\": \"string\",            \"event_type\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of system events"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the tenant public key that executor adds to SSH agent  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACA"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the tenant public key that executor adds to SSH agent"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of tenants  **Example response:**  .. sourcecode:: http     HTTP/1.1 200 OK    Content-Type: application/json     [        {            \"name\": \"string\"        }    ]"
+msgstr ""
+
+#: ../../<openapi>:1
+msgid "Returns the list of tenants"
+msgstr ""

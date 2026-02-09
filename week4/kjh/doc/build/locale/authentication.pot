@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/authentication.rst:6
+msgid "Authenticated Access"
+msgstr ""
+
+#: ../../source/authentication.rst:8
+msgid "Access to Zuul's REST API and web interface can optionally be restricted.  By default, anonymous read access to any tenant is permitted.  Optionally, some administrative actions may also be enabled and restricted to authorized users.  Additionally, individual tenants or the entire system may have read-level access restricted to authorized users."
+msgstr ""
+
+#: ../../source/authentication.rst:15
+msgid "The supported administrative actions are **autohold**, **enqueue/enqueue-ref**, **dequeue/dequeue-ref** and **promote**. These are similar to the ones available through Zuul's CLI."
+msgstr ""
+
+#: ../../source/authentication.rst:20
+msgid "The protected endpoints require a bearer token, passed to Zuul Web Server as the **Authorization** header of the request. The token and this workflow follow the JWT standard as established in this `RFC <https://tools.ietf.org/html/rfc7519>`_."
+msgstr ""
+
+#: ../../source/authentication.rst:26
+msgid "Important Security Considerations"
+msgstr ""
+
+#: ../../source/authentication.rst:28
+msgid "Anybody with a valid administrative token can perform privileged actions exposed through the REST API. Furthermore revoking tokens, especially when manually issued, is not trivial."
+msgstr ""
+
+#: ../../source/authentication.rst:32
+msgid "As a mitigation, tokens should be generated with a short time to live, like 10 minutes or less. If the token contains authorization Information (see the ``zuul.admin`` claim below), it should be generated with as little a scope as possible (one tenant only) to reduce the surface of attack should the token be compromised."
+msgstr ""
+
+#: ../../source/authentication.rst:38
+msgid "Exposing administration tasks can impact build results (dequeue-ing buildsets), and pose potential resources problems if the ``autohold`` feature is abused, leading to a significant number of nodes remaining in \"hold\" state for extended periods of time. As always, \"with great power comes great responsibility\" and tokens should be handed over with discernment."
+msgstr ""
+
+#: ../../source/authentication.rst:45
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/authentication.rst:47
+msgid "In order to use restricted commands in the zuul command line interface, at least one HS256 authenticator should be configured."
+msgstr ""
+
+#: ../../source/authentication.rst:51
+msgid "To enable tenant-scoped access to privileged actions or restrict read-level access, see the Zuul Web Server component's section."
+msgstr ""
+
+#: ../../source/authentication.rst:54
+msgid "To set access rules for a tenant, see :ref:`the documentation about tenant definition <authz_rule_definition>`."
+msgstr ""
+
+#: ../../source/authentication.rst:57
+msgid "Most of the time, only one authenticator will be needed in Zuul's configuration; namely the configuration matching a third party identity provider service like dex, auth0, keycloak or others. It can be useful however to add another authenticator similar to this one:"
+msgstr ""
+
+#: ../../source/authentication.rst:72
+msgid "With such an authenticator, a Zuul operator can use Zuul's CLI to issue tokens overriding a tenant's access rules if need be. A user can then use these tokens with Zuul's CLI to perform protected actions on a tenant temporarily, without having to modify a tenant's access rules."
+msgstr ""
+
+#: ../../source/authentication.rst:80
+msgid "JWT Format"
+msgstr ""
+
+#: ../../source/authentication.rst:82
+msgid "Zuul can consume JWTs with the following minimal set of claims:"
+msgstr ""
+
+#: ../../source/authentication.rst:94
+msgid "**iss** is the issuer of the token. It can be used to filter Identity Providers."
+msgstr ""
+
+#: ../../source/authentication.rst:96
+msgid "**aud**, as the intended audience, is usually the client id as registered on the Identity Provider."
+msgstr ""
+
+#: ../../source/authentication.rst:98
+msgid "**exp** is the token's expiry timestamp."
+msgstr ""
+
+#: ../../source/authentication.rst:99
+msgid "**iat** is the token's date of issuance timestamp."
+msgstr ""
+
+#: ../../source/authentication.rst:100
+msgid "**sub** is the default, unique identifier of the user."
+msgstr ""
+
+#: ../../source/authentication.rst:102
+msgid "JWTs can be extended arbitrarily with other claims. Zuul however can look for a specific **zuul** claim, if the ``allow_authz_override`` option was set to True in the authenticator's configuration. This claim has the following format:"
+msgstr ""
+
+#: ../../source/authentication.rst:114
+msgid "The **admin** field is a list of tenants on which the token's bearer is granted the right to perform privileged actions."
+msgstr ""
+
+#: ../../source/authentication.rst:118
+msgid "Manually Generating a JWT"
+msgstr ""
+
+#: ../../source/authentication.rst:120
+msgid "An operator can generate a JWT by using the settings of a configured authenticator in ``zuul.conf``."
+msgstr ""
+
+#: ../../source/authentication.rst:123
+msgid "For example, in Python, and for an authenticator using the ``HS256`` algorithm:"
+msgstr ""
+
+#: ../../source/authentication.rst:140
+msgid "Online resources like https://jwt.io are also available to generate, decode and debug JWTs."
+msgstr ""
+
+#: ../../source/authentication.rst:144
+msgid "Debugging"
+msgstr ""
+
+#: ../../source/authentication.rst:146
+msgid "If problems appear:"
+msgstr ""
+
+#: ../../source/authentication.rst:148
+msgid "Make sure your configuration is correct, especially callback URIs."
+msgstr ""
+
+#: ../../source/authentication.rst:149
+msgid "More information can be found in Zuul's web service logs."
+msgstr ""
+
+#: ../../source/authentication.rst:150
+msgid "From the user's side, activating the web console in the browser can be helpful to debug API calls."
+msgstr ""
+
+#: ../../source/authentication.rst:154
+msgid "Interfacing with Other Systems"
+msgstr ""
+
+#: ../../source/authentication.rst:156
+msgid "Here are some how-tos to help administrators enable OpenID Connect authentication in Zuul and Zuul's Web UI."
+msgstr ""

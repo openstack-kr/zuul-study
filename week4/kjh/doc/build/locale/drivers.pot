@@ -1,0 +1,4099 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/drivers/aws.rst:6
+msgid "AWS"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:8
+msgid "Zuul can use AWS as a source for build nodes."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:10
+msgid "If using the AWS driver to upload images, see `VM Import/Export service role`_ for information on configuring the required permissions in AWS.  You must also create an S3 Bucket for use by Zuul if uploading images (except when using the ``ebs-direct`` upload method)."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:15
+msgid "A number of methods for configuration authentication are available:"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:17
+msgid "Supplying values directly in ``zuul.conf``"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:18
+msgid "A shared credential file"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:19
+msgid "`Environment variables`_"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:21
+msgid "Zuul will try to obtain credential information from those sources in that order."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:25
+#: ../../source/drivers/azure.rst:50
+#: ../../source/drivers/elasticsearch.rst:30
+#: ../../source/drivers/gerrit.rst:62
+#: ../../source/drivers/git.rst:12
+#: ../../source/drivers/github.rst:154
+#: ../../source/drivers/gitlab.rst:50
+#: ../../source/drivers/mqtt.rst:227
+#: ../../source/drivers/openstack.rst:14
+#: ../../source/drivers/pagure.rst:41
+#: ../../source/drivers/smtp.rst:10
+#: ../../source/drivers/static.rst:25
+msgid "Connection Configuration"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:27
+#: ../../source/drivers/azure.rst:52
+#: ../../source/drivers/gerrit.rst:64
+#: ../../source/drivers/git.rst:14
+#: ../../source/drivers/github.rst:163
+#: ../../source/drivers/gitlab.rst:52
+#: ../../source/drivers/openstack.rst:16
+#: ../../source/drivers/pagure.rst:43
+msgid "The supported options in ``zuul.conf`` connections are:"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:36
+msgid "The connection must set ``driver=aws`` for AWS connections."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:40
+msgid "A path to a `configuration file`_ with shared access credentials.  If this is supplied, no other credential settings need to be present."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:46
+msgid "The AWS access key id."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:50
+msgid "The AWS secret access key."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:54
+msgid "The AWS profile."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:59
+msgid "The API rate limit (in requests per second) to use when performing API calls with AWS."
+msgstr ""
+
+#: ../../source/drivers/aws.rst:63
+#: ../../source/drivers/azure.rst:101
+#: ../../source/drivers/openstack.rst:44
+#: ../../source/drivers/static.rst:43
+msgid "Provider Configuration"
+msgstr ""
+
+#: ../../source/drivers/aws.rst:65
+msgid "The ``aws`` driver adds the following options to the :attr:`provider` and :attr:`section` configurations:"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:4
+msgid "The attributes available for configuring an AWS provider are below."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:11
+#: ../../source/drivers/azure-attrs.rstinc:11
+#: ../../source/drivers/openstack-attrs.rstinc:11
+#: ../../source/drivers/static-attrs.rstinc:11
+msgid "Whether a section is intended to be inherited by another :attr:`section` or a :attr:`provider`.  This setting is currently unused (but may be used in the future).  If a section is used to provide common values to other sections, set this to `true`. Otherwise, the default of `false` indicates that the section should be referenced directly by providers."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:22
+#: ../../source/drivers/azure-attrs.rstinc:22
+#: ../../source/drivers/openstack-attrs.rstinc:22
+#: ../../source/drivers/static-attrs.rstinc:22
+msgid "The name of the :ref:`connection <connections>` to use.  This attribute is only used by :attr:`section` objects."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:29
+#: ../../source/drivers/azure-attrs.rstinc:29
+#: ../../source/drivers/openstack-attrs.rstinc:29
+#: ../../source/drivers/static-attrs.rstinc:29
+msgid "Attributes to be set as default values for any flavor used with this provider.  Many attributes which may be set on an individual flavor may be set once in this section and used for all the flavors in this provider. Values set on individual flavors may still override the values set here."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:39
+#: ../../source/drivers/aws-attrs.rstinc:170
+#: ../../source/drivers/azure-attrs.rstinc:45
+#: ../../source/drivers/azure-attrs.rstinc:115
+#: ../../source/drivers/openstack-attrs.rstinc:39
+#: ../../source/drivers/openstack-attrs.rstinc:95
+#: ../../source/drivers/static-attrs.rstinc:39
+#: ../../source/drivers/static-attrs.rstinc:71
+msgid "Whether the configuration of the flavor may be updated by values in flavor-defaults or overidden with a new definition by sections or providers lower in the hierarchy than the point at which the final attribute is applied."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:46
+#: ../../source/drivers/aws-attrs.rstinc:177
+#: ../../source/drivers/azure-attrs.rstinc:52
+#: ../../source/drivers/azure-attrs.rstinc:122
+#: ../../source/drivers/openstack-attrs.rstinc:46
+#: ../../source/drivers/openstack-attrs.rstinc:102
+#: ../../source/drivers/static-attrs.rstinc:46
+#: ../../source/drivers/static-attrs.rstinc:78
+msgid "The flavor may not be updated or overidden."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:50
+#: ../../source/drivers/aws-attrs.rstinc:181
+#: ../../source/drivers/azure-attrs.rstinc:56
+#: ../../source/drivers/azure-attrs.rstinc:126
+#: ../../source/drivers/openstack-attrs.rstinc:50
+#: ../../source/drivers/openstack-attrs.rstinc:106
+#: ../../source/drivers/static-attrs.rstinc:50
+#: ../../source/drivers/static-attrs.rstinc:82
+msgid "The flavor may be updated or overidden."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:54
+#: ../../source/drivers/aws-attrs.rstinc:185
+#: ../../source/drivers/azure-attrs.rstinc:60
+#: ../../source/drivers/azure-attrs.rstinc:130
+#: ../../source/drivers/openstack-attrs.rstinc:54
+#: ../../source/drivers/openstack-attrs.rstinc:110
+#: ../../source/drivers/static-attrs.rstinc:54
+#: ../../source/drivers/static-attrs.rstinc:86
+msgid "The flavor may not be updated by flavor-defaults but may be explicitly overidden by redefining it in a new 'flavor' entry."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:60
+#: ../../source/drivers/aws-attrs.rstinc:235
+#: ../../source/drivers/aws-attrs.rstinc:445
+#: ../../source/drivers/aws-attrs.rstinc:712
+#: ../../source/drivers/aws-attrs.rstinc:925
+#: ../../source/drivers/aws-attrs.rstinc:1198
+#: ../../source/drivers/aws-attrs.rstinc:1434
+msgid "Specify whether IMDSv2 is required.  If this is omitted, then AWS defaults are used (usually equivalent to ``optional`` but may be influenced by the image used)."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:66
+#: ../../source/drivers/aws-attrs.rstinc:241
+#: ../../source/drivers/aws-attrs.rstinc:451
+#: ../../source/drivers/aws-attrs.rstinc:718
+#: ../../source/drivers/aws-attrs.rstinc:931
+#: ../../source/drivers/aws-attrs.rstinc:1204
+#: ../../source/drivers/aws-attrs.rstinc:1440
+msgid "Allows usage of IMDSv2 but do not require it.  This sets the following metadata options:"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:69
+#: ../../source/drivers/aws-attrs.rstinc:244
+#: ../../source/drivers/aws-attrs.rstinc:454
+#: ../../source/drivers/aws-attrs.rstinc:721
+#: ../../source/drivers/aws-attrs.rstinc:934
+#: ../../source/drivers/aws-attrs.rstinc:1207
+#: ../../source/drivers/aws-attrs.rstinc:1443
+msgid "`HttpTokens` is `optional`"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:70
+#: ../../source/drivers/aws-attrs.rstinc:78
+#: ../../source/drivers/aws-attrs.rstinc:245
+#: ../../source/drivers/aws-attrs.rstinc:253
+#: ../../source/drivers/aws-attrs.rstinc:455
+#: ../../source/drivers/aws-attrs.rstinc:463
+#: ../../source/drivers/aws-attrs.rstinc:722
+#: ../../source/drivers/aws-attrs.rstinc:730
+#: ../../source/drivers/aws-attrs.rstinc:935
+#: ../../source/drivers/aws-attrs.rstinc:943
+#: ../../source/drivers/aws-attrs.rstinc:1208
+#: ../../source/drivers/aws-attrs.rstinc:1216
+#: ../../source/drivers/aws-attrs.rstinc:1444
+#: ../../source/drivers/aws-attrs.rstinc:1452
+msgid "`HttpEndpoint` is `enabled`"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:74
+#: ../../source/drivers/aws-attrs.rstinc:249
+#: ../../source/drivers/aws-attrs.rstinc:459
+#: ../../source/drivers/aws-attrs.rstinc:726
+#: ../../source/drivers/aws-attrs.rstinc:939
+#: ../../source/drivers/aws-attrs.rstinc:1212
+#: ../../source/drivers/aws-attrs.rstinc:1448
+msgid "Require IMDSv2.  This sets the following metadata options:"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:77
+#: ../../source/drivers/aws-attrs.rstinc:252
+#: ../../source/drivers/aws-attrs.rstinc:462
+#: ../../source/drivers/aws-attrs.rstinc:729
+#: ../../source/drivers/aws-attrs.rstinc:942
+#: ../../source/drivers/aws-attrs.rstinc:1215
+#: ../../source/drivers/aws-attrs.rstinc:1451
+msgid "`HttpTokens` is `required`"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:83
+#: ../../source/drivers/aws-attrs.rstinc:264
+#: ../../source/drivers/aws-attrs.rstinc:527
+#: ../../source/drivers/aws-attrs.rstinc:742
+#: ../../source/drivers/aws-attrs.rstinc:1007
+#: ../../source/drivers/aws-attrs.rstinc:1221
+#: ../../source/drivers/aws-attrs.rstinc:1457
+msgid "The number of I/O operations per second to be provisioned for the volume.  The default varies based on the volume type; see the documentation under `EBS volume type`_ for the specific volume type for details."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:92
+#: ../../source/drivers/aws-attrs.rstinc:300
+#: ../../source/drivers/azure-attrs.rstinc:77
+#: ../../source/drivers/azure-attrs.rstinc:180
+#: ../../source/drivers/openstack-attrs.rstinc:62
+#: ../../source/drivers/openstack-attrs.rstinc:129
+msgid "Whether a public IPv4 address should be attached to nodes."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:98
+#: ../../source/drivers/aws-attrs.rstinc:306
+#: ../../source/drivers/azure-attrs.rstinc:83
+#: ../../source/drivers/azure-attrs.rstinc:186
+#: ../../source/drivers/openstack-attrs.rstinc:68
+#: ../../source/drivers/openstack-attrs.rstinc:135
+msgid "Whether a public IPv6 address should be attached to nodes."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:103
+#: ../../source/drivers/aws-attrs.rstinc:311
+#: ../../source/drivers/aws-attrs.rstinc:564
+#: ../../source/drivers/aws-attrs.rstinc:778
+#: ../../source/drivers/aws-attrs.rstinc:1050
+#: ../../source/drivers/aws-attrs.rstinc:1309
+#: ../../source/drivers/aws-attrs.rstinc:1564
+msgid "The throughput of the volume in MiB/s.  This is only valid for ``gp3`` volumes."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:109
+#: ../../source/drivers/aws-attrs.rstinc:317
+#: ../../source/drivers/aws-attrs.rstinc:590
+#: ../../source/drivers/aws-attrs.rstinc:792
+#: ../../source/drivers/aws-attrs.rstinc:1084
+#: ../../source/drivers/aws-attrs.rstinc:1315
+#: ../../source/drivers/aws-attrs.rstinc:1570
+#: ../../source/drivers/azure-attrs.rstinc:88
+#: ../../source/drivers/azure-attrs.rstinc:191
+#: ../../source/drivers/azure-attrs.rstinc:333
+#: ../../source/drivers/azure-attrs.rstinc:589
+#: ../../source/drivers/azure-attrs.rstinc:742
+#: ../../source/drivers/azure-attrs.rstinc:929
+#: ../../source/drivers/azure-attrs.rstinc:1140
+#: ../../source/drivers/openstack-attrs.rstinc:73
+#: ../../source/drivers/openstack-attrs.rstinc:140
+#: ../../source/drivers/openstack-attrs.rstinc:275
+#: ../../source/drivers/openstack-attrs.rstinc:404
+#: ../../source/drivers/openstack-attrs.rstinc:550
+#: ../../source/drivers/openstack-attrs.rstinc:716
+#: ../../source/drivers/openstack-attrs.rstinc:906
+msgid "A string of userdata for a node.  Systems such as \"cloud-init\" may use this to configure the node on boot."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:115
+#: ../../source/drivers/aws-attrs.rstinc:323
+#: ../../source/drivers/aws-attrs.rstinc:601
+#: ../../source/drivers/aws-attrs.rstinc:803
+#: ../../source/drivers/aws-attrs.rstinc:1095
+#: ../../source/drivers/aws-attrs.rstinc:1321
+#: ../../source/drivers/aws-attrs.rstinc:1576
+msgid "The size of the root EBS volume, in GiB, for the image.  If omitted, the volume size reported for the imported snapshot will be used.  Only used with the :value:`provider[aws].images[zuul].import-method.snapshot` or :value:`provider[aws].images[zuul].import-method.ebs-direct` import methods."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:126
+#: ../../source/drivers/aws-attrs.rstinc:334
+#: ../../source/drivers/aws-attrs.rstinc:612
+#: ../../source/drivers/aws-attrs.rstinc:814
+#: ../../source/drivers/aws-attrs.rstinc:1106
+#: ../../source/drivers/aws-attrs.rstinc:1332
+#: ../../source/drivers/aws-attrs.rstinc:1587
+msgid "The root `EBS volume type`_ for the image. Only used with the :value:`provider[aws].images[zuul].import-method.snapshot` or :value:`provider[aws].images[zuul].import-method.ebs-direct` import methods."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:137
+#: ../../source/drivers/azure-attrs.rstinc:99
+#: ../../source/drivers/openstack-attrs.rstinc:85
+#: ../../source/drivers/static-attrs.rstinc:61
+msgid "A list of flavors associated with this provider."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:143
+msgid "If set to ``true``, an AWS dedicated host will be allocated for the instance.  The host may be used for one or more nodes depending on the settings of :attr:`provider[aws].labels.slots` and :attr:`provider[aws].labels.reuse`."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:149
+msgid "If this option is set, the :value:`provider[aws].flavors.market-type.spot` option is not available, and :attr:`provider[aws].labels.az` option is required."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:157
+#: ../../source/drivers/aws-attrs.rstinc:653
+#: ../../source/drivers/aws-attrs.rstinc:859
+#: ../../source/drivers/azure-attrs.rstinc:104
+#: ../../source/drivers/azure-attrs.rstinc:404
+#: ../../source/drivers/azure-attrs.rstinc:630
+#: ../../source/drivers/openstack-attrs.rstinc:90
+#: ../../source/drivers/openstack-attrs.rstinc:329
+#: ../../source/drivers/openstack-attrs.rstinc:453
+#: ../../source/drivers/static-attrs.rstinc:66
+#: ../../source/drivers/static-attrs.rstinc:242
+#: ../../source/drivers/static-attrs.rstinc:342
+msgid "A textual description of the image for reference purposes."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:163
+msgid "Indicates whether EBS optimization (additional, dedicated throughput between Amazon EC2 and Amazon EBS) should be enabled for the instance."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:192
+msgid "If specified, the EC2 Fleet API will be used for launching the instance.  In this case, quota is not checked before launching the instance, but is taken into account after the instance is launched.  Mutually exclusive with :attr:`provider[aws].flavors.instance-type`."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:200
+msgid "The allocation strategy to use when launching the instance."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:204
+msgid "The prioritized allocation strategy.  Available for on-demand instances"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:209
+msgid "The price-capacity-optimized allocation strategy. Available for spot instances"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:214
+msgid "The capacity-optimized allocation strategy.  Available for spot instances"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:219
+msgid "The diversified allocation strategy.  Available for spot instances"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:224
+msgid "The lowest-price allocation strategy.  Available for spot or on-demand instances"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:230
+msgid "A list of instance types from which AWS may select when launching the instance."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:258
+msgid "Name of the AWS instance type to use.. Mutually exclusive with :attr:`provider[aws].flavors.fleet`."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:272
+msgid "Whether to request an on-demand or spot instance."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:276
+msgid "This is the typical EC2 instance where continued availability is guaranteed after allocation."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:281
+msgid "Request an Amazon EC2 Spot instance instead of an On-Demand instance.  Spot instances take advantage of unused EC2 capacity at a discount, but if demand is high, instances may be unavailable.  In addition, Amazon EC2 may interrupt Spot instances and reclaim them.  Alternative nodesets with On-Demand instances configured as a fallback may be configured in order to mitigate this."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:293
+#: ../../source/drivers/azure-attrs.rstinc:160
+#: ../../source/drivers/openstack-attrs.rstinc:122
+#: ../../source/drivers/static-attrs.rstinc:93
+msgid "The name of the flavor.  Used to refer to the flavor in Zuul configuration."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:345
+#: ../../source/drivers/azure-attrs.rstinc:210
+#: ../../source/drivers/openstack-attrs.rstinc:160
+#: ../../source/drivers/static-attrs.rstinc:99
+msgid "Attributes to be set as default values for any image used with this provider.  Many attributes which may be set on an individual image may be set once in this section and used for all the images in this provider. Values set on individual images may still override the values set here."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:356
+#: ../../source/drivers/aws-attrs.rstinc:831
+msgid "The architecture of the image.  See the `AWS RegisterImage API documentation`_ for valid values."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:364
+#: ../../source/drivers/aws-attrs.rstinc:633
+#: ../../source/drivers/aws-attrs.rstinc:839
+#: ../../source/drivers/azure-attrs.rstinc:220
+#: ../../source/drivers/azure-attrs.rstinc:384
+#: ../../source/drivers/azure-attrs.rstinc:610
+#: ../../source/drivers/openstack-attrs.rstinc:177
+#: ../../source/drivers/openstack-attrs.rstinc:309
+#: ../../source/drivers/openstack-attrs.rstinc:433
+#: ../../source/drivers/static-attrs.rstinc:109
+#: ../../source/drivers/static-attrs.rstinc:222
+#: ../../source/drivers/static-attrs.rstinc:322
+#: ../../source/drivers/static-attrs.rstinc:742
+msgid "The port that Zuul should use when connecting to the node. For most nodes this is not necessary. This defaults to 22 when ``connection-type`` is 'ssh' and 5986 when it is 'winrm'."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:370
+#: ../../source/drivers/aws-attrs.rstinc:639
+#: ../../source/drivers/aws-attrs.rstinc:845
+#: ../../source/drivers/azure-attrs.rstinc:226
+#: ../../source/drivers/azure-attrs.rstinc:390
+#: ../../source/drivers/azure-attrs.rstinc:616
+#: ../../source/drivers/openstack-attrs.rstinc:183
+#: ../../source/drivers/openstack-attrs.rstinc:315
+#: ../../source/drivers/openstack-attrs.rstinc:439
+#: ../../source/drivers/static-attrs.rstinc:115
+#: ../../source/drivers/static-attrs.rstinc:228
+#: ../../source/drivers/static-attrs.rstinc:328
+msgid "The connection type that a consumer should use when connecting to the node."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:375
+#: ../../source/drivers/aws-attrs.rstinc:644
+#: ../../source/drivers/aws-attrs.rstinc:850
+#: ../../source/drivers/azure-attrs.rstinc:231
+#: ../../source/drivers/azure-attrs.rstinc:395
+#: ../../source/drivers/azure-attrs.rstinc:621
+#: ../../source/drivers/openstack-attrs.rstinc:188
+#: ../../source/drivers/openstack-attrs.rstinc:320
+#: ../../source/drivers/openstack-attrs.rstinc:444
+#: ../../source/drivers/static-attrs.rstinc:120
+#: ../../source/drivers/static-attrs.rstinc:233
+#: ../../source/drivers/static-attrs.rstinc:333
+msgid "A winrm connection."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:379
+#: ../../source/drivers/aws-attrs.rstinc:648
+#: ../../source/drivers/aws-attrs.rstinc:854
+#: ../../source/drivers/azure-attrs.rstinc:235
+#: ../../source/drivers/azure-attrs.rstinc:399
+#: ../../source/drivers/azure-attrs.rstinc:625
+#: ../../source/drivers/openstack-attrs.rstinc:192
+#: ../../source/drivers/openstack-attrs.rstinc:324
+#: ../../source/drivers/openstack-attrs.rstinc:448
+#: ../../source/drivers/static-attrs.rstinc:124
+#: ../../source/drivers/static-attrs.rstinc:237
+#: ../../source/drivers/static-attrs.rstinc:337
+msgid "An ssh connection."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:385
+#: ../../source/drivers/aws-attrs.rstinc:865
+msgid "Whether the image has support for the AWS Enhanced Networking Adapter (ENA).  Many newer operating systems include driver support as standard and some AWS instance types require it."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:392
+#: ../../source/drivers/aws-attrs.rstinc:658
+#: ../../source/drivers/aws-attrs.rstinc:872
+#: ../../source/drivers/aws-attrs.rstinc:1146
+#: ../../source/drivers/aws-attrs.rstinc:1372
+#: ../../source/drivers/azure-attrs.rstinc:246
+#: ../../source/drivers/azure-attrs.rstinc:415
+#: ../../source/drivers/azure-attrs.rstinc:641
+#: ../../source/drivers/azure-attrs.rstinc:786
+#: ../../source/drivers/azure-attrs.rstinc:968
+#: ../../source/drivers/openstack-attrs.rstinc:197
+#: ../../source/drivers/openstack-attrs.rstinc:334
+#: ../../source/drivers/openstack-attrs.rstinc:458
+#: ../../source/drivers/openstack-attrs.rstinc:609
+#: ../../source/drivers/openstack-attrs.rstinc:770
+#: ../../source/drivers/static-attrs.rstinc:129
+#: ../../source/drivers/static-attrs.rstinc:247
+#: ../../source/drivers/static-attrs.rstinc:347
+#: ../../source/drivers/static-attrs.rstinc:466
+#: ../../source/drivers/static-attrs.rstinc:584
+msgid "Whether the configuration of the label may be updated by values in label-defaults or overidden with a new definition by sections or providers lower in the hierarchy than the point at which the final attribute is applied."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:399
+#: ../../source/drivers/aws-attrs.rstinc:665
+#: ../../source/drivers/aws-attrs.rstinc:879
+#: ../../source/drivers/aws-attrs.rstinc:1153
+#: ../../source/drivers/aws-attrs.rstinc:1379
+#: ../../source/drivers/azure-attrs.rstinc:253
+#: ../../source/drivers/azure-attrs.rstinc:422
+#: ../../source/drivers/azure-attrs.rstinc:648
+#: ../../source/drivers/azure-attrs.rstinc:793
+#: ../../source/drivers/azure-attrs.rstinc:975
+#: ../../source/drivers/openstack-attrs.rstinc:204
+#: ../../source/drivers/openstack-attrs.rstinc:341
+#: ../../source/drivers/openstack-attrs.rstinc:465
+#: ../../source/drivers/openstack-attrs.rstinc:616
+#: ../../source/drivers/openstack-attrs.rstinc:777
+#: ../../source/drivers/static-attrs.rstinc:136
+#: ../../source/drivers/static-attrs.rstinc:254
+#: ../../source/drivers/static-attrs.rstinc:354
+#: ../../source/drivers/static-attrs.rstinc:473
+#: ../../source/drivers/static-attrs.rstinc:591
+msgid "The label may not be updated or overidden."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:403
+#: ../../source/drivers/aws-attrs.rstinc:669
+#: ../../source/drivers/aws-attrs.rstinc:883
+#: ../../source/drivers/aws-attrs.rstinc:1157
+#: ../../source/drivers/aws-attrs.rstinc:1383
+#: ../../source/drivers/azure-attrs.rstinc:257
+#: ../../source/drivers/azure-attrs.rstinc:426
+#: ../../source/drivers/azure-attrs.rstinc:652
+#: ../../source/drivers/azure-attrs.rstinc:797
+#: ../../source/drivers/azure-attrs.rstinc:979
+#: ../../source/drivers/openstack-attrs.rstinc:208
+#: ../../source/drivers/openstack-attrs.rstinc:345
+#: ../../source/drivers/openstack-attrs.rstinc:469
+#: ../../source/drivers/openstack-attrs.rstinc:620
+#: ../../source/drivers/openstack-attrs.rstinc:781
+#: ../../source/drivers/static-attrs.rstinc:140
+#: ../../source/drivers/static-attrs.rstinc:258
+#: ../../source/drivers/static-attrs.rstinc:358
+#: ../../source/drivers/static-attrs.rstinc:477
+#: ../../source/drivers/static-attrs.rstinc:595
+msgid "The label may be updated or overidden."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:407
+#: ../../source/drivers/aws-attrs.rstinc:673
+#: ../../source/drivers/aws-attrs.rstinc:887
+#: ../../source/drivers/aws-attrs.rstinc:1161
+#: ../../source/drivers/aws-attrs.rstinc:1387
+#: ../../source/drivers/azure-attrs.rstinc:261
+#: ../../source/drivers/azure-attrs.rstinc:430
+#: ../../source/drivers/azure-attrs.rstinc:656
+#: ../../source/drivers/azure-attrs.rstinc:801
+#: ../../source/drivers/azure-attrs.rstinc:983
+#: ../../source/drivers/openstack-attrs.rstinc:212
+#: ../../source/drivers/openstack-attrs.rstinc:349
+#: ../../source/drivers/openstack-attrs.rstinc:473
+#: ../../source/drivers/openstack-attrs.rstinc:624
+#: ../../source/drivers/openstack-attrs.rstinc:785
+#: ../../source/drivers/static-attrs.rstinc:144
+#: ../../source/drivers/static-attrs.rstinc:262
+#: ../../source/drivers/static-attrs.rstinc:362
+#: ../../source/drivers/static-attrs.rstinc:481
+#: ../../source/drivers/static-attrs.rstinc:599
+msgid "The label may not be updated by label-defaults but may be explicitly overidden by redefining it in a new 'label' entry."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:414
+#: ../../source/drivers/aws-attrs.rstinc:894
+msgid "The image format that should be used when building and uploading or importing the image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:419
+#: ../../source/drivers/aws-attrs.rstinc:899
+msgid "The OVA image format."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:423
+#: ../../source/drivers/aws-attrs.rstinc:903
+msgid "The VHD image format."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:427
+#: ../../source/drivers/aws-attrs.rstinc:907
+msgid "The VHDX image format."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:431
+#: ../../source/drivers/aws-attrs.rstinc:911
+msgid "The VMDK image format."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:435
+#: ../../source/drivers/aws-attrs.rstinc:915
+msgid "A raw image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:439
+#: ../../source/drivers/aws-attrs.rstinc:919
+msgid "Rather than producing an image artifact and uploading or importing it, this image is created by snapshotting a running instance."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:468
+#: ../../source/drivers/aws-attrs.rstinc:948
+msgid "Controls the usage of IMDSv2 on instances created from the image, This is only supported using the :value:`provider[aws].images[zuul].import-method.snapshot` or :value:`provider[aws].images[zuul].import-method.ebs-direct` import methods."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:476
+#: ../../source/drivers/aws-attrs.rstinc:956
+msgid "Enforces usage of IMDSv2 by default on instances created from the image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:481
+#: ../../source/drivers/aws-attrs.rstinc:961
+msgid "IMDSv2 is optional."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:486
+#: ../../source/drivers/aws-attrs.rstinc:966
+msgid "The method to use when importing the image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:490
+#: ../../source/drivers/aws-attrs.rstinc:970
+msgid "This method uploads the image file to AWS as a snapshot and then registers an AMI directly from the snapshot. This is faster compared to the `image` method and may be used with operating systems and versions that AWS does not otherwise support.  However, it is incompatible with some operating systems which require special licensing or other metadata in AWS."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:500
+#: ../../source/drivers/aws-attrs.rstinc:980
+msgid "This method uploads the image file to AWS and performs an \"image import\" on the file.  This causes AWS to boot the image in a temporary VM and then take a snapshot of that VM which is then used as the basis of the AMI.  This is slower compared to the `snapshot` method and may only be used with operating systems and versions which AWS already supports.  This may be necessary in order to use Windows images."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:511
+#: ../../source/drivers/aws-attrs.rstinc:991
+msgid "This is similar to the `snapshot` method, but uses the `EBS direct API`_ instead of S3.  This may be faster and more efficient, but it may incur additional costs."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:521
+#: ../../source/drivers/aws-attrs.rstinc:736
+#: ../../source/drivers/aws-attrs.rstinc:1001
+#: ../../source/drivers/azure-attrs.rstinc:278
+#: ../../source/drivers/azure-attrs.rstinc:522
+#: ../../source/drivers/azure-attrs.rstinc:673
+#: ../../source/drivers/openstack-attrs.rstinc:220
+#: ../../source/drivers/openstack-attrs.rstinc:362
+#: ../../source/drivers/openstack-attrs.rstinc:481
+#: ../../source/drivers/static-attrs.rstinc:152
+#: ../../source/drivers/static-attrs.rstinc:270
+#: ../../source/drivers/static-attrs.rstinc:370
+msgid "The limit on the amount of time a successful image import can take."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:535
+#: ../../source/drivers/aws-attrs.rstinc:756
+#: ../../source/drivers/aws-attrs.rstinc:1021
+#: ../../source/drivers/azure-attrs.rstinc:284
+#: ../../source/drivers/azure-attrs.rstinc:534
+#: ../../source/drivers/azure-attrs.rstinc:685
+#: ../../source/drivers/openstack-attrs.rstinc:226
+#: ../../source/drivers/openstack-attrs.rstinc:374
+#: ../../source/drivers/openstack-attrs.rstinc:493
+#: ../../source/drivers/static-attrs.rstinc:158
+#: ../../source/drivers/static-attrs.rstinc:282
+#: ../../source/drivers/static-attrs.rstinc:382
+msgid "The path of the default python interpreter.  Used by Zuul to set ``ansible_python_interpreter``.  The special value ``auto`` will direct Zuul to use inbuilt Ansible logic to select the interpreter."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:543
+#: ../../source/drivers/aws-attrs.rstinc:764
+#: ../../source/drivers/aws-attrs.rstinc:1029
+#: ../../source/drivers/azure-attrs.rstinc:292
+#: ../../source/drivers/azure-attrs.rstinc:567
+#: ../../source/drivers/azure-attrs.rstinc:693
+#: ../../source/drivers/openstack-attrs.rstinc:234
+#: ../../source/drivers/openstack-attrs.rstinc:382
+#: ../../source/drivers/openstack-attrs.rstinc:501
+#: ../../source/drivers/static-attrs.rstinc:166
+#: ../../source/drivers/static-attrs.rstinc:290
+#: ../../source/drivers/static-attrs.rstinc:390
+msgid "The shell type of the node's default shell executable. Used by Zuul to set ``ansible_shell_type``. This setting should only be used"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:546
+#: ../../source/drivers/aws-attrs.rstinc:767
+#: ../../source/drivers/aws-attrs.rstinc:1032
+#: ../../source/drivers/azure-attrs.rstinc:295
+#: ../../source/drivers/azure-attrs.rstinc:570
+#: ../../source/drivers/azure-attrs.rstinc:696
+#: ../../source/drivers/openstack-attrs.rstinc:237
+#: ../../source/drivers/openstack-attrs.rstinc:385
+#: ../../source/drivers/openstack-attrs.rstinc:504
+#: ../../source/drivers/static-attrs.rstinc:169
+#: ../../source/drivers/static-attrs.rstinc:293
+#: ../../source/drivers/static-attrs.rstinc:393
+msgid "For a windows image with the experimental `connection-type` ``ssh`` in which case ``cmd`` or ``powershell`` should be set and reflect the node's ``DefaultShell`` configuration."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:549
+#: ../../source/drivers/aws-attrs.rstinc:770
+#: ../../source/drivers/aws-attrs.rstinc:1035
+#: ../../source/drivers/azure-attrs.rstinc:298
+#: ../../source/drivers/azure-attrs.rstinc:573
+#: ../../source/drivers/azure-attrs.rstinc:699
+#: ../../source/drivers/openstack-attrs.rstinc:240
+#: ../../source/drivers/openstack-attrs.rstinc:388
+#: ../../source/drivers/openstack-attrs.rstinc:507
+#: ../../source/drivers/static-attrs.rstinc:172
+#: ../../source/drivers/static-attrs.rstinc:296
+#: ../../source/drivers/static-attrs.rstinc:396
+msgid "If the default shell is not Bourne compatible (sh), but instead e.g. ``csh`` or ``fish``, and the user is aware that there is a long-standing issue with ``ansible_shell_type`` in combination with ``become``."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:557
+#: ../../source/drivers/aws-attrs.rstinc:1043
+#: ../../source/drivers/azure-attrs.rstinc:306
+#: ../../source/drivers/azure-attrs.rstinc:707
+#: ../../source/drivers/openstack-attrs.rstinc:248
+#: ../../source/drivers/openstack-attrs.rstinc:515
+#: ../../source/drivers/static-attrs.rstinc:180
+#: ../../source/drivers/static-attrs.rstinc:404
+msgid "A dictionary of tags to add to uploaded images, and to nodes created from them.  Avoid the use of `zuul_` as a key prefix since Zuul uses this for internal values."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:571
+#: ../../source/drivers/aws-attrs.rstinc:1065
+#: ../../source/drivers/azure-attrs.rstinc:314
+#: ../../source/drivers/azure-attrs.rstinc:723
+#: ../../source/drivers/openstack-attrs.rstinc:256
+#: ../../source/drivers/openstack-attrs.rstinc:531
+#: ../../source/drivers/static-attrs.rstinc:188
+#: ../../source/drivers/static-attrs.rstinc:420
+msgid "An ordered list of methods to use when creating an image in the provider."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:576
+#: ../../source/drivers/aws-attrs.rstinc:1070
+#: ../../source/drivers/azure-attrs.rstinc:319
+#: ../../source/drivers/azure-attrs.rstinc:728
+#: ../../source/drivers/openstack-attrs.rstinc:261
+#: ../../source/drivers/openstack-attrs.rstinc:536
+#: ../../source/drivers/static-attrs.rstinc:193
+#: ../../source/drivers/static-attrs.rstinc:425
+msgid "Copy the image from another provider if available."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:580
+#: ../../source/drivers/aws-attrs.rstinc:1074
+#: ../../source/drivers/azure-attrs.rstinc:323
+#: ../../source/drivers/azure-attrs.rstinc:732
+#: ../../source/drivers/openstack-attrs.rstinc:265
+#: ../../source/drivers/openstack-attrs.rstinc:540
+#: ../../source/drivers/static-attrs.rstinc:197
+#: ../../source/drivers/static-attrs.rstinc:429
+msgid "Import the image directly from its storage location."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:584
+#: ../../source/drivers/aws-attrs.rstinc:1078
+#: ../../source/drivers/azure-attrs.rstinc:327
+#: ../../source/drivers/azure-attrs.rstinc:736
+#: ../../source/drivers/openstack-attrs.rstinc:269
+#: ../../source/drivers/openstack-attrs.rstinc:544
+#: ../../source/drivers/static-attrs.rstinc:201
+#: ../../source/drivers/static-attrs.rstinc:433
+msgid "Download the image from its storage location and upload it to the provider."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:596
+#: ../../source/drivers/aws-attrs.rstinc:798
+#: ../../source/drivers/aws-attrs.rstinc:1090
+#: ../../source/drivers/azure-attrs.rstinc:339
+#: ../../source/drivers/azure-attrs.rstinc:595
+#: ../../source/drivers/azure-attrs.rstinc:748
+#: ../../source/drivers/openstack-attrs.rstinc:281
+#: ../../source/drivers/openstack-attrs.rstinc:410
+#: ../../source/drivers/openstack-attrs.rstinc:556
+#: ../../source/drivers/static-attrs.rstinc:207
+#: ../../source/drivers/static-attrs.rstinc:312
+#: ../../source/drivers/static-attrs.rstinc:439
+#: ../../source/drivers/static-attrs.rstinc:766
+msgid "The username Zuul should use when connecting to the node."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:623
+#: ../../source/drivers/azure-attrs.rstinc:349
+#: ../../source/drivers/openstack-attrs.rstinc:292
+#: ../../source/drivers/static-attrs.rstinc:212
+msgid "A list of images associated with this provider."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:628
+#: ../../source/drivers/azure-attrs.rstinc:354
+#: ../../source/drivers/openstack-attrs.rstinc:297
+#: ../../source/drivers/static-attrs.rstinc:217
+msgid "These are the attributes available for a cloud image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:680
+msgid "If provided, this is used to select an AMI by filters.  If the filters provided match more than one image, the most recent will be returned.  Either this field or :attr:`provider[aws].images[cloud].image-id` must be provided."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:686
+msgid "This field may be provided as a dictionary, or a list of dictionaries with the following keys:"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:692
+msgid "The filter name. See `Boto describe images`_ for a list of valid filters."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:700
+msgid "A list of string values on which to filter."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:705
+msgid "If this is provided, it is used to select the AMI from AWS by ID.  Either this field or :attr:`provider[aws].images[cloud].image-filters` must be provided."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:750
+#: ../../source/drivers/aws-attrs.rstinc:1015
+#: ../../source/drivers/azure-attrs.rstinc:528
+#: ../../source/drivers/azure-attrs.rstinc:679
+#: ../../source/drivers/openstack-attrs.rstinc:368
+#: ../../source/drivers/openstack-attrs.rstinc:487
+#: ../../source/drivers/static-attrs.rstinc:276
+#: ../../source/drivers/static-attrs.rstinc:376
+msgid "The name of the image.  Used to refer to the image in Zuul configuration."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:783
+#: ../../source/drivers/aws-attrs.rstinc:1055
+#: ../../source/drivers/azure-attrs.rstinc:580
+#: ../../source/drivers/azure-attrs.rstinc:713
+#: ../../source/drivers/openstack-attrs.rstinc:395
+#: ../../source/drivers/openstack-attrs.rstinc:521
+#: ../../source/drivers/static-attrs.rstinc:303
+#: ../../source/drivers/static-attrs.rstinc:410
+msgid "The type of image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:787
+#: ../../source/drivers/azure-attrs.rstinc:584
+#: ../../source/drivers/openstack-attrs.rstinc:399
+#: ../../source/drivers/static-attrs.rstinc:307
+msgid "An existing image available in the cloud."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:825
+#: ../../source/drivers/azure-attrs.rstinc:605
+#: ../../source/drivers/openstack-attrs.rstinc:421
+#: ../../source/drivers/static-attrs.rstinc:317
+msgid "These are the attributes available for a Zuul image."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1059
+#: ../../source/drivers/azure-attrs.rstinc:717
+#: ../../source/drivers/openstack-attrs.rstinc:525
+#: ../../source/drivers/static-attrs.rstinc:414
+msgid "An image managed by Zuul."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1117
+#: ../../source/drivers/azure-attrs.rstinc:758
+#: ../../source/drivers/openstack-attrs.rstinc:567
+#: ../../source/drivers/static-attrs.rstinc:444
+msgid "Attributes to be set as default values for any label used with this provider.  Many attributes which may be set on an individual label may be set once in this section and used for all the labels in this provider. Values set on individual labels may still override the values set here."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1127
+#: ../../source/drivers/aws-attrs.rstinc:1348
+msgid "Instances will be assigned to the specified availibility zone.  If omitted, AWS will select from the available zones."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1135
+#: ../../source/drivers/aws-attrs.rstinc:1356
+#: ../../source/drivers/azure-attrs.rstinc:769
+#: ../../source/drivers/azure-attrs.rstinc:946
+#: ../../source/drivers/openstack-attrs.rstinc:598
+#: ../../source/drivers/openstack-attrs.rstinc:754
+#: ../../source/drivers/static-attrs.rstinc:455
+#: ../../source/drivers/static-attrs.rstinc:568
+msgid "The time (in seconds) to wait for a node to boot."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1140
+#: ../../source/drivers/aws-attrs.rstinc:1366
+#: ../../source/drivers/azure-attrs.rstinc:780
+#: ../../source/drivers/azure-attrs.rstinc:962
+#: ../../source/drivers/openstack-attrs.rstinc:603
+#: ../../source/drivers/openstack-attrs.rstinc:764
+#: ../../source/drivers/static-attrs.rstinc:460
+#: ../../source/drivers/static-attrs.rstinc:578
+msgid "Specify that a Zuul executor in the specified zone is used to run jobs with nodes from this label."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1169
+#: ../../source/drivers/aws-attrs.rstinc:1400
+#: ../../source/drivers/azure-attrs.rstinc:818
+#: ../../source/drivers/azure-attrs.rstinc:1005
+#: ../../source/drivers/openstack-attrs.rstinc:632
+#: ../../source/drivers/openstack-attrs.rstinc:798
+#: ../../source/drivers/static-attrs.rstinc:489
+#: ../../source/drivers/static-attrs.rstinc:612
+msgid "Whether to validate SSH host keys.  When true, this helps ensure that nodes are ready to receive SSH connections before they are used.  When set to false, Zuul will not attempt to ssh-keyscan nodes after they are booted.  Disable this if the zuul-launcher and the nodes it launches are on different networks, where the launcher is unable to reach the nodes directly."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1180
+#: ../../source/drivers/aws-attrs.rstinc:1411
+msgid "Used to attach an IAM instance profile. Useful for giving access to services without needing any secrets."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1186
+#: ../../source/drivers/aws-attrs.rstinc:1417
+msgid "ARN identifier of the profile.  Mutually exclusive with :attr:`provider[aws].labels.iam-instance-profile.name`"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1193
+#: ../../source/drivers/aws-attrs.rstinc:1424
+msgid "Name of the instance profile.  Mutually exclusive with :attr:`provider[aws].labels.iam-instance-profile.arn`"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1229
+#: ../../source/drivers/aws-attrs.rstinc:1465
+#: ../../source/drivers/openstack-attrs.rstinc:643
+#: ../../source/drivers/openstack-attrs.rstinc:814
+#: ../../source/drivers/static-attrs.rstinc:500
+#: ../../source/drivers/static-attrs.rstinc:628
+msgid "The name of a keypair that will be used when booting the node."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1235
+#: ../../source/drivers/aws-attrs.rstinc:1471
+msgid "The KMS key id to use when launching instances from an encrypted image.  Typically only necessary when using images shared from a different AWS account."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1243
+#: ../../source/drivers/aws-attrs.rstinc:1479
+#: ../../source/drivers/azure-attrs.rstinc:835
+#: ../../source/drivers/azure-attrs.rstinc:1027
+#: ../../source/drivers/openstack-attrs.rstinc:650
+#: ../../source/drivers/openstack-attrs.rstinc:821
+#: ../../source/drivers/static-attrs.rstinc:507
+#: ../../source/drivers/static-attrs.rstinc:635
+msgid "The time (in seconds) since creation that a node may be available for use.  Ready nodes older than this time will be deleted."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1251
+#: ../../source/drivers/aws-attrs.rstinc:1487
+#: ../../source/drivers/azure-attrs.rstinc:843
+#: ../../source/drivers/azure-attrs.rstinc:1035
+#: ../../source/drivers/openstack-attrs.rstinc:658
+#: ../../source/drivers/openstack-attrs.rstinc:829
+#: ../../source/drivers/static-attrs.rstinc:515
+#: ../../source/drivers/static-attrs.rstinc:643
+msgid "The time (in seconds) an unassigned node should stay in ready state."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1257
+#: ../../source/drivers/aws-attrs.rstinc:1506
+#: ../../source/drivers/azure-attrs.rstinc:849
+#: ../../source/drivers/azure-attrs.rstinc:1054
+#: ../../source/drivers/openstack-attrs.rstinc:664
+#: ../../source/drivers/openstack-attrs.rstinc:848
+#: ../../source/drivers/static-attrs.rstinc:521
+#: ../../source/drivers/static-attrs.rstinc:662
+msgid "The time (in seconds) since an instance was launched, during which a node will not be deleted. For node resources with minimum billing times, this can be used to ensure that the instance is retained for at least the minimum billing interval."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1262
+#: ../../source/drivers/aws-attrs.rstinc:1511
+#: ../../source/drivers/azure-attrs.rstinc:854
+#: ../../source/drivers/azure-attrs.rstinc:1059
+#: ../../source/drivers/openstack-attrs.rstinc:669
+#: ../../source/drivers/openstack-attrs.rstinc:853
+#: ../../source/drivers/static-attrs.rstinc:526
+#: ../../source/drivers/static-attrs.rstinc:667
+msgid "This setting takes precedence over `max-[ready-]age`."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1268
+#: ../../source/drivers/aws-attrs.rstinc:1523
+#: ../../source/drivers/azure-attrs.rstinc:860
+#: ../../source/drivers/azure-attrs.rstinc:1071
+#: ../../source/drivers/openstack-attrs.rstinc:680
+#: ../../source/drivers/openstack-attrs.rstinc:870
+#: ../../source/drivers/static-attrs.rstinc:532
+#: ../../source/drivers/static-attrs.rstinc:679
+msgid "Should the node be reused (True) or deleted (False) after use."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1273
+#: ../../source/drivers/aws-attrs.rstinc:1528
+msgid "Specifies the security group IDs to assign to the node's network interfaces."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1280
+#: ../../source/drivers/aws-attrs.rstinc:1535
+#: ../../source/drivers/azure-attrs.rstinc:866
+#: ../../source/drivers/azure-attrs.rstinc:1077
+#: ../../source/drivers/openstack-attrs.rstinc:692
+#: ../../source/drivers/openstack-attrs.rstinc:882
+#: ../../source/drivers/static-attrs.rstinc:538
+#: ../../source/drivers/static-attrs.rstinc:685
+msgid "How many jobs are permitted run on the same node simultaneously."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1286
+#: ../../source/drivers/aws-attrs.rstinc:1541
+#: ../../source/drivers/azure-attrs.rstinc:872
+#: ../../source/drivers/azure-attrs.rstinc:1083
+#: ../../source/drivers/openstack-attrs.rstinc:698
+#: ../../source/drivers/openstack-attrs.rstinc:888
+#: ../../source/drivers/static-attrs.rstinc:544
+#: ../../source/drivers/static-attrs.rstinc:691
+msgid "The time (in seconds) until a snapshot expires."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1292
+#: ../../source/drivers/aws-attrs.rstinc:1547
+#: ../../source/drivers/azure-attrs.rstinc:878
+#: ../../source/drivers/azure-attrs.rstinc:1089
+#: ../../source/drivers/openstack-attrs.rstinc:704
+#: ../../source/drivers/openstack-attrs.rstinc:894
+#: ../../source/drivers/static-attrs.rstinc:550
+#: ../../source/drivers/static-attrs.rstinc:697
+msgid "The time (in seconds) to wait for a snapshot to complete."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1297
+#: ../../source/drivers/aws-attrs.rstinc:1552
+msgid "Specifies the subnets to assign to the node's network interfaces."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1302
+#: ../../source/drivers/aws-attrs.rstinc:1557
+#: ../../source/drivers/azure-attrs.rstinc:909
+#: ../../source/drivers/azure-attrs.rstinc:1120
+#: ../../source/drivers/openstack-attrs.rstinc:709
+#: ../../source/drivers/openstack-attrs.rstinc:899
+#: ../../source/drivers/static-attrs.rstinc:555
+#: ../../source/drivers/static-attrs.rstinc:702
+msgid "A dictionary of tags to add to nodes.  Avoid the use of `zuul_` as a key prefix since Zuul uses this for internal values."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1343
+#: ../../source/drivers/azure-attrs.rstinc:940
+#: ../../source/drivers/openstack-attrs.rstinc:728
+#: ../../source/drivers/static-attrs.rstinc:562
+msgid "A list of labels associated with this provider."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1361
+#: ../../source/drivers/azure-attrs.rstinc:951
+#: ../../source/drivers/openstack-attrs.rstinc:759
+#: ../../source/drivers/static-attrs.rstinc:573
+msgid "A textual description of the label for reference purposes."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1394
+#: ../../source/drivers/azure-attrs.rstinc:990
+#: ../../source/drivers/openstack-attrs.rstinc:792
+#: ../../source/drivers/static-attrs.rstinc:606
+msgid "The flavor to use with this label."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1430
+#: ../../source/drivers/azure-attrs.rstinc:1016
+#: ../../source/drivers/openstack-attrs.rstinc:809
+#: ../../source/drivers/static-attrs.rstinc:623
+msgid "The image to use with this label."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1493
+#: ../../source/drivers/azure-attrs.rstinc:1041
+#: ../../source/drivers/openstack-attrs.rstinc:835
+#: ../../source/drivers/static-attrs.rstinc:649
+msgid "Minimum number of instances that should be in a ready state. Zuul always creates more nodes as necessary in response to demand, but setting ``min-ready`` can speed processing by attempting to keep nodes on-hand and ready for immedate use.  This is best-effort based on available capacity and is not a guaranteed allocation.  The default of 0 means that Zuul will only create nodes of this label when there is demand."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1516
+#: ../../source/drivers/azure-attrs.rstinc:1064
+#: ../../source/drivers/openstack-attrs.rstinc:858
+#: ../../source/drivers/static-attrs.rstinc:672
+msgid "The name of the label.  Used to refer to the label in Zuul configuration."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1599
+#: ../../source/drivers/azure-attrs.rstinc:1152
+#: ../../source/drivers/openstack-attrs.rstinc:919
+#: ../../source/drivers/static-attrs.rstinc:710
+msgid "The number of times to attempt launching a node before considering the request failed."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1605
+#: ../../source/drivers/azure-attrs.rstinc:1158
+#: ../../source/drivers/openstack-attrs.rstinc:925
+#: ../../source/drivers/static-attrs.rstinc:716
+msgid "The time to wait from issuing the command to create a new node until the node is reporting as running.  If the timeout is exceeded, the node launch is aborted and the node deleted."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1613
+#: ../../source/drivers/azure-attrs.rstinc:1166
+#: ../../source/drivers/openstack-attrs.rstinc:933
+#: ../../source/drivers/static-attrs.rstinc:724
+msgid "The name of the provider.  Used to refer to the provider in Zuul configuration."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1619
+msgid "Configuration options related to object storage used for image management."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1625
+msgid "The name of the S3 bucket that should be used when importing Zuul images."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1631
+msgid "The name of the parent section from which to inherit. This attribute is only used by :attr:`section` objects.  To indicate which section a provider should be attached to, use :attr:`provider[aws].section`"
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1640
+msgid "The name of the `AWS region`_ to interact with."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1647
+#: ../../source/drivers/azure-attrs.rstinc:1191
+#: ../../source/drivers/openstack-attrs.rstinc:965
+msgid "Resource limits for this provider.  Configure these values to cause Zuul to attempt to limit the resource usage.  This can be used to limit Zuul's usage to a level below the cloud quota."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1652
+msgid "In addition to the options listed below, it is possible to configure a limit for any of the quota codes supported by AWS."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1659
+#: ../../source/drivers/openstack-attrs.rstinc:973
+msgid "The number of cores."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1664
+#: ../../source/drivers/azure-attrs.rstinc:1204
+#: ../../source/drivers/openstack-attrs.rstinc:978
+#: ../../source/drivers/static-attrs.rstinc:785
+msgid "The number of instances."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1669
+#: ../../source/drivers/azure-attrs.rstinc:1214
+#: ../../source/drivers/openstack-attrs.rstinc:983
+msgid "The amount of ram, in MiB."
+msgstr ""
+
+#: ../../source/drivers/aws-attrs.rstinc:1674
+#: ../../source/drivers/azure-attrs.rstinc:1219
+#: ../../source/drivers/openstack-attrs.rstinc:998
+#: ../../source/drivers/static-attrs.rstinc:790
+msgid "The name of the :attr:`section` from which to inherit."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:4
+msgid "Azure"
+msgstr ""
+
+#: ../../source/drivers/azure.rst:6
+msgid "Zuul can use Azure as a source for build nodes."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:8
+msgid "Before using the Azure driver, make sure you have created a service principal."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:11
+msgid "Two methods of authenticating the service principal are available: a shared secret or OIDC federation."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:14
+msgid "To use a shared secret: save the credential information in a JSON file.  Follow the instructions at `Azure CLI`_ and use the ``--sdk-auth`` flag::"
+msgstr ""
+
+#: ../../source/drivers/azure.rst:20
+msgid "There are two options for providing the information in this file to Zuul: place this file on the zuul-launcher and refer to it using :attr:`<azure connection>.shared_credentials_file` or extract the information in the file and provide it directly with the configuration options below."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:26
+msgid "To use OIDC federation, the JWT must be available in a file on the zuul-launcher (for example, by way of Kubernetes secret projection).  Set the :attr:`<azure connection>.subscription_id`, :attr:`<azure connection>.tenant_id`, :attr:`<azure connection>.client_id`, and :attr:`<azure connection>.federated_token_file` fields."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:34
+msgid "You must also have created a network for Zuul to use.  Be sure to enable IPv6 on the network if you plan to use it."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:37
+msgid "The Azure driver uses the \"Standard\" SKU for all public IP addresses. Standard IP addresses block all incoming traffic by default, therefore the use of a Network Security Group is required in order to allow incoming traffic.  You will need to create one, add any required rules, and attach it to the subnet created above."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:43
+msgid "You may also need to register the `Microsoft.Compute` resource provider with your subscription."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:46
+#: ../../source/drivers/azure.rst:103
+msgid "The ``azure`` driver adds the following options to the :attr:`provider` and :attr:`section` configurations:"
+msgstr ""
+
+#: ../../source/drivers/azure.rst:61
+msgid "The connection must set ``driver=azure`` for Azure connections."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:65
+msgid "A path to JSON file with shared access credentials.  If this is supplied, no other credential settings need to be present."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:70
+msgid "Path to the a file containing a JWT for use with OIDC federation."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:75
+msgid "The Microsoft Entra tenant ID for the account.  Required unless :attr:`<azure connection>.shared_credentials_file` is set."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:80
+msgid "The Microsoft Entra client ID for the account.  Required unless :attr:`<azure connection>.shared_credentials_file` is set."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:85
+msgid "The shared secret for the principal.  Required unless :attr:`<azure connection>.shared_credentials_file` or :attr:`<azure connection>.federated_token_file` are set."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:91
+msgid "The Azure subscription to use.  Required unless :attr:`<azure connection>.shared_credentials_file` is set."
+msgstr ""
+
+#: ../../source/drivers/azure.rst:97
+msgid "The API rate limit (in requests per second) to use when performing API calls with Azure."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:4
+msgid "The attributes available for configuring an Azure provider are below."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:39
+#: ../../source/drivers/azure-attrs.rstinc:109
+#: ../../source/drivers/azure-attrs.rstinc:240
+#: ../../source/drivers/azure-attrs.rstinc:409
+#: ../../source/drivers/azure-attrs.rstinc:635
+#: ../../source/drivers/azure-attrs.rstinc:774
+#: ../../source/drivers/azure-attrs.rstinc:956
+msgid "If set to ``true``, Azure will create an ephemeral OS disk instead of a managed disk."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:67
+#: ../../source/drivers/azure-attrs.rstinc:137
+#: ../../source/drivers/azure-attrs.rstinc:268
+#: ../../source/drivers/azure-attrs.rstinc:437
+#: ../../source/drivers/azure-attrs.rstinc:663
+#: ../../source/drivers/azure-attrs.rstinc:808
+#: ../../source/drivers/azure-attrs.rstinc:995
+msgid "If booting a Windows image, an administrative password is required.  If the password is not actually used (e.g., the image has key-based authentication enabled), a random password can be provided by enabling this option.  The password is not stored anywhere and is not retrievable."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:94
+#: ../../source/drivers/azure-attrs.rstinc:205
+#: ../../source/drivers/azure-attrs.rstinc:344
+#: ../../source/drivers/azure-attrs.rstinc:600
+#: ../../source/drivers/azure-attrs.rstinc:753
+#: ../../source/drivers/azure-attrs.rstinc:935
+#: ../../source/drivers/azure-attrs.rstinc:1146
+msgid "The size of the operating system disk, in GiB."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:147
+msgid "Whether to enable IPv4 networking.  Defaults to true unless IPv6 is enabled.  Enabling this will attach a private IPv4 address."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:154
+msgid "Whether to enable IPv6 networking. Enabling this will attach a private IPv6 address."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:166
+msgid "Whether to create regular or spot instances."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:170
+msgid "A regular instance."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:174
+msgid "A spot instance."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:197
+msgid "Size of the VM to use in Azure.  See the `List of VM sizes`_ for the list of sizes availabile in each region."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:359
+msgid "Specifies a community gallery image to use.  Either this field, :attr:`provider[azure].images[cloud].shared-gallery-image`, :attr:`provider[azure].images[cloud].image-reference`, :attr:`provider[azure].images[cloud].image-id`, or :attr:`provider[azure].images[cloud].image-filter` must be provided."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:369
+#: ../../source/drivers/azure-attrs.rstinc:552
+msgid "The image gallery name."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:374
+#: ../../source/drivers/azure-attrs.rstinc:470
+#: ../../source/drivers/azure-attrs.rstinc:557
+msgid "The image name."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:379
+#: ../../source/drivers/azure-attrs.rstinc:562
+msgid "The image version.  Omit to use the latest version."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:446
+msgid "Specifies a private image to use via filters.  Either this field, :attr:`provider[azure].images[cloud].shared-gallery-image`, :attr:`provider[azure].images[cloud].community-gallery-image`, :attr:`provider[azure].images[cloud].image-reference`, or :attr:`provider[azure].images[cloud].image-id` must be provided."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:453
+msgid "If a filter is provided, Zuul will list all of the images in the provider's resource group and reduce the list using the supplied filter.  All items specified in the filter must match in order for an image to match.  If more than one image matches, the images are sorted by name and the last one matches."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:460
+msgid "The following filters are available:"
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:465
+msgid "The image location."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:475
+msgid "The image tags."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:480
+msgid "Specifies a private image to use by ID.  Either this field, :attr:`provider[azure].images[cloud].shared-gallery-image`, :attr:`provider[azure].images[cloud].community-gallery-image`, :attr:`provider[azure].images[cloud].image-reference`, or :attr:`provider[azure].images[cloud].image-filter` must be provided."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:490
+msgid "Specifies a public image to use by reference.  Either this field, :attr:`provider[azure].images[cloud].shared-gallery-image`, :attr:`provider[azure].images[cloud].community-gallery-image`, :attr:`provider[azure].images[cloud].image-id`, or :attr:`provider[azure].images[cloud].image-filter` must be provided."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:500
+msgid "The image offer."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:505
+msgid "The image Publisher."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:511
+msgid "The image SKU."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:516
+msgid "The image version."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:542
+msgid "Specifies a shared gallery image to use.  Either this field, :attr:`provider[azure].images[cloud].community-gallery-image`, :attr:`provider[azure].images[cloud].image-reference`, :attr:`provider[azure].images[cloud].image-id`, or :attr:`provider[azure].images[cloud].image-filter` must be provided."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:829
+#: ../../source/drivers/azure-attrs.rstinc:1021
+msgid "The SSH public key that should be installed on the node."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:883
+#: ../../source/drivers/azure-attrs.rstinc:1094
+msgid "Specifies the subnet to use by ID."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:888
+#: ../../source/drivers/azure-attrs.rstinc:1099
+msgid "Specifies the subnet to use by reference"
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:893
+#: ../../source/drivers/azure-attrs.rstinc:1104
+msgid "The name of the subnet's network."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:898
+#: ../../source/drivers/azure-attrs.rstinc:1109
+msgid "The resource group that contains the subnet."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:904
+#: ../../source/drivers/azure-attrs.rstinc:1115
+msgid "The name of the subnet."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:919
+#: ../../source/drivers/azure-attrs.rstinc:1130
+msgid "The name of the identity."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:924
+#: ../../source/drivers/azure-attrs.rstinc:1135
+msgid "The resource group that contains the identity."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:1172
+msgid "The name of the parent section from which to inherit. This attribute is only used by :attr:`section` objects.  To indicate which section a provider should be attached to, use :attr:`provider[azure].section`"
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:1181
+msgid "Name of the Azure region to use."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:1186
+msgid "Name of the resource group in which to place nodes."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:1199
+msgid "The number of cores used by regular instances."
+msgstr ""
+
+#: ../../source/drivers/azure-attrs.rstinc:1209
+msgid "The number of low priority cores (including spot instances)."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:4
+msgid "Elasticsearch"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:6
+msgid "The Elasticsearch driver supports reporters only. The purpose of the driver is to export build and buildset results to an Elasticsearch index."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:9
+msgid "If the index does not exist in Elasticsearch then the driver will create it with an appropriate mapping for static fields."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:12
+msgid "The driver can add job's variables and any data returned to Zuul via zuul_return respectively into the `job_vars` and `job_returned_vars` fields of the exported build doc. Elasticsearch will apply a dynamic data type detection for those fields."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:17
+msgid "Elasticsearch supports a number of different datatypes for the fields in a document. Please refer to its `documentation`_."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:20
+msgid "The Elasticsearch reporter uses new ES client, that is only supporting `current version`_ of Elasticsearch. In that case the reporter  has been tested on ES cluster version 7. Lower version may be working, but we can not give tu any guarantee of that."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:32
+msgid "The connection options for the Elasticsearch driver are:"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:41
+msgid "The connection must set ``driver=elasticsearch``."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:46
+msgid "Database connection information in the form of a comma separated list of ``host:port``. The information can also include protocol (http/https) or username and password required to authenticate to the Elasticsearch."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:50
+msgid "Example:"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:52
+msgid "uri=elasticsearch1.domain:9200,elasticsearch2.domain:9200"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:54
+msgid "or"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:56
+msgid "uri=https://user:password@elasticsearch:9200"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:58
+msgid "where user and password is optional."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:63
+msgid "Turn on SSL. This option is not required, if you set ``https`` in uri param."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:69
+msgid "Make sure we verify SSL certificates."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:74
+msgid "Path to CA certs on disk."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:79
+msgid "Path to the PEM formatted SSL client certificate."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:84
+msgid "Path to the PEM formatted SSL client key."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:87
+msgid "Example of driver configuration:"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:96
+msgid "Additional parameters to authenticate to the Elasticsearch server you can find in `client`_ class."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:103
+#: ../../source/drivers/gerrit.rst:551
+#: ../../source/drivers/github.rst:502
+#: ../../source/drivers/gitlab.rst:237
+#: ../../source/drivers/mqtt.rst:286
+#: ../../source/drivers/pagure.rst:218
+#: ../../source/drivers/smtp.rst:60
+#: ../../source/drivers/zuul.rst:94
+msgid "Reporter Configuration"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:105
+msgid "This reporter is used to store build results in an Elasticsearch index."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:107
+msgid "The Elasticsearch reporter does nothing on :attr:`pipeline.start` or :attr:`pipeline.merge-conflict`; it only acts on :attr:`pipeline.success` or :attr:`pipeline.failure` reporting stages."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:113
+msgid "The reporter supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:118
+msgid "The Elasticsearch index to be used to index the data. To prevent any name collisions between Zuul tenants, the tenant name is used as index name prefix. The real index name will be:"
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:126
+msgid "The index will be created if it does not exist."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:131
+msgid "Boolean value that determines if the reporter should add job's vars to the exported build doc. NOTE: The index-vars is not including the secrets."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:138
+msgid "Boolean value that determines if the reporter should add zuul_returned vars to the exported build doc."
+msgstr ""
+
+#: ../../source/drivers/elasticsearch.rst:142
+msgid "For example:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:4
+msgid "Gerrit"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:6
+msgid "`Gerrit`_ is a code review system.  The Gerrit driver supports sources, triggers, and reporters."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:11
+msgid "Zuul will need access to a Gerrit user."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:13
+msgid "Give that user whatever permissions will be needed on the projects you want Zuul to report on.  For instance, you may want to grant ``Verified +/-1`` and ``Submit`` to the user.  Additional categories or values may be added to Gerrit.  Zuul is very flexible and can take advantage of those."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:19
+msgid "If ``change.submitWholeTopic`` is configured in Gerrit, Zuul will honor this by enqueuing changes with the same topic as circular dependencies.  However, it is still necessary to enable circular dependency support in any pipeline queues where such changes may appear.  See :attr:`queue.allow-circular-dependencies` for information on how to configure this."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:26
+msgid "Zuul interacts with Gerrit in up to three ways:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:28
+msgid "Receiving trigger events"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:29
+msgid "Fetching source code"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:30
+msgid "Reporting results"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:32
+msgid "Trigger events arrive over an event stream, either SSH (via the ``gerrit stream-events`` command) or other protocols such as Kafka, AWS Kinesis, or Google Cloud Pub/Sub."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:36
+msgid "Fetching source code may happen over SSH or HTTP."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:38
+msgid "Reporting may happen over SSH or HTTP (strongly preferred)."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:40
+msgid "The appropriate connection methods must be configured to satisfy the interactions Zuul will have with Gerrit.  The recommended configuration is to configure both SSH and HTTP access."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:44
+msgid "The section below describes common configuration settings.  Specific settings for different connection methods follow."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:49
+msgid "If Gerrit is upgraded, or the value of ``change.submitWholeTopic`` is changed while Zuul is running, all running Zuul schedulers should be restarted in order to see the change."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:55
+msgid "Since Gerrit 3.7 it has been possible to import projects and their changes from one Gerrit server to another. Doing so may result in change number collisions (change numbers that do not uniquely identify a single change). Zuul's Gerrit driver is not currently expected to work with non unique change numbers."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:73
+msgid "The connection must set ``driver=gerrit`` for Gerrit connections."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:78
+msgid "Fully qualified domain name of Gerrit server."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:82
+msgid "The canonical hostname associated with the git repos on the Gerrit server.  Defaults to the value of :attr:`<gerrit connection>.server`.  This is used to identify projects from this connection by name and in preparing repos on the filesystem for use by jobs.  Note that Zuul will still only communicate with the Gerrit server identified by ``server``; this option is useful if users customarily use a different hostname to clone or pull git repos so that when Zuul places them in the job's working directory, they appear under this directory name."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:96
+msgid "Path to Gerrit web interface.  Omit the trailing ``/``."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:101
+msgid "Url template for links to specific git shas. By default this will point at Gerrit's built in gitweb but you can customize this value to point elsewhere (like cgit or github)."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:105
+msgid "The three values available for string interpolation are baseurl which points back to Gerrit, project and all of its safe attributes, and sha which is the git sha1."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:111
+msgid "This setting can be used to limit the number of dependencies that Zuul will consider when processing events from Gerrit.  If used, it should be set to a value that is higher than the highest number of dependencies that are expected to be encountered.  If, when processing an event from Gerrit, Zuul detects that the dependencies will exceed this value, Zuul will ignore the event with no feedback to the user.  This is meant only to protect the Zuul server from resource exhaustion when excessive dependencies are present.  The default (unset) is no limit.  Note that the value ``0`` does not disable this option; instead it limits Zuul to zero dependencies.  This is distinct from :attr:`tenant.max-dependencies`."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:127
+msgid "User name to use when accessing Gerrit."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:132
+msgid "Some Gerrit installations consist of multiple servers with various strategies for keeping these servers in sync (push replication, pull replication, multi-master, shared storage, etc.).  Since there is currently no reliable method to determine when all servers are updated, this setting may be used to introduce a delay in event processing.  Zuul will ensure that at least this amount of time (in seconds) has passed before processing the corresponding event."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:143
+msgid "SSH Configuration"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:145
+msgid "To prepare for SSH access, create an SSH keypair for Zuul to use if there isn't one already, and create a Gerrit user with that key::"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:150
+msgid "If you use an RSA key, ensure it is encoded in the PEM format (use the ``-t rsa -m PEM`` arguments to `ssh-keygen`)."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:154
+msgid "If using Gerrit 2.7 or later, make sure the user is a member of a group that is granted the ``Stream Events`` permission, otherwise it will not be able to invoke the ``gerrit stream-events`` command over SSH."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:162
+msgid "If SSH access to the Gerrit server should be via a different hostname than web access, set this value to the hostname to use for SSH connections."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:169
+msgid "Gerrit SSH server port."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:174
+msgid "Path to SSH key to use when logging into Gerrit."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:179
+msgid "SSH connection keepalive timeout; ``0`` disables."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:184
+msgid "This forces git operation over SSH even if the ``password`` attribute is set.  This allow REST API access to the Gerrit server even when git-over-http operation is disabled on the server."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:191
+msgid "HTTP Configuration"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:197
+msgid "The HTTP authentication password for the user.  This is optional, but if it is provided, Zuul will report to Gerrit via HTTP rather than SSH.  It is required in order for file and line comments to reported (the Gerrit SSH API only supports review messages).  Retrieve this password from the ``HTTP Password`` section of the ``Settings`` page in Gerrit."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:207
+msgid "The HTTP authentication mechanism."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:211
+msgid "HTTP Basic authentication; the default for most Gerrit installations."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:216
+msgid "HTTP Digest authentication; only used in versions of Gerrit prior to 2.15."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:221
+msgid "Zuul will submit a username and password to a form in order to authenticate."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:226
+msgid "Only valid when running in Google Cloud.  This will use the default service account to authenticate to Gerrit.  Note that this will only be used for interacting with the Gerrit API; anonymous HTTP access will be used to access the git repositories, therefore private repos or draft changes will not be available."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:236
+msgid "When using a self-signed certificate, this may be set to ``false`` to disable SSL certificate verification."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:240
+msgid "Kafka Event Support"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:242
+msgid "Zuul includes support for Gerrit's `events-kafka` plugin.  This may be used as an alternative to SSH for receiving trigger events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:245
+msgid "Kafka does provide event delivery guarantees, so unlike SSH, if all Zuul schedulers are unable to communicate with Gerrit or Kafka, they will eventually receive queued events on reconnection."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:249
+msgid "All Zuul schedulers will attempt to connect to Kafka brokers.  There are some implications for event delivery:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:252
+#: ../../source/drivers/gerrit.rst:307
+#: ../../source/drivers/gerrit.rst:355
+msgid "All events will be delivered to Zuul at least once.  In the case of a disrupted connection, Zuul may receive duplicate events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:255
+msgid "Events should generally arrive in order, however some events in rapid succession may be received by Zuul out of order."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:263
+msgid "A comma-separated list of Kafka servers (optionally including port separated with `:`)."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:269
+msgid "The Kafka topic to which Zuul should subscribe."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:274
+msgid "The Kafka client ID."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:279
+msgid "The Kafka group ID."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:283
+msgid "Path to TLS certificate to use when connecting to a Kafka broker."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:287
+msgid "Path to TLS certificate key to use when connecting to a Kafka broker."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:291
+msgid "Path to TLS CA certificate to use when connecting to a Kafka broker."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:294
+msgid "AWS Kinesis Event Support"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:296
+msgid "Zuul includes support for Gerrit's `events-aws-kinesis` plugin.  This may be used as an alternative to SSH for receiving trigger events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:299
+msgid "Kinesis does provide event delivery guarantees, so unlike SSH, if all Zuul schedulers are unable to communicate with Gerrit or AWS, they will eventually receive queued events on reconnection."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:303
+msgid "All Zuul schedulers will attempt to connect to AWS Kinesis, but only one scheduler will process a given Kinesis shard at a time.  There are some implications for event delivery:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:310
+msgid "If a connection is disrupted longer than the Kinesis retention period for a shard, Zuul may skip to the latest event ignoring all previous events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:314
+msgid "Because shard processing happens in parallel, events may not arrive in order."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:317
+msgid "If a long period with no events elapses and a connection is disrupted, it may take Zuul some time to catch up to the latest events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:326
+msgid "The AWS region name in which the Kinesis stream is located."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:331
+msgid "The AWS Kinesis stream name."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:335
+msgid "The AWS access key to use."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:339
+msgid "The AWS secret key to use."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:342
+msgid "Google Cloud Pub/Sub Event Support"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:344
+msgid "Zuul includes support for Gerrit's `events-gcloud-pubsub` plugin.  This may be used as an alternative to SSH for receiving trigger events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:347
+msgid "Google Cloud Pub/Sub does provide event delivery guarantees, so unlike SSH, if all Zuul schedulers are unable to communicate with Gerrit or Google Cloud Pub/Sub, they will eventually receive queued events on reconnection."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:352
+msgid "All Zuul schedulers will attempt to connect to Google Cloud Pub/Sub. There are some implications for event delivery:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:358
+msgid "Because the `events-gcloud-pubsub` plugin does not at the time of this writing specify that messages are ordered, events may be received by Zuul out of order.  Since this behavior is under the control of the Gerrit plugin, it may change in the future."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:368
+msgid "The Google Cloud project name to use."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:373
+msgid "The Google Cloud Pub/Sub topic to which Zuul should subscribe."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:378
+msgid "The ID of the Google Cloud Pub/Sub subscription to use.  If the subscription does not exist, it will be created."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:383
+msgid "Path to a file containing the JSON encoded key of a service account.  If not provided, then Google Cloud local auth is used. If Zuul is not running in the same Google Cloud project as Gerrit, this is required."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:389
+#: ../../source/drivers/git.rst:35
+#: ../../source/drivers/github.rst:281
+#: ../../source/drivers/gitlab.rst:127
+#: ../../source/drivers/pagure.rst:104
+#: ../../source/drivers/timer.rst:11
+#: ../../source/drivers/zuul.rst:10
+msgid "Trigger Configuration"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:393
+msgid "The dictionary passed to the Gerrit pipeline ``trigger`` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:399
+msgid "The event name from gerrit.  Examples: ``patchset-created``, ``comment-added``, ``ref-updated``.  This field is treated as a regular expression."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:405
+msgid "The branch associated with the event.  Example: ``master``. This field is treated as a regular expression, and multiple branches may be listed."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:411
+msgid "On ref-updated events, the branch parameter is not used, instead the ref is provided.  Currently Gerrit has the somewhat idiosyncratic behavior of specifying bare refs for branch names (e.g., ``master``), but full ref names for other kinds of refs (e.g., ``refs/tags/foo``).  Zuul matches this value exactly against what Gerrit provides.  This field is treated as a regular expression, and multiple refs may be listed."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:422
+msgid "When a branch is deleted, a ref-updated event is emitted with a newrev of all zeros specified. The ``ignore-deletes`` field is a boolean value that describes whether or not these newrevs trigger ref-updated events."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:429
+msgid "This is only used for ``comment-added`` events.  It only matches if the event has a matching approval associated with it. Example: ``Code-Review: 2`` matches a ``+2`` vote on the code review category.  Multiple approvals may be listed."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:436
+msgid "This is only used for ``comment-added`` events. It works the same way as ``approval``, with the additional requirement that the approval value must have changed from its previous value. This means that it only matches when a user modifies an approval score instead of any comment where the score is present."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:444
+msgid "This is used for any event.  It takes a regex applied on the performer email, i.e. Gerrit account email address.  If you want to specify several email filters, you must use a YAML list. Make sure to use non greedy matchers and to escapes dots! Example: ``email: ^.*?@example\\.org$``."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:452
+msgid "This is used for any event.  It takes a regex applied on the performer username, i.e. Gerrit account name.  If you want to specify several username filters, you must use a YAML list. Make sure to use non greedy matchers and to escapes dots. Example: ``username: ^zuul$``."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:460
+msgid "This is only used for ``comment-added`` events.  It accepts a list of regexes that are searched for in the comment string. If any of these regexes matches a portion of the comment string the trigger is matched. ``comment: retrigger`` will match when comments containing ``retrigger`` somewhere in the comment text are added to a change."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:469
+msgid "This is only used for ``hashtags-changed`` events.  It accepts a regex or list of regexes that are searched for in the list of hashtags added to the change in this event.  If any of these regexes match a portion of any of the added hashtags, the trigger is matched."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:477
+msgid "This is only used for ``hashtags-changed`` events.  It accepts a regex or list of regexes that are searched for in the list of hashtags removed from the change in this event.  If any of these regexes match a portion of any of the removed hashtags, the trigger is matched."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:485
+msgid "This is deprecated and will be removed in a future version.  Use :attr:`pipeline.trigger.<gerrit source>.require` instead."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:489
+msgid "This may be used for any event.  It requires that a certain kind of approval be present for the current patchset of the change (the approval could be added by the event in question).  It follows the same syntax as :attr:`pipeline.require.<gerrit source>.approval`. For each specified criteria there must exist a matching approval."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:496
+msgid "This is ignored if the :attr:`pipeline.trigger.<gerrit source>.require` attribute is present."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:501
+msgid "This is deprecated and will be removed in a future version.  Use :attr:`pipeline.trigger.<gerrit source>.reject` instead."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:505
+msgid "This takes a list of approvals in the same format as :attr:`pipeline.trigger.<gerrit source>.require-approval` but the item will fail to enter the pipeline if there is a matching approval."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:510
+msgid "This is ignored if the :attr:`pipeline.trigger.<gerrit source>.reject` attribute is present."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:515
+msgid "This may be used for any event.  It describes conditions that must be met by the change in order for the trigger event to match.  Those conditions may be satisfied by the event in question.  It follows the same syntax as :ref:`gerrit_requirements`."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:523
+msgid "This may be used for any event and is the mirror of :attr:`pipeline.trigger.<gerrit source>.require`.  It describes conditions that when met by the change cause the trigger event not to match.  Those conditions may be satisfied by the event in question.  It follows the same syntax as :ref:`gerrit_requirements`."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:533
+#: ../../source/drivers/git.rst:64
+#: ../../source/drivers/github.rst:484
+#: ../../source/drivers/gitlab.rst:219
+#: ../../source/drivers/pagure.rst:200
+#: ../../source/drivers/timer.rst:79
+#: ../../source/drivers/zuul.rst:77
+msgid "When set to `true`, this will cause debug messages to be included when the queue item is reported.  These debug messages may be used to help diagnose why certain jobs did or did not run, and in many cases, why the item was not ultimately enqueued into the pipeline."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:539
+#: ../../source/drivers/git.rst:70
+#: ../../source/drivers/github.rst:490
+#: ../../source/drivers/gitlab.rst:225
+#: ../../source/drivers/pagure.rst:206
+#: ../../source/drivers/timer.rst:85
+#: ../../source/drivers/zuul.rst:83
+msgid "Setting this value also effectively sets :attr:`project.<pipeline>.debug` for affected queue items."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:542
+#: ../../source/drivers/git.rst:73
+#: ../../source/drivers/github.rst:493
+#: ../../source/drivers/gitlab.rst:228
+#: ../../source/drivers/pagure.rst:209
+#: ../../source/drivers/timer.rst:88
+#: ../../source/drivers/zuul.rst:86
+msgid "This only applies to items that arrive at a pipeline via this particular trigger.  Since the output is very verbose and typically not needed or desired, this allows for a configuration where typical pipeline triggers omit the debug output, but triggers that match certain specific criteria may be used to request debug information."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:555
+msgid "The dictionary passed to the Gerrit reporter is used to provide label values to Gerrit.  To set the `Verified` label to `1`, add ``verified: 1`` to the dictionary."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:559
+msgid "The following additional keys are recognized:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:564
+msgid "Set this to ``True`` to submit (merge) the change."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:569
+msgid "If this is true (the default), Zuul will leave review messages on the change (including job results).  Set this to false to disable this behavior (file and line commands will still be sent if present)."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:576
+msgid "If this is set to a notify handling value then send notifications at the specified level. If not, use the default specified by the gerrit api. Some possible values include ``ALL`` and ``NONE``. See the gerrit api for available options and default value:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:582
+msgid "`<https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#review-input>`_"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:584
+msgid "A :ref:`connection<connections>` that uses the gerrit driver must be supplied to the trigger."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:590
+#: ../../source/drivers/github.rst:599
+#: ../../source/drivers/gitlab.rst:281
+#: ../../source/drivers/pagure.rst:250
+msgid "Requirements Configuration"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:592
+msgid "As described in :attr:`pipeline.require` and :attr:`pipeline.reject`, pipelines may specify that items meet certain conditions in order to be enqueued into the pipeline.  These conditions vary according to the source of the project in question.  To supply requirements for changes from a Gerrit source named ``gerrit``, create a configuration such as the following:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:607
+msgid "This indicates that changes originating from the Gerrit connection named ``gerrit`` must have a ``Code-Review`` vote of ``+2`` in order to be enqueued into the pipeline."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:613
+msgid "The dictionary passed to the Gerrit pipeline `require` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:618
+msgid "This requires that a certain kind of approval be present for the current patchset of the change (the approval could be added by the event in question). Approval is a dictionary or a list of dictionaries with attributes listed below, all of which are optional and are combined together so that there must be an approval matching all specified requirements."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:627
+#: ../../source/drivers/gerrit.rst:705
+msgid "If present, an approval from this username is required.  It is treated as a regular expression."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:632
+#: ../../source/drivers/gerrit.rst:710
+msgid "If present, an approval with this email address is required.  It is treated as a regular expression."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:637
+#: ../../source/drivers/gerrit.rst:715
+msgid "If present, the approval must be older than this amount of time to match.  Provide a time interval as a number with a suffix of \"w\" (weeks), \"d\" (days), \"h\" (hours), \"m\" (minutes), \"s\" (seconds).  Example ``48h`` or ``2d``."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:644
+#: ../../source/drivers/gerrit.rst:722
+msgid "If present, the approval must be newer than this amount of time to match.  Same format as \"older-than\"."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:647
+#: ../../source/drivers/gerrit.rst:725
+msgid "Any other field is interpreted as a review category and value pair.  For example ``Verified: 1`` would require that the approval be for a +1 vote in the \"Verified\" column.  The value may either be a single value or a list: ``Verified: [1, 2]`` would match either a +1 or +2 vote."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:655
+#: ../../source/drivers/github.rst:667
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be open or closed in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:660
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be the current patchset in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:665
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be wip or not wip in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:670
+#: ../../source/drivers/gerrit.rst:748
+msgid "A string value that corresponds with the status of the change reported by Gerrit."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:675
+msgid "A regex or list of regexes.  Each of these must match at least one of the hashtags present on the change in order for the change to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:681
+msgid "The `reject` attribute is the mirror of the `require` attribute.  It also accepts a dictionary under the connection name.  This dictionary supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:687
+msgid "This requires that a certain kind of approval not be present for the current patchset of the change (the approval could be added by the event in question). Approval is a dictionary or a list of dictionaries with attributes listed below, all of which are optional and are combined together so that there must be no approvals matching all specified requirements."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:694
+msgid "Example to reject a change with any negative vote:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:733
+#: ../../source/drivers/github.rst:765
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be open or closed in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:738
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be the current patchset in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:743
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be wip or not wip in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:753
+msgid "A regex or list of regexes.  If any of these match at least one of the hashtags present on the change, it will be rejected."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:758
+msgid "Reference Pipelines Configuration"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:760
+#: ../../source/drivers/github.rst:854
+#: ../../source/drivers/gitlab.rst:362
+#: ../../source/drivers/pagure.rst:303
+msgid "Here is an example of standard pipelines you may want to define:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:767
+msgid "Checks Plugin Support (Deprecated)"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:769
+msgid "The Gerrit driver has support for Gerrit's `checks` plugin.  Due to the deprecation of the checks plugin in Gerrit, support in Zuul is also deprecated and likely to be removed in a future version.  It is not recommended for use."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:774
+msgid "Caveats include (but are not limited to):"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:776
+msgid "This documentation is brief."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:778
+msgid "Access control for the `checks` API in Gerrit depends on a single global administrative permission, ``administrateCheckers``.  This is required in order to use the `checks` API and can not be restricted by project.  This means that any system using the `checks` API can interfere with any other."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:784
+msgid "Checkers are restricted to a single project.  This means that a system with many projects will require many checkers to be defined in Gerrit -- one for each project+pipeline."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:788
+msgid "No support is provided for attaching checks to tags or commits, meaning that tag, release, and post pipelines are unable to be used with the `checks` API and must rely on `stream-events`."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:792
+msgid "Sub-checks are not implemented yet, so in order to see the results of individual jobs on a change, users must either follow the buildset link, or the pipeline must be configured to leave a traditional comment."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:797
+msgid "Familiarity with the `checks` API is recommended."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:799
+msgid "Checkers may not be permanently deleted from Gerrit (only \"soft-deleted\" so they no longer apply), so any experiments you perform on a production system will leave data there forever."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:803
+msgid "In order to use the `checks` API, you must have HTTP access configured in `zuul.conf`."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:806
+msgid "There are two ways to configure a pipeline for the `checks` API: directly referencing the checker UUID, or referencing it's scheme.  It is hoped that once multi-repository checks are supported, that an administrator will be able to configure a single checker in Gerrit for each Zuul pipeline, and those checkers can apply to all repositories. If and when that happens, we will be able to reference the checker UUID directly in Zuul's pipeline configuration.  If you only have a single project, you may find this approach acceptable now."
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:815
+msgid "To use this approach, create a checker named ``zuul:check`` and configure a pipeline like this:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:858
+msgid "For a system with multiple repositories and one or more checkers for each repository, the `scheme` approach is recommended.  To use this, create a checker for each pipeline in each repository.  Give them names such as ``zuul_check:project1``, ``zuul_gate:project1``, ``zuul_check:project2``, etc.  The part before the ``:`` is the `scheme`.  Then create a pipeline like this:"
+msgstr ""
+
+#: ../../source/drivers/gerrit.rst:905
+msgid "This will match and report to the appropriate checker for a given repository based on the scheme you provided."
+msgstr ""
+
+#: ../../source/drivers/git.rst:4
+msgid "Git"
+msgstr ""
+
+#: ../../source/drivers/git.rst:6
+msgid "This driver can be used to load Zuul configuration from public Git repositories, for instance from ``opendev.org/zuul/zuul-jobs`` that is suitable for use by any Zuul system. It can also be used to trigger jobs from ``ref-updated`` events in a pipeline."
+msgstr ""
+
+#: ../../source/drivers/git.rst:23
+msgid "The connection must set ``driver=git`` for Git connections."
+msgstr ""
+
+#: ../../source/drivers/git.rst:27
+msgid "Path to the base Git URL. Git repos name will be appended to it."
+msgstr ""
+
+#: ../../source/drivers/git.rst:32
+msgid "The delay in seconds of the Git repositories polling loop."
+msgstr ""
+
+#: ../../source/drivers/git.rst:39
+msgid "The dictionary passed to the Git pipeline ``trigger`` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/git.rst:45
+msgid "Only ``ref-updated`` is supported."
+msgstr ""
+
+#: ../../source/drivers/git.rst:49
+msgid "On ref-updated events, a ref such as ``refs/heads/master`` or ``^refs/tags/.*$``. This field is treated as a regular expression, and multiple refs may be listed."
+msgstr ""
+
+#: ../../source/drivers/git.rst:56
+msgid "When a ref is deleted, a ref-updated event is emitted with a newrev of all zeros specified. The ``ignore-deletes`` field is a boolean value that describes whether or not these newrevs trigger ref-updated events."
+msgstr ""
+
+#: ../../source/drivers/github.rst:6
+msgid "GitHub"
+msgstr ""
+
+#: ../../source/drivers/github.rst:8
+msgid "The GitHub driver supports sources, triggers, and reporters.  It can interact with the public GitHub service as well as site-local installations of GitHub enterprise."
+msgstr ""
+
+#: ../../source/drivers/github.rst:13
+msgid "Configure GitHub"
+msgstr ""
+
+#: ../../source/drivers/github.rst:15
+msgid "Zuul needs to receive notification of events from GitHub, and it needs to interact with GitHub in response to those events.  There are two options available for configuring these connections.  A GitHub project's owner can either manually setup a web-hook or install a GitHub Application.  In the first case, the project's owner needs to know the Zuul endpoint and the webhook secrets and configure them manually. In the second, the project (or organization) owner need only install pre-existing GitHub Application into the project or organization."
+msgstr ""
+
+#: ../../source/drivers/github.rst:24
+msgid "In general, the Application method is recommended.  Both options are described in the following sections."
+msgstr ""
+
+#: ../../source/drivers/github.rst:27
+msgid "Regardless of which option is chosen, there are several types of authentication between Zuul and GitHub used for various purposes. Some are required and some are optional depending on the intended use and configuration."
+msgstr ""
+
+#: ../../source/drivers/github.rst:32
+msgid "In all cases Zuul needs to authenticate messages received from GitHub as being valid. To do this a `webhook_token` is configured."
+msgstr ""
+
+#: ../../source/drivers/github.rst:35
+msgid "Zuul also needs to authenticate to GitHub to make certain requests. At a high level, this is the sort of authentication that is required for various Zuul Github functionality:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:39
+msgid "Reporting: Requires authentication with write access to the project so that comments can be posted."
+msgstr ""
+
+#: ../../source/drivers/github.rst:41
+msgid "Enqueuing a pull request (including Depends-On: of a pull request): The API queries needed to examine PR's so that Zuul can enqueue them requires authentication with read access."
+msgstr ""
+
+#: ../../source/drivers/github.rst:44
+msgid ":attr:`job.required-projects` listing: No authentication required. For example, you may have a project where you are only interested in testing against a specific branch of a GitHub project. In this case you do not need any authentication to have Zuul pull the project. However, note that if you will ever need to speculatively test a PR in this project, you will require authenticated read access (see note above)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:51
+msgid "There are two different ways Zuul can Authenticate its requests to GitHub. The first is the `api_token`. This `api_token` is used by the web-hook option for all authentication. When using the GitHub Application system Zuul uses an `app_id` and `app_key` which is used to generate an application token behind the scenes. But this only works against projects that have installed your application. As a fallback for interaction with projects that haven't installed your application you can also configure an `api_token` when using the application system. This is particularly useful for supporting Depends-On functionality against GitHub projects."
+msgstr ""
+
+#: ../../source/drivers/github.rst:62
+msgid "Finally, authenticated requests receive much larger GitHub API rate limits. It is worthwhile to configure both an `app_id`/`app_key` and `api_token` when operating in application mode to avoid rate limits as much as possible."
+msgstr ""
+
+#: ../../source/drivers/github.rst:68
+msgid "Web-Hook"
+msgstr ""
+
+#: ../../source/drivers/github.rst:70
+msgid "To configure a project's `webhook events <https://developer.github.com/webhooks/creating/>`_:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:73
+msgid "Set *Payload URL* to ``http://<zuul-hostname>:<port>/api/connection/<connection-name>/payload``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:76
+msgid "Set *Content Type* to ``application/json``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:78
+msgid "Select *Events* you are interested in. See below for the supported events."
+msgstr ""
+
+#: ../../source/drivers/github.rst:80
+msgid "You will also need to have a GitHub user created for your zuul:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:82
+msgid "Zuul public key needs to be added to the GitHub account"
+msgstr ""
+
+#: ../../source/drivers/github.rst:84
+msgid "A api_token needs to be created too, see this `article <https://help.github.com/articles/creating-an-access-token-for-command-line-use/>`_"
+msgstr ""
+
+#: ../../source/drivers/github.rst:87
+msgid "Then in the zuul.conf, set webhook_token and api_token."
+msgstr ""
+
+#: ../../source/drivers/github.rst:90
+msgid "Application"
+msgstr ""
+
+#: ../../source/drivers/github.rst:92
+msgid "To create a `GitHub application <https://developer.github.com/apps/building-integrations/setting-up-and-registering-github-apps/registering-github-apps/>`_:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:95
+msgid "Go to your organization settings page to create the application, e.g.: https://github.com/organizations/my-org/settings/apps/new"
+msgstr ""
+
+#: ../../source/drivers/github.rst:97
+msgid "Set GitHub App name to \"my-org-zuul\""
+msgstr ""
+
+#: ../../source/drivers/github.rst:98
+msgid "Set Setup URL to your setup documentation, when user install the application they are redirected to this url"
+msgstr ""
+
+#: ../../source/drivers/github.rst:100
+msgid "Set Webhook URL to ``http://<zuul-hostname>:<port>/api/connection/<connection-name>/payload``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:102
+msgid "Create a Webhook secret"
+msgstr ""
+
+#: ../../source/drivers/github.rst:103
+msgid "Set permissions:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:105
+msgid "Repository administration: Read"
+msgstr ""
+
+#: ../../source/drivers/github.rst:106
+msgid "Checks: Read & Write"
+msgstr ""
+
+#: ../../source/drivers/github.rst:107
+msgid "Repository contents: Read & Write (write to let zuul merge change)"
+msgstr ""
+
+#: ../../source/drivers/github.rst:108
+msgid "Issues: Read & Write"
+msgstr ""
+
+#: ../../source/drivers/github.rst:109
+msgid "Pull requests: Read & Write"
+msgstr ""
+
+#: ../../source/drivers/github.rst:110
+msgid "Commit statuses: Read & Write"
+msgstr ""
+
+#: ../../source/drivers/github.rst:112
+msgid "Set events subscription:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:114
+msgid "Check run"
+msgstr ""
+
+#: ../../source/drivers/github.rst:115
+msgid "Commit comment"
+msgstr ""
+
+#: ../../source/drivers/github.rst:116
+msgid "Create"
+msgstr ""
+
+#: ../../source/drivers/github.rst:117
+msgid "Push"
+msgstr ""
+
+#: ../../source/drivers/github.rst:118
+msgid "Release"
+msgstr ""
+
+#: ../../source/drivers/github.rst:119
+msgid "Issue comment"
+msgstr ""
+
+#: ../../source/drivers/github.rst:120
+msgid "Issues"
+msgstr ""
+
+#: ../../source/drivers/github.rst:121
+msgid "Label"
+msgstr ""
+
+#: ../../source/drivers/github.rst:122
+msgid "Pull request"
+msgstr ""
+
+#: ../../source/drivers/github.rst:123
+msgid "Pull request review"
+msgstr ""
+
+#: ../../source/drivers/github.rst:124
+msgid "Pull request review comment"
+msgstr ""
+
+#: ../../source/drivers/github.rst:125
+msgid "Status"
+msgstr ""
+
+#: ../../source/drivers/github.rst:127
+msgid "Set Where can this GitHub App be installed to \"Any account\""
+msgstr ""
+
+#: ../../source/drivers/github.rst:128
+msgid "Create the App"
+msgstr ""
+
+#: ../../source/drivers/github.rst:129
+msgid "Generate a Private key in the app settings page"
+msgstr ""
+
+#: ../../source/drivers/github.rst:130
+msgid "Optionally configure an api_token. Please see this `article <https://help.github.com/articles/creating-an-access-token-for-command-line-use/>`_ for more information."
+msgstr ""
+
+#: ../../source/drivers/github.rst:134
+msgid "Then in the zuul.conf, set `webhook_token`, `app_id`, `app_key` and optionally `api_token`.  After restarting zuul-scheduler, verify in the 'Advanced' tab that the Ping payload works (green tick and 200 response)"
+msgstr ""
+
+#: ../../source/drivers/github.rst:139
+msgid "Users can now install the application using its public page, e.g.: https://github.com/apps/my-org-zuul"
+msgstr ""
+
+#: ../../source/drivers/github.rst:143
+msgid "GitHub Pull Requests that modify GitHub Actions workflow configuration files cannot be merged by application credentials (this is any Pull Request that edits the .github/workflows directory and its contents). These Pull Requests must be merged by a normal user account. This means that Zuul will be limited to posting test results and cannot merge these PRs automatically when they pass testing."
+msgstr ""
+
+#: ../../source/drivers/github.rst:150
+msgid "GitHub Actions are still in Beta and this behavior may change."
+msgstr ""
+
+#: ../../source/drivers/github.rst:156
+msgid "There are two forms of operation. Either the Zuul installation can be configured as a `Github App`_ or it can be configured as a Webhook."
+msgstr ""
+
+#: ../../source/drivers/github.rst:159
+msgid "If the `Github App`_ approach is taken, the config settings ``app_id``, ``app_key`` and optionally ``api_token`` are required. If the Webhook approach is taken, the ``api_token`` setting is required."
+msgstr ""
+
+#: ../../source/drivers/github.rst:172
+msgid "The connection must set ``driver=github`` for GitHub connections."
+msgstr ""
+
+#: ../../source/drivers/github.rst:176
+msgid "App ID if you are using a *GitHub App*. Can be found under the **Public Link** on the right hand side labeled **ID**."
+msgstr ""
+
+#: ../../source/drivers/github.rst:181
+msgid "Path to a file containing the secret key Zuul will use to create tokens for the API interactions. In Github this is known as **Private key** and must be collected when generated."
+msgstr ""
+
+#: ../../source/drivers/github.rst:187
+msgid "API token for accessing GitHub if Zuul is configured with Webhooks.  See `Creating an access token for command-line use <https://help.github.com/articles/creating-an-access-token-for-command-line-use/>`_."
+msgstr ""
+
+#: ../../source/drivers/github.rst:193
+msgid "Required token for validating the webhook event payloads.  In the GitHub App Configuration page, this is called **Webhook secret**.  See `Securing your webhooks <https://developer.github.com/webhooks/securing/>`_."
+msgstr ""
+
+#: ../../source/drivers/github.rst:201
+msgid "Path to SSH key to use when cloning github repositories if Zuul is configured with Webhooks."
+msgstr ""
+
+#: ../../source/drivers/github.rst:207
+msgid "Hostname of the github install (such as a GitHub Enterprise)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:211
+msgid "The canonical hostname associated with the git repos on the GitHub server.  Defaults to the value of :attr:`<github connection>.server`.  This is used to identify projects from this connection by name and in preparing repos on the filesystem for use by jobs.  Note that Zuul will still only communicate with the GitHub server identified by **server**; this option is useful if users customarily use a different hostname to clone or pull git repos so that when Zuul places them in the job's working directory, they appear under this directory name."
+msgstr ""
+
+#: ../../source/drivers/github.rst:224
+msgid "Enable or disable ssl verification for GitHub Enterprise.  This is useful for a connection to a test installation."
+msgstr ""
+
+#: ../../source/drivers/github.rst:230
+msgid "Enable or disable GitHub rate limit logging. If rate limiting is disabled in GitHub Enterprise this can save some network round trip times."
+msgstr ""
+
+#: ../../source/drivers/github.rst:235
+msgid "To configure Zuul to use a GitHub Enterprise `repository cache <https://docs.github.com/en/enterprise-server@3.3/admin/enterprise-management/caching-repositories/about-repository-caching>`_ set this value to the hostname of the cache (e.g., ``europe-ci.github.example.com``).  Zuul will fetch commits as well as determine the global repo state of repositories used in jobs from this host."
+msgstr ""
+
+#: ../../source/drivers/github.rst:242
+msgid "This setting is incompatible with :attr:`<github connection>.sshkey`."
+msgstr ""
+
+#: ../../source/drivers/github.rst:245
+msgid "Because the repository cache may be several minutes behind the canonical site, enabling this setting automatically sets the default :attr:`<github connection>.repo_retry_timeout` to 600 seconds.  That setting may still be overridden to specify a different value."
+msgstr ""
+
+#: ../../source/drivers/github.rst:253
+msgid "This setting is only used if :attr:`<github connection>.repo_cache` is set.  It specifies the amount of time in seconds that Zuul mergers and executors should spend attempting to fetch git commits which are not available from the GitHub repository cache host."
+msgstr ""
+
+#: ../../source/drivers/github.rst:259
+msgid "When :attr:`<github connection>.repo_cache` is set, this value defaults to 600 seconds, but it can be overridden.  Zuul retries git fetches every 30 seconds, and this value will be rounded up to the next highest multiple of 30 seconds."
+msgstr ""
+
+#: ../../source/drivers/github.rst:267
+msgid "The GitHub driver performs event pre-processing in parallel before forwarding the events (in the correct order) to the scheduler for processing.  By default, this parallel pre-processing is restricted to a single request for each GitHub App installation that Zuul uses when interacting with GitHub. This is to avoid running afoul of GitHub's abuse detection mechanisms.  Some high-traffic installations of GitHub Enterprise may wish to increase this value to allow more parallel requests if resources permit.  If GitHub Enterprise resource usage is not a concern, setting this value to ``10`` or greater may be reasonable."
+msgstr ""
+
+#: ../../source/drivers/github.rst:282
+msgid "GitHub webhook events can be configured as triggers."
+msgstr ""
+
+#: ../../source/drivers/github.rst:284
+msgid "A connection name with the GitHub driver can take multiple events with the following options."
+msgstr ""
+
+#: ../../source/drivers/github.rst:289
+msgid "The dictionary passed to the GitHub pipeline ``trigger`` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:295
+msgid "While it is currently possible to list more than one event in a single trigger, that is deprecated and support will be removed in a future version. Instead, specify a single event type per trigger, and list multiple triggers as necessary to cover all intended events."
+msgstr ""
+
+#: ../../source/drivers/github.rst:302
+msgid "The event from github. Supported events are:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:314
+msgid "A :value:`pipeline.trigger.<github source>.event.pull_request` event will have associated action(s) to trigger from. The supported actions are:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:320
+#: ../../source/drivers/pagure.rst:134
+msgid "Pull request opened."
+msgstr ""
+
+#: ../../source/drivers/github.rst:324
+#: ../../source/drivers/pagure.rst:138
+msgid "Pull request synchronized."
+msgstr ""
+
+#: ../../source/drivers/github.rst:328
+#: ../../source/drivers/pagure.rst:142
+msgid "Pull request closed."
+msgstr ""
+
+#: ../../source/drivers/github.rst:332
+msgid "Pull request reopened."
+msgstr ""
+
+#: ../../source/drivers/github.rst:336
+#: ../../source/drivers/pagure.rst:146
+msgid "Comment added to pull request."
+msgstr ""
+
+#: ../../source/drivers/github.rst:340
+msgid "Label added to pull request."
+msgstr ""
+
+#: ../../source/drivers/github.rst:344
+msgid "Label removed from pull request."
+msgstr ""
+
+#: ../../source/drivers/github.rst:348
+msgid "Status set on commit. The syntax is ``user:status:value``. This also can be a regular expression."
+msgstr ""
+
+#: ../../source/drivers/github.rst:351
+msgid "A :value:`pipeline.trigger.<github source>.event.pull_request_review` event will have associated action(s) to trigger from. The supported actions are:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:357
+msgid "Pull request review added."
+msgstr ""
+
+#: ../../source/drivers/github.rst:361
+msgid "Pull request review removed."
+msgstr ""
+
+#: ../../source/drivers/github.rst:363
+msgid "A :value:`pipeline.trigger.<github source>.event.check_run` event will have associated action(s) to trigger from. The supported actions are:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:369
+msgid "This is deprecated and will be removed in a future version.  Use :value:`pipeline.trigger.<github source>.action.rerequested` instead."
+msgstr ""
+
+#: ../../source/drivers/github.rst:374
+msgid "Deprecated alias for :value:`pipeline.trigger.<github source>.action.rerequested`."
+msgstr ""
+
+#: ../../source/drivers/github.rst:379
+msgid "A check run is rerequested."
+msgstr ""
+
+#: ../../source/drivers/github.rst:383
+msgid "A check run completed."
+msgstr ""
+
+#: ../../source/drivers/github.rst:387
+msgid "The branch associated with the event. Example: ``master``.  This field is treated as a regular expression, and multiple branches may be listed. Used for ``pull_request`` and ``pull_request_review`` events."
+msgstr ""
+
+#: ../../source/drivers/github.rst:394
+msgid "This is only used for ``pull_request`` ``comment`` actions.  It accepts a list of regexes that are searched for in the comment string. If any of these regexes matches a portion of the comment string the trigger is matched.  ``comment: retrigger`` will match when comments containing 'retrigger' somewhere in the comment text are added to a pull request."
+msgstr ""
+
+#: ../../source/drivers/github.rst:403
+msgid "This is only used for ``labeled`` and ``unlabeled`` ``pull_request`` actions.  It accepts a list of strings each of which matches the label name in the event literally.  ``label: recheck`` will match a ``labeled`` action when pull request is labeled with a ``recheck`` label. ``label: 'do not test'`` will match a ``unlabeled`` action when a label with name ``do not test`` is removed from the pull request."
+msgstr ""
+
+#: ../../source/drivers/github.rst:413
+msgid "This is only used for ``pull_request_review`` events.  It accepts a list of strings each of which is matched to the review state, which can be one of ``approved``, ``commented``, ``changes_requested``, ``dismissed``, or ``pending``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:420
+msgid "This is used for ``pull_request`` and ``status`` actions. It accepts a list of strings each of which matches the user setting the status, the status context, and the status itself in the format of ``user:context:status``.  For example, ``zuul_github_ci_bot:check_pipeline:success``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:428
+msgid "This is only used for ``check_run`` events. It works similar to the ``status`` attribute and accepts a list of strings each of which matches the app requesting or updating the check run, the check run's name and the conclusion in the format of ``app:name::conclusion``. To make Zuul properly interact with Github's checks API, each pipeline that is using the checks API should have at least one trigger that matches the pipeline's name regardless of the result, e.g. ``zuul:cool-pipeline:.*``. This will enable the cool-pipeline to trigger whenever a user requests the ``cool-pipeline`` check run as part of the ``zuul`` check suite. Additionally, one could use ``.*:success`` to trigger a pipeline whenever a successful check run is reported (e.g. useful for gating)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:445
+msgid "This is only used for ``push`` events. This field is treated as a regular expression and multiple refs may be listed. GitHub always sends full ref name, eg. ``refs/tags/bar`` and this string is matched against the regular expression."
+msgstr ""
+
+#: ../../source/drivers/github.rst:452
+msgid "This is deprecated and will be removed in a future version.  Use :attr:`pipeline.trigger.<github source>.require` instead."
+msgstr ""
+
+#: ../../source/drivers/github.rst:456
+msgid "This may be used for any event.  It requires that a certain kind of status be present for the PR (the status could be added by the event in question).  It follows the same syntax as :attr:`pipeline.require.<github source>.status`. For each specified criteria there must exist a matching status."
+msgstr ""
+
+#: ../../source/drivers/github.rst:462
+msgid "This is ignored if the :attr:`pipeline.trigger.<github source>.require` attribute is present."
+msgstr ""
+
+#: ../../source/drivers/github.rst:467
+msgid "This may be used for any event.  It describes conditions that must be met by the PR in order for the trigger event to match. Those conditions may be satisfied by the event in question.  It follows the same syntax as :ref:`github_requirements`."
+msgstr ""
+
+#: ../../source/drivers/github.rst:474
+msgid "This may be used for any event and is the mirror of :attr:`pipeline.trigger.<github source>.require`.  It describes conditions that when met by the PR cause the trigger event not to match.  Those conditions may be satisfied by the event in question.  It follows the same syntax as :ref:`github_requirements`."
+msgstr ""
+
+#: ../../source/drivers/github.rst:503
+msgid "Zuul reports back to GitHub via GitHub API. Available reports include a PR comment containing the build results, a commit status on start, success and failure, an issue label addition/removal on the PR, and a merge of the PR itself. Status name, description, and context is taken from the pipeline."
+msgstr ""
+
+#: ../../source/drivers/github.rst:510
+msgid "To report to GitHub, the dictionaries passed to any of the pipeline :ref:`reporter<reporters>` attributes support the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:518
+msgid "Report status via the Github `status API <https://docs.github.com/v3/repos/statuses/>`__.  Set to one of"
+msgstr ""
+
+#: ../../source/drivers/github.rst:527
+msgid "This is usually mutually exclusive with a value set in :attr:`pipeline.<reporter>.<github source>.check`, since this reports similar results via a different API.  This API is older and results do not show up on the \"checks\" tab in the Github UI. It is recommended to use `check` unless you have a specific reason to use the status API."
+msgstr ""
+
+#: ../../source/drivers/github.rst:537
+msgid "Report status via the Github `checks API <https://docs.github.com/v3/checks/>`__.  Set to one of"
+msgstr ""
+
+#: ../../source/drivers/github.rst:554
+msgid "This is usually mutually exclusive with a value set in :attr:`pipeline.<reporter>.<github source>.status`, since this reports similar results via a different API."
+msgstr ""
+
+#: ../../source/drivers/github.rst:561
+msgid "Boolean value that determines if the reporter should add a comment to the pipeline status to the github pull request. Only used for Pull Request based items."
+msgstr ""
+
+#: ../../source/drivers/github.rst:567
+msgid "One of `approve`, `comment`, or `request-changes` that causes the reporter to submit a review with the specified status on Pull Request based items. Has no effect on other items."
+msgstr ""
+
+#: ../../source/drivers/github.rst:573
+msgid "Text that will be submitted as the body of the review. Required if review is set to `comment` or `request-changes`."
+msgstr ""
+
+#: ../../source/drivers/github.rst:579
+msgid "Boolean value that determines if the reporter should merge the pull request. Only used for Pull Request based items."
+msgstr ""
+
+#: ../../source/drivers/github.rst:584
+msgid "List of strings each representing an exact label name which should be added to the pull request by reporter. Only used for Pull Request based items."
+msgstr ""
+
+#: ../../source/drivers/github.rst:590
+msgid "List of strings each representing an exact label name which should be removed from the pull request by reporter. Only used for Pull Request based items."
+msgstr ""
+
+#: ../../source/drivers/github.rst:601
+msgid "As described in :attr:`pipeline.require` and :attr:`pipeline.reject`, pipelines may specify that items meet certain conditions in order to be enqueued into the pipeline.  These conditions vary according to the source of the project in question.  To supply requirements for changes from a GitHub source named ``github``, create a configuration such as the following::"
+msgstr ""
+
+#: ../../source/drivers/github.rst:614
+msgid "This indicates that changes originating from the GitHub connection named ``github`` must have an approved code review in order to be enqueued into the pipeline."
+msgstr ""
+
+#: ../../source/drivers/github.rst:620
+msgid "The dictionary passed to the GitHub pipeline `require` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:625
+msgid "This requires that a certain kind of code review be present for the pull request (it could be added by the event in question). It takes several sub-parameters, all of which are optional and are combined together so that there must be a code review matching all specified requirements."
+msgstr ""
+
+#: ../../source/drivers/github.rst:633
+#: ../../source/drivers/github.rst:731
+msgid "If present, a code review from this username matches.  It is treated as a regular expression."
+msgstr ""
+
+#: ../../source/drivers/github.rst:638
+#: ../../source/drivers/github.rst:736
+msgid "If present, a code review with this email address matches. It is treated as a regular expression."
+msgstr ""
+
+#: ../../source/drivers/github.rst:643
+#: ../../source/drivers/github.rst:741
+msgid "If present, the code review must be older than this amount of time to match.  Provide a time interval as a number with a suffix of \"w\" (weeks), \"d\" (days), \"h\" (hours), \"m\" (minutes), \"s\" (seconds).  Example ``48h`` or ``2d``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:650
+#: ../../source/drivers/github.rst:748
+msgid "If present, the code review must be newer than this amount of time to match.  Same format as \"older-than\"."
+msgstr ""
+
+#: ../../source/drivers/github.rst:655
+#: ../../source/drivers/github.rst:753
+msgid "If present, the code review must match this type (or types)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:661
+#: ../../source/drivers/github.rst:759
+msgid "If present, the author of the code review must have this permission (or permissions) to match.  The available values are ``read``, ``write``, and ``admin``."
+msgstr ""
+
+#: ../../source/drivers/github.rst:672
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be merged or not in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/github.rst:677
+msgid "A boolean value (``true`` or ``false``) that indicates whether the item must be associated with the latest commit in the pull request in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/github.rst:686
+msgid "A boolean value (``true`` or ``false``) that indicates whether or not the change must be marked as a draft in GitHub in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/github.rst:692
+#: ../../source/drivers/github.rst:790
+msgid "A string value that corresponds with the status of the pull request.  The syntax is ``user:status:value``. This can also be a regular expression."
+msgstr ""
+
+#: ../../source/drivers/github.rst:696
+#: ../../source/drivers/github.rst:794
+msgid "Zuul does not differentiate between a status reported via status API or via checks API (which is also how Github behaves in terms of branch protection and `status checks`_). Thus, the status could be reported by a :attr:`pipeline.<reporter>.<github source>.status` or a :attr:`pipeline.<reporter>.<github source>.check`."
+msgstr ""
+
+#: ../../source/drivers/github.rst:703
+#: ../../source/drivers/github.rst:801
+msgid "When a status is reported via the status API, Github will add a ``[bot]`` to the name of the app that reported the status, resulting in something like ``user[bot]:status:value``. For a status reported via the checks API, the app's slug will be used as is."
+msgstr ""
+
+#: ../../source/drivers/github.rst:711
+msgid "A string value indicating that the pull request must have the indicated label (or labels)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:716
+msgid "The `reject` attribute is the mirror of the `require` attribute and is used to specify pull requests which should not be enqueued into a pipeline.  It accepts a dictionary under the connection name and with the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:723
+msgid "This requires that a certain kind of code review be absent for the pull request (it could be removed by the event in question). It takes several sub-parameters, all of which are optional and are combined together so that there must not be a code review matching all specified requirements."
+msgstr ""
+
+#: ../../source/drivers/github.rst:770
+msgid "A boolean value (``true`` or ``false``) that indicates whether the change must be merged or not in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/github.rst:775
+msgid "A boolean value (``true`` or ``false``) that indicates whether the item must be associated with the latest commit in the pull request in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/github.rst:784
+msgid "A boolean value (``true`` or ``false``) that indicates whether or not the change must be marked as a draft in GitHub in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/github.rst:809
+msgid "A string value indicating that the pull request must not have the indicated label (or labels)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:813
+#: ../../source/drivers/gitlab.rst:360
+#: ../../source/drivers/pagure.rst:301
+msgid "Reference pipelines configuration"
+msgstr ""
+
+#: ../../source/drivers/github.rst:816
+msgid "Branch protection rules"
+msgstr ""
+
+#: ../../source/drivers/github.rst:818
+msgid "The rules prevent Pull requests to be merged on defined branches if they are not met. For instance a branch might require that specific status are marked as ``success`` before allowing the merge of the Pull request."
+msgstr ""
+
+#: ../../source/drivers/github.rst:822
+msgid "Zuul provides the attribute :attr:`tenant.untrusted-projects.<project>.exclude-unprotected-branches`. This attribute is by default set to ``false`` but we recommend to set it to ``true`` for the whole tenant. By doing so Zuul will benefit from:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:827
+msgid "excluding in-repo development branches used to open Pull requests. This will prevent Zuul to fetch and read useless branches data to find Zuul configuration files."
+msgstr ""
+
+#: ../../source/drivers/github.rst:830
+msgid "reading protection rules configuration from the Github API for a given branch to define whether a Pull request must enter the gate pipeline. As of now Zuul only takes in account \"Require status checks to pass before merging\" and the checked status checkboxes."
+msgstr ""
+
+#: ../../source/drivers/github.rst:835
+msgid "Likewise, it is recommended to set the :attr:`tenant.untrusted-projects.<project>.exclude-locked-branches` setting to avoid expending resources on read-only branches."
+msgstr ""
+
+#: ../../source/drivers/github.rst:839
+msgid "With the use of the reference pipelines below, the Zuul project recommends to set the minimum following settings:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:842
+msgid "attribute tenant.untrusted-projects.exclude-unprotected-branches to ``true`` in the tenant (main.yaml) configuration file."
+msgstr ""
+
+#: ../../source/drivers/github.rst:844
+msgid "on each Github repository, activate the branch protections rules and configure the name of the protected branches. Furthermore set \"Require status checks to pass before merging\" and check the status labels checkboxes (at least ```<tenant>/check```) that must be marked as success in order for Zuul to make the Pull request enter the gate pipeline to be merged."
+msgstr ""
+
+#: ../../source/drivers/github.rst:852
+msgid "Reference pipelines"
+msgstr ""
+
+#: ../../source/drivers/github.rst:860
+msgid "Github Checks API"
+msgstr ""
+
+#: ../../source/drivers/github.rst:862
+msgid "Github provides two distinct methods for reporting results; a \"checks\" and a \"status\" API."
+msgstr ""
+
+#: ../../source/drivers/github.rst:865
+msgid "The `checks API`_ provides some additional features compared to the `status API`_ like file comments and custom actions (e.g. cancel a running build)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:869
+msgid "Either can be chosen when configuring Zuul to report for your Github project.  However, there are some considerations to take into account when choosing the API."
+msgstr ""
+
+#: ../../source/drivers/github.rst:874
+msgid "Design decisions"
+msgstr ""
+
+#: ../../source/drivers/github.rst:876
+msgid "The Github checks API defines the concepts of `Check Suites`_ and `Check Runs`_.  *Check suites* are a collection of *check runs* for a specific commit and summarize a final status"
+msgstr ""
+
+#: ../../source/drivers/github.rst:880
+msgid "A priori the check suite appears to be a good mapping for a pipeline execution in Zuul, where a check run maps to a single job execution that is part of the pipeline run.  Unfortunately, there are a few problematic restrictions mapping between Github and Zuul concepts."
+msgstr ""
+
+#: ../../source/drivers/github.rst:885
+msgid "Github check suites are opaque and the current status, duration and the overall conclusion are all calculated and set automatically whenever an included check run is updated.  Most importantly, there can only be one check suite per commit SHA, per app.  Thus there is no facility for Zuul to create multiple check suite results for a change, e.g. one check suite for each pipeline such as check and gate."
+msgstr ""
+
+#: ../../source/drivers/github.rst:892
+msgid "The Github check suite thus does not map well to Zuul's concept of multiple pipelines for a single change.  Since a check suite is unique and global for the change, it can not be used to flag the status of arbitrary pipelines.  This makes the check suite API insufficient for recording details that Zuul needs such as \"the check pipeline has passed but the gate pipeline has failed\"."
+msgstr ""
+
+#: ../../source/drivers/github.rst:899
+msgid "Another issue is that Zuul only reports on the results of the whole pipeline, not individual jobs.  Reporting each Zuul job as a separate check is problematic for a number of reasons."
+msgstr ""
+
+#: ../../source/drivers/github.rst:903
+msgid "Zuul often runs the same job for the same change multiple times; for example in the check and gate pipeline.  There is no facility for these runs to be reported differently in the single check suite for the Github change."
+msgstr ""
+
+#: ../../source/drivers/github.rst:908
+msgid "When configuring branch protection in Github, only a *check run* can be selected as required status check.  This is in conflict with managing jobs in pipelines with Zuul.  For example, to implement branch protection on GitHub would mean listing each job as a dedicated check, leading to a check run list that is not kept in sync with the project's Zuul pipeline configuration.  Additionally, you lose some of Zuul's features like non-voting jobs as Github branch protections has no concept of a non-voting job."
+msgstr ""
+
+#: ../../source/drivers/github.rst:917
+msgid "Thus Zuul can integrate with the checks API, but only at a pipeline level.  Each pipeline execution will map to a check-run result reported to Github."
+msgstr ""
+
+#: ../../source/drivers/github.rst:922
+msgid "Behaviour in Zuul"
+msgstr ""
+
+#: ../../source/drivers/github.rst:925
+msgid "Reporting"
+msgstr ""
+
+#: ../../source/drivers/github.rst:927
+msgid "The Github reporter is able to report both a status :attr:`pipeline.<reporter>.<github source>.status` or a check :attr:`pipeline.<reporter>.<github source>.check`. While it's possible to configure a Github reporter to report both, it's recommended to use only one. Reporting both might result in duplicated status check entries in the Github PR (the section below the comments)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:935
+msgid "Trigger"
+msgstr ""
+
+#: ../../source/drivers/github.rst:937
+msgid "The Github driver is able to trigger on a reported check (:value:`pipeline.trigger.<github source>.event.check_run`) similar to a reported status (:value:`pipeline.trigger.<github source>.action.status`)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:942
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/drivers/github.rst:944
+msgid "While trigger and reporter differentiates between status and check, the Github driver does not differentiate between them when it comes to pipeline requirements. This is mainly because Github also doesn't differentiate between both in terms of branch protection and `status checks`_."
+msgstr ""
+
+#: ../../source/drivers/github.rst:950
+msgid "Actions / Events"
+msgstr ""
+
+#: ../../source/drivers/github.rst:952
+msgid "Github provides a set of default actions for check suites and check runs. Those actions are available as buttons in the Github UI. Clicking on those buttons will emit webhook events which will be handled by Zuul."
+msgstr ""
+
+#: ../../source/drivers/github.rst:956
+msgid "These actions are only available on failed check runs / check suites. So far, a running or successful check suite / check run does not provide any action from Github side."
+msgstr ""
+
+#: ../../source/drivers/github.rst:960
+msgid "Available actions are:"
+msgstr ""
+
+#: ../../source/drivers/github.rst:962
+msgid "Re-run all checks"
+msgstr ""
+
+#: ../../source/drivers/github.rst:963
+msgid "Github emits a webhook event with type ``check_suite`` and action ``rerequested`` that is meant to re-run all check-runs contained in this check suite. Github does not provide the list of check-runs in that case, so it's up to the Github app what should run."
+msgstr ""
+
+#: ../../source/drivers/github.rst:968
+msgid "Re-run failed checks"
+msgstr ""
+
+#: ../../source/drivers/github.rst:969
+msgid "Github emits a webhook event with type ``check_run`` and action ``rerequested`` for each failed check run contained in this suite."
+msgstr ""
+
+#: ../../source/drivers/github.rst:972
+msgid "Re-run"
+msgstr ""
+
+#: ../../source/drivers/github.rst:973
+msgid "Github emits a webhook event with type ``check_run`` and action ``rerequested`` for the specific check run."
+msgstr ""
+
+#: ../../source/drivers/github.rst:976
+msgid "Zuul will handle all events except for the `Re-run all checks` event; it does not make sense in the Zuul model to trigger all pipelines to run simultaneously."
+msgstr ""
+
+#: ../../source/drivers/github.rst:980
+msgid "These events are unable to be customized in Github.  Github will always report \"You have successfully requested ...\" despite nothing listening to the event.  Therefore, it might be a solution to handle the `Re-run all checks` event in Zuul similar to `Re-run failed checks` just to not do anything while Github makes the user believe an action was really triggered."
+msgstr ""
+
+#: ../../source/drivers/github.rst:989
+msgid "File comments (annotations)"
+msgstr ""
+
+#: ../../source/drivers/github.rst:991
+msgid "Check runs can be used to post file comments directly in the files of the PR. Those are similar to user comments, but must provide some more information."
+msgstr ""
+
+#: ../../source/drivers/github.rst:994
+msgid "Zuul jobs can already return file comments via ``zuul_return`` (see: :ref:`return_values`). We can simply use this return value, build the necessary annotations (how Github calls it) from it and attach them to the check run."
+msgstr ""
+
+#: ../../source/drivers/github.rst:1001
+msgid "Custom actions"
+msgstr ""
+
+#: ../../source/drivers/github.rst:1003
+msgid "Check runs can provide some custom actions which will result in additional buttons being available in the Github UI for this specific check run. Clicking on such a button will emit a webhook event with type ``check_run`` and action ``requested_action`` and will additionally contain the id/name of the requested action which we can define when creating the action on the check run."
+msgstr ""
+
+#: ../../source/drivers/github.rst:1010
+msgid "We could use these custom actions to provide some \"Re-run\" action on a running check run (which might otherwise be stuck in case a check run update fails) or to abort a check run directly from the Github UI."
+msgstr ""
+
+#: ../../source/drivers/github.rst:1016
+msgid "Restrictions and Recommendations"
+msgstr ""
+
+#: ../../source/drivers/github.rst:1018
+msgid "Although both the checks API and the status API can be activated for a Github reporter at the same time, it's not recommended to do so as this might result in multiple status checks to be reported to the PR for the same pipeline execution (which would result in duplicated entries in the status section below the comments of a PR)."
+msgstr ""
+
+#: ../../source/drivers/github.rst:1024
+msgid "In case the update on a check run fails (e.g. request timeout when reporting success or failure to Github), the check run will stay in status \"in_progress\" and there will be no way to re-run the check run via the Github UI as the predefined actions are only available on failed check runs. Thus, it's recommended to configure a :value:`pipeline.trigger.<github source>.action.comment` trigger on the pipeline to still be able to trigger re-run of the stuck check run via e.g. \"recheck\"."
+msgstr ""
+
+#: ../../source/drivers/github.rst:1033
+msgid "The check suite will only list check runs that were reported by Zuul. If the requirements for a certain pipeline are not met and it is not run, the check run for this pipeline won't be listed in the check suite. However, this does not affect the required status checks. If the check run is enabled as required, Github will still show it in the list of required status checks - even if it didn't run yet - just not in the check suite."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:6
+msgid "GitLab"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:8
+msgid "The GitLab driver supports sources, triggers, and reporters. It can interact with the public GitLab.com service as well as site-local installations of GitLab."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:13
+msgid "Configure GitLab"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:15
+msgid "Zuul needs to interact with projects by:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:17
+msgid "receiving events via web-hooks"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:18
+msgid "performing actions via the API"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:21
+msgid "web-hooks"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:23
+msgid "Projects to be integrated with Zuul needs to send events using webhooks. This can be enabled at Group level or Project level in \"Settings/Webhooks\""
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:26
+msgid "\"URL\" set to ``http://<zuul-web>/api/connection/<conn-name>/payload``"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:28
+msgid "\"Merge request events\" set to \"on\""
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:29
+msgid "\"Push events\" set to \"on\""
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:30
+msgid "\"Tag push events\" set to \"on\""
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:31
+msgid "\"Comments\" set to \"on\""
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:32
+msgid "Define a \"Secret Token\""
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:36
+msgid "API"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:38
+msgid "Even though bot users exist: https://docs.gitlab.com/ce/user/project/settings/project_access_tokens.html#project-bot-users"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:39
+msgid "They are only available at project level."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:41
+msgid "In order to manage multiple projects using a single connection, Zuul needs a global access to projects, which can only be achieved by creating a specific Zuul user. This user counts as a licensed seat."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:45
+msgid "The API token must be created in user Settings, Access tokens. The Zuul user's API token configured in zuul.conf must have the following ACL rights: \"api\"."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:61
+msgid "The connection must set ``driver=gitlab`` for GitLab connections."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:65
+msgid "The user's personal access token name (Used if **cloneurl** is http(s)) Set this parameter if authentication to clone projects is required"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:70
+msgid "The user's personal access token"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:74
+msgid "The webhook secret token."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:79
+msgid "Hostname of the GitLab server."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:83
+msgid "The canonical hostname associated with the git repos on the GitLab server.  Defaults to the value of :attr:`<gitlab connection>.server`.  This is used to identify projects from this connection by name and in preparing repos on the filesystem for use by jobs.  Note that Zuul will still only communicate with the GitLab server identified by **server**; this option is useful if users customarily use a different hostname to clone or pull git repos so that when Zuul places them in the job's working directory, they appear under this directory name."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:96
+msgid "Path to the GitLab web and API interface."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:100
+msgid "Path to SSH key to use (Used if **cloneurl** is ssh)"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:105
+msgid "Omit to clone using http(s) or set to ``ssh://git@{server}``. If **api_token_name** is set and **cloneurl** is either omitted or is set without credentials, **cloneurl** will be modified to use credentials as this: ``http(s)://<api_token_name>:<api_token>@<server>``. If **cloneurl** is defined with credentials, it will be used as is, without modification from the driver."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:115
+msgid "TCP connection keepalive timeout; ``0`` disables."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:120
+msgid "Connection pooling improves performance and resource usage under normal circumstances, but in adverse network conditions it can be problematic.  Set this to ``true`` to disable."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:129
+msgid "GitLab webhook events can be configured as triggers."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:131
+msgid "A connection name with the GitLab driver can take multiple events with the following options."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:136
+msgid "The dictionary passed to the GitLab pipeline ``trigger`` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:142
+msgid "The event from GitLab. Supported events are:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:150
+msgid "A :value:`pipeline.trigger.<gitlab source>.event.gl_merge_request` event will have associated action(s) to trigger from. The supported actions are:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:156
+msgid "Merge request opened."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:160
+msgid "Merge request synchronized."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:164
+msgid "Merge request merged."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:168
+msgid "Comment added to merge request."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:172
+msgid "Merge request approved."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:176
+msgid "Merge request unapproved."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:180
+msgid "Merge request labeled."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:184
+msgid "This is only used for ``gl_merge_request`` and ``comment`` actions.  It accepts a list of regexes that are searched for in the comment string. If any of these regexes matches a portion of the comment string the trigger is matched.  ``comment: retrigger`` will match when comments containing 'retrigger' somewhere in the comment text are added to a merge request."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:193
+msgid "The branch associated with the event. Example: ``master``.  This field is treated as a regular expression, and multiple branches may be listed. Used for ``gl_merge_request`` events."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:199
+msgid "This is only used for ``gl_merge_request`` and ``labeled`` actions.  It accepts a string or a list of strings that are that must have been added for the event to match."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:205
+msgid "This is only used for ``gl_merge_request`` and ``labeled`` actions.  It accepts a string or a list of strings that are that must have been removed for the event to match."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:211
+msgid "This is only used for ``gl_push`` events. This field is treated as a regular expression and multiple refs may be listed. GitLab always sends full ref name, eg. ``refs/heads/bar`` and this string is matched against the regular expression."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:238
+msgid "Zuul reports back to GitLab via the API. Available reports include a Merge Request comment containing the build results. Status name, description, and context is taken from the pipeline."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:244
+msgid "To report to GitLab, the dictionaries passed to any of the pipeline :ref:`reporter<reporters>` attributes support the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:251
+msgid "Boolean value that determines if the reporter should add a comment to the pipeline status to the GitLab Merge Request."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:256
+msgid "Boolean value that determines whether to report *approve* or *unapprove* into the merge request approval system. To set an approval the Zuul user must be a *Developer* or *Maintainer* project's member. If not set approval won't be reported."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:264
+msgid "Boolean value that determines if the reporter should merge the Merge Request. To merge a Merge Request the Zuul user must be a *Developer* or *Maintainer* project's member. In case of *developer*, the *Allowed to merge* setting in *protected branches* must be set to *Developers + Maintainers*."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:271
+msgid "A string or list of strings, each representing a label name which should be added to the merge request."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:276
+msgid "A string or list of strings, each representing a label name which should be removed from the merge request."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:283
+msgid "As described in :attr:`pipeline.require` and :attr:`pipeline.reject`, pipelines may specify that items meet certain conditions in order to be enqueued into the pipeline.  These conditions vary according to the source of the project in question.  To supply requirements for changes from a GitLab source named ``gitlab``, create a configuration such as the following:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:301
+msgid "This indicates that changes originating from the GitLab connection must be in the *opened* state (not merged yet) and must not contain `do-not-merge` label."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:306
+msgid "The dictionary passed to the GitLab pipeline `require` attribute is used to specify Merge Requests which should be enqueued into a pipeline.  If all of the defined conditions are met, the Merge Request will be enqueued.  It supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:313
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Merge Request must be open in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:318
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Merge Request must be merged or not in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:323
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Merge Request must be approved or not in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:328
+msgid "A list of labels a Merge Request must have in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:332
+msgid "The `reject` attribute is the mirror of the `require` attribute and is used to specify Merge Requests which should not be enqueued into a pipeline.  If any of the defined conditions is met, the Merge Request will be rejected.  It accepts a dictionary under the connection name and with the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:340
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Merge Request must be open or not in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:345
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Merge Request must be merged or not in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:350
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Merge Request must be approved or not in order to be rejected."
+msgstr ""
+
+#: ../../source/drivers/gitlab.rst:355
+msgid "A list of labels a Merge Request must not have. If any of these is present in the Merge Request, it will be rejected."
+msgstr ""
+
+#: ../../source/drivers/index.rst:4
+msgid "Drivers"
+msgstr ""
+
+#: ../../source/drivers/index.rst:6
+msgid "Drivers may support any of the following functions:"
+msgstr ""
+
+#: ../../source/drivers/index.rst:8
+msgid "Sources -- hosts git repositories for projects.  Zuul can clone git repos for projects and fetch refs."
+msgstr ""
+
+#: ../../source/drivers/index.rst:10
+msgid "Triggers -- emits events to which Zuul may respond.  Triggers are configured in pipelines to cause changes or other refs to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/index.rst:13
+msgid "Reporters -- outputs information when a pipeline is finished processing an item."
+msgstr ""
+
+#: ../../source/drivers/index.rst:15
+msgid "Providers -- manages build nodes in a cloud."
+msgstr ""
+
+#: ../../source/drivers/index.rst:17
+msgid "Zuul includes the following source drivers (most support trigger and reporting as well):"
+msgstr ""
+
+#: ../../source/drivers/index.rst:29
+msgid "Zuul includes the following trigger or reporting-only drivers:"
+msgstr ""
+
+#: ../../source/drivers/index.rst:40
+msgid "Zuul includes the following provider drivers:"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:4
+msgid "MQTT"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:6
+msgid "The MQTT driver supports reporters only. It is used to send MQTT message when items report."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:10
+msgid "Message Schema"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:12
+msgid "An MQTT report uses this schema:"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:18
+msgid "The item UUID.  Each item enqueued into a Zuul pipeline is assigned a UUID which remains the same even as Zuul's speculative execution algorithm re-orders pipeline contents."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:24
+msgid "The reporter action name, e.g.: 'start', 'success', 'failure', 'merge-conflict', ..."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:29
+msgid "The tenant name."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:33
+msgid "The pipeline name."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:37
+msgid "The project name."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:41
+msgid "The branch name."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:45
+msgid "The change url."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:49
+msgid "The report message."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:53
+msgid "The change number."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:57
+msgid "The patchset number."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:61
+msgid "The commit id number."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:65
+msgid "The owner username of the change."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:69
+msgid "The change reference."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:73
+msgid "The internal zuul change reference."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:77
+msgid "The timestamp when the event was added to the scheduler."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:81
+msgid "The timestamp when the event was added to the pipeline."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:85
+msgid "The buildset information."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:89
+msgid "The buildset global uuid."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:93
+msgid "The buildset result"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:97
+msgid "The list of builds."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:101
+msgid "The job name."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:105
+msgid "The job voting status."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:109
+msgid "The build uuid (not present in start report)."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:113
+msgid "The build execute time."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:117
+msgid "The build start time (not present in start report)."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:121
+msgid "The build end time (not present in start report)."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:125
+msgid "The build log url (not present in start report)."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:129
+msgid "The url to the build result page.  Not present in start report."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:134
+msgid "The build results (not present in start report)."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:139
+msgid "The build artifacts (not present in start report)."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:141
+msgid "This is a list of dictionaries corresponding to the returned artifacts."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:145
+msgid "The name of the artifact."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:149
+msgid "The url of the artifact."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:154
+msgid "The metadata of the artifact.  This is a dictionary of arbitrary key values determined by the job."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:157
+msgid "Here is an example of a start message:"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:187
+msgid "Here is an example of a success message:"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:236
+msgid "The connection must set ``driver=mqtt`` for MQTT connections."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:241
+msgid "MQTT server hostname or address to use."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:246
+msgid "MQTT server port."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:251
+msgid "Maximum period in seconds allowed between communications with the broker."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:255
+msgid "Set a username for optional broker authentication."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:259
+msgid "Set a password for optional broker authentication."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:263
+msgid "A string path to the Certificate Authority certificate files to enable TLS connection."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:268
+msgid "A strings pointing to the PEM encoded client certificate to enable client TLS based authentication. This option requires keyfile to be set too."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:274
+msgid "A strings pointing to the PEM encoded client private keys to enable client TLS based authentication. This option requires certfile to be set too."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:280
+msgid "A string specifying which encryption ciphers are allowable for this connection. More information in this `openssl doc <https://www.openssl.org/docs/manmaster/man1/ciphers.html>`_."
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:288
+msgid "A :ref:`connection<connections>` that uses the mqtt driver must be supplied to the reporter. Each pipeline must provide a topic name. For example:"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:303
+msgid "To report via MQTT message, the dictionaries passed to any of the pipeline :ref:`reporter<reporters>` support the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:308
+msgid "The MQTT topic to publish messages. The topic can be a format string that can use the following parameters: ``tenant``, ``pipeline``, ``project``, ``branch``, ``change``, ``patchset`` and ``ref``. MQTT topic can have hierarchy separated by ``/``, more details in this `doc <https://mosquitto.org/man/mqtt-7.html>`_"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:317
+msgid "The quality of service level to use, it can be 0, 1 or 2. Read more in this `guide <https://www.hivemq.com/blog/mqtt-essentials-part-6-mqtt-quality-of-service-levels>`_"
+msgstr ""
+
+#: ../../source/drivers/mqtt.rst:323
+msgid "If set to ``true``, Zuul will include any data returned from the job via :ref:`return_values`."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:4
+msgid "OpenStack"
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:6
+msgid "Zuul can use OpenStack clouds as a source for build nodes."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:8
+msgid "Information about OpenStack clouds, including authentication information, may be provided via a configuration file (e.g., ``clouds.yaml``) or environment variables.  See the `OpenStack SDK`_ for more information."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:25
+msgid "The connection must set ``driver=openstack`` for OpenStack connections."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:29
+msgid "A path to a configuration file (e.g., ``clouds.yaml``) with connection information for one or more OpenStack clouds."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:35
+msgid "The name of the OpenStack cloud (as it appears in the client config file)."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:40
+msgid "The API rate limit (in requests per second) to use when performing API calls with this OpenStack cloud."
+msgstr ""
+
+#: ../../source/drivers/openstack.rst:46
+msgid "The ``openstack`` driver adds the following options to the :attr:`provider` and :attr:`section` configurations:"
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:4
+msgid "The attributes available for configuring an OpenStack provider are below."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:79
+#: ../../source/drivers/openstack-attrs.rstinc:146
+#: ../../source/drivers/openstack-attrs.rstinc:286
+#: ../../source/drivers/openstack-attrs.rstinc:415
+#: ../../source/drivers/openstack-attrs.rstinc:561
+#: ../../source/drivers/openstack-attrs.rstinc:722
+#: ../../source/drivers/openstack-attrs.rstinc:912
+msgid "When booting an image from volume, this indicates the size of the created volume, in GB."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:117
+msgid "Name or id of the OpenStack flavor to use."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:153
+msgid "If set to ``true``, Zuul will behave as if it is the only user of the OpenStack project and will attempt to clean unattached floating IPs that may have leaked."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:171
+#: ../../source/drivers/openstack-attrs.rstinc:303
+#: ../../source/drivers/openstack-attrs.rstinc:427
+msgid "Whether config drive should be used for the cloud image."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:356
+msgid "The ID of the cloud provider's image."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:578
+#: ../../source/drivers/openstack-attrs.rstinc:734
+msgid "Whether to automatically allocate and assign a floating IP for each node."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:584
+#: ../../source/drivers/openstack-attrs.rstinc:740
+msgid "Servers will be assigned to the specified availibility zone.  If omitted, one will be chosen at random."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:591
+#: ../../source/drivers/openstack-attrs.rstinc:747
+msgid "Whether to create a volume from the image and boot the node from it."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:674
+#: ../../source/drivers/openstack-attrs.rstinc:864
+msgid "The OpenStack networks to associate with the node."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:685
+#: ../../source/drivers/openstack-attrs.rstinc:875
+msgid "Specify custom networks to be attached to each node.  Specify the name or id of the network as a string."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:939
+msgid "The name of the parent section from which to inherit. This attribute is only used by :attr:`section` objects.  To indicate which section a provider should be attached to, use :attr:`provider[openstack].section`"
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:949
+msgid "If greater than 0, Zuul will behave as if it is the only user of the OpenStack project and will attempt to clean ports in ``DOWN`` state after the cleanup interval has elapsed.  This value may be reduced if the instance spawn time on the provider is reliably quicker."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:959
+msgid "The region name if the provider cloud has multiple regions."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:988
+msgid "The amount of volume storage in GB."
+msgstr ""
+
+#: ../../source/drivers/openstack-attrs.rstinc:993
+msgid "The number of volumes."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:6
+msgid "Pagure"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:8
+msgid "The Pagure driver supports sources, triggers, and reporters.  It can interact with the public Pagure.io service as well as site-local installations of Pagure."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:13
+msgid "Configure Pagure"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:15
+msgid "The user's API token configured in zuul.conf must have the following ACL rights:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:18
+msgid "\"Merge a pull-request\" set to on (optional, only for gating)"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:19
+msgid "\"Flag a pull-request\" set to on"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:20
+msgid "\"Comment on a pull-request\" set to on"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:21
+msgid "\"Modify an existing project\" set to on"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:23
+msgid "Each project to be integrated with Zuul needs:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:25
+msgid "\"Web hook target\" set to http://<zuul-web>/zuul/api/connection/<conn-name>/payload"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:27
+msgid "\"Pull requests\" set to on"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:28
+msgid "\"Open metadata access to all\" set to off (optional, expected if approval based on PR a metadata tag)"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:30
+msgid "\"Minimum score to merge pull-request\" set to the same value than the score requirement (optional, expected if score requirement is defined in a pipeline)"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:34
+msgid "Furthermore, the user must be added as project collaborator (**ticket** access level), to be able to read the project's webhook token. This token is used to validate webhook's payload. But if Zuul is configured to merge pull requests then the access level must be **commit**."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:52
+msgid "The connection must set ``driver=pagure`` for Pagure connections."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:56
+msgid "The user's API token with the ``Modify an existing project`` capability."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:61
+msgid "Hostname of the Pagure server."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:65
+msgid "The canonical hostname associated with the git repos on the Pagure server.  Defaults to the value of :attr:`<pagure connection>.server`.  This is used to identify projects from this connection by name and in preparing repos on the filesystem for use by jobs.  Note that Zuul will still only communicate with the Pagure server identified by **server**; this option is useful if users customarily use a different hostname to clone or pull git repos so that when Zuul places them in the job's working directory, they appear under this directory name."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:78
+msgid "Path to the Pagure web and API interface."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:83
+msgid "Path to the Pagure Git repositories. Used to clone."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:88
+msgid "Display name that will appear as the application name in front of each CI status flag."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:94
+msgid "A comma separated list of source ip addresses from which webhook calls are whitelisted. If the source is not whitelisted, then call payload's signature is verified using the project webhook token. An admin access to the project is required by Zuul to read the token. White listing a source of hook calls allows Zuul to react to events without any authorizations. This setting should not be used in production."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:105
+msgid "Pagure webhook events can be configured as triggers."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:107
+msgid "A connection name with the Pagure driver can take multiple events with the following options."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:112
+msgid "The dictionary passed to the Pagure pipeline ``trigger`` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:118
+msgid "The event from Pagure. Supported events are:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:128
+msgid "A :value:`pipeline.trigger.<pagure source>.event.pg_pull_request` event will have associated action(s) to trigger from. The supported actions are:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:150
+msgid "Status set on pull request."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:154
+msgid "Tag metadata set on pull request."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:156
+msgid "A :value:`pipeline.trigger.<pagure source>.event.pg_pull_request_review` event will have associated action(s) to trigger from. The supported actions are:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:162
+msgid "Positive pull request review added."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:166
+msgid "Negative pull request review added."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:170
+msgid "This is only used for ``pg_pull_request`` and ``comment`` actions.  It accepts a list of regexes that are searched for in the comment string. If any of these regexes matches a portion of the comment string the trigger is matched.  ``comment: retrigger`` will match when comments containing 'retrigger' somewhere in the comment text are added to a pull request."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:179
+msgid "This is used for ``pg_pull_request`` and ``status`` actions. It accepts a list of strings each of which matches the user setting the status, the status context, and the status itself in the format of ``status``.  For example, ``success`` or ``failure``."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:186
+msgid "This is used for ``pg_pull_request`` and ``tagged`` actions. It accepts a list of strings and if one of them is part of the event tags metadata then the trigger is matched."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:192
+msgid "This is only used for ``pg_push`` events. This field is treated as a regular expression and multiple refs may be listed. Pagure always sends full ref name, eg. ``refs/tags/bar`` and this string is matched against the regular expression."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:219
+msgid "Zuul reports back to Pagure via Pagure API. Available reports include a PR comment containing the build results, a commit status on start, success and failure, and a merge of the PR itself. Status name, description, and context is taken from the pipeline."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:226
+msgid "To report to Pagure, the dictionaries passed to any of the pipeline :ref:`reporter<reporters>` attributes support the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:232
+msgid "String value (``pending``, ``success``, ``failure``) that the reporter should set as the commit status on Pagure."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:238
+msgid "Boolean value that determines if the reporter should add a comment to the pipeline status to the Pagure Pull Request. Only used for Pull Request based items."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:245
+msgid "Boolean value that determines if the reporter should merge the pull Request. Only used for Pull Request based items."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:252
+msgid "As described in :attr:`pipeline.require` pipelines may specify that items meet certain conditions in order to be enqueued into the pipeline.  These conditions vary according to the source of the project in question.  To supply requirements for changes from a Pagure source named ``pagure``, create a configuration such as the following:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:269
+msgid "This indicates that changes originating from the Pagure connection must have a score of *1*, a CI status *success* and not being already merged."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:274
+msgid "The dictionary passed to the Pagure pipeline `require` attribute supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:279
+msgid "If present, the minimal score a Pull Request must reached."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:283
+msgid "If present, the CI status a Pull Request must have."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:287
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Pull Request must be merged or not in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:292
+msgid "A boolean value (``true`` or ``false``) that indicates whether the Pull Request must be open or closed in order to be enqueued."
+msgstr ""
+
+#: ../../source/drivers/pagure.rst:297
+msgid "if present, the list of tags a Pull Request must have."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:4
+msgid "SMTP"
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:6
+msgid "The SMTP driver supports reporters only.  It is used to send email when items report."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:19
+msgid "The connection must set ``driver=smtp`` for SMTP connections."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:24
+msgid "SMTP server hostname or address to use."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:29
+msgid "SMTP server port."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:34
+msgid "Who the email should appear to be sent from when emailing the report. This can be overridden by individual pipelines."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:40
+msgid "Who the report should be emailed to by default. This can be overridden by individual pipelines."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:45
+msgid "Optional user name used to authenticate to the SMTP server. Used only in conjunction with a password. If no password is present, this option is ignored."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:51
+msgid "Optional password used to authenticate to the SMTP server."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:56
+msgid "Issue a STARTTLS request to establish an encrypted channel after having connected to the SMTP server."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:62
+msgid "A simple email reporter is also available."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:64
+msgid "A :ref:`connection<connections>` that uses the smtp driver must be supplied to the reporter.  The connection also may specify a default *To* or *From* address."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:68
+msgid "Each pipeline can overwrite the ``subject`` or the ``to`` or ``from`` address by providing alternatives as arguments to the reporter. For example:"
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:86
+msgid "To report via email, the dictionaries passed to any of the pipeline :ref:`reporter<reporters>` attributes support the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:92
+msgid "The SMTP recipient address for the report.  Multiple addresses may be specified as one value separated by commas."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:97
+msgid "The SMTP sender address for the report."
+msgstr ""
+
+#: ../../source/drivers/smtp.rst:101
+msgid "The Subject of the report email."
+msgstr ""
+
+#: ../../source/drivers/static.rst:4
+msgid "Static"
+msgstr ""
+
+#: ../../source/drivers/static.rst:6
+msgid "Zuul can use statically defined nodes as a source for build nodes. These can be real hardware or virtual machines that are managed externally to Zuul."
+msgstr ""
+
+#: ../../source/drivers/static.rst:10
+msgid "To add static nodes to a provider in Zuul, use the :attr:`provider[static].nodes` attribute."
+msgstr ""
+
+#: ../../source/drivers/static.rst:13
+msgid "Static nodes in Zuul have persistent node ids that are determined based on their connection information.  This means the same node ID is used for every build on a given static node."
+msgstr ""
+
+#: ../../source/drivers/static.rst:17
+msgid "There is no restriction that would prohibit users in multiple tenants from configuring the same static nodes. If static nodes should only be used by users of certain tenants, you may wish to configure the static node to only accept a :ref:`tenant-key` in order to restrict access."
+msgstr ""
+
+#: ../../source/drivers/static.rst:27
+msgid "The connection configuration for the static driver is not used to provide any settings or information to Zuul, but a connection is nonetheless required in order to enable the functionality."
+msgstr ""
+
+#: ../../source/drivers/static.rst:31
+msgid "The only supported option in ``zuul.conf`` connections is:"
+msgstr ""
+
+#: ../../source/drivers/static.rst:40
+msgid "The connection must set ``driver=static`` for a static connection."
+msgstr ""
+
+#: ../../source/drivers/static.rst:45
+msgid "The ``static`` driver adds the following options to the :attr:`provider` and :attr:`section` configurations:"
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:4
+msgid "The attributes available for configuring a static provider are below."
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:730
+msgid "A list of nodes to be used by this provider."
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:735
+msgid "A list of label aliases to associate with this node. These labels may be used to request this node, but none of their attributes will be used to define characteristics."
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:749
+msgid "The ssh host key of the node."
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:754
+msgid "The label to associate with this node.  This is the primary label for the node and will be used to supply any necessary information about the node's characteristics."
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:761
+msgid "The hostname or ip address of the static node."
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:771
+msgid "The name of the parent section from which to inherit. This attribute is only used by :attr:`section` objects.  To indicate which section a provider should be attached to, use :attr:`provider[static].section`"
+msgstr ""
+
+#: ../../source/drivers/static-attrs.rstinc:780
+msgid "Resource limits for this provider."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:4
+msgid "Timer"
+msgstr ""
+
+#: ../../source/drivers/timer.rst:6
+msgid "The timer driver supports triggers only.  It is used for configuring pipelines so that jobs run at scheduled times.  No connection configuration is required."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:13
+msgid "Timers don't require a special connection or driver. Instead they can simply be used by listing ``timer`` as the trigger."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:16
+msgid "This trigger will run based on a cron-style time specification.  It will enqueue an event into its pipeline for every project and branch defined in the configuration.  Any job associated with the pipeline will run in response to that event."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:21
+msgid "Zuul implements the timer using `apscheduler`_, Please check the `apscheduler documentation`_ for more information about the syntax."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:26
+msgid "The timer trigger supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/timer.rst:31
+msgid "The time specification in cron syntax.  Only the 5 part syntax is supported, not the symbolic names.  Example: ``0 0 * * *`` runs at midnight."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:35
+msgid "An optional 6th part specifies seconds.  The optional 7th part specifies a jitter in seconds. This delays the trigger randomly, limited by the specified value.  Example ``0 0 * * * * 60`` runs at midnight or randomly up to 60 seconds later.  The jitter is applied individually to each project-branch combination.  While the jitter is initialized to a random value, the same value will often be used for a given project-branch combination (in other words, it is not guaranteed to vary from one run of the timer trigger to the next)."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:48
+msgid "Whether the branch tip should be dereferenced when enqueued."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:50
+msgid "This controls the behavior when the timer trigger for a given project-branch activates a second or more time for a given project-branch while a queue item for that project-branch is still in the pipeline."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:55
+msgid "If set to the default value of ``false``, then the triggering event and queue item will only include the name of the branch; this means that Zuul will see an identical queue item in the pipeline and will not enqueue a duplicate entry."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:60
+msgid "If set to ``true`` then Zuul will look up the current Git sha of the tip of each project-branch when enqueueing that project-branch and include that information in the triggering event and queue item.  If the timer trigger activates a second time while a given project-branch is still in the pipeline, the behavior then depends on whether the Git commit sha differs.  If the branch has changed between the two activations, Zuul will treat the second activation as distinct and enqueue a new item for the same project-branch (but with a different ``newrev`` value).  If the Git commit sha is the same on both activations, Zuul will not enqueue a second entry."
+msgstr ""
+
+#: ../../source/drivers/timer.rst:73
+msgid "Be aware the day-of-week value differs from cron. The first weekday is Monday (0), and the last is Sunday (6)."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:4
+msgid "Zuul"
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:6
+msgid "The Zuul driver supports triggers only.  It is used for triggering pipelines based on internal Zuul events."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:12
+msgid "Zuul events don't require a special connection or driver. Instead they can simply be used by listing ``zuul`` as the trigger."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:17
+msgid "The Zuul trigger supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:22
+msgid "The event name.  Currently supported events:"
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:26
+msgid "When Zuul merges a change to a project, it generates this event for every open change in the project.  If there are a large number of open changes, this may produce a large number of events and result in poor performance."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:33
+msgid "Triggering on this event can cause poor performance when using the GitHub driver with a large number of installations."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:39
+msgid "When Zuul enqueues a change into any pipeline, it generates this event for every child of that change.  If there are a large number of open changes, this may produce a large number of events and result in poor performance."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:44
+msgid "The dependent pipeline manager automatically enqueues forward, reverse, and if configured, circular dependencies of any change that is enqueued.  It is not necessary to add this trigger to :term:`gate` pipelines."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:52
+msgid "This event is emitted via the API or web interface when an authenticated user requests an image to be built or re-built."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:57
+msgid "This event is emitted whenever an image is built and reported by the Zuul reporter, and that reporter has `validate` set to `false`, and the image is uploaded to a provider.  This trigger will respond to that condition and enqueue a special queue item that can be used to validate the new upload of that image before it is put into regular service.  The jobs that run in response to that queue item that request the unvalidated image label will automatically use the new (unvalidated) upload instead of the most recent validated upload."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:70
+msgid "Only available for ``parent-change-enqueued`` events.  This is the name of the pipeline in which the parent change was enqueued."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:98
+msgid "The Zuul reporter supports the following attributes:"
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:103
+msgid "If this value is set to `true`, then any jobs in the buildset which are configured as image jobs (i.e., they have :attr:`job.image-name` set) will have their image build artifacts stored in Zuul's image registry, and the zuul-launcher will begin uploading those artifacts to providers."
+msgstr ""
+
+#: ../../source/drivers/zuul.rst:112
+msgid "If this value is set to `true`, then any uploads associated with the buildset will be marked as validated.  If this is set to `true` on the initial build of the images, then no validation step will occur (the images will be assumed to be in working order and will begin to be used as soon as their upload is complete).  If it is set on a secondary pipeline that responds to :value:`pipeline.trigger.zuul.event.image-validate` events, then it causes Zuul to mark those images as validated after that pipeline completes."
+msgstr ""

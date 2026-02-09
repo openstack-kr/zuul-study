@@ -1,0 +1,2265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/config/flavor.rst:4
+msgid "Flavor"
+msgstr ""
+
+#: ../../source/config/flavor.rst:6
+msgid "A flavor is used by :ref:`provider` objects to configure the characteristics of :ref:`build_nodes` related to the hardware (virtualized or not) that they run on.  Clouds variously call this concept `flavors`, `instance types`, `sizes`, etc.  Generally they embody characteristics as machine architecture, RAM, storage, CPU, and others.  By abstracting the concept in Zuul, users can express an intention to run a job on a node with certain characteristics, and differing flavor configurations in different providers can be used to select the appropriate system from the cloud."
+msgstr ""
+
+#: ../../source/config/flavor.rst:16
+msgid "The standalone flavor configuration object itself is little more than a name reservation.  It represents the idea of a particular flavor separate from any implementation of that flavor in a provider, and therefore there are very few configuration options below.  But once a flavor is defined in Zuul, when that flavor is attached to a :ref:`section`, the driver-specific options for flavors are available and may be applied to it.  See the driver-specific provider options for details."
+msgstr ""
+
+#: ../../source/config/flavor.rst:25
+msgid "For example, a user might decide to use a very small VM size for launching build nodes.  They would then define a flavor object:"
+msgstr ""
+
+#: ../../source/config/flavor.rst:34
+msgid "That expresses the idea of a `small-vm` flavor, but it doesn't contain any of the necessary information to identify the flavor in a cloud -- because that information depends on the provider.  A section may then use that flavor like this:"
+msgstr ""
+
+#: ../../source/config/flavor.rst:47
+msgid "This tells Zuul that to use the `small-vm` flavor on the `aws` cloud, it should use the ``t3.small`` instance type.  The same flavor could also be added to OpenStack or Azure clouds, with different attributes for identification."
+msgstr ""
+
+#: ../../source/config/flavor.rst:52
+msgid "The attributes available to top-level flavor objects are:"
+msgstr ""
+
+#: ../../source/config/flavor.rst:60
+msgid "The name of the flavor.  Used to refer to the flavor in Zuul configuration."
+msgstr ""
+
+#: ../../source/config/flavor.rst:66
+msgid "A textual description of the flavor."
+msgstr ""
+
+#: ../../source/config/image.rst:4
+msgid "Image"
+msgstr ""
+
+#: ../../source/config/image.rst:6
+msgid "An image is used by :ref:`provider` objects to configure the images that are available for launching :ref:`build_nodes`.  Zuul can work with images that already exist in a provider (whether they are externally managed, or supplied by the provider itself), or images where it manages the lifecycle (building, uploading or snapshotting, and deleting).  Regardless of what type of image is used, it needs to be configured in Zuul, and the image configuration object is used for that."
+msgstr ""
+
+#: ../../source/config/image.rst:15
+msgid "The standalone image configuration object itself is little more than a name reservation.  It represents the idea of a particular image with certain contents, but the actual set of bytes that make up that image, and the configuration options that go along with it, may be different on different providers.  Therefore, there are very few configuration options in the section below.  But once an image is defined in Zuul, when that image is attached to a :ref:`section` or :ref:`provider`, the driver-specific options for images are available and may be applied to it.  See the driver-specific provider options for details."
+msgstr ""
+
+#: ../../source/config/image.rst:25
+msgid "For example, a user might decide to use the latest Debian release available in their cloud for launching nodes.  They would then define an image object:"
+msgstr ""
+
+#: ../../source/config/image.rst:36
+msgid "That expresses the idea of a `debian-latest` image, but it doesn't contain any of the necessary information to identify the image in a cloud -- because that information depends on the provider.  A provider may then use that image like this:"
+msgstr ""
+
+#: ../../source/config/image.rst:49
+msgid "This tells Zuul that to use the `debian-latest` image on the `openstack` cloud, it should use the image-id ``deadbeef`` (OpenStack image IDs are usually hexadecimal strings).  The same image could also be added to AWS or Azure clouds, with different attributes for identification."
+msgstr ""
+
+#: ../../source/config/image.rst:55
+msgid "The attributes available to top-level image objects are:"
+msgstr ""
+
+#: ../../source/config/image.rst:63
+msgid "The name of the image.  Used to refer to the image in Zuul configuration."
+msgstr ""
+
+#: ../../source/config/image.rst:69
+msgid "The type of image."
+msgstr ""
+
+#: ../../source/config/image.rst:73
+msgid "An existing image available in the cloud."
+msgstr ""
+
+#: ../../source/config/image.rst:77
+msgid "An image managed by Zuul."
+msgstr ""
+
+#: ../../source/config/image.rst:82
+msgid "A textual description of the image."
+msgstr ""
+
+#: ../../source/config/job.rst:4
+msgid "Job"
+msgstr ""
+
+#: ../../source/config/job.rst:6
+msgid "A job is a unit of work performed by Zuul on an item enqueued into a pipeline.  Items may run any number of jobs (which may depend on each other).  Each job is an invocation of an Ansible playbook with a specific inventory of hosts.  The actual tasks that are run by the job appear in the playbook for that job while the attributes that appear in the Zuul configuration specify information about when, where, and how the job should be run."
+msgstr ""
+
+#: ../../source/config/job.rst:14
+msgid "Jobs in Zuul support inheritance.  Any job may specify a single parent job, and any attributes not set on the child job are collected from the parent job.  In this way, a configuration structure may be built starting with very basic jobs which describe characteristics that all jobs on the system should have, progressing through stages of specialization before arriving at a particular job.  A job may inherit from any other job in any project (however, if the other job is marked as :attr:`job.final`, jobs may not inherit from it, and if any of its attributes are marked as final with :attr:`job.attribute-control`, those attributes may not be changed)."
+msgstr ""
+
+#: ../../source/config/job.rst:25
+msgid "Generally, if an attribute is set on a child job, it will override (or completely replace) attributes on the parent.  This is always true for attributes that only accept single values, but attributes that accept multiple values (lists, or mappings) are sometimes combined. The default behavior varies; see the documentation for individual attributes for details.  A special YAML tag may be used to control the behavior explicitly.  For example, in order to specify that the tags in the present job should override those in the parent:"
+msgstr ""
+
+#: ../../source/config/job.rst:41
+msgid "Or to indicate that they should be combined with those in the parent:"
+msgstr ""
+
+#: ../../source/config/job.rst:50
+msgid "Attributes which support this feature are indicated in this documentation with \"Supports override control\"."
+msgstr ""
+
+#: ../../source/config/job.rst:53
+msgid "When lists are combined, they are merged without duplication."
+msgstr ""
+
+#: ../../source/config/job.rst:55
+msgid "When mappings (or dictionaries, for example, those used for job variables) are combined, they are deeply merged.  This means a leaf node (an entry whose value is not another mapping) with the same name will override a previous entry, but non-leaf nodes (entries whose values are mappings) will have their entries updated in the same manner, recursively.  New entries with unique names will be added to mappings."
+msgstr ""
+
+#: ../../source/config/job.rst:63
+msgid "A job with no parent is called a *base job* and may only be defined in a :term:`config-project`.  Every other job must have a parent, and so ultimately, all jobs must have an inheritance path which terminates at a base job.  Each tenant has a default parent job which will be used if no explicit parent is specified."
+msgstr ""
+
+#: ../../source/config/job.rst:69
+msgid "Multiple job definitions with the same name are called variants. These may have different selection criteria which indicate to Zuul that, for instance, the job should behave differently on a different git branch.  Unlike inheritance, all job variants must be defined in the same project.  Some attributes of jobs marked :attr:`job.final` may not be overridden.  Individual attributes marked as final with with :attr:`job.attribute-control` may not be overridden."
+msgstr ""
+
+#: ../../source/config/job.rst:77
+msgid "When Zuul decides to run a job, it performs a process known as freezing the job.  Because any number of job variants may be applicable, Zuul collects all of the matching variants and applies them in the order they appeared in the configuration.  The resulting frozen job is built from attributes gathered from all of the matching variants.  In this way, exactly what is run is dependent on the pipeline, project, branch, and content of the item."
+msgstr ""
+
+#: ../../source/config/job.rst:85
+msgid "In addition to the job's main playbook, each job may specify one or more pre- and post-playbooks.  These are run, in order, before and after (respectively) the main playbook.  They may be used to set up and tear down resources needed by the main playbook.  When combined with inheritance, they provide powerful tools for job construction.  A job only has a single main playbook, and when inheriting from a parent, the child's main playbook overrides (or replaces) the parent's.  However, the pre- and post-playbooks are appended and prepended in a nesting fashion.  So if a parent job and child job both specified pre and post playbooks, the sequence of playbooks run would be:"
+msgstr ""
+
+#: ../../source/config/job.rst:97
+msgid "parent pre-run playbook"
+msgstr ""
+
+#: ../../source/config/job.rst:98
+msgid "child pre-run playbook"
+msgstr ""
+
+#: ../../source/config/job.rst:99
+msgid "child playbook"
+msgstr ""
+
+#: ../../source/config/job.rst:100
+msgid "child post-run playbook"
+msgstr ""
+
+#: ../../source/config/job.rst:101
+msgid "parent post-run playbook"
+msgstr ""
+
+#: ../../source/config/job.rst:103
+msgid "Further inheritance would nest even deeper.  If a job fails or is aborted before the main playbook starts, Zuul will run only the post-run playbooks corresponding with the inheritance levels of the pre-run playbooks which were run.  In other words, if the child pre-run playbook was not run, then the child post-run playbook will not be run, but the parent post-run playbook will."
+msgstr ""
+
+#: ../../source/config/job.rst:110
+msgid "Here is an example of two job definitions:"
+msgstr ""
+
+#: ../../source/config/job.rst:129
+msgid "The following attributes are available on a job; all are optional unless otherwise specified:"
+msgstr ""
+
+#: ../../source/config/job.rst:135
+msgid "The name of the job.  By default, Zuul looks for a playbook with this name to use as the main playbook for the job.  This name is also referenced later in a project pipeline configuration."
+msgstr ""
+
+#: ../../source/config/job.rst:144
+msgid "Specifies a job to inherit from.  The parent job can be defined in this or any other project.  Any attributes not specified on a job will be collected from its parent.  If no value is supplied here, the job specified by :attr:`tenant.default-parent` will be used.  If **parent** is set to ``null`` (which is only valid in a :term:`config-project`), this is a :term:`base job`."
+msgstr ""
+
+#: ../../source/config/job.rst:153
+msgid "A textual description of the job.  Not currently used directly by Zuul, but it is used by the zuul-sphinx extension to Sphinx to auto-document Zuul jobs (in which case it is interpreted as ReStructuredText."
+msgstr ""
+
+#: ../../source/config/job.rst:161
+msgid "To prevent other jobs from inheriting from this job, and also to prevent changing execution-related attributes when this job is specified in a project's pipeline, set this attribute to ``true``."
+msgstr ""
+
+#: ../../source/config/job.rst:168
+msgid "It is possible to circumvent the use of `final` in an :term:`untrusted-project` by creating a change which `Depends-On` a change which alters `final`.  This limitation does not apply to jobs in a :term:`config-project`."
+msgstr ""
+
+#: ../../source/config/job.rst:176
+msgid "When set to ``true`` only jobs defined in the same project may inherit from this job. This includes changing execution-related attributes when this job is specified in a project's pipeline. Once this is set to ``true`` it cannot be reset to ``false``."
+msgstr ""
+
+#: ../../source/config/job.rst:183
+msgid "It is possible to circumvent the use of `protected` in an :term:`untrusted-project` by creating a change which `Depends-On` a change which alters `protected`.  This limitation does not apply to jobs in a :term:`config-project`."
+msgstr ""
+
+#: ../../source/config/job.rst:192
+msgid "To indicate a job is not intended to be run directly, but instead must be inherited from, set this attribute to ``true``."
+msgstr ""
+
+#: ../../source/config/job.rst:195
+#: ../../source/config/job.rst:216
+msgid "Once this is set to ``true`` in a job it cannot be reset to ``false`` within the same job by other variants; however jobs which inherit from it can (and by default do) reset it to ``false``."
+msgstr ""
+
+#: ../../source/config/job.rst:202
+msgid "It is possible to circumvent the use of `abstract` in an :term:`untrusted-project` by creating a change which `Depends-On` a change which alters `abstract`.  This limitation does not apply to jobs in a :term:`config-project`."
+msgstr ""
+
+#: ../../source/config/job.rst:211
+msgid "An intermediate job must be inherited by an abstract job; it can not be inherited by a final job.  All ``intermediate`` jobs *must* also be ``abstract``; a configuration error will be raised if not."
+msgstr ""
+
+#: ../../source/config/job.rst:221
+msgid "For example, you may define a base abstract job `foo` and create two abstract jobs that inherit from `foo` called `foo-production` and `foo-development`.  If it would be an error to accidentally inherit from the base job `foo` instead of choosing one of the two variants, `foo` could be marked as ``intermediate``."
+msgstr ""
+
+#: ../../source/config/job.rst:231
+msgid "The type of job; see below for details."
+msgstr ""
+
+#: ../../source/config/job.rst:235
+msgid "This is a normal Zuul job and is appropriate for the vast majority of circumstances."
+msgstr ""
+
+#: ../../source/config/job.rst:240
+msgid "An initializer job is always automatically inserted at the start of the job graph, so that it runs before any other jobs and acts as a dependency for all other jobs in the graph.  It behaves exactly as if all other jobs run for a queue item were declared with a dependency on this job using :attr:`job.dependencies`."
+msgstr ""
+
+#: ../../source/config/job.rst:249
+msgid "An reporter job is run after all other jobs in the buildset have completed, and after all pipeline reporters have reported.  It only runs if the buildset is successful and no errors were encountered by the pipeline reporters.  Because of this, its results may not be used to influence the result of a buildset, or whether a change is merged.  In the case of a change that is merged (for example, in a :term:`gate` pipeline), the reporter job runs after the merge is complete."
+msgstr ""
+
+#: ../../source/config/job.rst:258
+msgid "If a reporter job runs after a change is merged, the job variable :var:`zuul.buildset_refs.merge_commit_id` is available with information about the merged commit id."
+msgstr ""
+
+#: ../../source/config/job.rst:262
+msgid "A reporter job may be used to synchronously update external references to git repositories that are gated by Zuul."
+msgstr ""
+
+#: ../../source/config/job.rst:265
+msgid "While a reporter job is running, no action is taken for other items in the pipeline's shared queue.  It is recommended that reporter jobs run only on the executor and complete quickly in order to minimize delays."
+msgstr ""
+
+#: ../../source/config/job.rst:270
+msgid "If a reporter job fails, any changes in the pipeline behind it will be reset and their jobs restarted with the current state of all relevant repositories."
+msgstr ""
+
+#: ../../source/config/job.rst:274
+msgid "Normally, reporter jobs may only be attached to a project-pipeline within a config-project.  To allow an untrusted project to add its own reporter jobs, see the :attr:`tenant.untrusted-projects.<project>.allow-reporter-jobs` tenant configuration option."
+msgstr ""
+
+#: ../../source/config/job.rst:282
+msgid "Individual attributes may be set to final so that any attempt to set them by child jobs or variants will result in an error."
+msgstr ""
+
+#: ../../source/config/job.rst:285
+msgid "This is a dictionary where each key is a job attribute; the value is another dictionary with ``final: true`` to set the attribute final."
+msgstr ""
+
+#: ../../source/config/job.rst:289
+msgid "For example, to set the required-projects list fo final:"
+msgstr ""
+
+#: ../../source/config/job.rst:298
+msgid "The following attributes are supported:"
+msgstr ""
+
+#: ../../source/config/job.rst:300
+msgid "requires"
+msgstr ""
+
+#: ../../source/config/job.rst:301
+msgid "provides"
+msgstr ""
+
+#: ../../source/config/job.rst:302
+msgid "tags"
+msgstr ""
+
+#: ../../source/config/job.rst:303
+msgid "files"
+msgstr ""
+
+#: ../../source/config/job.rst:304
+msgid "irrelevant-files"
+msgstr ""
+
+#: ../../source/config/job.rst:305
+msgid "required-projects"
+msgstr ""
+
+#: ../../source/config/job.rst:306
+msgid "include-projects"
+msgstr ""
+
+#: ../../source/config/job.rst:307
+msgid "exclude-projects"
+msgstr ""
+
+#: ../../source/config/job.rst:308
+msgid "vars"
+msgstr ""
+
+#: ../../source/config/job.rst:309
+msgid "extra-vars"
+msgstr ""
+
+#: ../../source/config/job.rst:310
+msgid "host-vars"
+msgstr ""
+
+#: ../../source/config/job.rst:311
+msgid "group-vars"
+msgstr ""
+
+#: ../../source/config/job.rst:312
+msgid "include-vars"
+msgstr ""
+
+#: ../../source/config/job.rst:313
+msgid "dependencies"
+msgstr ""
+
+#: ../../source/config/job.rst:314
+msgid "failure-output"
+msgstr ""
+
+#: ../../source/config/job.rst:315
+msgid "type"
+msgstr ""
+
+#: ../../source/config/job.rst:320
+msgid "Normally when a job succeeds, the string ``SUCCESS`` is reported as the result for the job.  If set, this option may be used to supply a different string."
+msgstr ""
+
+#: ../../source/config/job.rst:327
+msgid "Normally when a job fails, the string ``FAILURE`` is reported as the result for the job.  If set, this option may be used to supply a different string."
+msgstr ""
+
+#: ../../source/config/job.rst:334
+msgid "In a dependent pipeline, this option may be used to indicate that no jobs should start on any items which depend on the current item until this job has completed successfully.  This may be used to conserve build resources, at the expense of inhibiting the parallelization which speeds the processing of items in a dependent pipeline."
+msgstr ""
+
+#: ../../source/config/job.rst:344
+msgid "Indicates whether the result of this job should be used in determining the overall result of the item."
+msgstr ""
+
+#: ../../source/config/job.rst:349
+msgid "A deprecated alias of :attr:`job.semaphores`."
+msgstr ""
+
+#: ../../source/config/job.rst:353
+msgid "The name of a :ref:`semaphore` (or list of them) or :ref:`global_semaphore` which should be acquired and released when the job begins and ends.  If the semaphore is at maximum capacity, then Zuul will wait until it can be acquired before starting the job. The format is either a string, a dictionary, or a list of either of those in the case of multiple semaphores. If it's a string it references a semaphore using the default value for :attr:`job.semaphores.resources-first`."
+msgstr ""
+
+#: ../../source/config/job.rst:362
+msgid "Also the name of a semaphore can be any string (without being previously defined via `semaphore` directive). In this case an implicit semaphore is created with capacity max=1."
+msgstr ""
+
+#: ../../source/config/job.rst:366
+msgid "If multiple semaphores are requested, the job will not start until all have been acquired, and Zuul will wait until all are available before acquiring any."
+msgstr ""
+
+#: ../../source/config/job.rst:370
+msgid "When inheriting jobs or applying variants, the list of semaphores is extended (semaphores specified in a job definition are added to any supplied by their parents).  This can not be changed via override control."
+msgstr ""
+
+#: ../../source/config/job.rst:378
+msgid "The name of the referenced semaphore"
+msgstr ""
+
+#: ../../source/config/job.rst:383
+msgid "By default a semaphore is acquired before the resources are requested. However in some cases the user may want to run cheap jobs as quickly as possible in a consecutive manner. In this case `resources-first` can be enabled to request the resources before locking the semaphore. This can lead to some amount of blocked resources while waiting for the semaphore so this should be used with caution."
+msgstr ""
+
+#: ../../source/config/job.rst:393
+msgid "Metadata about this job.  Tags are units of information attached to the job; they do not affect Zuul's behavior, but they can be used within the job to characterize the job.  For example, a job which tests a certain subsystem could be tagged with the name of that subsystem, and if the job's results are reported into a database, then the results of all jobs affecting that subsystem could be queried.  This attribute is specified as a list of strings."
+msgstr ""
+
+#: ../../source/config/job.rst:402
+#: ../../source/config/job.rst:411
+#: ../../source/config/job.rst:470
+#: ../../source/config/job.rst:963
+#: ../../source/config/job.rst:1017
+#: ../../source/config/job.rst:1062
+#: ../../source/config/job.rst:1533
+msgid "Supports override control.  The default is ``!inherit``: values are merged without duplication."
+msgstr ""
+
+#: ../../source/config/job.rst:407
+msgid "A list of free-form strings which identifies resources provided by this job which may be used by other jobs for other changes using the :attr:`job.requires` attribute."
+msgstr ""
+
+#: ../../source/config/job.rst:416
+msgid "A list of free-form strings which identify resources which may be provided by other jobs for other changes (via the :attr:`job.provides` attribute) that are used by this job."
+msgstr ""
+
+#: ../../source/config/job.rst:420
+msgid "When Zuul encounters a job with a `requires` attribute, it searches for those values in the `provides` attributes of any jobs associated with any queue items ahead of the current change.  In this way, if a change uses either git dependencies or a `Depends-On` header to indicate a dependency on another change, Zuul will be able to determine that the parent change affects the run-time environment of the child change.  If such a relationship is found, the job with `requires` will not start until all of the jobs with matching `provides` have completed or paused.  Additionally, the :ref:`artifacts <return_artifacts>` returned by the `provides` jobs will be made available to the `requires` job."
+msgstr ""
+
+#: ../../source/config/job.rst:433
+msgid "If the child change is enqueued after the moment the `provides` job has finished artifacts are still made available to the `requires` job."
+msgstr ""
+
+#: ../../source/config/job.rst:437
+msgid "If `provides` job has failed, then `requires` job is marked as failed and is not run."
+msgstr ""
+
+#: ../../source/config/job.rst:440
+msgid "`provides`/`requires` artifact resolution is ignored for non-change items, e.g. for branch items in `supercedent` pipeline, branch items in periodic `independent` pipeline, tag items in `independent` pipeline."
+msgstr ""
+
+#: ../../source/config/job.rst:444
+msgid "For example, a job which produces a builder container image in one project that is then consumed by a container image build job in another project might look like this:"
+msgstr ""
+
+#: ../../source/config/job.rst:475
+msgid "A list of secrets which may be used by the job.  A :ref:`secret` is a named collection of private information defined separately in the configuration.  The secrets that appear here must be defined in the same project as this job definition."
+msgstr ""
+
+#: ../../source/config/job.rst:481
+msgid "Each item in the list may be supplied either as a string, in which case it references the name of a :ref:`secret` definition, or as a dict. If an element in this list is given as a dict, it may have the following fields:"
+msgstr ""
+
+#: ../../source/config/job.rst:489
+msgid "The name to use for the Ansible variable into which the secret content will be placed."
+msgstr ""
+
+#: ../../source/config/job.rst:495
+msgid "The name to use to find the secret's definition in the configuration."
+msgstr ""
+
+#: ../../source/config/job.rst:501
+msgid "A boolean indicating that this secret should be made available to playbooks in parent jobs.  Use caution when setting this value -- parent jobs may be in different projects with different security standards.  Setting this to true makes the secret available to those playbooks and therefore subject to intentional or accidental exposure."
+msgstr ""
+
+#: ../../source/config/job.rst:508
+msgid "For example:"
+msgstr ""
+
+#: ../../source/config/job.rst:523
+msgid "will result in the following being passed as a variable to the playbooks in ``amazing-job``:"
+msgstr ""
+
+#: ../../source/config/job.rst:533
+msgid "The nodes which should be supplied to the job.  This parameter may be supplied either as a string, in which case it references a :ref:`nodeset` definition which appears elsewhere in the configuration, or a dictionary, in which case it is interpreted in the same way as a Nodeset definition, though the top-level nodeset ``name`` attribute should be omitted (in essence, it is an anonymous Nodeset definition unique to this job; the nodes themselves still require names).  See the :ref:`nodeset` reference for the syntax to use in that case."
+msgstr ""
+
+#: ../../source/config/job.rst:543
+msgid "If a job has an empty (or no) :ref:`nodeset` definition, it will still run and is able to perform limited actions within the Zuul executor sandbox.  Note so-called \"executor-only\" jobs run with an empty inventory, and hence Ansible's *implicit localhost*. This means an executor-only playbook must be written to match ``localhost`` directly; i.e."
+msgstr ""
+
+#: ../../source/config/job.rst:556
+msgid "not with ``hosts: all`` (as this does not match the implicit localhost and the playbook will not run).  There are also caveats around things like enumerating the magic variable ``hostvars`` in this situation.  For more information see the Ansible `implicit localhost documentation <https://docs.ansible.com/ansible/latest/inventory/implicit_localhost.html>`__."
+msgstr ""
+
+#: ../../source/config/job.rst:563
+msgid "A useful example of executor-only jobs is saving resources by directly utilising the prior results from testing a committed change.  For example, a review which updates documentation source files would generally test validity by building a documentation tree.  When this change is committed, the pre-built output can be copied in an executor-only job directly to the publishing location in a post-commit *promote* pipeline; avoiding having to use a node to rebuild the documentation for final publishing."
+msgstr ""
+
+#: ../../source/config/job.rst:575
+msgid "When Zuul runs jobs for a proposed change, it normally checks out the branch associated with that change on every project present in the job.  If jobs are running on a ref (such as a branch tip or tag), then that ref is normally checked out.  This attribute is used to override that behavior and indicate that this job should, regardless of the branch for the queue item, use the indicated ref (i.e., branch or tag) instead.  This can be used, for example, to run a previous version of the software (from a stable maintenance branch) under test even if the change being tested applies to a different branch (this is only likely to be useful if there is some cross-branch interaction with some component of the system being tested).  See also the project-specific :attr:`job.required-projects.override-checkout` attribute to apply this behavior to a subset of a job's projects."
+msgstr ""
+
+#: ../../source/config/job.rst:591
+msgid "This value is also used to help select which variants of a job to run.  If ``override-checkout`` is set, then Zuul will use this value instead of the branch of the item being tested when collecting jobs to run."
+msgstr ""
+
+#: ../../source/config/job.rst:598
+msgid "The time in seconds that the job will allow all pre-run playbooks to consume before timing out. If set this value must be less than or equal to the job ``timeout`` value as pre-run playbook runtime counts against the job ``timeout``. If left unset then the job ``timeout`` value will be used."
+msgstr ""
+
+#: ../../source/config/job.rst:606
+msgid "The time in seconds that the job should be allowed to run before it is automatically aborted and failure is reported.  If no timeout is supplied, the job may run indefinitely.  Supplying a timeout is highly recommended."
+msgstr ""
+
+#: ../../source/config/job.rst:611
+msgid "This timeout only applies to the pre-run and run playbooks in a job."
+msgstr ""
+
+#: ../../source/config/job.rst:616
+msgid "The time in seconds that each post playbook should be allowed to run before it is automatically aborted and failure is reported.  If no post-timeout is supplied, the job may run indefinitely.  Supplying a post-timeout is highly recommended."
+msgstr ""
+
+#: ../../source/config/job.rst:621
+msgid "The post-timeout is handled separately from the above timeout because the post playbooks are typically where you will copy jobs logs. In the event of the pre-run or run playbooks timing out we want to do our best to copy the job logs in the post-run playbooks."
+msgstr ""
+
+#: ../../source/config/job.rst:629
+msgid "When Zuul encounters an error running a job's pre-run playbook, Zuul will stop and restart the job.  Errors during the main or post-run -playbook phase of a job are not affected by this parameter (they are reported immediately).  This parameter controls the number of attempts to make before an error is reported."
+msgstr ""
+
+#: ../../source/config/job.rst:638
+msgid "The name of a playbook or list of playbooks to run before the main body of a job.  Values are either a string describing the full path to the playbook in the repo where the job is defined, or a dictionary described below."
+msgstr ""
+
+#: ../../source/config/job.rst:643
+msgid "When a job inherits from a parent, the child's pre-run playbooks are run after the parent's.  See :ref:`job` for more information."
+msgstr ""
+
+#: ../../source/config/job.rst:647
+#: ../../source/config/job.rst:683
+#: ../../source/config/job.rst:737
+#: ../../source/config/job.rst:770
+msgid "If the value is a dictionary, the following attributes are available:"
+msgstr ""
+
+#: ../../source/config/job.rst:652
+#: ../../source/config/job.rst:688
+#: ../../source/config/job.rst:742
+#: ../../source/config/job.rst:775
+msgid "The path to the playbook relative to the root of the repo."
+msgstr ""
+
+#: ../../source/config/job.rst:656
+#: ../../source/config/job.rst:692
+#: ../../source/config/job.rst:746
+#: ../../source/config/job.rst:779
+msgid "The name of a :ref:`semaphore` (or list of them) or :ref:`global_semaphore` which should be acquired and released when the playbook begins and ends.  If the semaphore is at maximum capacity, then Zuul will wait until it can be acquired before starting the playbook. The format is either a string, or a list of strings."
+msgstr ""
+
+#: ../../source/config/job.rst:663
+msgid "If multiple semaphores are requested, the playbook will not start until all have been acquired, and Zuul will wait until all are available before acquiring any.  The time spent waiting for pre-run playbook semaphores is counted against the :attr:`job.timeout`."
+msgstr ""
+
+#: ../../source/config/job.rst:669
+#: ../../source/config/job.rst:705
+#: ../../source/config/job.rst:759
+#: ../../source/config/job.rst:792
+msgid "None of the semaphores specified for a playbook may also be specified in the same job."
+msgstr ""
+
+#: ../../source/config/job.rst:674
+msgid "The name of a playbook or list of playbooks to run after the main body of a job.  Values are either a string describing the full path to the playbook in the repo where the job is defined, or a dictionary described below."
+msgstr ""
+
+#: ../../source/config/job.rst:679
+msgid "When a job inherits from a parent, the child's post-run playbooks are run before the parent's.  See :ref:`job` for more information."
+msgstr ""
+
+#: ../../source/config/job.rst:699
+msgid "If multiple semaphores are requested, the playbook will not start until all have been acquired, and Zuul will wait until all are available before acquiring any.  The time spent waiting for post-run playbook semaphores is counted against the :attr:`job.post-timeout`."
+msgstr ""
+
+#: ../../source/config/job.rst:711
+msgid "A boolean value indicating whether this is a \"cleanup\" playbook.  Normally Zuul does not run post-run playbooks when it cancels a job, because the results of the job are discarded.  If this value is set, then Zuul will make an effort to run the playbook even if the job is canceled."
+msgstr ""
+
+#: ../../source/config/job.rst:719
+msgid "This attribute is deprecated.  Use :attr:`job.post-run.cleanup` instead."
+msgstr ""
+
+#: ../../source/config/job.rst:722
+msgid "The name of a playbook or list of playbooks to run after job execution.  Values are either a string describing the full path to the playbook in the repo where the job is defined, or a dictionary described below."
+msgstr ""
+
+#: ../../source/config/job.rst:727
+msgid "The cleanup phase is performed regardless of the job's result, even when the job is canceled.  Cleanup results are not taken into account when reporting the job result."
+msgstr ""
+
+#: ../../source/config/job.rst:731
+msgid "When a job inherits from a parent, the child's cleanup-run playbooks are run before the parent's.  See :ref:`job` for more information."
+msgstr ""
+
+#: ../../source/config/job.rst:735
+msgid "There is a hard-coded five minute timeout for cleanup playbooks."
+msgstr ""
+
+#: ../../source/config/job.rst:753
+msgid "If multiple semaphores are requested, the playbook will not start until all have been acquired, and Zuul will wait until all are available before acquiring any.  The time spent waiting for post-run playbook semaphores is counted against the cleanup phase timeout."
+msgstr ""
+
+#: ../../source/config/job.rst:764
+msgid "The name of a playbook or list of playbooks for this job.  If it is not supplied, the parent's playbook will be used (and likewise up the inheritance chain).  Values are either a string describing the full path to the playbook in the repo where the job is defined, or a dictionary described below."
+msgstr ""
+
+#: ../../source/config/job.rst:786
+msgid "If multiple semaphores are requested, the playbook will not start until all have been acquired, and Zuul will wait until all are available before acquiring any.  The time spent waiting for run playbook semaphores is counted against the :attr:`job.timeout`."
+msgstr ""
+
+#: ../../source/config/job.rst:795
+msgid "Example:"
+msgstr ""
+
+#: ../../source/config/job.rst:801
+msgid "Or:"
+msgstr ""
+
+#: ../../source/config/job.rst:812
+msgid "Keep stdout/stderr of command and shell tasks separate (the Ansible default behavior) instead of merging stdout and stderr."
+msgstr ""
+
+#: ../../source/config/job.rst:815
+msgid "Since version 3, Zuul has combined the stdout and stderr streams in Ansible command tasks, but will soon switch to using the normal Ansible behavior.  In an upcoming release of Zuul, this default will change to `True`, and in a later release, this option will be removed altogether."
+msgstr ""
+
+#: ../../source/config/job.rst:821
+msgid "This option may be used in the interim to verify playbook compatibility and facilitate upgrading to the new behavior."
+msgstr ""
+
+#: ../../source/config/job.rst:826
+msgid "The ansible version to use for all playbooks of the job. This can be defined at the following layers of configuration where the first match takes precedence:"
+msgstr ""
+
+#: ../../source/config/job.rst:830
+msgid ":attr:`job.ansible-version`"
+msgstr ""
+
+#: ../../source/config/job.rst:831
+msgid ":attr:`tenant.default-ansible-version`"
+msgstr ""
+
+#: ../../source/config/job.rst:832
+msgid ":attr:`scheduler.default_ansible_version`"
+msgstr ""
+
+#: ../../source/config/job.rst:833
+msgid "Zuul default version"
+msgstr ""
+
+#: ../../source/config/job.rst:835
+msgid "The supported ansible versions are:"
+msgstr ""
+
+#: ../../source/config/job.rst:851
+msgid "A list of Ansible roles to prepare for the job.  Because a job runs an Ansible playbook, any roles which are used by the job must be prepared and installed by Zuul before the job begins. This value is a list of dictionaries, each of which indicates one of two types of roles: a Galaxy role, which is simply a role that is installed from Ansible Galaxy, or a Zuul role, which is a role provided by a project managed by Zuul.  Zuul roles are able to benefit from speculative merging and cross-project dependencies when used by playbooks in untrusted projects. Roles are added to the Ansible role path in the order they appear on the job -- roles earlier in the list will take precedence over those which follow."
+msgstr ""
+
+#: ../../source/config/job.rst:864
+msgid "This attribute is not overridden on inheritance or variance; instead roles are added with each new job or variant.  In the case of job inheritance or variance, the roles used for each of the playbooks run by the job will be only those which were cumulatively defined up to that point in the inheritance hierarchy where that playbook was added.  If a child job inherits from a parent which defines a pre and post playbook, then the pre and post playbooks it inherits from the parent job will run only with the roles that were defined on the parent. If the child adds its own pre and post playbooks, then any roles added by the child will be available to the child's playbooks. This is so that a job which inherits from a parent does not inadvertently alter the behavior of the parent's playbooks by the addition of conflicting roles.  Roles added by a child will appear before those it inherits from its parent."
+msgstr ""
+
+#: ../../source/config/job.rst:880
+msgid "If a project used for a Zuul role has branches, the usual process of selecting which branch should be checked out applies. See :attr:`job.override-checkout` for a description of that process and how to override it.  As a special case, if the role project is the project in which this job definition appears, then the branch in which this definition appears will be used. In other words, a playbook may not use a role from a different branch of the same project."
+msgstr ""
+
+#: ../../source/config/job.rst:889
+msgid "If the job is run on a ref (for example, a branch tip or a tag) then a different form of the branch selection process is used. There is no single branch context available for selecting an appropriate branch of the role's repo to check out, so only the following are considered: First the ref specified by :attr:`job.required-projects.override-checkout`, or :attr:`job.override-checkout`.  Then if the role repo is the playbook repo or has a branch name that matches the branch of the playbook repo, that branch is used; otherwise the project's default branch is selected."
+msgstr ""
+
+#: ../../source/config/job.rst:902
+msgid "Keep this behavior difference in mind when designing jobs that run on both branches and tags.  If the same job must be used in both circumstances, ensure that any roles from other repos used by playbooks in the job originate only in un-branched repositories.  Otherwise different branches of the role repo may be checked out."
+msgstr ""
+
+#: ../../source/config/job.rst:909
+msgid "A project which supplies a role may be structured in one of two configurations: a bare role (in which the role exists at the root of the project), or a contained role (in which the role exists within the ``roles/`` directory of the project, perhaps along with other roles).  In the case of a contained role, the ``roles/`` directory of the project is added to the role search path.  In the case of a bare role, the project itself is added to the role search path.  In case the name of the project is not the name under which the role should be installed (and therefore referenced from Ansible), the ``name`` attribute may be used to specify an alternate."
+msgstr ""
+
+#: ../../source/config/job.rst:921
+msgid "A job automatically has the project in which it is defined added to the roles path if that project appears to contain a role or ``roles/`` directory.  By default, the project is added to the path under its own name, however, that may be changed by explicitly listing the project in the roles list in the usual way."
+msgstr ""
+
+#: ../../source/config/job.rst:930
+msgid "Galaxy roles are not yet implemented."
+msgstr ""
+
+#: ../../source/config/job.rst:932
+msgid "The name of the role in Ansible Galaxy.  If this attribute is supplied, Zuul will search Ansible Galaxy for a role by this name and install it.  Mutually exclusive with ``zuul``; either ``galaxy`` or ``zuul`` must be supplied."
+msgstr ""
+
+#: ../../source/config/job.rst:939
+msgid "The name of a Zuul project which supplies the role.  Mutually exclusive with ``galaxy``; either ``galaxy`` or ``zuul`` must be supplied."
+msgstr ""
+
+#: ../../source/config/job.rst:945
+msgid "The installation name of the role.  In the case of a bare role, the role will be made available under this name. Ignored in the case of a contained role."
+msgstr ""
+
+#: ../../source/config/job.rst:951
+msgid "A list of other projects which are used by this job.  Any Zuul projects specified here will also be checked out by Zuul into the working directory for the job.  Speculative merging and cross-repo dependencies will be honored.  If there is not a change for the project ahead in the pipeline, its repo state as of the time the item was enqueued will be frozen and used for all jobs for a given change (see :ref:`global_repo_state`)."
+msgstr ""
+
+#: ../../source/config/job.rst:959
+msgid "The format for this attribute is either a list of strings or dictionaries.  Strings are interpreted as project names, dictionaries, if used, may have the following attributes:"
+msgstr ""
+
+#: ../../source/config/job.rst:969
+msgid "The name of the required project."
+msgstr ""
+
+#: ../../source/config/job.rst:973
+msgid "When Zuul runs jobs for a proposed change, it normally checks out the branch associated with that change on every project present in the job.  If jobs are running on a ref (such as a branch tip or tag), then that ref is normally checked out. This attribute is used to override that behavior and indicate that this job should, regardless of the branch for the queue item, use the indicated ref (i.e., branch or tag) instead, for only this project.  See also the :attr:`job.override-checkout` attribute to apply the same behavior to all projects in a job."
+msgstr ""
+
+#: ../../source/config/job.rst:984
+msgid "This value is also used to help select which variants of a job to run.  If ``override-checkout`` is set, then Zuul will use this value instead of the branch of the item being tested when collecting any jobs to run which are defined in this project."
+msgstr ""
+
+#: ../../source/config/job.rst:993
+msgid "A list of projects that should be included when preparing the workspace for this job.  Any projects that are required for playbooks, roles, include-vars, or required-projects will be present and prepared regardless.  This may only be used to filter projects that would otherwise already be present in the workspace for other reasons.  That includes projects for changes related to any items ahead in the queue, dependencies of those changes, and also the changes under test for the current queue item, and any required projects for the job."
+msgstr ""
+
+#: ../../source/config/job.rst:1003
+msgid "Note that `include-projects` alone is not sufficient to cause a project to be prepared in the workspace.  It must be selected due to one of the preceding reasons.  See :attr:`job.required-projects` to force a project to appear in the workspace."
+msgstr ""
+
+#: ../../source/config/job.rst:1009
+msgid "This feature may be useful for jobs which are known to interact with a known set of repositories (or even no repositories). Such jobs may be able to run faster if only the necessary projects are prepared in the workspace."
+msgstr ""
+
+#: ../../source/config/job.rst:1014
+#: ../../source/config/job.rst:1059
+msgid "The default value of ``null`` indicates no filtering is to be performed."
+msgstr ""
+
+#: ../../source/config/job.rst:1020
+#: ../../source/config/job.rst:1065
+msgid "The items in the list may either be a string, in which case they are interpreted as the name of a project, or a dictionary with the following form:"
+msgstr ""
+
+#: ../../source/config/job.rst:1026
+#: ../../source/config/job.rst:1071
+msgid "The type of entry.  May be one of the following values:"
+msgstr ""
+
+#: ../../source/config/job.rst:1030
+#: ../../source/config/job.rst:1075
+msgid "The entry is the name of a project (equivalent to a bare string).  If this entry is supplied, the ``name`` key in the dictionary must also be present."
+msgstr ""
+
+#: ../../source/config/job.rst:1036
+#: ../../source/config/job.rst:1081
+msgid "The entry matches the project of the current change under test."
+msgstr ""
+
+#: ../../source/config/job.rst:1040
+#: ../../source/config/job.rst:1085
+msgid "The entry matches any project in the current queue item."
+msgstr ""
+
+#: ../../source/config/job.rst:1044
+#: ../../source/config/job.rst:1089
+msgid "Only used with the ``name`` type, this string is the name of the project to match."
+msgstr ""
+
+#: ../../source/config/job.rst:1050
+msgid "A list of projects that should be excluded when preparing the workspace for this job."
+msgstr ""
+
+#: ../../source/config/job.rst:1053
+msgid "See :attr:`job.include-projects` for a general description of the feature."
+msgstr ""
+
+#: ../../source/config/job.rst:1056
+msgid "This filter is applied after :attr:`job.include-projects`, so it may further refine a list of projects."
+msgstr ""
+
+#: ../../source/config/job.rst:1094
+msgid "A dictionary of variables to supply to Ansible."
+msgstr ""
+
+#: ../../source/config/job.rst:1096
+msgid "When running a trusted playbook, the value of variables will be frozen at the start of the job.  Therefore if the value of the variable is an Ansible Jinja template, it may only reference values which are known at the start of the job, and its value will not change.  Untrusted playbooks dynamically evaluate variables and are not limited by this restriction."
+msgstr ""
+
+#: ../../source/config/job.rst:1103
+msgid "Un-frozen versions of all the original job variables are available tagged with the ``!unsafe`` YAML tag under the ``unsafe_vars`` variable hierarchy.  This tag prevents Ansible from evaluating them as Jinja templates.  For example, the job variable `myvar` would be available under `unsafe_vars.myvar`. Advanced users may force Ansible to evaluate these values, but it is not recommended to do so except in the most controlled of circumstances.  They are almost impossible to render safely."
+msgstr ""
+
+#: ../../source/config/job.rst:1112
+#: ../../source/config/job.rst:1122
+#: ../../source/config/job.rst:1132
+#: ../../source/config/job.rst:1142
+msgid "Supports override control.  The default is ``!inherit``: values are deep-merged."
+msgstr ""
+
+#: ../../source/config/job.rst:1117
+msgid "A dictionary of variables to supply to Ansible with higher precedence than job, host, or group vars. Note, that despite the name this is not passed to Ansible using the `--extra-vars` flag."
+msgstr ""
+
+#: ../../source/config/job.rst:1127
+msgid "A dictionary of host variables to supply to Ansible.  The keys of this dictionary are node names as defined in a :ref:`nodeset`, and the values are dictionaries of variables, just as in :attr:`job.vars`."
+msgstr ""
+
+#: ../../source/config/job.rst:1137
+msgid "A dictionary of group variables to supply to Ansible.  The keys of this dictionary are node groups as defined in a :ref:`nodeset`, and the values are dictionaries of variables, just as in :attr:`job.vars`."
+msgstr ""
+
+#: ../../source/config/job.rst:1145
+msgid "An example of three kinds of variables:"
+msgstr ""
+
+#: ../../source/config/job.rst:1175
+msgid "A list of files from which to read variables."
+msgstr ""
+
+#: ../../source/config/job.rst:1177
+msgid "The value may be supplied as a list or a single item, and each value may be a string or a dictionary described below.  If supplied as a string, it is treated as the :attr:`job.include-vars.name`."
+msgstr ""
+
+#: ../../source/config/job.rst:1182
+msgid "Files are read in order, with later variable values overriding earlier ones.  Variables specified by :attr:`job.vars` and related attributes will override variables read from files."
+msgstr ""
+
+#: ../../source/config/job.rst:1186
+msgid "The file should be in YAML or JSON format."
+msgstr ""
+
+#: ../../source/config/job.rst:1188
+msgid "Supports override control.  The default is ``!inherit``: values are appended without duplication."
+msgstr ""
+
+#: ../../source/config/job.rst:1194
+msgid "The name (relative to the root of the repository) of the file to read."
+msgstr ""
+
+#: ../../source/config/job.rst:1199
+msgid "The name of the project containing the file to read.  If this is left unspecified, the project containing the current job definition is used.  This option is mutually exclusive with :attr:`job.include-vars.zuul-project`."
+msgstr ""
+
+#: ../../source/config/job.rst:1207
+msgid "A boolean indicating whether this file is required to be present.  If this is set to ``true`` and the file is not present, it is considered an error and the job result will reflect this."
+msgstr ""
+
+#: ../../source/config/job.rst:1215
+msgid "A boolean indicating that instead of using a specified project, the project associated with the change under test (which can be found in the :var:`zuul.project` variable) should be used.  This permits the definition of jobs that may be centrally defined and used globally to read variables from files in the projects upon which they run."
+msgstr ""
+
+#: ../../source/config/job.rst:1222
+msgid "This option is mutually exclusive with :attr:`job.include-vars.project`."
+msgstr ""
+
+#: ../../source/config/job.rst:1228
+msgid "When this is ``true`` (the default) if the job is triggered by a ref, and that ref is for the include-vars project, then Zuul will checkout the ref and use the file from that ref checkout.  If the include-vars is for a different project than the triggering ref, or the job is not triggered by a ref, or this is set to ``false``, then Zuul will follow the normal fallback procedure for branches to determine from which branch to load the file."
+msgstr ""
+
+#: ../../source/config/job.rst:1237
+msgid "An example using job-vars:"
+msgstr ""
+
+#: ../../source/config/job.rst:1260
+msgid "A list of other jobs upon which this job depends.  Zuul will not start executing this job until all of its dependencies have completed successfully or have been paused, and if one or more of them fail, this job will not be run."
+msgstr ""
+
+#: ../../source/config/job.rst:1265
+msgid "The dependent job is provided with :ref:`artifacts <return_artifacts>` returned by preceding jobs, e.g. if jobC depends on jobB, jobB depends on jobA, then jobC is provided with artifacts from both jobA and jobB."
+msgstr ""
+
+#: ../../source/config/job.rst:1270
+msgid "The format for this attribute is either a list of strings or dictionaries.  Strings are interpreted as job names, dictionaries, if used, may have the following attributes:"
+msgstr ""
+
+#: ../../source/config/job.rst:1277
+msgid "The name of the required job."
+msgstr ""
+
+#: ../../source/config/job.rst:1282
+msgid "A boolean value which indicates whether this job is a *hard* or *soft* dependency.  A *hard* dependency will cause an error if the specified job is not run.  That is, if job B depends on job A, but job A is not run for any reason (for example, it contains a file matcher which does not match), then Zuul will not run any jobs and report an error.  A *soft* dependency will simply be ignored if the dependent job is not run."
+msgstr ""
+
+#: ../../source/config/job.rst:1291
+#: ../../source/config/job.rst:1434
+#: ../../source/config/job.rst:1454
+msgid "Supports override control.  The default is ``!override``: values are overridden."
+msgstr ""
+
+#: ../../source/config/job.rst:1296
+msgid "A list of Zuul projects which may use this job.  By default, a job may be used by any other project known to Zuul, however, some jobs use resources or perform actions which are not appropriate for other projects.  In these cases, a list of projects which are allowed to use this job may be supplied.  If this list is not empty, then it must be an exhaustive list of all projects permitted to use the job.  The current project (where the job is defined) is not automatically included, so if it should be able to run this job, then it must be explicitly listed.  This setting is ignored by :term:`config projects <config-project>` -- they may add any job to any project's pipelines.  By default, all projects may use the job."
+msgstr ""
+
+#: ../../source/config/job.rst:1309
+msgid "If a :attr:`job.secrets` is used in a job definition in an :term:`untrusted-project`, `allowed-projects` is automatically set to the current project only, and can not be overridden. However, a :term:`config-project` may still add such a job to any project's pipeline.  Apply caution when doing so as other projects may be able to expose the source project's secrets."
+msgstr ""
+
+#: ../../source/config/job.rst:1316
+msgid "This attribute is not overridden by inheritance; instead it is the intersection of all applicable parents and variants (i.e., jobs can reduce but not expand the set of allowed projects when they inherit)."
+msgstr ""
+
+#: ../../source/config/job.rst:1323
+msgid "It is possible to circumvent the use of `allowed-projects` in an :term:`untrusted-project` by creating a change which `Depends-On` a change which alters `allowed-projects`.  This limitation does not apply to jobs in a :term:`config-project`, or jobs in an `untrusted-project` which use a secret."
+msgstr ""
+
+#: ../../source/config/job.rst:1333
+msgid "A boolean value which indicates whether this job may only be used in pipelines where :attr:`pipeline.post-review` is ``true``.  This is automatically set to ``true`` if this job uses a :ref:`secret` and is defined in a :term:`untrusted-project`. It may be explicitly set to obtain the same behavior for jobs defined in :term:`config projects <config-project>`.  Once this is set to ``true`` anywhere in the inheritance hierarchy for a job, it will remain set for all child jobs and variants (it can not be set to ``false``)."
+msgstr ""
+
+#: ../../source/config/job.rst:1345
+msgid "It is possible to circumvent the use of `post-review` in an :term:`untrusted-project` by creating a change which `Depends-On` a change which alters `post-review`.  This limitation does not apply to jobs in a :term:`config-project`, or jobs in an `untrusted-project` which use a secret."
+msgstr ""
+
+#: ../../source/config/job.rst:1354
+msgid "A :ref:`regular expression <regex>` (or list of regular expressions) which describe on what branches a job should run (or in the case of variants, to alter the behavior of a job for a certain branch)."
+msgstr ""
+
+#: ../../source/config/job.rst:1359
+msgid "This attribute is not inherited in the usual manner.  Instead, it is used to determine whether each variant on which it appears will be used when running the job."
+msgstr ""
+
+#: ../../source/config/job.rst:1363
+msgid "If none of the defined job variants contain a branches setting which matches the branch of an item, then that job is not run for the item. Otherwise, all of the job variants which match that branch are used when freezing the job.  However, if :attr:`job.override-checkout` or :attr:`job.required-projects.override-checkout` are set for a project, Zuul will attempt to use the job variants which match the values supplied in ``override-checkout`` for jobs defined in those projects.  This can be used to run a job defined in one project on another project without a matching branch."
+msgstr ""
+
+#: ../../source/config/job.rst:1374
+msgid "If a tag item is enqueued, we look up the branches which contain the commit referenced by the tag.  If any of those branches match a branch matcher, the matcher is considered to have matched."
+msgstr ""
+
+#: ../../source/config/job.rst:1378
+msgid "Additionally in the case of a tag item, if the expression matches the full name of the ref (eg, `refs/tags/foo`) then the job is considered to match.  The preceding section still applies, so the definition must appear in a branch containing the commit referenced by the tag to be considered, and then the expression must also match the tag."
+msgstr ""
+
+#: ../../source/config/job.rst:1385
+msgid "This example illustrates a job called *run-tests* which uses a nodeset based on the current release of an operating system to perform its tests, except when testing changes to the stable/2.0 branch, in which case it uses an older release:"
+msgstr ""
+
+#: ../../source/config/job.rst:1401
+msgid "In some cases, Zuul uses an implied value for the branch specifier if none is supplied:"
+msgstr ""
+
+#: ../../source/config/job.rst:1404
+msgid "For a job definition in a :term:`config-project`, no implied branch specifier is used.  If no branch specifier appears, the job applies to all branches."
+msgstr ""
+
+#: ../../source/config/job.rst:1408
+msgid "In the case of an :term:`untrusted-project`, if the project has only one branch, no implied branch specifier is applied to :ref:`job` definitions.  If the project has more than one branch, the branch containing the job definition is used as an implied branch specifier."
+msgstr ""
+
+#: ../../source/config/job.rst:1414
+msgid "This allows for the very simple and expected workflow where if a project defines a job on the ``master`` branch with no branch specifier, and then creates a new branch based on ``master``, any changes to that job definition within the new branch only affect that branch, and likewise, changes to the master branch only affect it."
+msgstr ""
+
+#: ../../source/config/job.rst:1421
+msgid "See :attr:`pragma.implied-branch-matchers` for how to override this behavior on a per-file basis.  The behavior may also be configured by a Zuul administrator using :attr:`tenant.untrusted-projects.<project>.implied-branch-matchers`."
+msgstr ""
+
+#: ../../source/config/job.rst:1428
+msgid "This indicates that the job should only run on changes where the specified files are modified.  Unlike **branches**, this value is subject to inheritance and overriding, so only the final value is used to determine if the job should run. This is a :ref:`regular expression <regex>` or list of regular expressions."
+msgstr ""
+
+#: ../../source/config/job.rst:1439
+#: ../../source/config/job.rst:1459
+msgid "File filters will be ignored for refs that don't have any files. This will be the case for merge commits (e.g. in a post pipeline) or empty commits created with ``git commit --allow-empty`` (which can be used in order to run all jobs)."
+msgstr ""
+
+#: ../../source/config/job.rst:1447
+msgid "This is a negative complement of **files**.  It indicates that the job should run unless *all* of the files changed match this list.  In other words, if the regular expression ``docs/.*`` is supplied, then this job will not run if the only files changed are in the docs directory.  A :ref:`regular expression <regex>` or list of regular expressions."
+msgstr ""
+
+#: ../../source/config/job.rst:1468
+msgid "If this is set to ``true`` (the default), then the job's file matchers are ignored if a change alters the job's configuration, any of its playbooks, or any of its :attr:`job.include-vars` files.  This means that changes to jobs with file matchers will be self-testing without requiring that the file matchers include the Zuul configuration file defining the job or other referenced files."
+msgstr ""
+
+#: ../../source/config/job.rst:1479
+msgid "In the case of a dependency cycle where multiple changes within the cycle run the same job, this setting indicates whether Zuul should attempt to deduplicate the job.  If it is deduplicated, then the job will only run for one queue item within the cycle and other items which run the same job will use the results of that build."
+msgstr ""
+
+#: ../../source/config/job.rst:1486
+msgid "This setting determines whether Zuul will consider deduplication. If it is set to ``false``, Zuul will never attempt to deduplicate the job.  If it is set to ``auto`` (the default), then Zuul will compare the job with other jobs of other queue items in the dependency cycle, and if they are equivalent and meet certain project criteria, it will deduplicate them."
+msgstr ""
+
+#: ../../source/config/job.rst:1493
+msgid "The project criteria that Zuul considers under the ``auto`` setting are either:"
+msgstr ""
+
+#: ../../source/config/job.rst:1496
+msgid "The job must specify :attr:`job.required-projects`."
+msgstr ""
+
+#: ../../source/config/job.rst:1497
+msgid "Or the queue items must be for the same project."
+msgstr ""
+
+#: ../../source/config/job.rst:1499
+msgid "This is because of the following heuristic: if a job specifies :attr:`job.required-projects`, it is most likely to be one which operates in the same way regardless of which project the change under test belongs to, therefore the result of the same job running on two queue items in the same dependency cycle should be the same.  If a job does not specify :attr:`job.required-projects` and runs with two different projects under test, the outcome is likely different for those two items."
+msgstr ""
+
+#: ../../source/config/job.rst:1509
+msgid "If this is not true for a job (e.g., the job ignores the project under test and interacts only with external resources) :attr:`job.deduplicate` may be set to ``true`` to ignore the heuristic and deduplicate anyway."
+msgstr ""
+
+#: ../../source/config/job.rst:1516
+msgid "A regular expression (or list of regular expressions) that should be matched against job output to determine if the job is going to fail.  Matches are performed line-by-line (multiline regular expressions will not be effective)."
+msgstr ""
+
+#: ../../source/config/job.rst:1521
+msgid "This option is not required; job failure is determined by the result code from its Ansible playbooks.  However, if this option is supplied, and one of the regular expressions matches a line in the streaming output from the job, Zuul will be able to anticipate the failure before the completion of the playbook. In this case, it will be able to restart jobs for changes behind it in a dependent pipeline."
+msgstr ""
+
+#: ../../source/config/job.rst:1529
+msgid "Use caution when specifying this option.  If an early failure is triggered, the job result will be recorded as FAILURE even if the job playbooks ultimately succeed."
+msgstr ""
+
+#: ../../source/config/job.rst:1539
+msgid "Whether to perform a full checkout of projects in the workspace."
+msgstr ""
+
+#: ../../source/config/job.rst:1541
+msgid "This only applies to the workspace on the executor.  Most Zuul jobs copy repositories to remote :ref:`build_nodes` and independently checkout the appropriate refs.  Changing this setting should typically not affect the contents on remote nodes."
+msgstr ""
+
+#: ../../source/config/job.rst:1547
+msgid "Setting this option may be useful to save time or space when preparing large repositories which are not expected to be used on the Zuul executor, but care is needed to ensure that it does not affect job execution."
+msgstr ""
+
+#: ../../source/config/job.rst:1552
+msgid "When set to ``true`` (the default and recommended value under most circumstances), Zuul will perform a full git checkout of all of the involved repositories in the executor's workspace."
+msgstr ""
+
+#: ../../source/config/job.rst:1556
+msgid "When set to ``false``, Zuul will not perform a checkout of any of the involved repositories in the workspace.  Further, when it checks out repositories within private directories in order to run playbooks or roles, it will perform a sparse checkout with only the directories it expects to need.  This may cause problems if playbooks or roles reference files outside of the sparse checkout.  In this case, the option is unsuitable and should be set to ``true`` for the job so that full checkouts are performed."
+msgstr ""
+
+#: ../../source/config/job.rst:1566
+msgid "When set to the string ``auto``, Zuul will behave as if the value is ``true`` if and only if the job contains an empty nodeset, otherwise it will behave as if the value is ``false``. The reasoning is that jobs with no nodeset are likely to access the contents of the repos on the executor, whereas jobs with a nodeset may access them only on remote nodes."
+msgstr ""
+
+#: ../../source/config/job.rst:1576
+msgid "The scheme to use when placing git repositories in the workspace."
+msgstr ""
+
+#: ../../source/config/job.rst:1581
+msgid "This writes the repository into a directory based on the canonical hostname and the full name of the repository.  For example::"
+msgstr ""
+
+#: ../../source/config/job.rst:1587
+msgid "This is the default and, despite the name, is suitable and recommended for any language."
+msgstr ""
+
+#: ../../source/config/job.rst:1592
+msgid "This writes the repository into a directory based only on the last component of the name.  For example::"
+msgstr ""
+
+#: ../../source/config/job.rst:1597
+msgid "In some cases the ``golang`` scheme can produce collisions (consider the projects `component` and `component/subcomponent`).  In this case it may be preferable to use the ``flat`` scheme (which would produce repositories at `component` and `subcomponent`)."
+msgstr ""
+
+#: ../../source/config/job.rst:1603
+msgid "Note, however, that this scheme may produce collisions with `component` and `component/component`."
+msgstr ""
+
+#: ../../source/config/job.rst:1608
+msgid "This writes the repository into a directory based on the organization name and the  ``urllib.parse.quote_plus`` formatted project name.  For example::"
+msgstr ""
+
+#: ../../source/config/job.rst:1615
+msgid "This scheme will produce unique workspace paths for every repository and won't cause collisions."
+msgstr ""
+
+#: ../../source/config/job.rst:1621
+msgid "If this is an image build job (see :ref:`image-creation`), set this to the name of the image that is to be built.  This must match an :attr:`image` object defined in the same project."
+msgstr ""
+
+#: ../../source/config/label.rst:4
+msgid "Label"
+msgstr ""
+
+#: ../../source/config/label.rst:6
+msgid "A label is used by :ref:`provider` objects to configure the operational characteristics of :ref:`build_nodes`.  Unlike :ref:`flavor` or :ref:`image` objects, a label does not correspond to any existing concept in a cloud.  Instead, a label incorporates the settings controlled by images and flavors by reference, and adds some other operational settings to complete the information needed to launch a node."
+msgstr ""
+
+#: ../../source/config/label.rst:14
+msgid "Jobs request nodes by using labels, and labels, along with the images and flavors they reference, are used by providers to determine what nodes to provide."
+msgstr ""
+
+#: ../../source/config/label.rst:18
+msgid "Every label has a reference to a single flavor and a single image. That reference is by name, which means that a given label always references the same flavor and image.  Within a single tenant, all providers with a label will reference the same flavor and image objects.  But different tenants may have different definitions of flavors and images with the same names, so even if multiple tenants include the same label objects, those objects may reference different flavor and image objects."
+msgstr ""
+
+#: ../../source/config/label.rst:27
+msgid "The standalone label configuration object itself is where the flavor and image objects are referenced.  Some other globally-applicable options for the label are also available.  More options become available when the label is attached to a :ref:`section` or :ref:`provider` object.  See the driver-specific provider options for details."
+msgstr ""
+
+#: ../../source/config/label.rst:34
+msgid "For example, a user might decide to use a small vm running the latest version of Debian for launching nodes.  They would then define a label object that references pre-existing image and flavor objects:"
+msgstr ""
+
+#: ../../source/config/label.rst:46
+msgid "That expresses the idea of a label that runs Debian on a small VM, but it doesn't contain any of the necessary information to actually launch that VM in a cloud.  When the label is attached to a provider, the associated flavor and images will also need to be attached.  Once all three are attached, the provider will have enough information to create the requested VM."
+msgstr ""
+
+#: ../../source/config/label.rst:53
+msgid "The attributes available to top-level label objects are:"
+msgstr ""
+
+#: ../../source/config/label.rst:61
+msgid "The name of the label.  Used to refer to the label in Zuul configuration."
+msgstr ""
+
+#: ../../source/config/label.rst:67
+msgid "A textual description of the label."
+msgstr ""
+
+#: ../../source/config/label.rst:73
+msgid "The name of the :ref:`image` to use with this label."
+msgstr ""
+
+#: ../../source/config/label.rst:79
+msgid "The name of the :ref:`flavor` to use with this label."
+msgstr ""
+
+#: ../../source/config/label.rst:85
+msgid "The time (in seconds) since creation that a node may be available for use.  Ready nodes older than this time will be deleted."
+msgstr ""
+
+#: ../../source/config/label.rst:93
+msgid "The time (in seconds) an unassigned node should stay in ready state."
+msgstr ""
+
+#: ../../source/config/label.rst:99
+msgid "Minimum number of instances that should be in a ready state. Zuul always creates more nodes as necessary in response to demand, but setting ``min-ready`` can speed processing by attempting to keep nodes on-hand and ready for immedate use. This is best-effort based on available capacity and is not a guaranteed allocation.  The default of 0 means that Zuul will only create nodes of this label when there is demand."
+msgstr ""
+
+#: ../../source/config/label.rst:111
+msgid "The time (in seconds) since an instance was launched, during which a node will not be deleted. For node resources with minimum billing times, this can be used to ensure that the instance is retained for at least the minimum billing interval."
+msgstr ""
+
+#: ../../source/config/label.rst:116
+msgid "This setting takes precedence over `max-[ready-]age`."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:4
+msgid "Nodeset"
+msgstr ""
+
+#: ../../source/config/nodeset.rst:6
+msgid "A Nodeset is a named collection of nodes for use by a job.  Jobs may specify what nodes they require individually, however, by defining groups of node types once and referring to them by name, job configuration may be simplified."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:11
+msgid "Nodesets, like most configuration items, are unique within a tenant, though a nodeset may be defined on multiple branches of the same project as long as the contents are the same.  This is to aid in branch maintenance, so that creating a new branch based on an existing branch will not immediately produce a configuration error."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:43
+msgid "Nodesets may also be used to express that Zuul should use the first of multiple alternative node configurations to run a job.  When a Nodeset specifies a list of :attr:`nodeset.alternatives`, Zuul will request the first Nodeset in the series, and if allocation fails for any reason, Zuul will re-attempt the request with the subsequent Nodeset and so on.  The first Nodeset which is fulfilled will be used to run the job.  Additionally, if Zuul encounters an unrechable node during the build, it will use the next alternative when retrying the job.  An example of a nodeset configuration with alternatives follows."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:74
+msgid "In the above example, a job that requested the `fast-or-slow` nodeset would receive `fast-label` nodes if a provider was able to supply them, otherwise it would receive `slow-label` nodes.  A Nodeset may specify nodes and groups, or alternative nodesets, but not both."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:81
+msgid "A Nodeset requires two attributes:"
+msgstr ""
+
+#: ../../source/config/nodeset.rst:86
+msgid "The name of the Nodeset, to be referenced by a :ref:`job`."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:88
+msgid "This is required when defining a standalone Nodeset in Zuul. When defining an in-line anonymous nodeset within a job definition, this attribute should be omitted."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:94
+msgid "This attribute is required unless `alternatives` is supplied."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:96
+msgid "A list of node definitions, each of which has the following format:"
+msgstr ""
+
+#: ../../source/config/nodeset.rst:101
+msgid "The name of the node.  This will appear in the Ansible inventory for the job."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:104
+msgid "This can also be as a list of strings. If so, then the list of hosts in the Ansible inventory will share a common ansible_host address."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:110
+msgid "The label for the node.  Zuul will request a node with this label."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:115
+msgid "Additional groups can be defined which are accessible from the ansible playbooks."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:121
+msgid "The name of the group to be referenced by an ansible playbook."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:126
+msgid "The nodes that shall be part of the group. This is specified as a list of strings."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:132
+msgid "A list of alternative nodesets for which requests should be attempted in series.  The first request which succeeds will be used for the job."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:136
+msgid "The items in the list may be either strings, in which case they refer to other Nodesets within the layout, or they may be a dictionary which is a nested anonymous Nodeset definition.  The two types (strings or nested definitions) may be mixed."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:141
+msgid "An alternative Nodeset definition may in turn refer to other alternative nodeset definitions.  In this case, the tree of definitions will be flattened in a breadth-first manner to create the ordered list of alternatives."
+msgstr ""
+
+#: ../../source/config/nodeset.rst:146
+msgid "A Nodeset which specifies alternatives may not also specify nodes or groups (this attribute is exclusive with :attr:`nodeset.nodes` and :attr:`nodeset.groups`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:4
+msgid "Pipeline"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:6
+msgid "A pipeline describes a workflow operation in Zuul.  It associates jobs for a given project with triggering and reporting events."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:9
+msgid "Its flexible configuration allows for characterizing any number of workflows, and by specifying each as a named configuration, makes it easy to apply similar workflow operations to projects or groups of projects."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:14
+msgid "By way of example, one of the primary uses of Zuul is to perform project gating.  To do so, one can create a :term:`gate` pipeline which tells Zuul that when a certain event (such as approval by a code reviewer) occurs, the corresponding change or pull request should be enqueued into the pipeline.  When that happens, the jobs which have been configured to run for that project in the gate pipeline are run, and when they complete, the pipeline reports the results to the user."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:22
+msgid "Pipeline configuration items may only appear in :term:`config-projects <config-project>`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:25
+msgid "Generally, a Zuul administrator would define a small number of pipelines which represent the workflow processes used in their environment.  Each project can then be added to the available pipelines as appropriate."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:30
+msgid "Here is an example :term:`check` pipeline, which runs whenever a new patchset is created in Gerrit.  If the associated jobs all report success, the pipeline reports back to Gerrit with ``Verified`` vote of +1, or if at least one of them fails, a -1:"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:54
+msgid "The attributes available on a pipeline are as follows (all are optional unless otherwise specified):"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:60
+msgid "This is used later in the project definition to indicate what jobs should be run for events in the pipeline."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:66
+msgid "There are several schemes for managing pipelines.  The following table summarizes their features; each is described in detail below."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:71
+msgid "Manager"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:71
+msgid "Use Case"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:71
+msgid "Dependencies"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:71
+msgid "Merge"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:71
+msgid "Shared Queues"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:71
+msgid "Window"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:73
+msgid "Independent"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:73
+msgid ":term:`check`, :term:`post`"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:73
+#: ../../source/config/pipeline.rst:75
+#: ../../source/config/pipeline.rst:76
+msgid "No"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:73
+msgid "Unlimited"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:74
+msgid "Dependent"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:74
+msgid ":term:`gate`"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:74
+#: ../../source/config/pipeline.rst:75
+msgid "Yes"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:74
+msgid "Variable"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:75
+msgid "Serial"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:75
+msgid ":term:`deploy`"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:75
+#: ../../source/config/pipeline.rst:76
+msgid "1"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:76
+msgid "Supercedent"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:76
+msgid ":term:`post`, :term:`promote`"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:76
+msgid "Project-ref"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:81
+msgid "Every event in this pipeline should be treated as independent of other events in the pipeline.  This is appropriate when the order of events in the pipeline doesn't matter because the results of the actions this pipeline performs can not affect other events in the pipeline.  For example, when a change is first uploaded for review, you may want to run tests on that change to provide early feedback to reviewers. At the end of the tests, the change is not going to be merged, so it is safe to run these tests in parallel without regard to any other changes in the pipeline.  They are independent."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:93
+msgid "Another type of pipeline that is independent is a post-merge pipeline. In that case, the changes have already merged, so the results can not affect any other events in the pipeline."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:99
+msgid "The dependent pipeline manager is designed for gating.  It ensures that every change is tested exactly as it is going to be merged into the repository.  An ideal gating system would test one change at a time, applied to the tip of the repository, and only if that change passed tests would it be merged.  Then the next change in line would be tested the same way.  In order to achieve parallel testing of changes, the dependent pipeline manager performs speculative execution on changes.  It orders changes based on their entry into the pipeline.  It begins testing all changes in parallel, assuming that each change ahead in the pipeline will pass its tests.  If they all succeed, all the changes can be tested and merged in parallel.  If a change near the front of the pipeline fails its tests, each change behind it ignores whatever tests have been completed and are tested again without the change in front.  This way gate tests may run in parallel but still be tested correctly, exactly as they will appear in the repository when merged."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:118
+msgid "For more detail on the theory and operation of Zuul's dependent pipeline manager, see: :doc:`/gating`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:123
+msgid "This pipeline manager supports shared queues (like dependent pipelines) but only one item in each shared queue is processed at a time."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:127
+msgid "This may be useful for post-merge pipelines which perform partial production deployments (i.e., there are jobs with file matchers which only deploy to affected parts of the system).  In such a case it is important for every change to be processed, but they must still be processed one at a time in order to ensure that the production system is not inadvertently regressed.  Support for shared queues ensures that if multiple projects are involved deployment runs still execute sequentially."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:139
+msgid "This is like an independent pipeline, in that every item is distinct, except that items are grouped by project and ref, and only one item for each project-ref is processed at a time.  If more than one additional item is enqueued for the project-ref, previously enqueued items which have not started processing are removed."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:146
+msgid "In other words, this pipeline manager will only run jobs for the most recent item enqueued for a given project-ref."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:149
+msgid "This may be useful for post-merge pipelines which perform artifact builds where only the latest version is of use.  In these cases, build resources can be conserved by avoiding building intermediate versions."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:154
+msgid "Since this pipeline manager filters intermediate buildsets using it in combination with file filters on jobs is dangerous.  In this case jobs of in between buildsets can be unexpectedly skipped entirely. If file filters are needed the ``independent`` or ``serial`` pipeline managers should be used."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:162
+msgid "Since this pipeline manager creates a virtual queue for each project-ref, it ignores manually configured shared queues as well as circular dependencies."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:170
+msgid "This is a boolean which indicates that this pipeline executes code that has been reviewed.  Some jobs perform actions which should not be permitted with unreviewed code.  When this value is ``false`` those jobs will not be permitted to run in the pipeline.  If a pipeline is designed only to be used after changes are reviewed or merged, set this value to ``true`` to permit such jobs."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:178
+msgid "For more information, see :ref:`secret` and :attr:`job.post-review`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:183
+msgid "This field may be used to provide a textual description of the pipeline.  It may appear in the status page or in documentation."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:189
+msgid "This field may be used to provide a textual description of the variant. It may appear in the status page or in documentation."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:195
+msgid "The introductory text in reports when all the voting jobs are successful."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:201
+msgid "The introductory text in reports when at least one voting job fails."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:207
+msgid "The introductory text in reports when jobs are started. The following replacement fields are available:"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:210
+#: ../../source/config/pipeline.rst:221
+#: ../../source/config/pipeline.rst:239
+msgid "pipeline"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:211
+#: ../../source/config/pipeline.rst:222
+#: ../../source/config/pipeline.rst:240
+msgid "The name of the pipeline"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:212
+#: ../../source/config/pipeline.rst:223
+#: ../../source/config/pipeline.rst:241
+msgid "item_url"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:213
+#: ../../source/config/pipeline.rst:224
+#: ../../source/config/pipeline.rst:242
+msgid "The full URL to information about the item in the web UI"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:217
+msgid "The introductory text in reports when an item is enqueued. Empty by default. The following replacement fields are available:"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:229
+msgid "The introductory text in the message reported when a change fails to merge with the current state of the repository. Defaults to \"Merge failed.\""
+msgstr ""
+
+#: ../../source/config/pipeline.rst:235
+msgid "The introductory text in reports when an item is dequeued without running any jobs.  Empty by default. The following replacement fields are available:"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:247
+msgid "The introductory text in reports when an item is dequeued. The dequeue message only applies if the item was dequeued without a result."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:253
+msgid "Supplies additional information after test results.  Useful for adding information about the CI system such as debugging and contact details."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:259
+msgid "At least one trigger source must be supplied for each pipeline. Triggers are not exclusive -- matching events may be placed in multiple pipelines, and they will behave independently in each of the pipelines they match."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:264
+msgid "Triggers are loaded from their connection name. The driver type of the connection will dictate which options are available.  See :ref:`drivers`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:270
+msgid "If this section is present, it establishes prerequisites for any kind of item entering the Pipeline.  Regardless of how the item is to be enqueued (via any trigger or automatic dependency resolution), the conditions specified here must be met or the item will not be enqueued.  These requirements may vary depending on the source of the item being enqueued."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:277
+#: ../../source/config/pipeline.rst:287
+msgid "Requirements are loaded from their connection name. The driver type of the connection will dictate which options are available. See :ref:`drivers`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:283
+msgid "If this section is present, it establishes prerequisites that can block an item from being enqueued. It can be considered a negative version of :attr:`pipeline.require`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:294
+msgid "If this is set to `false` then any change enqueued into the pipeline (whether it is enqueued to run jobs or merely as a dependency) must be from one of the connections specified in the pipeline configuration (this includes any trigger, reporter, or source requirement).  When used in conjunction with :attr:`pipeline.require`, this can ensure that pipeline requirements are exhaustive."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:304
+msgid "The name of a pipeline, or a list of names, that this pipeline supercedes.  When a change is enqueued in this pipeline, it will be removed from the pipelines listed here.  For example, a :term:`gate` pipeline may supercede a :term:`check` pipeline so that test resources are not spent running near-duplicate jobs simultaneously."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:314
+msgid "Normally, if a new patchset is uploaded to a change that is in a pipeline, the existing entry in the pipeline will be removed (with jobs canceled and any dependent changes that can no longer merge as well.  To suppress this behavior (and allow jobs to continue running), set this to ``false``."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:323
+msgid "In any kind of pipeline (dependent or independent), Zuul will attempt to enqueue all dependencies ahead of the current change so that they are tested together (independent pipelines report the results of each change regardless of the results of changes ahead).  To ignore dependencies completely in an independent pipeline, set this to ``true``.  This option is ignored by dependent pipelines."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:334
+msgid "Indicates how the build scheduler should prioritize jobs for different pipelines.  Each pipeline may have one precedence, jobs for pipelines with a higher precedence will be run before ones with lower.  The value should be one of ``high``, ``normal``, or ``low``.  Default: ``normal``."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:342
+msgid "The following options configure :term:`reporters <reporter>`. Reporters are complementary to triggers; where a trigger is an event on a connection which causes Zuul to enqueue an item, a reporter is the action performed on a connection when an item is dequeued after its jobs complete.  The actual syntax for a reporter is defined by the driver which implements it.  See :ref:`drivers` for more information."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:352
+msgid "Describes where Zuul should report to if all the jobs complete successfully.  This section is optional; if it is omitted, Zuul will run jobs and do nothing on success -- it will not report at all.  If the section is present, the listed :term:`reporters <reporter>` will be asked to report on the jobs.  The reporters are listed by their connection name. The options available depend on the driver for the supplied connection."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:362
+msgid "These reporters describe what Zuul should do if at least one job fails."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:367
+msgid "These reporters describe what Zuul should do if it is unable to merge the patchset into the current state of the target branch. If no merge-conflict reporters are listed then the ``failure`` reporters will be used."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:374
+msgid "These reporters describe what Zuul should do if it encounters a configuration error while trying to enqueue the item.  If no config-error reporters are listed then the ``failure`` reporters will be used."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:381
+msgid "These reporters describe what Zuul should do when an item is enqueued into the pipeline.  This may be used to indicate to a system or user that Zuul is aware of the triggering event even though it has not evaluated whether any jobs will run."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:388
+msgid "These reporters describe what Zuul should do when jobs start running for an item in the pipeline.  This can be used, for example, to reset a previously reported result."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:394
+msgid "These reporters describe what Zuul should do when an item is dequeued from a pipeline without running any jobs.  This may be used to indicate to a system or user that the pipeline is not relevant for a change."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:401
+msgid "These reporters describe what Zuul should do when a pipeline is disabled.  See ``disable-after-consecutive-failures``."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:406
+msgid "These reporters describe what Zuul should do if an item is dequeued. The dequeue reporters will only apply if all of the following are true:"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:410
+msgid "The pipeline has a start reporter"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:411
+msgid "The item has reported start"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:412
+msgid "The item was dequeued without a result"
+msgstr ""
+
+#: ../../source/config/pipeline.rst:414
+msgid "The following options can be used to alter Zuul's behavior to mitigate situations in which jobs are failing frequently (perhaps due to a problem with an external dependency, or unusually high non-deterministic test failures)."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:421
+msgid "If set, a pipeline can enter a *disabled* state if too many changes in a row fail. When this value is exceeded the pipeline will stop reporting to any of the **success**, **failure** or **merge-conflict** reporters and instead only report to the **disabled** reporters.  (No **start** reports are made when a pipeline is disabled)."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:431
+msgid "Dependent pipeline managers only. Zuul can rate limit dependent pipelines in a manner similar to TCP flow control.  See :ref:`pipeline_window` for an overview.  Jobs are only started for items in the queue if they are within the active window for the pipeline. The initial length of this window is configurable with this value. The value given should be a positive integer value. A value of ``0`` disables rate limiting on the :value:`dependent pipeline manager <pipeline.manager.dependent>`."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:444
+msgid "Dependent pipeline managers only. This is the minimum value for the window described above. Should be a positive non zero integer value."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:450
+msgid "Dependent pipeline managers only. This is the maximum value for the window described above.  When omitted or set to ``null``, there is no upper limit on the size of the window.  If set, must be greater than or equal to the floor."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:458
+msgid "Dependent pipeline managers only. This value describes how the window should grow when changes are successfully merged by zuul."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:463
+msgid "Indicates that **window-increase-factor** should be added to the previous window value."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:468
+msgid "Indicates that **window-increase-factor** should be multiplied against the previous window value and the result will become the window size."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:475
+msgid "Dependent pipeline managers only. The value to be added or multiplied against the previous window value to determine the new window after successful change merges."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:482
+msgid "Dependent pipeline managers only. This value describes how the window should shrink when changes are not able to be merged by Zuul."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:488
+msgid "Indicates that **window-decrease-factor** should be subtracted from the previous window value."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:493
+msgid "Indicates that **window-decrease-factor** should be divided against the previous window value and the result will become the window size."
+msgstr ""
+
+#: ../../source/config/pipeline.rst:500
+msgid ":value:`Dependent pipeline managers <pipeline.manager.dependent>` only. The value to be subtracted or divided against the previous window value to determine the new window after unsuccessful change merges."
+msgstr ""
+
+#: ../../source/config/pragma.rst:4
+msgid "Pragma"
+msgstr ""
+
+#: ../../source/config/pragma.rst:6
+msgid "The `pragma` item does not behave like the others.  It can not be included or excluded from configuration loading by the administrator, and does not form part of the final configuration itself.  It is used to alter how the configuration is processed while loading."
+msgstr ""
+
+#: ../../source/config/pragma.rst:11
+msgid "A pragma item only affects the current file.  The same file in another branch of the same project will not be affected, nor any other files or any other projects.  The effect is global within that file -- pragma directives may not be set and then unset within the same file."
+msgstr ""
+
+#: ../../source/config/pragma.rst:23
+msgid "The pragma item currently supports the following attributes:"
+msgstr ""
+
+#: ../../source/config/pragma.rst:27
+msgid "This is a boolean, which, if set, may be used to enable (``true``) or disable (``false``) the addition of implied branch matchers to job and project-template definitions.  Normally Zuul decides whether to add these based on heuristics described in :attr:`job.branches`.  This attribute overrides that behavior."
+msgstr ""
+
+#: ../../source/config/pragma.rst:33
+msgid "This can be useful if a project has multiple branches, yet the jobs defined in the default branch should apply to all branches."
+msgstr ""
+
+#: ../../source/config/pragma.rst:36
+msgid "The behavior may also be configured by a Zuul administrator using :attr:`tenant.untrusted-projects.<project>.implied-branch-matchers`. This pragma overrides that setting if both are present."
+msgstr ""
+
+#: ../../source/config/pragma.rst:41
+#: ../../source/config/pragma.rst:72
+msgid "Note that if a job contains an explicit branch matcher, it will be used regardless of the value supplied here."
+msgstr ""
+
+#: ../../source/config/pragma.rst:46
+msgid "This is a list of :ref:`regular expressions <regex>`, just as :attr:`job.branches`, which may be used to supply the value of the implied branch matcher for all jobs and project-templates in a file."
+msgstr ""
+
+#: ../../source/config/pragma.rst:51
+msgid "This may be useful if two projects share jobs but have dissimilar branch names.  If, for example, two projects have stable maintenance branches with dissimilar names, but both should use the same job variants, this directive may be used to indicate that all of the jobs defined in the stable branch of the first project may also be used for the stable branch of the other.  For example:"
+msgstr ""
+
+#: ../../source/config/pragma.rst:66
+msgid "The above code, when added to the ``stable/foo`` branch of a project would indicate that the job variants described in that file should not only be used for changes to ``stable/foo``, but also on changes to ``stable/bar``, which may be in another project."
+msgstr ""
+
+#: ../../source/config/pragma.rst:75
+msgid "If this is used in a branch, it should include that branch name or changes on that branch may be ignored."
+msgstr ""
+
+#: ../../source/config/pragma.rst:78
+msgid "Note also that the presence of `implied-branches` does not automatically set `implied-branch-matchers`.  Zuul will still decide if implied branch matchers are warranted at all, using the heuristics described in :attr:`job.branches`, and only use the value supplied here if that is the case.  If you want to declare specific implied branches on, for example, a :term:`config-project` project (which normally would not use implied branches), you must set `implied-branch-matchers` as well."
+msgstr ""
+
+#: ../../source/config/project.rst:4
+msgid "Project"
+msgstr ""
+
+#: ../../source/config/project.rst:6
+msgid "A project corresponds to a source code repository with which Zuul is configured to interact.  The main responsibility of the project configuration item is to specify which jobs should run in which pipelines for a given project.  Within each project definition, a section for each :ref:`pipeline <pipeline>` may appear.  This project-pipeline definition is what determines how a project participates in a pipeline."
+msgstr ""
+
+#: ../../source/config/project.rst:14
+msgid "Multiple project definitions may appear for the same project (for example, in a central :term:`config projects <config-project>` as well as in a repo's own ``.zuul.yaml``).  In this case, all of the project definitions for the relevant branch are combined (the jobs listed in all of the matching definitions will be run).  In the case of an item which does not have a branch (for example, a tag), all of the project definitions will be combined."
+msgstr ""
+
+#: ../../source/config/project.rst:22
+msgid "Consider the following project definition::"
+msgstr ""
+
+#: ../../source/config/project.rst:36
+msgid "The project has two project-pipeline stanzas, one for the ``check`` pipeline, and one for ``gate``.  Each specifies which jobs should run when a change for that project enters the respective pipeline -- when a change enters ``check``, the ``check-syntax`` and ``unit-test`` jobs are run."
+msgstr ""
+
+#: ../../source/config/project.rst:42
+msgid "Pipelines which use the dependent pipeline manager (e.g., the ``gate`` example shown earlier) maintain separate queues for groups of projects.  When Zuul serializes a set of changes which represent future potential project states, it must know about all of the projects within Zuul which may have an effect on the outcome of the jobs it runs.  If project *A* uses project *B* as a library, then Zuul must be told about that relationship so that it knows to serialize changes to A and B together, so that it does not merge a change to B while it is testing a change to A."
+msgstr ""
+
+#: ../../source/config/project.rst:52
+msgid "Zuul could simply assume that all projects are related, or even infer relationships by which projects a job indicates it uses, however, in a large system that would become unwieldy very quickly, and unnecessarily delay changes to unrelated projects.  To allow for flexibility in the construction of groups of related projects, the change queues used by dependent pipeline managers are specified manually.  To group two or more related projects into a shared queue for a dependent pipeline, set the ``queue`` parameter to the same value for those projects."
+msgstr ""
+
+#: ../../source/config/project.rst:62
+msgid "The ``gate`` project-pipeline definition above specifies that this project participates in the ``integrated`` shared queue for that pipeline."
+msgstr ""
+
+#: ../../source/config/project.rst:68
+msgid "The following attributes may appear in a project:"
+msgstr ""
+
+#: ../../source/config/project.rst:72
+msgid "The name of the project.  If Zuul is configured with two or more unique projects with the same name, the canonical hostname for the project should be included (e.g., `git.example.com/foo`). This can also be a regex. In this case the regex must start with ``^`` and match the full project name following the same rule as name without regex. If not given it is implicitly derived from the project where this is defined."
+msgstr ""
+
+#: ../../source/config/project.rst:82
+msgid "A list of :ref:`project-template` references; the project-pipeline definitions of each Project Template will be applied to this project.  If more than one template includes jobs for a given pipeline, they will be combined, as will any jobs specified in project-pipeline definitions on the project itself."
+msgstr ""
+
+#: ../../source/config/project.rst:91
+msgid "A list of branches to which this `project` stanza should apply."
+msgstr ""
+
+#: ../../source/config/project.rst:93
+msgid "If omitted on a `project` stanza within an :term:`untrusted-project` that is configuring its own project, the current branch will be used (:attr:`pragma` settings are ignored).  That means that in the typical case where this option is omitted on an untrusted project, the stanza is always interpreted as configuring the project on the branch where the definition is found."
+msgstr ""
+
+#: ../../source/config/project.rst:101
+msgid "If omitted on a `project` stanza within a :term:`config-project`, the stanza will be interpreted as applying to all branches (but :attr:`pragma` settings are effective in this case, see below)."
+msgstr ""
+
+#: ../../source/config/project.rst:106
+msgid "If omitted when configuring a project other than the current project, if the current project is branched, then the current branch will be used (but :attr:`pragma` settings are effective in this case, see below).  If the current project has only one branch, then the stanza will be interpreted as applying to all branches."
+msgstr ""
+
+#: ../../source/config/project.rst:113
+msgid "In the cases where :attr:`pragma` settings are effective, if :attr:`pragma.implied-branch-matchers` is in effect then :attr:`pragma.implied-branches` will be used."
+msgstr ""
+
+#: ../../source/config/project.rst:117
+msgid "In all cases, explicit configuration of branches overrides implied branches."
+msgstr ""
+
+#: ../../source/config/project.rst:120
+msgid "Note that use of this attribute when configuring the jobs run on the current project can produce undesirable behavior when combined with common project branching paradigms.  In particular, note that when a project is branched, the project stanzas are effectively copied onto that branch, and therefore additional explicit stanzas will be in effect.  It is recommended to only use this attribute inside unbranched projects and instead use the default implicit branch behavior for branched projects."
+msgstr ""
+
+#: ../../source/config/project.rst:133
+msgid "The name of a branch that Zuul should check out in jobs if no better match is found.  Typically Zuul will check out the branch which matches the change under test, or if a job has specified an :attr:`job.override-checkout`, it will check that out. However, if there is no matching or override branch, then Zuul will checkout the default branch."
+msgstr ""
+
+#: ../../source/config/project.rst:140
+msgid "Each project may only have one ``default-branch`` therefore Zuul will use the first value that it encounters for a given project (regardless of in which branch the definition appears).  It may not appear in a :ref:`project-template` definition."
+msgstr ""
+
+#: ../../source/config/project.rst:145
+msgid "This setting also affects the order in which configuration objects are processed.  Zuul will process the default branch first before any other branches."
+msgstr ""
+
+#: ../../source/config/project.rst:149
+msgid "The Gerrit and GitHub drivers will automatically use the default branch as specified for the repository in their respective systems as a default value for this setting.  It may be overridden by setting this value explicitly."
+msgstr ""
+
+#: ../../source/config/project.rst:157
+msgid "The merge mode which is used by Git for this project.  Be sure this matches what the remote system which performs merges (i.e., Gerrit). The requested merge mode will also be used by the GitHub and GitLab drivers when performing merges."
+msgstr ""
+
+#: ../../source/config/project.rst:162
+msgid "Each project may only have one ``merge-mode`` therefore Zuul will use the first value that it encounters for a given project (regardless of in which branch the definition appears).  It may not appear in a :ref:`project-template` definition."
+msgstr ""
+
+#: ../../source/config/project.rst:167
+msgid "It must be one of the following values:"
+msgstr ""
+
+#: ../../source/config/project.rst:171
+msgid "Uses the default git merge strategy. This maps to the merge mode ``merge`` in GitHub and GitLab. This is the default merge mode for all drivers except gerrit and GitHub."
+msgstr ""
+
+#: ../../source/config/project.rst:177
+msgid "Uses the resolve git merge strategy. This is a very conservative merge strategy which most closely matches the behavior of Gerrit, and is the default merge mode for Gerrit. This maps to the merge mode ``merge`` in GitHub and GitLab."
+msgstr ""
+
+#: ../../source/config/project.rst:184
+msgid "Uses the ``recursive`` git merge strategy. This is the default merge mode for GitHub Enterprise version earlier than 3.8."
+msgstr ""
+
+#: ../../source/config/project.rst:189
+msgid "Uses the ``ort`` git merge strategy. This is the default merge mode for github.com and GitHub Enterprise version 3.8 or newer."
+msgstr ""
+
+#: ../../source/config/project.rst:194
+msgid "Cherry-picks each change onto the branch rather than performing any merges. This is not supported by GitHub and GitLab."
+msgstr ""
+
+#: ../../source/config/project.rst:199
+msgid "Squash merges each change onto the branch. This maps to the merge mode ``squash`` in GitHub and GitLab."
+msgstr ""
+
+#: ../../source/config/project.rst:204
+msgid "Rebases the changes onto the branch.  This is only supported by GitHub and maps to the ``rebase`` merge mode (but does not alter committer information in the way that GitHub does in the repos that Zuul prepares for jobs)."
+msgstr ""
+
+#: ../../source/config/project.rst:212
+msgid "A dictionary of variables to be made available for all jobs in all pipelines of this project.  For more information see :ref:`variable inheritance <user_jobs_variable_inheritance>`."
+msgstr ""
+
+#: ../../source/config/project.rst:218
+msgid "This specifies the name of the shared queue this project is in.  Any projects which interact with each other in tests should be part of the same shared queue in order to ensure that they don't merge changes which break the others.  This is a free-form string; just set the same value for each group of projects."
+msgstr ""
+
+#: ../../source/config/project.rst:225
+msgid "The name can refer to the name of a :attr:`queue` which allows further configuration of the queue."
+msgstr ""
+
+#: ../../source/config/project.rst:228
+msgid "Each pipeline for a project can only belong to one queue, therefore Zuul will use the first value that it encounters. It need not appear in the first instance of a :attr:`project` stanza; it may appear in secondary instances or even in a :ref:`project-template` definition."
+msgstr ""
+
+#: ../../source/config/project.rst:234
+msgid "This attribute is not evaluated speculatively and its setting shall be merged to be effective."
+msgstr ""
+
+#: ../../source/config/project.rst:239
+msgid "Each pipeline that the project participates in should have an entry in the project.  The value for this key should be a dictionary with the following format:"
+msgstr ""
+
+#: ../../source/config/project.rst:246
+msgid "A list of jobs that should be run when items for this project are enqueued into the pipeline.  Each item of this list may be a string, in which case it is treated as a job name, or it may be a dictionary, in which case it is treated as a job variant local to this project and pipeline.  In that case, the format of the dictionary is the same as the top level :attr:`job` definition.  Any attributes set on the job here will override previous versions of the job."
+msgstr ""
+
+#: ../../source/config/project.rst:257
+msgid "If this is set to `true`, Zuul will include debugging information in reports it makes about items in the pipeline. This should not normally be set, but in situations were it is difficult to determine why Zuul did or did not run a certain job, the additional information this provides may help."
+msgstr ""
+
+#: ../../source/config/project.rst:266
+msgid "If this is set to `true`, Zuul will report a build or node failure immediately and abort all still running builds. This can be used to save resources in resource constrained environments at the cost of potentially requiring multiple attempts if more than one problem is present."
+msgstr ""
+
+#: ../../source/config/project.rst:272
+msgid "Once this is defined it cannot be overridden afterwards. So this can be forced to a specific value by e.g. defining it in a config repo."
+msgstr ""
+
+#: ../../source/config/project.rst:279
+msgid "Project Template"
+msgstr ""
+
+#: ../../source/config/project.rst:281
+msgid "A Project Template defines one or more project-pipeline definitions which can be re-used by multiple projects."
+msgstr ""
+
+#: ../../source/config/project.rst:284
+msgid "A Project Template uses the same syntax as a :ref:`project` definition, however, in the case of a template, the :attr:`project.name` attribute does not refer to the name of a project, but rather names the template so that it can be referenced in a :ref:`project` definition."
+msgstr ""
+
+#: ../../source/config/project.rst:290
+msgid "Because Project Templates may be used outside of the projects where they are defined, they honor the implied branch :ref:`pragmas <pragma>` (unlike Projects).  The same heuristics described in :attr:`job.branches` that determine what implied branches a :ref:`job` will receive apply to Project Templates (with the exception that it is not possible to explicitly set a branch matcher on a Project Template)."
+msgstr ""
+
+#: ../../source/config/provider.rst:4
+msgid "Provider"
+msgstr ""
+
+#: ../../source/config/provider.rst:6
+msgid "A provider is responsible for managing :ref:`build_nodes` (which may be VMs, real servers, containers, or other resources) for Zuul.  A provider may appear in more than one tenant; if it does, it is still treated as a single provider that is shared by those tenants."
+msgstr ""
+
+#: ../../source/config/provider.rst:11
+msgid "The provider may have resource limits applied to it; if it does, those limits are shared across all tenants (in other words, if a provider has a limit of 10 instances, then all of the tenants that use that provider share the 10 instance limit)."
+msgstr ""
+
+#: ../../source/config/provider.rst:16
+msgid "Providers refer to other objects, such as :ref:`label`, :ref:`image` and, indirectly, :ref:`flavor` objects.  These references are made by name, and since they may be loaded from other projects, it is possible for the same provider to reference different label, flavor, and image objects in different tenants.  This will work as expected: the cloud will have different images uploaded if they reference different images, or it will use the same image if they reference the same image."
+msgstr ""
+
+#: ../../source/config/provider.rst:25
+msgid "If there are settings that are common to most or all flavors, images, or labels, they may be able to be added to the associated `defaults` section (`flavor-defaults`, `label-defaults`, and `image-defaults`). In these cases, a specific setting for an individual flavor, label, or image would override one set as a default.  Further, some settings are available on the top-level flavor, label, and image objects; some of these may also be overridden at the provider."
+msgstr ""
+
+#: ../../source/config/provider.rst:33
+msgid "Each provider must inherit from exactly one :ref:`section`.  A section represents a portion of a cloud or other system that supplies resources.  Sections may inherit from other sections, but eventually one of them must be associated with one of the Zuul :ref:`connections` which represent the entire cloud or resource supplier."
+msgstr ""
+
+#: ../../source/config/provider.rst:39
+#: ../../source/config/section.rst:14
+msgid "Configuration information that is common to multiple providers should be added to to a section rather than the providers.  For the most part, sections and providers have the same configuration attributes available to them.  The few exceptions are the `section` attribute which is only available to providers, the `connection` attribute, which is only available to sections (and may not be overridden in a chain of inheritance of multiple sections), and the `flavors` attribute, which is only available to sections."
+msgstr ""
+
+#: ../../source/config/provider.rst:48
+#: ../../source/config/section.rst:23
+msgid "This inheritance chain guarantees that any provider and its associated sections are only ever associated with a single connection and therefore driver (such as AWS, OpenStack, etc.).  Because each remote system behaves differently, the options available for each system differ, and therefore the options available to a given provider or section depend on which driver is used for the underlying connection. A small number of very basic options which are available in all cases are documented here, but the full list of available options is provided with each driver's documentation."
+msgstr ""
+
+#: ../../source/config/provider.rst:60
+msgid "For the full list of attributes available to a provider based on its driver, see:"
+msgstr ""
+
+#: ../../source/config/provider.rst:63
+#: ../../source/config/section.rst:38
+msgid ":attr:`provider[aws]`"
+msgstr ""
+
+#: ../../source/config/provider.rst:64
+#: ../../source/config/section.rst:39
+msgid ":attr:`provider[azure]`"
+msgstr ""
+
+#: ../../source/config/provider.rst:65
+#: ../../source/config/section.rst:40
+msgid ":attr:`provider[static]`"
+msgstr ""
+
+#: ../../source/config/provider.rst:66
+#: ../../source/config/section.rst:41
+msgid ":attr:`provider[openstack]`"
+msgstr ""
+
+#: ../../source/config/provider.rst:72
+msgid "The name of the provider."
+msgstr ""
+
+#: ../../source/config/provider.rst:78
+msgid "The :ref:`section` to which this provider should be attached."
+msgstr ""
+
+#: ../../source/config/provider.rst:83
+msgid "A textual description of the provider."
+msgstr ""
+
+#: ../../source/config/provider.rst:88
+msgid "A list of :ref:`image` objects available to this provider."
+msgstr ""
+
+#: ../../source/config/provider.rst:93
+msgid "A list of :ref:`label` objects available to this provider."
+msgstr ""
+
+#: ../../source/config/queue.rst:4
+msgid "Queue"
+msgstr ""
+
+#: ../../source/config/queue.rst:6
+msgid "Projects that interact with each other should share a ``queue``. This is especially used in a :value:`dependent <pipeline.manager.dependent>` pipeline. The :attr:`project.queue` can optionally refer to a specific :attr:`queue` object that can further configure the behavior of the queue."
+msgstr ""
+
+#: ../../source/config/queue.rst:12
+msgid "Here is an example ``queue`` configuration."
+msgstr ""
+
+#: ../../source/config/queue.rst:23
+msgid "The attributes available on a queue are as follows (all are optional unless otherwise specified):"
+msgstr ""
+
+#: ../../source/config/queue.rst:29
+msgid "This is used later in the project definition to refer to this queue."
+msgstr ""
+
+#: ../../source/config/queue.rst:34
+msgid "Queues by default define a single queue for all projects and branches that use it. This is especially important if projects want to do upgrade tests between different branches in the :term:`gate`. If a set of projects doesn't have this use case it can configure the queue to create a shared queue per branch for all projects. This can be useful for large projects to improve the throughput of a gate pipeline as this results in shorter queues and thus less impact when a job fails in the gate. Note that this means that all projects that should be gated must have aligned branch names when using per branch queues. Otherwise changes that belong together end up in different queues."
+msgstr ""
+
+#: ../../source/config/queue.rst:49
+msgid "Determines whether Zuul is allowed to process circular dependencies between changes for this queue. All projects that are part of a dependency cycle must share the same change queue."
+msgstr ""
+
+#: ../../source/config/queue.rst:53
+msgid "If Zuul detects a dependency cycle it will ensure that every change also includes all other changes that are part of the cycle.  However each change will still be a normal item in the queue with its own jobs."
+msgstr ""
+
+#: ../../source/config/queue.rst:58
+msgid "Reporting of success will be postponed until all items in the cycle succeed. In the case of a failure in any of those items the whole cycle will be dequeued."
+msgstr ""
+
+#: ../../source/config/queue.rst:62
+msgid "An error message will be posted to all items of the cycle if some items fail to report (e.g. merge failure when some items were already merged). In this case the target branch(es) might be in a broken state."
+msgstr ""
+
+#: ../../source/config/queue.rst:66
+msgid "In general, circular dependencies are considered to be an antipattern since they add extra constraints to continuous deployment systems.  Additionally, due to the lack of atomicity in merge operations in code review systems (this includes Gerrit, even with submitWholeTopic set), it may be possible for only part of a cycle to be merged.  In that case, manual interventions (such as reverting a commit, or bypassing gating to force-merge the remaining commits) may be required."
+msgstr ""
+
+#: ../../source/config/queue.rst:75
+msgid "If the remote system is able to merge the first but unable to merge the second or later change in a dependency cycle, then the gating system for a project may be broken and may require an intervention to correct."
+msgstr ""
+
+#: ../../source/config/queue.rst:84
+msgid "Determines whether Zuul should query the code review system for changes under the same topic and treat those as a set of circular dependencies."
+msgstr ""
+
+#: ../../source/config/queue.rst:88
+msgid "Note that the Gerrit code review system supports a setting called ``change.submitWholeTopic``, which, when set, will cause all changes under the same topic to be merged simultaneously. Zuul automatically observes this setting and treats all changes to be submitted together as circular dependencies.  If this setting is enabled in gerrit, do not enable ``dependencies-by-topic`` in associated Zuul queues."
+msgstr ""
+
+#: ../../source/config/queue.rst:96
+msgid "Because ``change.submitWholeTopic`` is applied system-wide in Gerrit, some Zuul users may wish to emulate the behavior for some projects without enabling it for all of Gerrit.  In this case, setting ``dependencies-by-topic`` will cause Zuul to approximate the Gerrit behavior only for changes enqueued into queues where this is set."
+msgstr ""
+
+#: ../../source/config/queue.rst:103
+msgid "This setting requires :attr:`queue.allow-circular-dependencies` to also be set.  All of the caveats noted there continue to apply."
+msgstr ""
+
+#: ../../source/config/secret.rst:4
+msgid "Secret"
+msgstr ""
+
+#: ../../source/config/secret.rst:6
+msgid "Zuul supports two types of secrets:"
+msgstr ""
+
+#: ../../source/config/secret.rst:8
+msgid "A collection of private data for use by one or more jobs, hereafter referred to as a `data secret`."
+msgstr ""
+
+#: ../../source/config/secret.rst:11
+msgid "Automatic OpenID Connect (OIDC) token generation for use by jobs, hereafter referred to as a `token secret`."
+msgstr ""
+
+#: ../../source/config/secret.rst:14
+msgid "A given secret defined in Zuul may only perform one of those roles (they are mutually exclusive)."
+msgstr ""
+
+#: ../../source/config/secret.rst:18
+msgid "Data Secrets"
+msgstr ""
+
+#: ../../source/config/secret.rst:20
+msgid "A `data secret` is one where values are specified using the :attr:`secret.data` attribute described below."
+msgstr ""
+
+#: ../../source/config/secret.rst:23
+msgid "In order to maintain the security of the data, the values are usually encrypted, however, data which are not sensitive may be provided unencrypted as well for convenience."
+msgstr ""
+
+#: ../../source/config/secret.rst:28
+msgid "Token Secrets"
+msgstr ""
+
+#: ../../source/config/secret.rst:30
+msgid "A `token secret` is one where an OpenID Connect (OIDC) token is automatically generated for the job being run.  Configuration of the token is described below in :attr:`secret.oidc`."
+msgstr ""
+
+#: ../../source/config/secret.rst:34
+msgid "Zuul acts as an OpenID Connect Identity Provider which enables it to provide an identity to a job which can be trusted by federated third party services.  When configured in :attr:`secret.oidc`, Zuul will generate an OIDC ID token dynamically and make it available to the jobs that are configured to use the secret."
+msgstr ""
+
+#: ../../source/config/secret.rst:40
+msgid "In addition to the standard claims, the ID token will contain the following Zuul claims by default:"
+msgstr ""
+
+#: ../../source/config/secret.rst:43
+msgid "**sub**"
+msgstr ""
+
+#: ../../source/config/secret.rst:44
+msgid "This is the most important claim.  Most third-party services are likely to match on this claim to determine permissions.  This claim acts as a fully-qualified name to uniquely identify the Zuul secret used.  It takes the form:"
+msgstr ""
+
+#: ../../source/config/secret.rst:49
+msgid "``secret:{zuul tenant}/{canonical project name}/{secret name}``"
+msgstr ""
+
+#: ../../source/config/secret.rst:51
+msgid "The following items are not stable identifiers and may not be suitable for use in matching.  Caution is advised when using these."
+msgstr ""
+
+#: ../../source/config/secret.rst:54
+msgid "**build-uuid**"
+msgstr ""
+
+#: ../../source/config/secret.rst:55
+msgid "The UUID that uniquely identifies the current build."
+msgstr ""
+
+#: ../../source/config/secret.rst:57
+msgid "**job-name**"
+msgstr ""
+
+#: ../../source/config/secret.rst:58
+msgid "The name of the currently running job."
+msgstr ""
+
+#: ../../source/config/secret.rst:60
+msgid "**playbook**"
+msgstr ""
+
+#: ../../source/config/secret.rst:61
+msgid "The name of the currently running playbook."
+msgstr ""
+
+#: ../../source/config/secret.rst:63
+msgid "**pipeline**"
+msgstr ""
+
+#: ../../source/config/secret.rst:64
+msgid "The name of the pipeline the currently running build is in."
+msgstr ""
+
+#: ../../source/config/secret.rst:66
+msgid "**tenant**"
+msgstr ""
+
+#: ../../source/config/secret.rst:67
+msgid "The name of the Zuul tenant the running build is in."
+msgstr ""
+
+#: ../../source/config/secret.rst:69
+msgid "Custom claims can be added to the ID token in :attr:`secret.oidc.claims`"
+msgstr ""
+
+#: ../../source/config/secret.rst:71
+msgid "Signing key rotation is handled by Zuul automatically where the rotation interval can be specified in :attr:`oidc.signing_key_rotation_interval` system-wide in the main Zuul configuration file."
+msgstr ""
+
+#: ../../source/config/secret.rst:75
+msgid "In case a key is compromised, the ``zuul-admin`` command ``delete-oidc-signing-keys`` can be used to delete the signing keys of a specific algorithm and Zuul will automatically generate a new signing key."
+msgstr ""
+
+#: ../../source/config/secret.rst:81
+msgid "Usage"
+msgstr ""
+
+#: ../../source/config/secret.rst:83
+msgid "A Secret may only be used by jobs defined within the same project. Note that they can be used by any branch of that project, so if a project's branches have different access controls, consider whether all branches of that project are equally trusted before using secrets."
+msgstr ""
+
+#: ../../source/config/secret.rst:88
+msgid "To use a secret, a :ref:`job` must specify the secret in :attr:`job.secrets`.  With one exception, secrets are bound to the playbooks associated with the specific job definition where they were declared.  Additional pre or post playbooks which appear in child jobs will not have access to the secrets, nor will playbooks which override the main playbook (if any) of the job which declared the secret.  This protects against jobs in other repositories declaring a job with a secret as a parent and then exposing that secret."
+msgstr ""
+
+#: ../../source/config/secret.rst:97
+msgid "The exception to the above is if the :attr:`job.secrets.pass-to-parent` attribute is set to true.  In that case, the secret is made available not only to the playbooks in the current job definition, but to all playbooks in all parent jobs as well.  This allows for jobs which are designed to work with secrets while leaving it up to child jobs to actually supply the secret.  Use this option with care, as it may allow the authors of parent jobs to accidentally or intentionally expose secrets.  If a secret with `pass-to-parent` set in a child job has the same name as a secret available to a parent job's playbook, the secret in the child job will not override the parent, instead it will simply not be available to that playbook (but will remain available to others)."
+msgstr ""
+
+#: ../../source/config/secret.rst:110
+msgid "It is possible to use secrets for jobs defined in :term:`config projects <config-project>` as well as :term:`untrusted projects <untrusted-project>`, however their use differs slightly.  Because playbooks in a config project which use secrets run in the :term:`trusted execution context` where proposed changes are not used in executing jobs, it is safe for those secrets to be used in all types of pipelines.  However, because playbooks defined in an untrusted project are run in the :term:`untrusted execution context` where proposed changes are used in job execution, it is dangerous to allow those secrets to be used in pipelines which are used to execute proposed but unreviewed changes.  By default, pipelines are considered `pre-review` and will refuse to run jobs which have playbooks that use secrets in the untrusted execution context (including those subject to :attr:`job.secrets.pass-to-parent` secrets) in order to protect against someone proposing a change which exposes a secret.  To permit this (for instance, in a pipeline which only runs after code review), the :attr:`pipeline.post-review` attribute may be explicitly set to ``true``."
+msgstr ""
+
+#: ../../source/config/secret.rst:129
+msgid "In some cases, it may be desirable to prevent a job which is defined in a config project from running in a pre-review pipeline (e.g., a job used to publish an artifact).  In these cases, the :attr:`job.post-review` attribute may be explicitly set to ``true`` to indicate the job should only run in post-review pipelines."
+msgstr ""
+
+#: ../../source/config/secret.rst:135
+msgid "If a job with secrets is unsafe to be used by other projects, the :attr:`job.allowed-projects` attribute can be used to restrict the projects which can invoke that job.  If a job with secrets is defined in an `untrusted-project`, `allowed-projects` is automatically set to that project only, and can not be overridden (though a :term:`config-project` may still add the job to any project's pipeline regardless of this setting; do so with caution as other projects may expose the source project's secrets)."
+msgstr ""
+
+#: ../../source/config/secret.rst:144
+msgid "Secrets, like most configuration items, are unique within a tenant, though a secret may be defined on multiple branches of the same project as long as the contents are the same.  This is to aid in branch maintenance, so that creating a new branch based on an existing branch will not immediately produce a configuration error."
+msgstr ""
+
+#: ../../source/config/secret.rst:150
+msgid "When the values of secrets are passed to Ansible, the ``!unsafe`` YAML tag is added which prevents them from being evaluated as Jinja expressions.  This is to avoid a situation where a child job might expose a parent job's secrets via template expansion."
+msgstr ""
+
+#: ../../source/config/secret.rst:155
+msgid "However, if it is known that a given secret value can be trusted, then this limitation can be worked around by using the following construct in a playbook:"
+msgstr ""
+
+#: ../../source/config/secret.rst:164
+msgid "This will force an explicit template evaluation of the `var` attribute on the `secretname` secret.  The results will be stored in unsafe_var_eval."
+msgstr ""
+
+#: ../../source/config/secret.rst:170
+msgid "The following attributes must appear on a secret:"
+msgstr ""
+
+#: ../../source/config/secret.rst:175
+msgid "The name of the secret, used in a :ref:`job` definition to request the secret."
+msgstr ""
+
+#: ../../source/config/secret.rst:180
+msgid "Mutually exclusive with ``oidc``, either ``data`` or ``oidc`` must be supplied."
+msgstr ""
+
+#: ../../source/config/secret.rst:183
+msgid "Use of this attribute generates a :term:`data secret`."
+msgstr ""
+
+#: ../../source/config/secret.rst:185
+msgid "A dictionary which will be added to the Ansible variables available to the job.  The values can be any of the normal YAML data types (strings, integers, dictionaries or lists) or encrypted strings.  See :ref:`encryption` for more information."
+msgstr ""
+
+#: ../../source/config/secret.rst:192
+msgid "Mutually exclusive with ``data``, either ``data`` or ``oidc`` must be supplied."
+msgstr ""
+
+#: ../../source/config/secret.rst:195
+msgid "Use of this attribute generates a :term:`token secret`."
+msgstr ""
+
+#: ../../source/config/secret.rst:197
+msgid "If this value is set, then an OIDC ID token in string form will be generated dynamically before running the playbook, and will be added to the Ansible variables available to the job.  It can be used to authenticate to external services that trust Zuul."
+msgstr ""
+
+#: ../../source/config/secret.rst:202
+msgid "Since all attributes below are optional, to request a `token secret` without supplying any options, use the following form:"
+msgstr ""
+
+#: ../../source/config/secret.rst:213
+msgid "TTL (Time-To-Live) of the ID token in seconds, it is used to calculate ``exp`` claim. It should be longer than the duration between the playbook start and the task execution that uses the secret, otherwise the token may be expired. It must not be greater than the :attr:`tenant.max-oidc-ttl` and if not specified, the default value is :attr:`tenant.default-oidc-ttl`."
+msgstr ""
+
+#: ../../source/config/secret.rst:222
+msgid "Custom ``iss`` claim, it must be one of the allowed issuers defined in :attr:`tenant.allowed-oidc-issuers`."
+msgstr ""
+
+#: ../../source/config/secret.rst:227
+msgid "Specify the signing algorithm of the ID token.  It must be one of :attr:`oidc.supported_signing_algorithms` and if not specified, the default value is :attr:`oidc.default_signing_algorithm`."
+msgstr ""
+
+#: ../../source/config/secret.rst:233
+msgid "A dictionary of custom claims to be added to the ID token. For example, the ``aud`` claim can be specified here.  The custom claims are not able to overwrite the Zuul default claims mentioned above."
+msgstr ""
+
+#: ../../source/config/section.rst:4
+msgid "Section"
+msgstr ""
+
+#: ../../source/config/section.rst:6
+msgid "A section is a portion of a cloud or other system that supplies test resources.  Sections are used by :ref:`provider` objects to complete their configuration."
+msgstr ""
+
+#: ../../source/config/section.rst:10
+msgid "Sections may inherit from other sections, but eventually one of them must be associated with one of the Zuul :ref:`connections` which represent the entire cloud or test resource supplier."
+msgstr ""
+
+#: ../../source/config/section.rst:35
+msgid "For the full list of attributes available to a section based on its driver, see:"
+msgstr ""
+
+#: ../../source/config/section.rst:47
+msgid "The name of the section."
+msgstr ""
+
+#: ../../source/config/section.rst:52
+msgid "A :ref:`section` from which to inherit common configuration settings."
+msgstr ""
+
+#: ../../source/config/section.rst:57
+msgid "A textual description of the section."
+msgstr ""
+
+#: ../../source/config/section.rst:62
+msgid "The name of a Zuul :ref:`connection <connections>` this section should use to communicate with the cloud or other resource supplier."
+msgstr ""
+
+#: ../../source/config/section.rst:69
+msgid "Whether a section is intended to be inherited by another :ref:`section` or a :ref:`provider`.  This setting is currently unused (but may be used in the future).  If a section is used to provide common values to other sections, set this to `true`. Otherwise, the default of `false` indicates that the section should be referenced directly by providers."
+msgstr ""
+
+#: ../../source/config/section.rst:80
+msgid "A list of :ref:`image` objects available to this section."
+msgstr ""
+
+#: ../../source/config/section.rst:85
+msgid "A list of :ref:`label` objects available to this section."
+msgstr ""
+
+#: ../../source/config/section.rst:90
+msgid "A list of :ref:`flavor` objects available to this section."
+msgstr ""
+
+#: ../../source/config/semaphore.rst:4
+msgid "Semaphore"
+msgstr ""
+
+#: ../../source/config/semaphore.rst:6
+msgid "Semaphores can be used to restrict the number of certain jobs which are running at the same time.  This may be useful for jobs which access shared or limited resources.  A semaphore has a value which represents the maximum number of jobs which use that semaphore at the same time."
+msgstr ""
+
+#: ../../source/config/semaphore.rst:12
+msgid "Semaphores, like most configuration items, are unique within a tenant, though a semaphore may be defined on multiple branches of the same project as long as the value is the same.  This is to aid in branch maintenance, so that creating a new branch based on an existing branch will not immediately produce a configuration error."
+msgstr ""
+
+#: ../../source/config/semaphore.rst:18
+msgid "Zuul also supports global semaphores (see :ref:`global_semaphore`) which may only be created by the Zuul administrator, but can be used to coordinate resources across multiple tenants."
+msgstr ""
+
+#: ../../source/config/semaphore.rst:22
+msgid "Semaphores are never subject to dynamic reconfiguration.  If the value of a semaphore is changed, it will take effect only when the change where it is updated is merged.  However, Zuul will attempt to validate the configuration of semaphores in proposed updates, even if they aren't used."
+msgstr ""
+
+#: ../../source/config/semaphore.rst:28
+msgid "An example usage of semaphores follows:"
+msgstr ""
+
+#: ../../source/config/semaphore.rst:41
+msgid "The following attributes are available:"
+msgstr ""
+
+#: ../../source/config/semaphore.rst:46
+msgid "The name of the semaphore, referenced by jobs."
+msgstr ""
+
+#: ../../source/config/semaphore.rst:51
+msgid "The maximum number of running jobs which can use this semaphore."
+msgstr ""

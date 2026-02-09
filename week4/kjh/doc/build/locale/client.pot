@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/client.rst:4
+msgid "Zuul Admin Client"
+msgstr ""
+
+#: ../../source/client.rst:6
+msgid "Zuul includes a simple command line client that may be used to affect Zuul's behavior while running."
+msgstr ""
+
+#: ../../source/client.rst:9
+msgid "For operations related to normal workflow like enqueue, dequeue, autohold and promote, the `zuul-client` CLI should be used instead."
+msgstr ""
+
+#: ../../source/client.rst:12
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/client.rst:14
+msgid "The client uses the same zuul.conf file as the server, and will look for it in the same locations if not specified on the command line."
+msgstr ""
+
+#: ../../source/client.rst:18
+msgid "Usage"
+msgstr ""
+
+#: ../../source/client.rst:19
+msgid "The general options that apply to all subcommands are:"
+msgstr ""
+
+#: ../../source/client.rst:23
+msgid "The following subcommands are supported:"
+msgstr ""
+
+#: ../../source/client.rst:26
+msgid "tenant-conf-check"
+msgstr ""
+
+#: ../../source/client.rst:30
+#: ../../source/client.rst:46
+#: ../../source/client.rst:56
+#: ../../source/client.rst:74
+#: ../../source/client.rst:85
+#: ../../source/client.rst:94
+#: ../../source/client.rst:103
+#: ../../source/client.rst:112
+#: ../../source/client.rst:121
+#: ../../source/client.rst:130
+#: ../../source/client.rst:139
+#: ../../source/client.rst:160
+#: ../../source/client.rst:168
+#: ../../source/client.rst:176
+#: ../../source/client.rst:184
+#: ../../source/client.rst:201
+#: ../../source/client.rst:268
+msgid "Example::"
+msgstr ""
+
+#: ../../source/client.rst:34
+msgid "This command validates the tenant configuration schema. It exits '-1' in case of errors detected."
+msgstr ""
+
+#: ../../source/client.rst:38
+msgid "create-auth-token"
+msgstr ""
+
+#: ../../source/client.rst:40
+msgid "This command is only available if an authenticator is configured in ``zuul.conf``. Furthermore the authenticator's configuration must include a signing secret."
+msgstr ""
+
+#: ../../source/client.rst:50
+msgid "The return value is the value of the ``Authorization`` header the user must set when querying a protected endpoint on Zuul's REST API. When the ``--tenant`` is specified, ``zuul.admin`` claim with the value of the tenant will be added to the token. The meta information of the token will be printed when \"--print-meta-info\" is specified."
+msgstr ""
+
+#: ../../source/client.rst:70
+msgid "export-keys"
+msgstr ""
+
+#: ../../source/client.rst:81
+msgid "import-keys"
+msgstr ""
+
+#: ../../source/client.rst:90
+msgid "copy-keys"
+msgstr ""
+
+#: ../../source/client.rst:99
+msgid "delete-keys"
+msgstr ""
+
+#: ../../source/client.rst:108
+msgid "delete-oidc-signing-keys"
+msgstr ""
+
+#: ../../source/client.rst:117
+msgid "delete-state"
+msgstr ""
+
+#: ../../source/client.rst:126
+msgid "delete-pipeline-state"
+msgstr ""
+
+#: ../../source/client.rst:135
+msgid "prune-database"
+msgstr ""
+
+#: ../../source/client.rst:144
+msgid "Deprecated commands"
+msgstr ""
+
+#: ../../source/client.rst:146
+msgid "The following commands are deprecated in the zuul-admin CLI, and thus may not be entirely supported in Zuul's current version. They will be removed in a future release of Zuul. They can still be performed via the `zuul-client` CLI. Please refer to `zuul-client's documentation <https://zuul-ci.org/docs/zuul-client/>`__ for more details."
+msgstr ""
+
+#: ../../source/client.rst:151
+msgid "In order to run these commands, the ``webclient`` section is required in the configuration file."
+msgstr ""
+
+#: ../../source/client.rst:153
+msgid "It is also possible to run the client without a configuration file, by using the ``--zuul-url`` option to specify the base URL of the Zuul web server."
+msgstr ""
+
+#: ../../source/client.rst:157
+msgid "Autohold"
+msgstr ""
+
+#: ../../source/client.rst:165
+msgid "Autohold Delete"
+msgstr ""
+
+#: ../../source/client.rst:173
+msgid "Autohold Info"
+msgstr ""
+
+#: ../../source/client.rst:181
+msgid "Autohold List"
+msgstr ""
+
+#: ../../source/client.rst:189
+msgid "Dequeue"
+msgstr ""
+
+#: ../../source/client.rst:192
+msgid "Examples::"
+msgstr ""
+
+#: ../../source/client.rst:198
+msgid "Enqueue"
+msgstr ""
+
+#: ../../source/client.rst:205
+msgid "Note that the format of change id is <number>,<patchset>."
+msgstr ""
+
+#: ../../source/client.rst:208
+msgid "Enqueue-ref"
+msgstr ""
+
+#: ../../source/client.rst:212
+msgid "This command is provided to manually simulate a trigger from an external source.  It can be useful for testing or replaying a trigger that is difficult or impossible to recreate at the source.  The arguments to ``enqueue-ref`` will vary depending on the source and type of trigger.  Some familiarity with the arguments emitted by ``gerrit`` `update hooks <https://gerrit-review.googlesource.com/admin/projects/plugins/hooks>`__ such as ``patchset-created`` and ``ref-updated`` is recommended.  Some examples of common operations are provided below."
+msgstr ""
+
+#: ../../source/client.rst:223
+msgid "Manual enqueue examples"
+msgstr ""
+
+#: ../../source/client.rst:225
+msgid "It is common to have a ``release`` pipeline that listens for new tags coming from ``gerrit`` and performs a range of code packaging jobs. If there is an unexpected issue in the release jobs, the same tag can not be recreated in ``gerrit`` and the user must either tag a new release or request a manual re-triggering of the jobs.  To re-trigger the jobs, pass the failed tag as the ``ref`` argument and set ``newrev`` to the change associated with the tag in the project repository (i.e. what you see from ``git show X.Y.Z``)::"
+msgstr ""
+
+#: ../../source/client.rst:236
+msgid "The command can also be used asynchronously trigger a job in a ``periodic`` pipeline that would usually be run at a specific time by the ``timer`` driver.  For example, the following command would trigger the ``periodic`` jobs against the current ``master`` branch top-of-tree for a project::"
+msgstr ""
+
+#: ../../source/client.rst:244
+msgid "Another common pipeline is a ``post`` queue listening for ``gerrit`` merge results.  Triggering here is slightly more complicated as you wish to recreate the full ``ref-updated`` event from ``gerrit``.  For a new commit on ``master``, the gerrit ``ref-updated`` trigger expresses \"reset ``refs/heads/master`` for the project from ``oldrev`` to ``newrev``\" (``newrev`` being the committed change).  Thus to replay the event, you could ``git log`` in the project and take the current ``HEAD`` and the prior change, then enqueue the event::"
+msgstr ""
+
+#: ../../source/client.rst:258
+msgid "Note that zero values for ``oldrev`` and ``newrev`` can indicate branch creation and deletion; the source code is the best reference for these more advanced operations."
+msgstr ""
+
+#: ../../source/client.rst:264
+msgid "Promote"
+msgstr ""
+
+#: ../../source/client.rst:272
+msgid "Note that the format of changes id is <number>,<patchset>."
+msgstr ""
+
+#: ../../source/client.rst:274
+msgid "The promote action is used to reorder the changes in a pipeline, by putting the provided changes at the top of the queue."
+msgstr ""
+
+#: ../../source/client.rst:277
+msgid "The most common use case for the promote action is the need to merge an urgent fix when the gate pipeline has several patches queued ahead. This is especially needed if there is concern that one or more changes ahead in the queue may fail, thus increasing the time to land for the fix; or concern that the fix may not pass validation if applied on top of the current patch queue in the gate."
+msgstr ""
+
+#: ../../source/client.rst:284
+msgid "Any items in a dependent pipeline which have had items ahead of them changed will have their jobs canceled and restarted based on the new ordering."
+msgstr ""
+
+#: ../../source/client.rst:288
+msgid "If items in independent pipelines are promoted, no jobs will be restarted, but their change queues within the pipeline will be re-ordered so that they will be processed first and their node request priorities will increase."
+msgstr ""
