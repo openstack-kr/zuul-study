@@ -1,0 +1,1870 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossary &mdash; Zuul  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=97235ca2" />
+
+  
+    <link rel="canonical" href="https://zuul-ci.org/docs/zuul/latest/glossary.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Release Notes" href="releasenotes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #41B6E6" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Zuul</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Zuul Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gating.html">Project Gating</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gating.html#testing-in-parallel">Testing in parallel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gating.html#pipeline-window">Pipeline Window</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gating.html#cross-project-testing">Cross Project Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gating.html#cross-project-dependencies">Cross-Project Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gating.html#dependent-pipeline">Dependent Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gating.html#independent-pipeline">Independent Pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gating.html#multiple-changes">Multiple Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gating.html#cycles">Cycles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gating.html#global-repo-state">Global Repo State</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/quick-start.html">Quick-Start Installation and Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quick-start.html#start-zuul-containers">Start Zuul Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quick-start.html#add-your-gerrit-account">Add Your Gerrit Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quick-start.html#configure-zuul-pipelines">Configure Zuul Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quick-start.html#test-zuul-pipelines">Test Zuul Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quick-start.html#configure-a-base-job">Configure a Base Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/quick-start.html#further-steps">Further Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project-config.html">Project Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project-config.html#security-contexts">Security Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-config.html#configuration-loading">Configuration Loading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-config.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-config.html#encryption">Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-config.html#configuration-items">Configuration Items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config/pipeline.html">Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/job.html">Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/project.html">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/project.html#project-template">Project Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/queue.html">Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/secret.html">Secret</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="config/secret.html#data-secrets">Data Secrets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config/secret.html#token-secrets">Token Secrets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config/secret.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="config/nodeset.html">Nodeset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/semaphore.html">Semaphore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/pragma.html">Pragma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/image.html">Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/flavor.html">Flavor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/label.html">Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/section.html">Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/provider.html">Provider</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="job-content.html">Job Content</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#working-directory">Working Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#git-repositories">Git Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#variables">Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#site-wide-variables">Site-wide Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#job-extra-variables">Job Extra Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#job-variables">Job Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#project-variables">Project Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#file-variables">File Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#parent-job-results">Parent Job Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#zuul-variables">Zuul Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#job-ref">Job Ref</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#item">Item</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#job">Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#id2">Working Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#ssh-keys">SSH Keys</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#nodepool-key">Nodepool Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#tenant-key">Tenant Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#project-key">Project Key</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#return-values">Return Values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#returning-the-log-url">Returning the log url</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#returning-artifact-urls">Returning artifact URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#skipping-dependent-jobs">Skipping dependent jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#leaving-warnings">Leaving warnings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#leaving-file-comments">Leaving file comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#pausing-the-job">Pausing the job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job-content.html#skipping-retries">Skipping retries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#ansible-groups">Ansible Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job-content.html#id5">Build Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Service Administration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#external-dependencies">External Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#nodepool">Nodepool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#zookeeper">ZooKeeper</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#executor-deployment">Executor Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#web-deployment">Web Deployment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#reverse-proxy">Reverse Proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#static-offload">Static Offload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#sub-directory-serving">Sub directory serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#white-labeled-tenant">White Labeled Tenant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#static-external">Static External</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="upgrading.html#rolling-upgrades">Rolling Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrading.html#skipping-versions">Skipping Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="components.html">Component Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#common-options">Common Options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#statsd">Statsd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#tracing">Tracing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#zookeeper">ZooKeeper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#database">Database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#oidc">OIDC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#scheduler">Scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#merger">Merger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#executor">Executor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#trusted-and-untrusted-playbooks">Trusted and Untrusted Playbooks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#security-considerations">Security Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id5">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#web-server">Web Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#launcher">Launcher</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#authentication">Authentication</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="configuration.html#driver-specific-attributes">Driver-specific attributes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="configuration.html#hs256">HS256</a></li>
+<li class="toctree-l6"><a class="reference internal" href="configuration.html#rs256">RS256</a></li>
+<li class="toctree-l6"><a class="reference internal" href="configuration.html#rs256withjwks">RS256withJWKS</a></li>
+<li class="toctree-l6"><a class="reference internal" href="configuration.html#openidconnect">OpenIDConnect</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#finger-gateway">Finger Gateway</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#connections">Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers/index.html">Drivers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="drivers/gerrit.html">Gerrit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gerrit.html#connection-configuration">Connection Configuration</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gerrit.html#ssh-configuration">SSH Configuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gerrit.html#http-configuration">HTTP Configuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gerrit.html#kafka-event-support">Kafka Event Support</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gerrit.html#aws-kinesis-event-support">AWS Kinesis Event Support</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gerrit.html#google-cloud-pub-sub-event-support">Google Cloud Pub/Sub Event Support</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gerrit.html#trigger-configuration">Trigger Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gerrit.html#reporter-configuration">Reporter Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gerrit.html#requirements-configuration">Requirements Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gerrit.html#reference-pipelines-configuration">Reference Pipelines Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gerrit.html#checks-plugin-support-deprecated">Checks Plugin Support (Deprecated)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/git.html">Git</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/git.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/git.html#trigger-configuration">Trigger Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/github.html">GitHub</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#configure-github">Configure GitHub</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#web-hook">Web-Hook</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#application">Application</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#trigger-configuration">Trigger Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#reporter-configuration">Reporter Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#requirements-configuration">Requirements Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#reference-pipelines-configuration">Reference pipelines configuration</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#branch-protection-rules">Branch protection rules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#reference-pipelines">Reference pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/github.html#github-checks-api">Github Checks API</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#design-decisions">Design decisions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#behaviour-in-zuul">Behaviour in Zuul</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="drivers/github.html#reporting">Reporting</a></li>
+<li class="toctree-l6"><a class="reference internal" href="drivers/github.html#trigger">Trigger</a></li>
+<li class="toctree-l6"><a class="reference internal" href="drivers/github.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#actions-events">Actions / Events</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#file-comments-annotations">File comments (annotations)</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="drivers/github.html#custom-actions">Custom actions</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/github.html#restrictions-and-recommendations">Restrictions and Recommendations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/gitlab.html">GitLab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gitlab.html#configure-gitlab">Configure GitLab</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gitlab.html#web-hooks">web-hooks</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drivers/gitlab.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gitlab.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gitlab.html#trigger-configuration">Trigger Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gitlab.html#reporter-configuration">Reporter Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gitlab.html#requirements-configuration">Requirements Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/gitlab.html#reference-pipelines-configuration">Reference pipelines configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/pagure.html">Pagure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/pagure.html#configure-pagure">Configure Pagure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/pagure.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/pagure.html#trigger-configuration">Trigger Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/pagure.html#reporter-configuration">Reporter Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/pagure.html#requirements-configuration">Requirements Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/pagure.html#reference-pipelines-configuration">Reference pipelines configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/elasticsearch.html">Elasticsearch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/elasticsearch.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/elasticsearch.html#reporter-configuration">Reporter Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/mqtt.html">MQTT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/mqtt.html#message-schema">Message Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/mqtt.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/mqtt.html#reporter-configuration">Reporter Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/smtp.html">SMTP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/smtp.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/smtp.html#reporter-configuration">Reporter Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/timer.html">Timer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/timer.html#trigger-configuration">Trigger Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/zuul.html">Zuul</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/zuul.html#trigger-configuration">Trigger Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/zuul.html#reporter-configuration">Reporter Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/aws.html">AWS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/aws.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/aws.html#provider-configuration">Provider Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/azure.html">Azure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/azure.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/azure.html#provider-configuration">Provider Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/openstack.html">OpenStack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/openstack.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/openstack.html#provider-configuration">Provider Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="drivers/static.html">Static</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drivers/static.html#connection-configuration">Connection Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drivers/static.html#provider-configuration">Provider Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tenants.html">Tenant Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tenants.html#tenant">Tenant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tenants.html#global-semaphore">Global Semaphore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tenants.html#authorization-rule">Authorization Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tenants.html#authorization-rule-templating">Authorization Rule Templating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tenants.html#api-root">API Root</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build-nodes.html">Build Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="build-nodes.html#node-reuse">Node Reuse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-nodes.html#image-creation">Image Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-nodes.html#image-validation">Image Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-nodes.html#nodepool-migration">Nodepool Migration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="operation.html">Operation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operation.html#scheduler">Scheduler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#id2">Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#reconfiguration">Reconfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#managing-event-processing">Managing Event Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#backup-and-restoration">Backup and Restoration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="operation.html#merger">Merger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#id4">Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="operation.html#executor">Executor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#id5">Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#ansible-and-python-3">Ansible and Python 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#log-streaming">Log Streaming</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="operation.html#posix-log-streaming">Posix Log Streaming</a></li>
+<li class="toctree-l5"><a class="reference internal" href="operation.html#windows-log-streaming">Windows Log Streaming</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="operation.html#web-server">Web Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#id7">Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="operation.html#finger-gateway">Finger Gateway</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operation.html#id8">Operation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authenticated Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#important-security-considerations">Important Security Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#jwt-format">JWT Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#manually-generating-a-jwt">Manually Generating a JWT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#debugging">Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#interfacing-with-other-systems">Interfacing with Other Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="howtos/openid-with-google.html">Configuring Google Authentication</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-google.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-google.html#setting-up-credentials-with-google">Setting up credentials with Google</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="howtos/openid-with-google.html#create-oauth-client-id">Create OAuth client ID</a></li>
+<li class="toctree-l6"><a class="reference internal" href="howtos/openid-with-google.html#configure-zuul">Configure Zuul</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-google.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="howtos/openid-with-keycloak.html">Configuring Keycloak Authentication</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-keycloak.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-keycloak.html#setting-up-keycloak">Setting up Keycloak</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="howtos/openid-with-keycloak.html#create-a-client">Create a client</a></li>
+<li class="toctree-l6"><a class="reference internal" href="howtos/openid-with-keycloak.html#create-a-client-scope">Create a client scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="howtos/openid-with-keycloak.html#optional-set-up-a-social-identity-provider">(Optional) Set up a social identity provider</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-keycloak.html#setting-up-zuul">Setting up Zuul</a></li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-keycloak.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="howtos/openid-with-microsoft.html">Configuring Microsoft Authentication</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-microsoft.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-microsoft.html#creating-the-app-registration">Creating the App Registration</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="howtos/openid-with-microsoft.html#optional-include-groups-claim">Optional: Include Groups Claim</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="howtos/openid-with-microsoft.html#setting-up-zuul">Setting up Zuul</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/keycloak.html">Keycloak Tutorial</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/keycloak.html#update-etc-hosts">Update /etc/hosts</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/keycloak.html#restart-zuul-containers">Restart Zuul Containers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/keycloak.html#start-keycloak">Start Keycloak</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/keycloak.html#log-into-zuul">Log Into Zuul</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring.html">Monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="monitoring.html#statsd-reporting">Statsd reporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="monitoring.html#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="monitoring.html#metrics">Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="monitoring.html#prometheus-monitoring">Prometheus monitoring</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="monitoring.html#id1">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="monitoring.html#id2">Metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="monitoring.html#liveness-probes">Liveness Probes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tracing.html">Tracing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tracing.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tracing.html#tutorial">Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorials/tracing.html">Jaeger Tracing Tutorial</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/tracing.html#restart-zuul-containers">Restart Zuul Containers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/tracing.html#start-jaeger">Start Jaeger</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tutorials/tracing.html#recheck-a-change">Recheck a change</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client.html">Zuul Admin Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client.html#usage">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client.html#tenant-conf-check">tenant-conf-check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#create-auth-token">create-auth-token</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#export-keys">export-keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#import-keys">import-keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#copy-keys">copy-keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#delete-keys">delete-keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#delete-oidc-signing-keys">delete-oidc-signing-keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#delete-state">delete-state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#delete-pipeline-state">delete-pipeline-state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#prune-database">prune-database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="client.html#deprecated-commands">Deprecated commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client.html#autohold">Autohold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#autohold-delete">Autohold Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#autohold-info">Autohold Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#autohold-list">Autohold List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#dequeue">Dequeue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#enqueue">Enqueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#enqueue-ref">Enqueue-ref</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="client.html#manual-enqueue-examples">Manual enqueue examples</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#promote">Promote</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#thread-dumps-and-profiling">Thread Dumps and Profiling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest-api.html">REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtos/index.html">How-To Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="howtos/pti.html">Project Testing Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howtos/pti.html#projects-layout">Projects layout</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="howtos/pti.html#org-config">org-config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="howtos/pti.html#org-jobs">org-jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/pti.html#projects-content">Projects content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/pti.html#usage">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="howtos/pti.html#project-tests">Project tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="howtos/pti.html#updating-pti-test">Updating PTI test</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/pti.html#cross-project-gating">Cross project gating</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="howtos/badges.html">Badges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtos/matrix.html">Chatting with Matrix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howtos/matrix.html#why-use-matrix">Why Use Matrix?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/matrix.html#create-an-account">Create An Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/matrix.html#join-the-zuul-room">Join the #zuul Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/matrix.html#optional-next-steps">Optional Next Steps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="howtos/matrix-encryption.html">Optional: Save Encryption Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="howtos/matrix-id.html">Optional: Register with an Identity Provider</a></li>
+<li class="toctree-l4"><a class="reference internal" href="howtos/matrix-irc.html">Optional: Join an IRC Room</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="howtos/zookeeper.html">ZooKeeper Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howtos/zookeeper.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howtos/zookeeper.html#encrypted-connections">Encrypted Connections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/index.html#zuul.scheduler.Scheduler"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/datamodel.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.Pipeline"><code class="docutils literal notranslate"><span class="pre">Pipeline</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.manager.PipelineManager"><code class="docutils literal notranslate"><span class="pre">PipelineManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.manager.dependent.DependentPipelineManager"><code class="docutils literal notranslate"><span class="pre">DependentPipelineManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.manager.independent.IndependentPipelineManager"><code class="docutils literal notranslate"><span class="pre">IndependentPipelineManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.ChangeQueue"><code class="docutils literal notranslate"><span class="pre">ChangeQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.Job"><code class="docutils literal notranslate"><span class="pre">Job</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.JobGraph"><code class="docutils literal notranslate"><span class="pre">JobGraph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.Build"><code class="docutils literal notranslate"><span class="pre">Build</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.QueueItem"><code class="docutils literal notranslate"><span class="pre">QueueItem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#zuul.model.BuildSet"><code class="docutils literal notranslate"><span class="pre">BuildSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#changes">Changes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.Change"><code class="docutils literal notranslate"><span class="pre">Change</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.Ref"><code class="docutils literal notranslate"><span class="pre">Ref</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#filters">Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.RefFilter"><code class="docutils literal notranslate"><span class="pre">RefFilter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.EventFilter"><code class="docutils literal notranslate"><span class="pre">EventFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#tenants">Tenants</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.Tenant"><code class="docutils literal notranslate"><span class="pre">Tenant</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.UnparsedAbideConfig"><code class="docutils literal notranslate"><span class="pre">UnparsedAbideConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.UnparsedConfig"><code class="docutils literal notranslate"><span class="pre">UnparsedConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.ParsedConfig"><code class="docutils literal notranslate"><span class="pre">ParsedConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/datamodel.html#other-global-objects">Other Global Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.Project"><code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.Layout"><code class="docutils literal notranslate"><span class="pre">Layout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.RepoFiles"><code class="docutils literal notranslate"><span class="pre">RepoFiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/datamodel.html#zuul.model.TriggerEvent"><code class="docutils literal notranslate"><span class="pre">TriggerEvent</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/drivers.html">Drivers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/drivers.html#zuul.driver.Driver"><code class="docutils literal notranslate"><span class="pre">Driver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.Driver.reconfigure"><code class="docutils literal notranslate"><span class="pre">Driver.reconfigure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.Driver.registerScheduler"><code class="docutils literal notranslate"><span class="pre">Driver.registerScheduler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.Driver.stop"><code class="docutils literal notranslate"><span class="pre">Driver.stop()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/drivers.html#zuul.driver.ConnectionInterface"><code class="docutils literal notranslate"><span class="pre">ConnectionInterface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.ConnectionInterface.getConnection"><code class="docutils literal notranslate"><span class="pre">ConnectionInterface.getConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/drivers.html#zuul.driver.SourceInterface"><code class="docutils literal notranslate"><span class="pre">SourceInterface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.SourceInterface.getRejectSchema"><code class="docutils literal notranslate"><span class="pre">SourceInterface.getRejectSchema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.SourceInterface.getRequireSchema"><code class="docutils literal notranslate"><span class="pre">SourceInterface.getRequireSchema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.SourceInterface.getSource"><code class="docutils literal notranslate"><span class="pre">SourceInterface.getSource()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/drivers.html#zuul.driver.TriggerInterface"><code class="docutils literal notranslate"><span class="pre">TriggerInterface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.TriggerInterface.getTrigger"><code class="docutils literal notranslate"><span class="pre">TriggerInterface.getTrigger()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.TriggerInterface.getTriggerEventClass"><code class="docutils literal notranslate"><span class="pre">TriggerInterface.getTriggerEventClass()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.TriggerInterface.getTriggerSchema"><code class="docutils literal notranslate"><span class="pre">TriggerInterface.getTriggerSchema()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/drivers.html#zuul.driver.ReporterInterface"><code class="docutils literal notranslate"><span class="pre">ReporterInterface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.ReporterInterface.getReporter"><code class="docutils literal notranslate"><span class="pre">ReporterInterface.getReporter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/drivers.html#zuul.driver.ReporterInterface.getReporterSchema"><code class="docutils literal notranslate"><span class="pre">ReporterInterface.getReporterSchema()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/triggers.html">Triggers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/triggers.html#zuul.trigger.BaseTrigger"><code class="docutils literal notranslate"><span class="pre">BaseTrigger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.trigger.BaseTrigger.getEventFilters"><code class="docutils literal notranslate"><span class="pre">BaseTrigger.getEventFilters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.trigger.BaseTrigger.onChangeEnqueued"><code class="docutils literal notranslate"><span class="pre">BaseTrigger.onChangeEnqueued()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.trigger.BaseTrigger.onChangeMerged"><code class="docutils literal notranslate"><span class="pre">BaseTrigger.onChangeMerged()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.trigger.BaseTrigger.postConfig"><code class="docutils literal notranslate"><span class="pre">BaseTrigger.postConfig()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/triggers.html#zuul.driver.gerrit.gerrittrigger.GerritTrigger"><code class="docutils literal notranslate"><span class="pre">GerritTrigger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.driver.gerrit.gerrittrigger.GerritTrigger.getEventFilters"><code class="docutils literal notranslate"><span class="pre">GerritTrigger.getEventFilters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/triggers.html#zuul.driver.timer.timertrigger.TimerTrigger"><code class="docutils literal notranslate"><span class="pre">TimerTrigger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.driver.timer.timertrigger.TimerTrigger.getEventFilters"><code class="docutils literal notranslate"><span class="pre">TimerTrigger.getEventFilters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/triggers.html#zuul.driver.zuul.zuultrigger.ZuulTrigger"><code class="docutils literal notranslate"><span class="pre">ZuulTrigger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/triggers.html#zuul.driver.zuul.zuultrigger.ZuulTrigger.getEventFilters"><code class="docutils literal notranslate"><span class="pre">ZuulTrigger.getEventFilters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/testing.html">Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/testing.html#tests.base.simple_layout"><code class="docutils literal notranslate"><span class="pre">simple_layout()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.addEvent"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.addEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.assertBuilds"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.assertBuilds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.assertHistory"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.assertHistory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.assertReportedStat"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.assertReportedStat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.commitConfigUpdate"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.commitConfigUpdate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.getSortedBuilds"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.getSortedBuilds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.getUpstreamRepos"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.getUpstreamRepos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.logState"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.logState()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.newTenantConfig"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.newTenantConfig()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.printHistory"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.printHistory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.setUp"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.ZuulTestCase.waitUntilNodeCacheSync"><code class="docutils literal notranslate"><span class="pre">ZuulTestCase.waitUntilNodeCacheSync()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.addFakeChange"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.addFakeChange()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.checkBranchCache"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.checkBranchCache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.cleanupCache"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.cleanupCache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.clearBranchCache"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.clearBranchCache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.clearConnectionCacheOnBranchEvent"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.clearConnectionCacheOnBranchEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.getEventQueue"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.getEventQueue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.getProjectBranches"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.getProjectBranches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.getProjectDefaultBranch"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.getProjectDefaultBranch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.getProjectMergeModes"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.getProjectMergeModes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.getWebController"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.getWebController()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.isBranchProtected"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.isBranchProtected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.maintainCache"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.maintainCache()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.toDict"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.updateProjectBranches"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.updateProjectBranches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.fakegerrit.FakeGerritConnection.validateWebConfig"><code class="docutils literal notranslate"><span class="pre">FakeGerritConnection.validateWebConfig()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/testing.html#tests.base.RecordingExecutorServer"><code class="docutils literal notranslate"><span class="pre">RecordingExecutorServer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.RecordingExecutorServer.failJob"><code class="docutils literal notranslate"><span class="pre">RecordingExecutorServer.failJob()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.RecordingExecutorServer.release"><code class="docutils literal notranslate"><span class="pre">RecordingExecutorServer.release()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.RecordingExecutorServer.retryJob"><code class="docutils literal notranslate"><span class="pre">RecordingExecutorServer.retryJob()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.RecordingExecutorServer.returnData"><code class="docutils literal notranslate"><span class="pre">RecordingExecutorServer.returnData()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/testing.html#tests.base.FakeBuild"><code class="docutils literal notranslate"><span class="pre">FakeBuild</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.FakeBuild.getWorkspaceRepos"><code class="docutils literal notranslate"><span class="pre">FakeBuild.getWorkspaceRepos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.FakeBuild.hasChanges"><code class="docutils literal notranslate"><span class="pre">FakeBuild.hasChanges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.FakeBuild.isWaiting"><code class="docutils literal notranslate"><span class="pre">FakeBuild.isWaiting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/testing.html#tests.base.FakeBuild.release"><code class="docutils literal notranslate"><span class="pre">FakeBuild.release()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/testing.html#tests.base.BuildHistory"><code class="docutils literal notranslate"><span class="pre">BuildHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/metrics.html">Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/metrics.html#event-overview">Event Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/docs.html">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/docs.html#restructuredtext-conventions">ReStructuredText Conventions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#code-blocks">Code Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#literal-values">Literal Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#terminology">Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/docs.html#zuul-sphinx-directives">Zuul Sphinx Directives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#zuul-attr">zuul:attr::</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#zuul-value">zuul:value::</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#zuul-var">zuul:var::</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/docs.html#zuul-sphinx-roles">Zuul Sphinx Roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#id1">:zuul:attr:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#id2">:zuul:value:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/docs.html#id3">:zuul:var:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/ansible.html">Ansible Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/ansible.html#streaming-job-output">Streaming job output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/ansible.html#zuul.ansible.base.callback.zuul_stream.CallbackModule"><code class="docutils literal notranslate"><span class="pre">CallbackModule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/ansible.html#zuul.lib.log_streamer.LogStreamer"><code class="docutils literal notranslate"><span class="pre">LogStreamer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/ansible.html#zuul.web.LogStreamHandler"><code class="docutils literal notranslate"><span class="pre">LogStreamHandler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/ansible.html#zuul.web.ZuulWeb"><code class="docutils literal notranslate"><span class="pre">ZuulWeb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/ansible.html#zuul.ansible.base.callback.zuul_json.CallbackModule"><code class="docutils literal notranslate"><span class="pre">CallbackModule</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/ansible.html#capturing-live-command-output">Capturing live command output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/javascript.html">Zuul Dashboard Javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/javascript.html#for-the-impatient-who-don-t-want-deal-with-javascript-toolchains">For the impatient who don’t want deal with javascript toolchains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/javascript.html#yarn-dependency-management">yarn dependency management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/javascript.html#dealing-with-yarn-lock-merge-conflicts">Dealing with yarn.lock merge conflicts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/javascript.html#react-components-and-styling">React Components and Styling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/javascript.html#development">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/javascript.html#authentication">Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/javascript.html#deploying">Deploying</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/specs/index.html">Specifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html">Nodepool in Zuul</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#image-management">Image Management</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#snapshot-images">Snapshot Images</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#node-management">Node Management</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#quota-handling-rate-limiting">Quota Handling &amp; Rate Limiting</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#upgrade-process">Upgrade Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#library-requirements">Library Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#diskimage-builder-testing">Diskimage-Builder Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/nodepool-in-zuul.html#work-items">Work Items</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/specs/init-jobs.html">Initializer Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#proposal">Proposal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#implementation">Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#user-interface">User Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#other-types-of-jobs">Other Types of Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#alternatives">Alternatives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/init-jobs.html#work-items">Work Items</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/specs/reporter-jobs.html">Reporter Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/reporter-jobs.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/reporter-jobs.html#proposal">Proposal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/reporter-jobs.html#implementation">Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/reporter-jobs.html#user-interface">User Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/reporter-jobs.html#limitations">Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/reporter-jobs.html#alternatives">Alternatives</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/specs/branch-assigned-queues.html">Branch-Assigned Queues</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/branch-assigned-queues.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/branch-assigned-queues.html#proposal">Proposal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/branch-assigned-queues.html#user-interface">User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/specs/web-rbac.html">Fine-Grained API/Web Access Control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/web-rbac.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/web-rbac.html#proposal">Proposal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/specs/web-rbac.html#alternatives">Alternatives</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/zookeeper.html">ZooKeeper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/zookeeper.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/zookeeper.html#driver-event-ingestion">Driver Event Ingestion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/zookeeper.html#active-event-gathering">Active Event Gathering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/zookeeper.html#passive-event-gathering">Passive Event Gathering</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/zookeeper.html#configuration-storage">Configuration Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/zookeeper.html#executor-and-merger-queues">Executor and Merger Queues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/zookeeper.html#zookeeper-map">Zookeeper Map</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/model-changelog.html">Data Model Changelog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-0">Version 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-1">Version 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-2">Version 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-3">Version 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-4">Version 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-5">Version 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-6">Version 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-7">Version 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-8">Version 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-9">Version 9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-10">Version 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-11">Version 11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-12">Version 12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-13">Version 13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-14">Version 14</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-15">Version 15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-16">Version 16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-17">Version 17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-18">Version 18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-19">Version 19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-20">Version 20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-21">Version 21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-22">Version 22</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-23">Version 23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-24">Version 24</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-25">Version 25</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-26">Version 26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-27">Version 27</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-28">Version 28</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-29">Version 29</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-30">Version 30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-31">Version 31</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-32">Version 32</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-33">Version 33</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-34">Version 34</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-35">Version 35</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/model-changelog.html#version-36">Version 36</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/releasenotes.html">Release Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/releasenotes.html#installing-reno">Installing reno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/releasenotes.html#adding-a-new-release-note">Adding a new release note</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Zuul Project Governance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="governance.html#zuul-maintainers">Zuul Maintainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="governance.html#zuul-project-lead">Zuul Project Lead</a></li>
+<li class="toctree-l2"><a class="reference internal" href="governance.html#zuul-jobs-maintainers">Zuul-Jobs Maintainers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerabilities.html">Vulnerability Reporting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vulnerabilities.html#create-a-private-story-in-storyboard">Create a Private Story in StoryBoard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vulnerabilities.html#report-via-encrypted-e-mail">Report via Encrypted E-mail</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#in-development">In Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-13-1-1">13.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-13-1-0">13.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-13-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-13-1-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-13-0-1">13.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-13-0-1-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-13-0-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-13-0-0">13.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-13-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-12-1-0">12.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-12-1-0-new-features">New Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-12-0-0">12.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-12-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-12-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-12-0-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-11-3-0">11.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-3-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-3-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-11-2-0">11.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-2-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-11-1-0">11.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-1-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-1-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-11-0-1">11.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-0-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-11-0-0">11.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-0-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-11-0-0-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-10-2-0">10.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-2-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-2-0-bug-fixes">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#other-notes">Other Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-10-1-0">10.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-1-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-1-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-10-0-0">10.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#prelude">Prelude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-10-0-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-9-5-0">9.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-5-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-9-4-0">9.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-4-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-4-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-9-3-0">9.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-3-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-3-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-3-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-9-2-0">9.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-2-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-2-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-9-1-0">9.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-1-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-1-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-9-0-0">9.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-9-0-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-8-3-1">8.3.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-3-1-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-8-3-0">8.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-3-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-3-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-3-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-8-2-0">8.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-2-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-2-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-8-1-0">8.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-1-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-1-0-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-8-0-1">8.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-0-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-8-0-0">8.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-8-0-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-7-1-0">7.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-7-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-7-1-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-7-0-0">7.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-7-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-7-0-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-6-4-0">6.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-4-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-4-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-6-3-0">6.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-3-0-new-features">New Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-6-2-0">6.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-2-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-6-1-0">6.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-1-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-1-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-6-0-0">6.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-6-0-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-2-5">5.2.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-5-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-2-4">5.2.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-4-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-2-3">5.2.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-3-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-2-2">5.2.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-2-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-2-1">5.2.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-1-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-1-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-2-0">5.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-2-0-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-1-0">5.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-1-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-1-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-1-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-5-0-0">5.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-5-0-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-12-0">4.12.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-12-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-11-0">4.11.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-11-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-11-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-10-4">4.10.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-10-4-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-10-3">4.10.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-10-3-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-10-2">4.10.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-10-2-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-10-1">4.10.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-10-1-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-10-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-10-0">4.10.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-10-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-9-0">4.9.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-9-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-9-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-8-1">4.8.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-8-1-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-8-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-8-0">4.8.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-8-0-new-features">New Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-7-0">4.7.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-7-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-7-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-7-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-6-0">4.6.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-6-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-6-0-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-5-1">4.5.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-5-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-5-0">4.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-5-0-prelude">Prelude</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-4-0">4.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-4-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-4-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-3-0">4.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-3-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-3-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-3-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-3-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-2-0">4.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-2-0-prelude">Prelude</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-1-0">4.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-1-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-1-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-1-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-4-0-0">4.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-0-0-prelude">Prelude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-0-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-0-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-0-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-4-0-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-19-1">3.19.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-1-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-19-0">3.19.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-0-prelude">Prelude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-0-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-19-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-18-0">3.18.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-18-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-18-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-18-0-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-18-0-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-18-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-17-0">3.17.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-17-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-17-0-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-16-1">3.16.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-16-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-16-0">3.16.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-16-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-16-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-16-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-15-0">3.15.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-15-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-14-0">3.14.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-14-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-14-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-13-0">3.13.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-13-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-13-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-12-0">3.12.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-12-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-12-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-12-0-other-notes">Other Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-11-1">3.11.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-11-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-11-0">3.11.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-11-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-11-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-10-2">3.10.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-10-2-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-10-2-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-10-2-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-10-1">3.10.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-10-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-10-0">3.10.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-10-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-10-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-9-0">3.9.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-9-0-new-features">New Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-8-1">3.8.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-8-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-8-0">3.8.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-8-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-8-0-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-8-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-7-1">3.7.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-7-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-7-0">3.7.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-7-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-7-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-6-1">3.6.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-6-1-security-issues">Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-6-0">3.6.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-6-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-6-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-5-0">3.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-5-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-5-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-5-0-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-5-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-4-0">3.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-4-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-4-0-upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-3-1">3.3.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-1-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-1-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-1-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-3-0">3.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-3-0-deprecation-notes">Deprecation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-2-0">3.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-2-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-2-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-1-0">3.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-1-0-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-1-0-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-1-0-security-issues">Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-1-0-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-0-3">3.0.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-3-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-3-deprecation-notes">Deprecation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-3-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-0-2">3.0.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-2-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-2-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-2-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="releasenotes.html#relnotes-3-0-1">3.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-1-new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-1-upgrade-notes">Upgrade Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html#relnotes-3-0-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #41B6E6" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zuul</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Glossary</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/glossary.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="glossary">
+<span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Link to this heading"></a></h1>
+<dl class="simple glossary">
+<dt id="term-abstract-job">abstract job<a class="headerlink" href="#term-abstract-job" title="Link to this term"></a></dt><dd><p>A job which cannot be run directly, and is only intended to
+serve as a parent on top of which other jobs are constructed.</p>
+</dd>
+<dt id="term-artifact">artifact<a class="headerlink" href="#term-artifact" title="Link to this term"></a></dt><dd><p>A file or set of files created by a build and archived for
+reuse.  The term is usually in reference to primary build
+outputs such as a release package or rendered documentation,
+but can also mean files produced as a byproduct such as logs.</p>
+</dd>
+<dt id="term-base-job">base job<a class="headerlink" href="#term-base-job" title="Link to this term"></a></dt><dd><p>A job with no parent.  A base job may only be defined in a
+<a class="reference internal" href="#term-config-project"><span class="xref std std-term">config-project</span></a>.  Multiple base jobs may be defined, but
+each tenant has a single default job which will be used as the
+parent of any job which does not specify one explicitly.</p>
+</dd>
+<dt id="term-build">build<a class="headerlink" href="#term-build" title="Link to this term"></a></dt><dd><p>Any run of a job.  Every build is assigned a globally unique
+identifier which is used when coordinating between Zuul’s
+component services, and for purposes such as addressing log
+streams and results in the status API and Web dashboard.  The
+context for a build comes not only from its job definition,
+but also from the pipeline into which it is scheduled.</p>
+</dd>
+<dt id="term-buildset">buildset<a class="headerlink" href="#term-buildset" title="Link to this term"></a></dt><dd><p>A collection of builds which share a common context.  All
+builds in a buildset have the same triggering event and change
+identifier.</p>
+</dd>
+<dt id="term-change">change<a class="headerlink" href="#term-change" title="Link to this term"></a></dt><dd><p>A specific state of a Git repository.  Changes can represent a
+change revision/pull request from a code review system, a
+remote branch tip, a tag, or any other sort of Git ref.  A
+change can also come with additional dependency context,
+either implicit from its commit history or explicit through
+the use of cross-project dependency declarations (for example
+in a commit message or pull request summary, the exact
+mechanism varies by source connection driver).</p>
+</dd>
+<dt id="term-check">check<a class="headerlink" href="#term-check" title="Link to this term"></a></dt><dd><p>By convention, the name of a pipeline which performs pre-merge
+tests.  Such a pipeline might be triggered by creating a new
+change or pull request.  It may run with changes which have not
+yet seen any human review, so care must be taken in selecting
+the kinds of jobs to run, and what resources will be available
+to them in order to avoid misuse of the system or credential
+compromise.  It usually has an <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.independent" title="value-pipeline.manager.independent"><span class="xref zuul zuul-value">independent</span></a> pipeline manager since the final
+sequence of changes to merge is not generally known at the time
+of upload.</p>
+</dd>
+<dt id="term-child-job">child job<a class="headerlink" href="#term-child-job" title="Link to this term"></a></dt><dd><p>A job which inherits values such as playbooks and variables
+from a parent job.  All jobs are implicitly child jobs, since
+they inherit from at least a base job whether they declare it
+as a parent or not.</p>
+</dd>
+<dt id="term-config-project">config-project<a class="headerlink" href="#term-config-project" title="Link to this term"></a></dt><dd><p>One of two types of projects which may be specified by the
+administrator in the tenant config file.  A config-project is
+primarily tasked with holding configuration information and job
+content for Zuul.  Jobs which are defined in a config-project
+are run with elevated privileges, and all Zuul configuration
+items are available for use.  It is expected that changes to
+config-projects will undergo careful scrutiny before being
+merged.</p>
+</dd>
+<dt id="term-connection">connection<a class="headerlink" href="#term-connection" title="Link to this term"></a></dt><dd><p>A coupling of a triggering and reporting driver with
+credentials and location information for a specific source of
+events, whether that’s a code review platform, a generic Git
+hosting site or an emitting protocol such as SMTP or SQL.</p>
+</dd>
+<dt id="term-cross-project-dependency">cross-project dependency<a class="headerlink" href="#term-cross-project-dependency" title="Link to this term"></a></dt><dd><p>An explicit declaration that a change depends on another
+change, which need not be in the same Git repository or even
+accessible via the same connection.  Zuul is expected to
+incorporate any cross-project dependencies into the context
+for the change declaring that dependency relationship.</p>
+</dd>
+<dt id="term-data-secret">data secret<a class="headerlink" href="#term-data-secret" title="Link to this term"></a></dt><dd><p>A <a class="reference internal" href="config/secret.html#secret"><span class="std std-ref">Secret</span></a> that consists of user-defined data, whether
+encrypted or not.  Useful for securely supplying information about
+remote resources (eg, usernames, passwords, urls, etc) to jobs.</p>
+</dd>
+<dt id="term-deploy">deploy<a class="headerlink" href="#term-deploy" title="Link to this term"></a></dt><dd><p>By convention, the name of a continuous-deployment pipeline.
+Such a pipeline typically interacts with production systems
+rather than ephemeral build nodes.  By triggering on merge events
+the results of deployment can be reported back to the
+originating change.  The <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.serial" title="value-pipeline.manager.serial"><span class="xref zuul zuul-value">serial</span></a> pipeline manager, is recommended if
+multiple repositories are involved and only some jobs (based on
+file matchers) will be run for each change.  If a single repo is
+involved and all deployment jobs run on every change merged,
+then <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.supercedent" title="value-pipeline.manager.supercedent"><span class="xref zuul zuul-value">supercedent</span></a> may be
+a better fit.</p>
+</dd>
+<dt id="term-executor">executor<a class="headerlink" href="#term-executor" title="Link to this term"></a></dt><dd><p>The component of Zuul responsible for executing a sandboxed
+Ansible process in order to produce a build.  Some builds may
+run entirely in the executor’s provided workspace if the job
+is suitably constructed, or it may require the executor to
+connect to remote nodes for more complex and risky operations.</p>
+</dd>
+<dt id="term-final-job">final job<a class="headerlink" href="#term-final-job" title="Link to this term"></a></dt><dd><p>A job which no other jobs are allowed to use as a parent, for
+example in order to prevent the list of tasks they run from
+being altered by potential child jobs.</p>
+</dd>
+<dt id="term-gate">gate<a class="headerlink" href="#term-gate" title="Link to this term"></a></dt><dd><p>By convention, the name of a pipeline which performs project
+gating.  Such a pipeline might be triggered by a core team
+member approving a change or pull request.  It should have a
+<a class="reference internal" href="config/pipeline.html#value-pipeline.manager.dependent" title="value-pipeline.manager.dependent"><span class="xref zuul zuul-value">dependent</span></a> pipeline manager
+so that it can combine and sequence changes as they are
+approved.</p>
+</dd>
+<dt id="term-inventory">inventory<a class="headerlink" href="#term-inventory" title="Link to this term"></a></dt><dd><p>The set of hosts and variable assignments Zuul provides to
+Ansible, forming the context for a build.</p>
+</dd>
+<dt id="term-job">job<a class="headerlink" href="#term-job" title="Link to this term"></a></dt><dd><p>A collection of Ansible playbooks, variables, filtering
+conditions and other metadata defining a set of actions which
+should be taken when invoked under the intended circumstances.
+Jobs are anonymous sets of sequenced actions, which when
+executed in the context of a pipeline, result in a build.</p>
+</dd>
+<dt id="term-job-dependency">job dependency<a class="headerlink" href="#term-job-dependency" title="Link to this term"></a></dt><dd><p>A declared reliance in one job on the completion of builds for
+one or more other jobs or provided artifacts those builds may
+produce.  Jobs may also be conditionally dependent on specific
+build results for their dependencies.</p>
+</dd>
+<dt id="term-job-variant">job variant<a class="headerlink" href="#term-job-variant" title="Link to this term"></a></dt><dd><p>A lightweight modification of another defined job altering
+variables and filtering criteria.</p>
+</dd>
+<dt id="term-merger">merger<a class="headerlink" href="#term-merger" title="Link to this term"></a></dt><dd><p>The component of Zuul responsible for constructing Git refs
+provided to builds based on supplied change contexts from
+triggering events.  An executor may also be configured to run
+a local merger process for increased efficiency.</p>
+</dd>
+<dt id="term-node">node<a class="headerlink" href="#term-node" title="Link to this term"></a></dt><dd><p>A remote system resource on which Ansible playbooks may be
+executed, for strong isolation from the executor’s
+environment.  In Ansible inventory terms, this is a remote
+host.</p>
+</dd>
+<dt id="term-nodeset">nodeset<a class="headerlink" href="#term-nodeset" title="Link to this term"></a></dt><dd><p>An assembly of one or more nodes which, when applied in a job,
+are added as host entries to the Ansible inventory for its
+builds.  Nodes in a nodeset can be given convenient names for
+ease of reference in job playbooks.</p>
+</dd>
+<dt id="term-parent-job">parent job<a class="headerlink" href="#term-parent-job" title="Link to this term"></a></dt><dd><p>A job from which a child job inherits values such as playbooks
+and variables.  Depending on the type of playbooks and
+variables, these may either be merged with or overridden by
+the child job.  Any job which doesn’t specify a parent
+inherits from the tenant’s base job.</p>
+</dd>
+<dt id="term-pipeline">pipeline<a class="headerlink" href="#term-pipeline" title="Link to this term"></a></dt><dd><p>A set of triggering, prioritizing, scheduling, and reporting
+rules which provide the context for a build.</p>
+</dd>
+<dt id="term-pipeline-manager">pipeline manager<a class="headerlink" href="#term-pipeline-manager" title="Link to this term"></a></dt><dd><p>The algorithm through which a pipeline manages queuing of
+trigger events.  Specifically, this determines whether changes
+are queued independently, sequenced together in the order
+they’re approved, or superceded entirely by subsequent events.</p>
+</dd>
+<dt id="term-post">post<a class="headerlink" href="#term-post" title="Link to this term"></a></dt><dd><p>By convention, the name of a pipeline which runs after a branch
+is updated.  By triggering on a branch update (rather than a
+merge) event, jobs in this pipeline may run with the final git
+state after the merge (including any merge commits generated by
+the upstream code review system).  This is important when
+building some artifacts in order that the exact commit ids are
+present in the git repo.  The downside to this approach is that
+jobs in this pipeline run without any connection to the
+underlying changes which created the commits.  If only the
+latest updates to a branch matter, then the <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.supercedent" title="value-pipeline.manager.supercedent"><span class="xref zuul zuul-value">supercedent</span></a> pipeline manager is recommended;
+otherwise <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.independent" title="value-pipeline.manager.independent"><span class="xref zuul zuul-value">independent</span></a>
+may be a better choice.  See also <a class="reference internal" href="#term-tag"><span class="xref std std-term">tag</span></a> and
+<a class="reference internal" href="#term-release"><span class="xref std std-term">release</span></a>.</p>
+</dd>
+<dt id="term-project">project<a class="headerlink" href="#term-project" title="Link to this term"></a></dt><dd><p>A unique Git source repository available through a connection
+within a tenant.  Projects are identified by their connection
+or hostname, combined with their repository, so as to avoid
+ambiguity when two repositories of the same name are available
+through different connections.</p>
+</dd>
+<dt id="term-project-gating">project gating<a class="headerlink" href="#term-project-gating" title="Link to this term"></a></dt><dd><p>Automatically preventing a proposed change from merging to a
+canonical source code repository for a project until it is
+able to pass declared tests for that repository.  In a project
+gating workflow, cues may be taken from its users, but it is
+ultimately the gating system which controls merging of changes
+and not the users themselves.</p>
+</dd>
+<dt id="term-project-pipeline">project pipeline<a class="headerlink" href="#term-project-pipeline" title="Link to this term"></a></dt><dd><p>The application of jobs to a pipeline.  Project pipeline
+entries often include filtering and matching rules specifying
+the conditions under which a job should result in a build, and
+any interdependencies those jobs may have on the build results
+and named artifacts provided by other jobs.</p>
+</dd>
+<dt id="term-project-queue">project queue<a class="headerlink" href="#term-project-queue" title="Link to this term"></a></dt><dd><p>The set of changes sequenced for testing, either explicitly
+through dependency relationships, or implicitly from the
+chronological ordering of triggering events which enqueued
+them.  Project queues can be named and shared by multiple
+projects, ensuring sequential merging of changes across those
+projects.</p>
+</dd>
+<dt id="term-project-template">project template<a class="headerlink" href="#term-project-template" title="Link to this term"></a></dt><dd><p>A named mapping of jobs into pipelines, for application to one
+or more projects.  This construct provides a convenient means
+of reusing the same sets of jobs in the same pipelines across
+multiple projects.</p>
+</dd>
+<dt id="term-promote">promote<a class="headerlink" href="#term-promote" title="Link to this term"></a></dt><dd><p>By convention, the name of a pipeline which uploads previously
+built artifacts.  These artifacts should be constructed in a
+<a class="reference internal" href="#term-gate"><span class="xref std std-term">gate</span></a> pipeline and uploaded to a temporary location.
+When all of the jobs in the gate pipeline succeed, the change
+will be merged and may then be enqueued into a promote pipeline.
+Jobs running in this pipeline do so with the understanding that
+since the change merged as it was tested in the gate, any
+artifacts created at that time are now safe to promote to
+production. It is a good choice to use a <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.supercedent" title="value-pipeline.manager.supercedent"><span class="xref zuul zuul-value">supercedent</span></a> pipeline manager so that if many
+changes merge in rapid sequence, Zuul may skip promoting all but
+the latest artifact to production.</p>
+</dd>
+<dt id="term-provided-artifact">provided artifact<a class="headerlink" href="#term-provided-artifact" title="Link to this term"></a></dt><dd><p>A named artifact which builds of a job are expected to
+produce, for purposes of dependency declarations in other
+jobs.  Multiple jobs may provide equivalent artifacts with the
+same name, allowing these relationships to be defined
+independent of the specific jobs which provide them.</p>
+</dd>
+<dt id="term-release">release<a class="headerlink" href="#term-release" title="Link to this term"></a></dt><dd><p>By convention, the name of a pipeline which runs after a
+release-formatted tag is updated.  Other than the matching ref,
+this is typically constructed the same as a <a class="reference internal" href="#term-post"><span class="xref std std-term">post</span></a>
+pipeline.  See also <a class="reference internal" href="#term-tag"><span class="xref std std-term">tag</span></a>.</p>
+</dd>
+<dt id="term-reporter">reporter<a class="headerlink" href="#term-reporter" title="Link to this term"></a></dt><dd><p>A reporter is a <a class="reference internal" href="config/pipeline.html#reporters"><span class="std std-ref">pipeline attribute</span></a> which
+describes the action performed when an item is dequeued after
+its jobs complete.  Reporters are implemented by <a class="reference internal" href="drivers/index.html#drivers"><span class="std std-ref">Drivers</span></a>
+so their actions may be quite varied.  For example, a reporter
+might leave feedback in a remote system on a proposed change,
+send email, or store information in a database.</p>
+</dd>
+<dt id="term-required-artifact">required artifact<a class="headerlink" href="#term-required-artifact" title="Link to this term"></a></dt><dd><p>An artifact provided by one or more jobs, on which execution
+of the job requiring it depends.</p>
+</dd>
+<dt id="term-required-project">required project<a class="headerlink" href="#term-required-project" title="Link to this term"></a></dt><dd><p>A project whose source code is required by the job.  Jobs
+implicitly require the project associated with the event
+which triggered their build, but additional projects can be
+specified explicitly as well.  Zuul supplies merge commits
+representing the speculative future states of all required
+projects for a build.</p>
+</dd>
+<dt id="term-scheduler">scheduler<a class="headerlink" href="#term-scheduler" title="Link to this term"></a></dt><dd><p>The component of Zuul which coordinates source and reporting
+connections as well as requests for nodes, mergers and
+executors for builds triggered by pipeline definitions in the
+tenant configuration.</p>
+</dd>
+<dt id="term-speculative-execution">speculative execution<a class="headerlink" href="#term-speculative-execution" title="Link to this term"></a></dt><dd><p>A term borrowed from microprocessor design, the idea that
+sequenced operations can be performed in parallel by
+predicting their possible outcomes and then discarding any
+logical branches which turn out not to be true.  Zuul uses
+optimistic prediction to assume all builds for a change will
+succeed, and then proceeds to run parallel builds for other
+changes which would follow it in sequence.  If a change enters
+a failing state (at least one of its voting builds indicates a
+failure result), then Zuul resets testing for all subsequent
+queue items to no longer include it in their respective
+contexts.</p>
+</dd>
+<dt id="term-tag">tag<a class="headerlink" href="#term-tag" title="Link to this term"></a></dt><dd><p>By convention, the name of a pipeline which runs after a tag is
+updated.  Other than the matching ref, this is typically
+constructed the same as a <a class="reference internal" href="#term-post"><span class="xref std std-term">post</span></a> pipeline.  See also
+<a class="reference internal" href="#term-release"><span class="xref std std-term">release</span></a>.</p>
+</dd>
+<dt id="term-tenant">tenant<a class="headerlink" href="#term-tenant" title="Link to this term"></a></dt><dd><p>A set of projects on which Zuul should operate.  Configuration
+is not shared between tenants, but the same projects from the
+same connections may appear in more than one tenant and the
+same events may even enqueue the same changes in pipelines for
+more than one tenant.  Zuul’s HTTP API methods and Web
+dashboard are scoped per tenant, in order to support distinct
+tenant-specific authentication and authorization.</p>
+</dd>
+<dt id="term-token-secret">token secret<a class="headerlink" href="#term-token-secret" title="Link to this term"></a></dt><dd><p>A <a class="reference internal" href="config/secret.html#secret"><span class="std std-ref">Secret</span></a> that consists of an automatically generated
+OpenID Connect token that uniquely identifies the secret as well
+as information about the job using it.  Useful for
+authenticating to federated third-party services.</p>
+</dd>
+<dt id="term-trigger">trigger<a class="headerlink" href="#term-trigger" title="Link to this term"></a></dt><dd><p>A (typically external) event which Zuul may rely on as a cue
+to enqueue a change into a pipeline.</p>
+</dd>
+<dt id="term-trusted-execution-context">trusted execution context<a class="headerlink" href="#term-trusted-execution-context" title="Link to this term"></a></dt><dd><p>Playbooks defined in a <a class="reference internal" href="#term-config-project"><span class="xref std std-term">config-project</span></a> run in the
+<em>trusted</em> execution context.  The trusted execution context may
+have access to extra directories within the bubblewrap container
+if the operator has configured these.</p>
+</dd>
+<dt id="term-untrusted-execution-context">untrusted execution context<a class="headerlink" href="#term-untrusted-execution-context" title="Link to this term"></a></dt><dd><p>Playbooks defined in an <a class="reference internal" href="#term-untrusted-project"><span class="xref std std-term">untrusted-project</span></a> run in the
+<em>untrusted</em> execution context.</p>
+</dd>
+<dt id="term-untrusted-project">untrusted-project<a class="headerlink" href="#term-untrusted-project" title="Link to this term"></a></dt><dd><p>One of two types of projects which may be specified by the
+administrator in the tenant config file.  An untrusted-project
+is one whose primary focus is not to operate Zuul, but rather it
+is one of the projects being tested or deployed.  The Zuul
+configuration language available to these projects is somewhat
+restricted, and jobs defined in these projects run in a
+restricted execution environment since they may be operating on
+changes which have not yet undergone review.</p>
+</dd>
+<dt id="term-window">window<a class="headerlink" href="#term-window" title="Link to this term"></a></dt><dd><p>The portion of a pipeline (most relevant to <a class="reference internal" href="config/pipeline.html#value-pipeline.manager.dependent" title="value-pipeline.manager.dependent"><span class="xref zuul zuul-value">dependent
+pipelines</span></a>) that is permitted to
+run jobs.  Zuul has a number of configuration options and
+heuristics designed to match resource usage to pipeline
+throughput in order to merge changes quickly without wasting
+test resources on changes unlikely to merge.</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="releasenotes.html" class="btn btn-neutral float-left" title="Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012-2026, Zuul project contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book">Versions</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        
+          <dd><a href="/docs/zuul/latest/">latest</a></dd>
+        
+          <dd><a href="/docs/zuul/13.1.1/">13.1.1</a></dd>
+        
+          <dd><a href="/docs/zuul/13.1.0/">13.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/13.0.1/">13.0.1</a></dd>
+        
+          <dd><a href="/docs/zuul/13.0.0/">13.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/12.1.0/">12.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/12.0.0/">12.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/11.3.0/">11.3.0</a></dd>
+        
+          <dd><a href="/docs/zuul/11.2.0/">11.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/11.1.0/">11.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/11.0.1/">11.0.1</a></dd>
+        
+          <dd><a href="/docs/zuul/11.0.0/">11.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/10.2.0/">10.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/10.1.0/">10.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/10.0.0/">10.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/9.5.0/">9.5.0</a></dd>
+        
+          <dd><a href="/docs/zuul/9.4.0/">9.4.0</a></dd>
+        
+          <dd><a href="/docs/zuul/9.3.0/">9.3.0</a></dd>
+        
+          <dd><a href="/docs/zuul/9.2.0/">9.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/9.1.0/">9.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/9.0.0/">9.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/8.3.1/">8.3.1</a></dd>
+        
+          <dd><a href="/docs/zuul/8.3.0/">8.3.0</a></dd>
+        
+          <dd><a href="/docs/zuul/8.2.0/">8.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/8.1.0/">8.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/8.0.1/">8.0.1</a></dd>
+        
+          <dd><a href="/docs/zuul/8.0.0/">8.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/7.1.0/">7.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/7.0.0/">7.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/6.4.0/">6.4.0</a></dd>
+        
+          <dd><a href="/docs/zuul/6.3.0/">6.3.0</a></dd>
+        
+          <dd><a href="/docs/zuul/6.2.0/">6.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/6.1.0/">6.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/6.0.0/">6.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/5.2.5/">5.2.5</a></dd>
+        
+          <dd><a href="/docs/zuul/5.2.4/">5.2.4</a></dd>
+        
+          <dd><a href="/docs/zuul/5.2.3/">5.2.3</a></dd>
+        
+          <dd><a href="/docs/zuul/5.2.2/">5.2.2</a></dd>
+        
+          <dd><a href="/docs/zuul/5.2.1/">5.2.1</a></dd>
+        
+          <dd><a href="/docs/zuul/5.2.0/">5.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/5.1.0/">5.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/5.0.0/">5.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.12.0/">4.12.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.11.0/">4.11.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.10.4/">4.10.4</a></dd>
+        
+          <dd><a href="/docs/zuul/4.10.3/">4.10.3</a></dd>
+        
+          <dd><a href="/docs/zuul/4.10.2/">4.10.2</a></dd>
+        
+          <dd><a href="/docs/zuul/4.10.1/">4.10.1</a></dd>
+        
+          <dd><a href="/docs/zuul/4.10.0/">4.10.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.9.0/">4.9.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.8.1/">4.8.1</a></dd>
+        
+          <dd><a href="/docs/zuul/4.8.0/">4.8.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.7.0/">4.7.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.6.0/">4.6.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.5.1/">4.5.1</a></dd>
+        
+          <dd><a href="/docs/zuul/4.5.0/">4.5.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.4.0/">4.4.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.3.0/">4.3.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.2.0/">4.2.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.1.0/">4.1.0</a></dd>
+        
+          <dd><a href="/docs/zuul/4.0.0/">4.0.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.19.1/">3.19.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.19.0/">3.19.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.18.0/">3.18.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.17.0/">3.17.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.16.1/">3.16.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.16.0/">3.16.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.15.0/">3.15.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.14.0/">3.14.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.13.0/">3.13.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.12.0/">3.12.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.11.1/">3.11.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.11.0/">3.11.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.10.2/">3.10.2</a></dd>
+        
+          <dd><a href="/docs/zuul/3.10.1/">3.10.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.10.0/">3.10.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.9.0/">3.9.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.8.1/">3.8.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.8.0/">3.8.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.7.1/">3.7.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.7.0/">3.7.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.6.1/">3.6.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.6.0/">3.6.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.5.0/">3.5.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.4.0/">3.4.0</a></dd>
+        
+          <dd><a href="/docs/zuul/3.3.1/">3.3.1</a></dd>
+        
+          <dd><a href="/docs/zuul/3.3.0/">3.3.0</a></dd>
+        
+      </dl>
+    </div>
+  </div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+:title: AWS Driver
+
+.. _aws:
+
+AWS
+===
+
+Zuul can use AWS as a source for build nodes.
+
+If using the AWS driver to upload images, see `VM Import/Export
+service role`_ for information on configuring the required permissions
+in AWS.  You must also create an S3 Bucket for use by Zuul if
+uploading images (except when using the ``ebs-direct`` upload method).
+
+A number of methods for configuration authentication are available:
+
+* Supplying values directly in ``zuul.conf``
+* A shared credential file
+* `Environment variables`_
+
+Zuul will try to obtain credential information from those sources in
+that order.
+
+Connection Configuration
+------------------------
+
+The supported options in ``zuul.conf`` connections are:
+
+.. attr:: <aws connection>
+
+   .. attr:: driver
+      :required:
+
+      .. value:: aws
+
+         The connection must set ``driver=aws`` for AWS connections.
+
+   .. attr:: shared_credentials_file
+
+      A path to a `configuration file`_ with shared access
+      credentials.  If this is supplied, no other credential settings
+      need to be present.
+
+   .. attr:: access_key_id
+
+      The AWS access key id.
+
+   .. attr:: secret_access_key
+
+      The AWS secret access key.
+
+   .. attr:: profile
+
+      The AWS profile.
+
+   .. attr:: rate
+      :default: 2
+
+      The API rate limit (in requests per second) to use when
+      performing API calls with AWS.
+
+Provider Configuration
+----------------------
+
+The ``aws`` driver adds the following options to the :attr:`provider`
+and :attr:`section` configurations:
+
+.. include:: aws-attrs.rstinc
+
+.. _`VM Import/Export service role`: https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-role
+.. _`configuration file`: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#using-a-configuration-file
+.. _`Environment variables`: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#using-environment-variables`

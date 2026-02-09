@@ -1,0 +1,790 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/howtos/badges.rst:8
+msgid "Badges"
+msgstr ""
+
+#: ../../source/howtos/badges.rst:10
+msgid "You can embed a badge declaring that your project is gated and therefore by definition always has a working build. Since there is only one status to report, it is a simple static file:"
+msgstr ""
+
+#: ../../source/howtos/badges.rst:14
+msgid "Zuul: Gated"
+msgstr ""
+
+#: ../../source/howtos/badges.rst:17
+msgid "To use it, simply put ``https://zuul-ci.org/gated.svg`` into an RST or markdown formatted README file, or use it in an ``<img>`` tag in HTML."
+msgstr ""
+
+#: ../../source/howtos/badges.rst:20
+msgid "For advanced usage Zuul also supports generating dynamic badges via the REST api. This can be useful if you want to display the status of e.g. periodic pipelines of a project. To use it use an url like ``https://zuul.opendev.org/api/tenant/zuul/badge?project=zuul/zuul-website&pipeline=post`` instead of the above mentioned url. It supports filtering by ``project``, ``pipeline`` and ``branch``."
+msgstr ""
+
+#: ../../source/howtos/index.rst:2
+msgid "How-To Guides"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:2
+msgid "Chatting with Matrix"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:4
+msgid "The Zuul community uses mailing lists for long-form communication and Matrix for real-time (or near real-time) chat."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:7
+msgid "This guide will walk you through getting started with Matrix and how to use it to join communities like Zuul on IRC."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:10
+msgid "Familiar with Matrix already and want to jump straight to the room? Follow this link: `https://matrix.to/#/#zuul:opendev.org <https://matrix.to/#/#zuul:opendev.org>`_"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:14
+msgid "Why Use Matrix?"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:16
+msgid "Matrix has a number of clients available including feature-rich web, desktop and mobile clients, as well as integration with the popular text-based weechat client.  This provides plenty of choices based on your own preference.  This guide will focus on using the Element web client."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:22
+msgid "Matrix supports persistent presence in \"rooms\".  Once you join a room, your homeserver will keep you connected to that room and save all of the messages sent to it, so that if you close your client and return later, you won't miss anything.  You don't need to run your own server to use Matrix; you are welcome to use the public server at matrix.org. But if you are a member of an organization that already runs a homeserver, or you would like to run one yourself, you may do so and federate with the larger Matrix network.  This guide will walk you through setting up an account on the matrix.org homeserver."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:32
+msgid "Matrix is an open (in every sense of the word) federated communication system.  Because of this it's possible to bridge the Matrix network to other networks (including IRC, slack, etc).  That makes it the perfect system to use to communicate with various communities using a single interface."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:39
+msgid "Create An Account"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:41
+msgid "If you don't already have an account on a Matrix homeserver, go to https://app.element.io/ to create one, then click `Create Account`."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:47
+msgid "You can create an account with an email address or one of the supported authentication providers."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:53
+msgid "You'll be asked to accept the terms and conditions of the service."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:58
+msgid "If you are registering an account via email, you will be prompted to verify your email address."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:52
+#: ../../source/howtos/matrix.rst:64
+msgid "You will receive an email like this:"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:69
+msgid "Once you click the link in the email, your account will be created."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:74
+msgid "You can follow the link to sign in."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:80
+msgid "Join the #zuul Room"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:82
+msgid "Click the plus icon next to `Rooms` on the left of the screen, then click `Explore public rooms` in the dropdown that appears."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:88
+msgid "A popup dialog will appear; enter ``#zuul:opendev.org`` into the search box."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:94
+msgid "It will display `No results for \"#zuul:opendev.org\"` since the room is hosted on a federated homeserver, but it's really there.  Disregard that and hit `enter` or click `Join`, and you will join the room."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:98
+msgid "Go ahead and say hi, introduce yourself, and let us know what you're working on or any questions you have.  Keep in mind that the Zuul community is world-wide and we may be away from our desks when you join.  Because Matrix keeps a message history, we'll see your message and you'll see any responses, even if you close your browser and log in later."
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:106
+msgid "Optional Next Steps"
+msgstr ""
+
+#: ../../source/howtos/matrix.rst:108
+msgid "The following steps are optional.  You don't need to do these just to hop in with a quick question, but if you plan on spending more than a brief amount of time interacting with communities in Matrix, they will improve your experience."
+msgstr ""
+
+#: ../../source/howtos/matrix-encryption.rst:2
+msgid "Optional: Save Encryption Keys"
+msgstr ""
+
+#: ../../source/howtos/matrix-encryption.rst:4
+msgid "The Matrix protocol supports end-to-end encryption.  We don't have this enabled for the ``#zuul`` room (there's little point as it's a public room), but if you start direct chats with other Matrix users, your communication will be encrypted by default.  Since it's *end-to-end* encryption, that means your encryption keys are stored on your client, and the server has no way to decrypt those messages.  But that also means that if you sign out of your client or switch browsers, you will lose your encryption keys along with access to any old messages that were encrypted with them.  To avoid this, you can back up your keys to the server (in an encrypted form, of course) so that if you log in from another session, you can restore those keys and pick up where you left off.  To set this up, open the User Menu by clicking on your name at the top left of the screen."
+msgstr ""
+
+#: ../../source/howtos/matrix-encryption.rst:21
+msgid "Click the `Security & privacy` menu item in the dropdown."
+msgstr ""
+
+#: ../../source/howtos/matrix-encryption.rst:26
+msgid "Click the `Set up` button under `Encryption` / `Secure Backup` in the dialog that pops up."
+msgstr ""
+
+#: ../../source/howtos/matrix-encryption.rst:32
+msgid "Follow the prompts to back up your encryption keys."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:2
+msgid "Optional: Register with an Identity Provider"
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:4
+msgid "By default, there is no public link between your Matrix account and any identifying information such as your email address.  However, you may wish people to be able to find your Matrix ID by looking up your email address or phone number.  We also have plans to add additional functionality to our bots if they are able to look up contributors by email addresses.  If you wish to make your account discoverable in this way, you may perform the following steps to list your account in one of the public third-party identifier services.  Note that these services are designed to only return results for someone who already knows your email address or phone number; they take care to ensure that it is not possible (or nearly so) to \"scrape\" their data sets to obtain lists of users."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:17
+msgid "To get started, open the User Menu and click `All settings`.  Under the `General` section, find `Email addresses`.  If you followed the instructions above, you should already have an email address listed here.  If you don't, enter your address, click `Add`, and follow the instructions to verify your address.  The dialog should look like this when complete:"
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:27
+msgid "To make your account discoverable by email, scroll down to the `Discovery` section."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:33
+msgid "Read the privacy notice and click the checkbox next to `Accept`.  That will enable the `Continue` button; click that to proceed."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:40
+msgid "The `Discovery` section will be replaced with the email address you registered above."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:46
+msgid "Click the `Share` button next to the address.  The system will send an email to you, and meanwhile the dialog will show this:"
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:57
+msgid "Follow the link in the email to verify it really is you making the request."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:63
+msgid "Then return to the settings page and click the `Complete` button."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:68
+msgid "Once everything is finished, the complete button should change to read `Revoke`."
+msgstr ""
+
+#: ../../source/howtos/matrix-id.rst:74
+msgid "If you see that, you're all done.  If you change your mind and don't want your account to be discoverable via email, you can click the `Revoke` button at any time."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:2
+msgid "Optional: Join an IRC Room"
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:4
+msgid "The Matrix community maintains bridges to most major IRC networks. You can use the same Matrix account and client to join IRC channels as well as Zuul's Matrix Room.  You will benefit from the persistent connection and history features as well.  Follow the instructions below to join an IRC channel.  The example below is for the ``#opendev`` channel on OFTC, but the process is similar for other channels or networks."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:12
+msgid "Click the plus icon next to the `Home` space on the left of the screen, then click `Join public room` in the dropdown that appears."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:18
+msgid "A popup dialog will appear where you can enter the name of the room to join.  IRC channels are bridged to matrix with a special room name. OFTC channels are prefixed with ``#_oftc_`` and suffixed with ``:matrix.org``.  To join the ``#opendev`` IRC channel, enter ``#_oftc_#opendev:matrix.org`` into the text field."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:27
+msgid "There will be no search results; an unfortunate consequence of one of the anti-spam measures necessary on IRC.  Disregard that and hit `enter` or click `Join #oftc_#opendev:matrix.org`, and you will join the room."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:32
+msgid "If this is your first time joining an OFTC channel, you will also receive an invitation to join the `OFTC IRC Bridge status` room."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:38
+msgid "Accept the invitation."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:43
+msgid "This is a private control channel between you and the system that operates the OFTC bridge.  Here you can perform some IRC commands such as changing your nickname and setting up nick registration.  That is out of scope for this HOWTO, but advanced IRC users may be interested in doing so."
+msgstr ""
+
+#: ../../source/howtos/matrix-irc.rst:49
+msgid "You may repeat this procedure for any other IRC channels on the OFTC, Freenode, or libera.chat networks."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:2
+msgid "Configuring Google Authentication"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:4
+msgid "This document explains how to configure Zuul in order to enable authentication with Google."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:8
+#: ../../source/howtos/openid-with-keycloak.rst:10
+#: ../../source/howtos/openid-with-microsoft.rst:8
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:10
+msgid "The Zuul instance must be able to query Google's OAUTH API servers. This simply generally means that the Zuul instance must be able to send and receive HTTPS data to and from the Internet."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:13
+msgid "You must set up a project in `Google's developers console <https://console.developers.google.com/>`_."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:16
+msgid "Setting up credentials with Google"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:18
+msgid "In the developers console, choose your project and click `APIs & Services`."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:20
+msgid "Choose `Credentials` in the menu on the left, then click `Create Credentials`."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:22
+msgid "Choose `Create OAuth client ID`. You might need to configure a consent screen first."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:25
+msgid "Create OAuth client ID"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:27
+msgid "Choose `Web application` as Application Type."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:29
+msgid "In `Authorized JavaScript Origins`, add the base URL of Zuul's Web UI. For example, if you are running a yarn development server on your computer, it would be `http://localhost:3000` ."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:33
+msgid "In `Authorized redirect URIs`, write down the base URL of Zuul's Web UI followed by \"/t/<tenant>/auth_callback\", for each tenant on which you want to enable authentication. For example, if you are running a yarn development server on your computer and want to set up authentication for tenant \"local\", write `http://localhost:3000/t/local/auth_callback` ."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:39
+msgid "Click Save. Google will generate a Client ID and a Client secret for your new credentials; we will only need the Client ID for the rest of this How-To."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:43
+msgid "Configure Zuul"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:45
+msgid "Edit the ``/etc/zuul/zuul.conf`` to add the google authenticator:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:57
+#: ../../source/howtos/openid-with-keycloak.rst:122
+#: ../../source/howtos/openid-with-microsoft.rst:80
+msgid "Restart Zuul services (scheduler, web)."
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:59
+#: ../../source/howtos/openid-with-keycloak.rst:124
+msgid "Head to your tenant's status page. If all went well, you should see a \"Sign in\" button in the upper right corner of the page. Congratulations!"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:63
+#: ../../source/howtos/openid-with-keycloak.rst:128
+msgid "Further Reading"
+msgstr ""
+
+#: ../../source/howtos/openid-with-google.rst:65
+msgid "This How-To is based on `Google's documentation on their implementation of OpenID Connect <https://developers.google.com/identity/protocols/oauth2/openid-connect>`_."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:2
+msgid "Configuring Keycloak Authentication"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:4
+msgid "This document explains how to configure Zuul and Keycloak in order to enable authentication in Zuul with Keycloak. It's written with Keycloak 23 in mind, but should probably work for other versions with only minor adjustments."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:12
+msgid "The Zuul instance must be able to query Keycloak over HTTPS."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:13
+msgid "Authenticating users must be able to reach Keycloak's web UI."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:14
+msgid "Have a realm set up in Keycloak. `Instructions on how to do so can be found here <https://www.keycloak.org/docs/latest/server_admin/#configuring-realms>`_ ."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:17
+msgid "By convention, we will assume the Keycloak server's FQDN is ``keycloak``, and Zuul's Web UI's base URL is ``https://zuul/``. We will use the realm ``my_realm``."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:20
+msgid "Most operations below regarding the configuration of Keycloak can be performed through Keycloak's admin CLI. The following steps must be performed as an admin on Keycloak's GUI."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:25
+msgid "Setting up Keycloak"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:28
+msgid "Create a client"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:30
+msgid "Choose the realm ``my_realm``, then click ``clients`` in the Configure panel. Click ``Create``."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:33
+msgid "Give your client whatever ID you please; we will pick ``zuul`` for this example. Also this example assumes your Zuul WebUI is served from a host referred to as zuul.example.org in DNS. Make sure to fill the following fields:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:37
+msgid "General settings (page 1):"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:39
+msgid "Client type: ``OpenID Connect`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:40
+msgid "Client ID: ``zuul`` (or whatever else you want)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:42
+msgid "Capability config (page 2):"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:44
+msgid "Client authentication: ``Off`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:45
+msgid "Authentication flow:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:47
+msgid "Standard flow: ``On`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:48
+msgid "Direct access grants: ``On`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:49
+msgid "Implicit flow: ``On``"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:51
+msgid "Login settings (page 3):"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:53
+msgid "Valid redirect URIs: ``https://zuul.example.org/*``"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:54
+msgid "Web origins: ``https://zuul.example.org`` (no trailing ``/`` here)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:56
+#: ../../source/howtos/openid-with-keycloak.rst:75
+msgid "Click \"Save\" when done."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:59
+msgid "Create a client scope"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:61
+msgid "Keycloak maps the client ID to a specific claim, instead of the usual `aud` claim. We need to configure Keycloak to add our client ID to the `aud` claim by creating a custom client scope for our client."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:65
+msgid "Choose the realm ``my_realm``, then click ``client scopes`` in the Configure panel. Click ``Create``."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:68
+msgid "Name your scope as you please. We will name it ``zuul_aud`` for this example. Make sure you fill the following fields:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:71
+msgid "Name: ``zuul_aud``"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:72
+msgid "Protocol: ``OpenID Connect`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:73
+msgid "Include in Token Scope: ``On`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:77
+msgid "On the Client Scopes page, click on ``zuul_aud`` to configure it; click on ``Mappers`` then ``Configure a new mapper`` and select ``Audience`` from the list it presents."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:81
+msgid "On the resulting form, name the mapper whatever you want (our example will use ``zuul_map``), and make sure to fill the following:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:84
+msgid "Name: ``zuul_map``"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:85
+msgid "Included client audience: ``zuul``"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:86
+msgid "Add to ID token: ``On``"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:87
+msgid "Add to access token: ``On`` (default)"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:89
+msgid "Then save."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:91
+msgid "Finally, go back to the clients list and pick the ``zuul`` client again. Click on ``Client scopes`` and click the ``Add client scope`` button. Pick the checkbox next to the ``zuul_aud`` scope you created and click the ``Add`` button choosing the ``Default`` option from the list that subsequently pops up."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:98
+msgid "(Optional) Set up a social identity provider"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:100
+msgid "Keycloak can delegate authentication to predefined social networks. Follow `these steps to find out how. <https://www.keycloak.org/docs/latest/server_admin/index.html#social-identity-providers>`_"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:103
+msgid "If you don't set up authentication delegation, make sure to create at least one user in your realm, or allow self-registration. See Keycloak's documentation section on `user management <https://www.keycloak.org/docs/latest/server_admin/index.html#assembly-managing-users_server_administration_guide>`_ for more details on how to do so."
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:109
+#: ../../source/howtos/openid-with-microsoft.rst:63
+msgid "Setting up Zuul"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:111
+msgid "Edit the ``/etc/zuul/zuul.conf`` to add the keycloak authenticator:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-keycloak.rst:130
+msgid "This How-To is based on `Keycloak's documentation <https://www.keycloak.org/documentation.html>`_, specifically `the documentation about clients <https://www.keycloak.org/docs/latest/server_admin/#assembly-managing-clients_server_administration_guide>`_."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:2
+msgid "Configuring Microsoft Authentication"
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:4
+msgid "This document explains how to configure Zuul in order to enable authentication with Microsoft Login."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:10
+msgid "The Zuul instance must be able to query Microsoft's OAUTH API servers. This simply generally means that the Zuul instance must be able to send and receive HTTPS data to and from the Internet."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:13
+msgid "You must have an Active Directory instance in Azure and the ability to create an App Registration."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:16
+msgid "By convention, we will assume Zuul's Web UI's base URL is ``https://zuul.example.com/``."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:20
+msgid "Creating the App Registration"
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:22
+msgid "Navigate to the Active Directory instance in Azure and select `App registrations` under ``Manage``.  Select ``New registration``.  This will open a dialog to register an application."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:26
+msgid "Enter a name of your choosing (e.g., ``Zuul``), and select which account types should have access.  Under ``Redirect URI`` select ``Single-page application(SPA)`` and enter ``https://zuul.example.com/auth_callback`` as the redirect URI.  Press the ``Register`` button."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:32
+msgid "You should now be at the overview of the Zuul App registration.  This page displays several values which will be used later.  Record the ``Application (client) ID`` and ``Directory (tenant) ID``.  When we need to construct values including these later, we will refer to them with all caps (e.g., ``CLIENT_ID`` and ``TENANT_ID`` respectively)."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:38
+msgid "Select ``Authentication`` under ``Manage``.  You should see a ``Single-page application`` section with the redirect URI previously configured during registration; if not, correct that now."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:42
+msgid "Under ``Implicit grant and hybrid flows`` select both ``Access tokens`` and ``ID tokens``, then Save."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:45
+msgid "Back at the Zuul App Registration menu, select ``Expose an API``, then press ``Set`` and then press ``Save`` to accept the default Application ID URI (it should look like ``api://CLIENT_ID``)."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:49
+msgid "Press ``Add a scope`` and enter ``zuul`` as the scope name.  Enter ``Access zuul`` for both the ``Admin consent display name`` and ``Admin consent description``.  Leave ``Who can consent`` set to ``Admins only``, then press ``Add scope``."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:55
+msgid "Optional: Include Groups Claim"
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:57
+msgid "In order to include group information in the token sent to Zuul, select ``Token configuration`` under ``Manage`` and then ``Add groups claim``."
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:65
+msgid "Edit the ``/etc/zuul/zuul.conf`` to add the microsoft authenticator:"
+msgstr ""
+
+#: ../../source/howtos/openid-with-microsoft.rst:82
+msgid "Head to your tenant's status page. If all went well, you should see a `Sign in` button in the upper right corner of the page. Congratulations!"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:6
+msgid "Project Testing Interface"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:8
+msgid "The following sections describe an example PTI (Project Testing Interface) implementation. The goal is to setup a consistent interface for driving tests and other necessary tasks to successfully configure :ref:`project_gating` within your organization."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:15
+msgid "Projects layout"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:17
+msgid "A proper PTI needs at least two projects:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:19
+msgid "org-config: a :term:`config-project` curated by administrators, and"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:20
+msgid "org-jobs: a :term:`untrusted-project` to hold common jobs."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:22
+msgid "The projects that are being tested or deployed are also :term:`untrusted-project`, and for the purpose of this example we will use a couple of integrated projects named:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:26
+msgid "org-server"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:27
+msgid "org-client"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:31
+msgid "org-config"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:33
+msgid "The config project needs careful scrutiny as it defines privileged Zuul configurations that are shared by all your projects:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:36
+msgid ":ref:`pipeline` triggers and requirements let you define when a change is tested and what are the conditions for merging code. Approval from core members or special labels to indicate a change is good to go are pipelines configuration."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:41
+msgid "The base job let you define how the test environment is validated before the actual job is executed. The base job also defines how and where the job artifacts are stored."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:45
+msgid "More importantly, a config-project may enforce a set of integration jobs to be executed on behalf of the other projects. A regular (untrusted-project) can only manage its own configuration, and as part of a PTI implementation, you want to ensure your projects' changes undergo validation that are defined globally by your organization."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:51
+msgid "Because the nature of those configuration settings are privileged, config-projects changes are only effective when merged."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:56
+msgid "org-jobs"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:58
+msgid "Jobs definition content are not privileged Zuul settings and jobs can be defined in a regular :term:`untrusted-project`. As a matter of fact, it is recommended to define jobs outside of the config project so that job updates can be tested before being merged."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:63
+msgid "In this example, we are using a dedicated org-jobs project."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:67
+msgid "Projects content"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:69
+msgid "In this example PTI, the organization requirements are a consistent code style and an integration test to validate org-client and org-server works according to a reference implementation."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:73
+msgid "In the org-jobs project, we define a couple of jobs:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:92
+msgid "The integration-tests.yaml playbook needs to implement an integration test that checks both the server and client code."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:96
+msgid "In the org-config project, we define a project template:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:114
+msgid "Finally, in the org-config project, we setup the PTI template on both projects:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:131
+msgid "Usage"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:133
+msgid "With the above layout, the organization projects use a consistent testing interface. The org-client or org-server does not need extra settings, all new contribution shall pass the codestyle and integration-test as defined by the organization admin."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:141
+msgid "Project tests"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:143
+msgid "Projects may add extra jobs on top of the PTI. For example, the org-client project can add a user interface test:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:160
+msgid "In this example, new org-client change will run the PTI's jobs as well as the org-client-ui-validation job."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:165
+msgid "Updating PTI test"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:167
+msgid "Once the PTI is in place, if a project needs adjustment, it can proceed as follow:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:170
+msgid "First a change on org-jobs is proposed to modify a job. For example, update a codestyle check using such commit:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:179
+msgid "Then, without merging this proposal, it can be tested across the projects using such commit:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:189
+msgid "Lastly the org-jobs may be enriched with:"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:199
+msgid "Extra care is required when updating PTI jobs as they affects all the projects. Ideally, the org-jobs project would use a org-jobs-check to run PTI jobs change on every projects."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:205
+msgid "Cross project gating"
+msgstr ""
+
+#: ../../source/howtos/pti.rst:207
+msgid "The org-pti template is using the \"integrated\" queue to ensure projects change are gated by the zuul scheduler. Though, the jobs need extra care to properly test projects as they are prepared by Zuul. For example, the org-integration-test playbook need to ensure the client and server are installed from the zuul src_root."
+msgstr ""
+
+#: ../../source/howtos/pti.rst:213
+msgid "This is called sibling installation, and it is a critical piece to ensure cross project gating."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:4
+msgid "ZooKeeper Administration"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:6
+msgid "This section will cover some basic tasks and recommendations when setting up ZooKeeper for use with Zuul.  A complete tutorial for ZooKeeper is out of scope for this documentation."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:11
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:13
+msgid "The following general configuration setting in ``/etc/zookeeper/zoo.cfg`` is recommended:"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:20
+msgid "ZooKeeper's default config will never purge snapshots, causing the disk to eventually fill up.  This instructs ZooKeeper to purge old snapshots every 2 hours.  This covers most use cases.  This value depends on load and available disk space."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:28
+msgid "Encrypted Connections"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:30
+msgid "Zuul requires its connections to ZooKeeper are TLS encrypted. ZooKeeper version 3.5.1 or greater is required for TLS support. ZooKeeper performs hostname validation for all ZooKeeper servers (\"quorum members\"), therefore each member of the ZooKeeper cluster should have its own certificate.  This does not apply to clients which may share a certificate."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:37
+msgid "ZooKeeper performs certificate validation on all connections (server and client).  If you use a private Certificate Authority (CA) (which is generally recommended and discussed below), then these TLS certificates not only serve to encrypt traffic, but also to authenticate and authorize clients to the cluster.  Only clients with certificates authorized by a CA explicitly trusted by your ZooKeeper installation will be able to connect."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:45
+msgid "The instructions below direct you to sign certificates with a CA that you create specifically for Zuul's ZooKeeper cluster.  If you use a CA you share with other users in your organization, any certificate signed by that CA will be able to connect to your ZooKeeper cluster.  In this case, you may need to take additional steps such as network isolation to protect your ZooKeeper cluster.  These are beyond the scope of this document."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:54
+msgid "The ``tools/zk-ca.sh`` script in the Zuul source code repository can be used to quickly and easily generate self-signed certificates for all ZooKeeper cluster members and clients."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:58
+msgid "Make a directory for it to store the certificates and CA data, and run it once for each client:"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:68
+msgid "Add the following to ``/etc/zookeeper/zoo.cfg``:"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:85
+msgid "Change the name of the certificate filenames as appropriate for the host (e.g., ``zookeeper1.example.com.pem``)."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:88
+msgid "In order to disable plaintext connections, ensure that the ``clientPort`` option does not appear in ``zoo.cfg``.  Use the new method of specifying Zookeeper quorum servers, which looks like this:"
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:98
+msgid "This format normally includes ``;2181`` at the end of each line, signifying that the server should listen on port 2181 for plaintext client connections (this is equivalent to the ``clientPort`` option). Omit it to disable plaintext connections.  The earlier addition of ``secureClientPort`` to the config file instructs ZooKeeper to listen for encrypted connections on port 2281."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:105
+msgid "Be sure to specify port 2281 rather than the standard 2181 in the :attr:`zookeeper.hosts` setting in ``zuul.conf``."
+msgstr ""
+
+#: ../../source/howtos/zookeeper.rst:108
+msgid "Finally, add the :attr:`zookeeper.tls_cert`, :attr:`zookeeper.tls_key`, and :attr:`zookeeper.tls_ca` options.  Your ``zuul.conf`` file should look like:"
+msgstr ""

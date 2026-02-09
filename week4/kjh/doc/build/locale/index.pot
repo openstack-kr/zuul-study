@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 11:00+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/index.rst:2
+msgid "Zuul - A Project Gating System"
+msgstr ""
+
+#: ../../source/index.rst:4
+msgid "Zuul is a program that drives continuous integration, delivery, and deployment systems with a focus on project gating and interrelated projects."
+msgstr ""
+
+#: ../../source/index.rst:8
+msgid "If you are looking for the Edge routing service named Zuul that is related to Netflix, it can be found here: https://github.com/Netflix/zuul"
+msgstr ""
+
+#: ../../source/index.rst:12
+msgid "If you are looking for the Javascript testing tool named Zuul, it can be found here: https://github.com/defunctzombie/zuul"
+msgstr ""
+
+#: ../../source/index.rst:18
+msgid "How To Use This Manual"
+msgstr ""
+
+#: ../../source/index.rst:20
+msgid "If you have access to a Zuul system operated by someone else, then you may be interested in :ref:`about-zuul` and the following reference sections: :ref:`project-configuration` and :ref:`job-content`."
+msgstr ""
+
+#: ../../source/index.rst:24
+msgid "If you would like to learn how to run Zuul, try the :ref:`quick-start`."
+msgstr ""
+
+#: ../../source/index.rst:26
+msgid "If you are or will be responsible for installing and operating a Zuul System, the remainder of the sections will be useful."
+msgstr ""
+
+#: ../../source/index.rst:47
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../source/index.rst:49
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../source/index.rst:50
+msgid ":ref:`search`"
+msgstr ""
