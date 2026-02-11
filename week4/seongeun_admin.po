@@ -1,0 +1,346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 09:30+0900\n"
+"PO-Revision-Date: 2026-02-10 10:06+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: ../../source/client.rst:4
+msgid "Zuul Admin Client"
+msgstr "Zuul 관리자 클라이언트 (Zuul Admin Client)"
+
+#: ../../source/client.rst:6
+msgid ""
+"Zuul includes a simple command line client that may be used to affect Zuul's "
+"behavior while running."
+msgstr ""
+"Zuul은 실행 중인 Zuul의 동작을 제어할 수 있는 간단한 커맨드 라인 클라이언트"
+"를 포함합니다."
+
+#: ../../source/client.rst:9
+msgid ""
+"For operations related to normal workflow like enqueue, dequeue, autohold "
+"and promote, the `zuul-client` CLI should be used instead."
+msgstr ""
+"하지만 enqueue, dequeue, autohold, promote와 같은 일반적인 워크플로우 관련 작"
+"업에는 zuul-client CLI를 사용해야 합니다."
+
+#: ../../source/client.rst:12
+msgid "Configuration"
+msgstr "설정 (Configuration)"
+
+#: ../../source/client.rst:14
+msgid ""
+"The client uses the same zuul.conf file as the server, and will look for it "
+"in the same locations if not specified on the command line."
+msgstr ""
+"클라이언트는 서버와 동일한 zuul.conf 파일을 사용합니다. 커맨드 라인에서 경로"
+"를 지정하지 않으면, 서버와 동일한 위치에서 파일을 찾습니다."
+
+#: ../../source/client.rst:18
+msgid "Usage"
+msgstr "사용법 (Usage)"
+
+#: ../../source/client.rst:19
+msgid "The general options that apply to all subcommands are:"
+msgstr ""
+"모든 서브커맨드(subcommand)에 공통으로 적용되는 옵션은 다음과 같습니다."
+
+#: ../../source/client.rst:23
+msgid "The following subcommands are supported:"
+msgstr "지원하는 서브커맨드는 다음과 같습니다."
+
+#: ../../source/client.rst:26
+msgid "tenant-conf-check"
+msgstr "tenant-conf-check"
+
+#: ../../source/client.rst:30 ../../source/client.rst:46
+#: ../../source/client.rst:56 ../../source/client.rst:74
+#: ../../source/client.rst:85 ../../source/client.rst:94
+#: ../../source/client.rst:103 ../../source/client.rst:112
+#: ../../source/client.rst:121 ../../source/client.rst:130
+#: ../../source/client.rst:139 ../../source/client.rst:160
+#: ../../source/client.rst:168 ../../source/client.rst:176
+#: ../../source/client.rst:184 ../../source/client.rst:201
+#: ../../source/client.rst:268
+msgid "Example::"
+msgstr "예제::"
+
+#: ../../source/client.rst:34
+msgid ""
+"This command validates the tenant configuration schema. It exits '-1' in "
+"case of errors detected."
+msgstr ""
+"이 명령은 테넌트(tenant) 구성 스키마를 검증합니다. 오류가 감지되면 '-1'로 종"
+"료합니다."
+
+#: ../../source/client.rst:38
+msgid "create-auth-token"
+msgstr "create-auth-token"
+
+#: ../../source/client.rst:40
+msgid ""
+"This command is only available if an authenticator is configured in "
+"``zuul.conf``. Furthermore the authenticator's configuration must include a "
+"signing secret."
+msgstr ""
+"이 명령은 zuul.conf에 인증자(authenticator)가 구성되어 있는 경우에만 사용할 "
+"수 있습니다. 또한, 인증자 구성에는 반드시 서명 시크릿(signing secret)이 포함"
+"되어 있어야 합니다."
+
+#: ../../source/client.rst:50
+msgid ""
+"The return value is the value of the ``Authorization`` header the user must "
+"set when querying a protected endpoint on Zuul's REST API. When the ``--"
+"tenant`` is specified, ``zuul.admin`` claim with the value of the tenant "
+"will be added to the token. The meta information of the token will be "
+"printed when \"--print-meta-info\" is specified."
+msgstr ""
+"반환 값은 Zuul의 REST API에서 보호된 엔드포인트를 쿼리할 때 사용자가 설정해"
+"야 하는 Authorization 헤더의 값입니다. --tenant 옵션이 지정되면, 해당 테넌트 "
+"값을 가진 zuul.admin 클레임(claim)이 토큰에 추가됩니다. --print-meta-info가 "
+"지정되면 토큰의 메타 정보가 출력됩니다."
+
+#: ../../source/client.rst:70
+msgid "export-keys"
+msgstr "export-keys"
+
+#: ../../source/client.rst:81
+msgid "import-keys"
+msgstr "import-keys"
+
+#: ../../source/client.rst:90
+msgid "copy-keys"
+msgstr "copy-keys"
+
+#: ../../source/client.rst:99
+msgid "delete-keys"
+msgstr "delete-keys"
+
+#: ../../source/client.rst:108
+msgid "delete-oidc-signing-keys"
+msgstr "delete-oidc-signing-keys"
+
+#: ../../source/client.rst:117
+msgid "delete-state"
+msgstr "delete-state"
+
+#: ../../source/client.rst:126
+msgid "delete-pipeline-state"
+msgstr "delete-pipeline-state"
+
+#: ../../source/client.rst:135
+msgid "prune-database"
+msgstr "prune-database"
+
+#: ../../source/client.rst:144
+msgid "Deprecated commands"
+msgstr "지원 중단된 명령 (Deprecated commands)"
+
+#: ../../source/client.rst:146
+msgid ""
+"The following commands are deprecated in the zuul-admin CLI, and thus may "
+"not be entirely supported in Zuul's current version. They will be removed in "
+"a future release of Zuul. They can still be performed via the `zuul-client` "
+"CLI. Please refer to `zuul-client's documentation <https://zuul-ci.org/docs/"
+"zuul-client/>`__ for more details."
+msgstr ""
+"다음 명령들은 zuul-admin CLI에서 더 이상 지원되지 않으며(deprecated), 현재 "
+"Zuul 버전에서 완벽하게 지원되지 않을 수 있습니다. 향후 Zuul 릴리스에서 제거"
+"될 예정입니다. 해당 작업은 zuul-client CLI를 통해 여전히 수행할 수 있습니다. "
+"자세한 내용은 zuul-client 문서 <https://zuul-ci.org/docs/zuul-client/>__를 참"
+"고하세요."
+
+#: ../../source/client.rst:151
+msgid ""
+"In order to run these commands, the ``webclient`` section is required in the "
+"configuration file."
+msgstr "이 명령들을 실행하려면 구성 파일에 webclient 섹션이 필요합니다."
+
+#: ../../source/client.rst:153
+msgid ""
+"It is also possible to run the client without a configuration file, by using "
+"the ``--zuul-url`` option to specify the base URL of the Zuul web server."
+msgstr ""
+"또한, 구성 파일 없이 zuul-admin 클라이언트를 실행할 수도 있습니다. 이 경우 --"
+"zuul-url 옵션을 사용하여 Zuul 웹 서버의 기본 URL(base URL)을 지정해야 합니다."
+
+#: ../../source/client.rst:157
+msgid "Autohold"
+msgstr "Autohold"
+
+#: ../../source/client.rst:165
+msgid "Autohold Delete"
+msgstr "Autohold Delete"
+
+#: ../../source/client.rst:173
+msgid "Autohold Info"
+msgstr "Autohold Info"
+
+#: ../../source/client.rst:181
+msgid "Autohold List"
+msgstr "Autohold List"
+
+#: ../../source/client.rst:189
+msgid "Dequeue"
+msgstr "Dequeue"
+
+#: ../../source/client.rst:192
+msgid "Examples::"
+msgstr "예제::"
+
+#: ../../source/client.rst:198
+msgid "Enqueue"
+msgstr "Enqueue"
+
+#: ../../source/client.rst:205
+msgid "Note that the format of change id is <number>,<patchset>."
+msgstr "Change ID의 형식은 <number>,<patchset>임을 참고하세요."
+
+#: ../../source/client.rst:208
+msgid "Enqueue-ref"
+msgstr "Enqueue-ref"
+
+#: ../../source/client.rst:212
+msgid ""
+"This command is provided to manually simulate a trigger from an external "
+"source.  It can be useful for testing or replaying a trigger that is "
+"difficult or impossible to recreate at the source.  The arguments to "
+"``enqueue-ref`` will vary depending on the source and type of trigger.  Some "
+"familiarity with the arguments emitted by ``gerrit`` `update hooks <https://"
+"gerrit-review.googlesource.com/admin/projects/plugins/hooks>`__ such as "
+"``patchset-created`` and ``ref-updated`` is recommended.  Some examples of "
+"common operations are provided below."
+msgstr ""
+"이 명령은 외부 소스에서 발생하는 트리거를 수동으로 시뮬레이션하기 위해 제공됩"
+"니다. 소스에서 다시 생성하기 어렵거나 불가능한 트리거를 테스트하거나 재생"
+"(replay)하는 데 유용합니다. enqueue-ref에 대한 인자는 소스와 트리거 유형에 따"
+"라 달라집니다. patchset-created 및 ref-updated와 같은 gerrit update hooks "
+"<https://gerrit-review.googlesource.com/admin/projects/plugins/hooks>__에서 "
+"전달되는 인자에 대해 어느 정도 이해하고 있는 것이 좋습니다. 아래에 일반적인 "
+"작업에 대한 몇 가지 예제가 제공됩니다."
+
+#: ../../source/client.rst:223
+msgid "Manual enqueue examples"
+msgstr "수동 Enqueue 예제 (Manual enqueue examples)"
+
+#: ../../source/client.rst:225
+msgid ""
+"It is common to have a ``release`` pipeline that listens for new tags coming "
+"from ``gerrit`` and performs a range of code packaging jobs. If there is an "
+"unexpected issue in the release jobs, the same tag can not be recreated in "
+"``gerrit`` and the user must either tag a new release or request a manual re-"
+"triggering of the jobs.  To re-trigger the jobs, pass the failed tag as the "
+"``ref`` argument and set ``newrev`` to the change associated with the tag in "
+"the project repository (i.e. what you see from ``git show X.Y.Z``)::"
+msgstr ""
+"gerrit에서 오는 새로운 태그를 감지하고 일련의 코드 패키징 작업을 수행하는 "
+"release 파이프라인을 갖는 것은 일반적입니다. 릴리스 작업에 예상치 못한 문제"
+"가 발생할 경우, 동일한 태그를 gerrit에서 다시 생성할 수 없으므로 사용자는 새 "
+"릴리스 태그를 지정하거나 작업의 수동 재트리거(re-triggering)를 요청해야 합니"
+"다. 작업을 다시 트리거하려면, 실패한 태그를 ref 인자로 전달하고 newrev를 프로"
+"젝트 저장소의 태그와 연관된 변경 사항(즉, git show X.Y.Z에서 확인되는 것)으"
+"로 설정하세요::"
+
+#: ../../source/client.rst:236
+msgid ""
+"The command can also be used asynchronously trigger a job in a ``periodic`` "
+"pipeline that would usually be run at a specific time by the ``timer`` "
+"driver.  For example, the following command would trigger the ``periodic`` "
+"jobs against the current ``master`` branch top-of-tree for a project::"
+msgstr ""
+"이 명령은 timer 드라이버에 의해 특정 시간에 실행되는 periodic 파이프라인의 작"
+"업을 비동기적으로 트리거하는 데에도 사용할 수 있습니다. 예를 들어, 다음 명령"
+"은 프로젝트의 현재 master 브랜치 최상단(top-of-tree)에 대해 periodic 작업을 "
+"트리거합니다::"
+
+#: ../../source/client.rst:244
+msgid ""
+"Another common pipeline is a ``post`` queue listening for ``gerrit`` merge "
+"results.  Triggering here is slightly more complicated as you wish to "
+"recreate the full ``ref-updated`` event from ``gerrit``.  For a new commit "
+"on ``master``, the gerrit ``ref-updated`` trigger expresses \"reset ``refs/"
+"heads/master`` for the project from ``oldrev`` to ``newrev``\" (``newrev`` "
+"being the committed change).  Thus to replay the event, you could ``git "
+"log`` in the project and take the current ``HEAD`` and the prior change, "
+"then enqueue the event::"
+msgstr ""
+"또 다른 일반적인 파이프라인은 gerrit 병합 결과를 감지하는 post 큐입니다. 여기"
+"에서 트리거하는 것은 gerrit의 전체 ref-updated 이벤트를 다시 생성해야 하므로 "
+"조금 더 복잡합니다. master에 대한 새로운 커밋의 경우, Gerrit ref-updated 트리"
+"거는 \"프로젝트의 refs/heads/master를 oldrev에서 newrev로 리셋\"(여기서 "
+"newrev는 커밋된 변경 사항)하는 것을 의미합니다. 따라서 이벤트를 재생하려면, "
+"프로젝트에서 git log를 확인하여 현재 HEAD와 이전 변경 사항을 가져온 다음 이벤"
+"트를 enqueue 할 수 있습니다::"
+
+#: ../../source/client.rst:258
+msgid ""
+"Note that zero values for ``oldrev`` and ``newrev`` can indicate branch "
+"creation and deletion; the source code is the best reference for these more "
+"advanced operations."
+msgstr ""
+"oldrev와 newrev의 값이 0인 경우 브랜치 생성 및 삭제를 의미할 수 있음을 참고하"
+"세요. 이러한 고급 작업에 대해서는 소스 코드를 참조하는 것이 가장 좋습니다."
+
+#: ../../source/client.rst:264
+msgid "Promote"
+msgstr "Promote (승격)"
+
+#: ../../source/client.rst:272
+msgid "Note that the format of changes id is <number>,<patchset>."
+msgstr "변경 사항 ID(change id)의 형식은 <number>,<patchset>임을 참고하세요."
+
+#: ../../source/client.rst:274
+msgid ""
+"The promote action is used to reorder the changes in a pipeline, by putting "
+"the provided changes at the top of the queue."
+msgstr ""
+"Promote 액션은 파이프라인 내의 변경 사항 순서를 재정렬하여, 지정된 변경 사항"
+"을 큐(queue)의 최상단으로 이동시키는 데 사용됩니다."
+
+#: ../../source/client.rst:277
+msgid ""
+"The most common use case for the promote action is the need to merge an "
+"urgent fix when the gate pipeline has several patches queued ahead. This is "
+"especially needed if there is concern that one or more changes ahead in the "
+"queue may fail, thus increasing the time to land for the fix; or concern "
+"that the fix may not pass validation if applied on top of the current patch "
+"queue in the gate."
+msgstr ""
+"Promote 액션의 가장 일반적인 사용 사례는 게이트(gate) 파이프라인에 이미 여러 "
+"패치가 대기 중인 상황에서 긴급 수정 사항(urgent fix)을 병합해야 할 때입니다. "
+"특히 큐의 앞쪽에 있는 변경 사항들이 실패하여 수정 사항의 반영(land) 시간이 지"
+"연될 우려가 있거나, 현재 대기 중인 패치들 위에 수정 사항을 적용했을 때 검증"
+"을 통과하지 못할 우려가 있을 때 유용합니다."
+
+#: ../../source/client.rst:284
+msgid ""
+"Any items in a dependent pipeline which have had items ahead of them changed "
+"will have their jobs canceled and restarted based on the new ordering."
+msgstr ""
+"종속(dependent) 파이프라인에 있는 항목(item)들의 경우, 자신보다 앞선 순서의 "
+"항목에 변경이 생기면 기존 작업(job)들이 취소되고 새로운 순서에 따라 다시 시작"
+"됩니다."
+
+#: ../../source/client.rst:288
+msgid ""
+"If items in independent pipelines are promoted, no jobs will be restarted, "
+"but their change queues within the pipeline will be re-ordered so that they "
+"will be processed first and their node request priorities will increase."
+msgstr ""
+"독립(independent) 파이프라인에 있는 항목이 Promote 되는 경우에는 작업이 재시"
+"작되지 않습니다. 대신 파이프라인 내의 변경 사항 큐가 재정렬되어 해당 항목이 "
+"먼저 처리되며, 노드 요청 우선순위가 높아집니다."
