@@ -1,0 +1,4617 @@
+# Korean translations for Zuul package.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 01:27+0900\n"
+"PO-Revision-Date: 2026-02-12 01:27+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/releasenotes.rst:2
+msgid "Release Notes"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5
+msgid "In Development"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:10 branch>:94 branch>:194 branch>:261
+#: branch>:322 branch>:404 branch>:479 branch>:533 branch>:705 branch>:793
+#: branch>:917 branch>:1029 branch>:1058 branch>:1140 branch>:1229 branch>:1280
+#: branch>:1378 branch>:1514 branch>:1562 branch>:1660 branch>:1748
+#: branch>:1782 branch>:1831 branch>:1859 branch>:1876 branch>:1946
+#: branch>:2028 branch>:2199 branch>:2245 branch>:2367 branch>:2545
+#: branch>:2667 branch>:2731 branch>:2818 branch>:2858 branch>:2934
+#: branch>:3071 branch>:3117 branch>:3210 branch>:3313 branch>:3582
+#: branch>:3719 branch>:3789 branch>:3840 branch>:3902 branch>:3928
+#: branch>:3967 branch>:4023 branch>:4074 branch>:4135 branch>:4239
+#: branch>:4288 branch>:4352 branch>:4428 branch>:4475 branch>:4568
+#: branch>:4625 branch>:4692 branch>:4792 branch>:4860 branch>:4947
+#: branch>:4992 branch>:5046
+msgid "New Features"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:14
+msgid ""
+"Jobs may now filter the non-required projects for their workspace. If a job "
+"is known to only operate on a certain set of projects, the :attr:`job."
+"include-projects` and :attr:`job.exclude-projects` attributes may be used to "
+"instruct Zuul to skip the workspace preparation of projects that are not "
+"required by the job."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:22
+msgid ""
+"A new type of job, a \"reporter\" job is available.  It allows users to "
+"perform an action immediately after all pipeline reporters have run for a "
+"queue item.  The configuration attribute, :attr:`job.type` is used to enable "
+"the feature."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:29
+msgid ""
+"A change has been made to the branch selection routine for role repo "
+"checkouts in jobs triggered by tags."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:32
+msgid ""
+"Previously, when checking out a role repo for a tag job, Zuul would check "
+"out the first match of the following:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:35 branch>:42
+msgid "The project override-checkout"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:36 branch>:43
+msgid "The job override-checkout"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:37
+msgid ""
+"If the role project is the playbook project, then the playbook project branch"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:38 branch>:45
+msgid "The role project default branch"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:40
+msgid "It is now updated to the following:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:44
+msgid "The playbook project branch"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:47
+msgid ""
+"This may be a change for certain jobs, but it is hoped that the new sequence "
+"is more intuitive."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:54 branch>:133 branch>:588 branch>:671
+#: branch>:740 branch>:832 branch>:964 branch>:1203 branch>:1241 branch>:1433
+#: branch>:1545 branch>:2010 branch>:2448 branch>:2899 branch>:3095
+#: branch>:3165 branch>:3266 branch>:3447 branch>:3749 branch>:3867
+#: branch>:4775 branch>:4963
+msgid "Deprecation Notes"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:58
+msgid ""
+"The Zuul job variables :var:`zuul.build_refs.project.src_dir` and :var:`zuul."
+"buildset_refs.project.src_dir` were erroneously supplied as ``zuul."
+"build_refs.src_dir`` and ``zuul.buildset_refs.src_dir`` respectively.  The "
+"correct variables are now supplied, and any usages of the old, incorrect "
+"variables should be replaced.  The old variables will be removed in a future "
+"version of Zuul."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:70
+msgid "13.1.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:75 branch>:164 branch>:683
+#: branch>:1359 branch>:1610 branch>:2325 branch>:2959 branch>:3487
+#: branch>:3689 branch>:3761 branch>:3807 branch>:4085 branch>:4299
+#: branch>:4412 branch>:4517 branch>:4663 branch>:4914
+msgid "Security Issues"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:79
+msgid ""
+"A vulnerability in the zuul-web component could be used to obtain the "
+"contents of any file accessible on the zuul-web server (or within its "
+"container).  The vulnerability is believed to have been present prior to "
+"version 4 of Zuul, and has been corrected as of version 13.1.0."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:89
+msgid "13.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:98
+msgid ""
+"A new configuration setting, ``replication_delay`` has been added to the "
+"Gerrit driver. Some Gerrit installations consist of multiple servers with "
+"various strategies for keeping these servers in sync (push replication, pull "
+"replication, multi-master, shared storage, etc.).  Since there is currently "
+"no reliable method to determine when all servers are updated, this setting "
+"may be used to introduce a delay in event processing.  Zuul will ensure that "
+"at least this amount of time (in seconds) has passed before processing the "
+"corresponding event."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:110
+msgid ""
+"The :attr:`pipeline.<reporter>.<github source>.check` attribute now accepts "
+"the value of :value:`pipeline.<reporter>.<github source>.check.queued` to "
+"indicate that a pull request has been enqueued into a pipeline."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:117
+msgid ""
+"Added support for the branch attribute in GitLab pipeline configurations "
+"triggered by merge_request events. This enables pipelines to run only for "
+"specific branches, providing precise control over branch-specific behavior."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:123
+msgid ""
+"A new type of job, an \"initializer\" job is available.  It allows users to "
+"easily configure very large job graphs where all the jobs in the graph have "
+"dependencies on a single (or small number) of jobs.  The configuration "
+"attribute, :attr:`job.type` is available to enable the feature."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:137
+msgid ""
+"The ``replication_timeout`` setting for the Gerrit driver is now ignored and "
+"should be removed from ``zuul.conf`` files.  See the new "
+"``replication_delay`` setting for an alternative."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:145 branch>:177 branch>:388
+#: branch>:600 branch>:621 branch>:753 branch>:858 branch>:1041 branch>:1124
+#: branch>:1259 branch>:1340 branch>:1457 branch>:1644 branch>:1724
+#: branch>:1923 branch>:2102 branch>:2119 branch>:2135 branch>:2152
+#: branch>:2181 branch>:2229 branch>:2463 branch>:2611 branch>:2627
+#: branch>:2651 branch>:2682 branch>:2802 branch>:3040 branch>:3179
+#: branch>:3278 branch>:3463 branch>:3528 branch>:3700 branch>:3772
+#: branch>:3824 branch>:3885 branch>:4008 branch>:4097 branch>:4120
+#: branch>:4273 branch>:4315 branch>:4333 branch>:4546 branch>:4676
+#: branch>:4837 branch>:4931 branch>:4974 branch>:5023 branch>:5089
+msgid "Bug Fixes"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:149
+msgid ""
+"Zuul will now record a notice in the job-output.json for Ansible playbooks "
+"that fail to do so themselves. This can happen if Ansible crashes or is "
+"forced to stop by Zuul due to timeouts. The information is minimal, but "
+"should give users an indication in the web ui console of why certain plays "
+"are not recorded."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:159
+msgid "13.0.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:168
+msgid ""
+"Streaming log handling for the ``win_command`` and ``win_shell`` modules did "
+"not correctly observe the ``no_log`` directive. Previously Zuul would "
+"suppress output to the ``job-output.json`` file, but not output to ``job-"
+"output.txt`` or live log streams."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:181
+msgid ""
+"The Zuul module for `ansible.builtin.command` and `ansible.builtin.shell` "
+"now correctly handles the case when `no_log: True` is set. Previously the "
+"task would deadlock if the process output filled the buffer."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:189
+msgid "13.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:198
+msgid ""
+"Ansible version 11 is now available.  The default Ansible version is still "
+"9, but version 11 may be selected by using :attr:`job.ansible-version`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:204
+msgid ""
+"The :attr:`authorization-rule.conditions` attribute can now include "
+"conditions for boolean claims."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:209
+msgid ""
+"Implemented support for the `reject` attribute in the GitLab driver. It "
+"allows specifying Merge Requests which should not be enqueued into a "
+"pipeline. The supported conditions cover the same Merge Requests' parameters "
+"as available in the existing `require` attribute – filtering whether the "
+"Merge Request must (not) be open, merged, approved or contain some labels."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:218
+msgid ""
+"If a change alters a file in an :attr:`job.include-vars`, :attr:`job.pre-"
+"run`, :attr:`job.run`, or :attr:`job.post-run` attribute of a job, then that "
+"job will run regardless of any file matchers configured on the job (unless :"
+"attr:`job.match-on-config-updates` is disabled)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:224
+msgid ""
+"This means that jobs with file matchers should no longer need to explicitly "
+"list their playbooks or include-vars files in order to run on changes to "
+"those files."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:230
+msgid ""
+"The :attr:`nodeset.alternatives` feature will now be used if Ansible reports "
+"an unreachable host while running a job.  This can be used to fall back to a "
+"more reliable nodeset if connectivity to the nodeset is interrupted while "
+"running."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:239 branch>:350 branch>:438
+#: branch>:500 branch>:640 branch>:929 branch>:1012 branch>:1076 branch>:1190
+#: branch>:1329 branch>:1527 branch>:1592 branch>:1678 branch>:1765
+#: branch>:1801 branch>:1843 branch>:1987 branch>:2045 branch>:2218
+#: branch>:2305 branch>:2421 branch>:2481 branch>:2510 branch>:2583
+#: branch>:2704 branch>:2757 branch>:2781 branch>:2877 branch>:3143
+#: branch>:3253 branch>:3387 branch>:3651 branch>:3735 branch>:3852
+#: branch>:3913 branch>:3938 branch>:3978 branch>:4059 branch>:4200
+#: branch>:4377 branch>:4450 branch>:4505 branch>:4598 branch>:4647
+#: branch>:4761 branch>:4895 branch>:5005 branch>:5074
+msgid "Upgrade Notes"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:243
+msgid ""
+"Support for Ansible version 8 has been removed.  Migrate any existing jobs "
+"which rely on this version to Ansible version 9 before upgrading."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:249
+msgid ""
+"The previously deprecated ``status-url`` attribute of the Github and Pagure "
+"reporter has been removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:256
+msgid "12.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:265
+msgid ""
+"Added support for OpenID Connect (OIDC) compatible workload identity "
+"federation.  When configured using :attr:`secret.oidc`, Zuul will generate "
+"an OIDC ID token and supply it to the job, which can be used to authenticate "
+"to external services that trust Zuul as an OIDC Identity Provider.  See :ref:"
+"`secret` for more information."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:274
+msgid ""
+"An option has been added to allow multiple timer-triggered queue items for "
+"the same project-branch may now be enqueued if the branch head has advanced."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:278
+msgid ""
+"Previously timer-triggered items only included information about the project "
+"and branch, and therefore if a job on such an item ran longer than the timer "
+"interval, Zuul would not enqueue a second copy of the item because it would "
+"have been seen as identical to the first (even if the underlying repo had "
+"changed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:284
+msgid ""
+"If the new ``dereference`` attribute of the timer trigger is set, Zuul will "
+"now include information about the branch head SHA of the queue item, so that "
+"now if a timer trigger fires while a queue item for the same project-branch "
+"is already in the queue, the second item will be enqueued if the branch has "
+"changed since the first item was enqueued.  If the SHA of the branch head is "
+"the same for both items, the second item will not be enqueued."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:292
+msgid ""
+"When set, the ``newrev`` is now available in the job's ``zuul`` variables "
+"for such queue items."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:295
+msgid ""
+"The previous behavior remains the default, where derefence is not set, and "
+"``newrev`` is not available."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:300
+msgid ""
+"Most pipeline triggers now accept a ``debug`` attribute which may be used to "
+"add a trigger to allow users to request extra debug information about why a "
+"change may or may not have been enqueued into a pipeline and why certain "
+"jobs ran or did not run."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:305
+msgid ""
+"For example, a site may add a trigger that matches the comment \"check "
+"debug\" to request an expanded report on a change."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:310
+msgid ""
+"Tenant administrators may now use the web UI or zuul-client commands to "
+"pause and unpause event processing for a tenant."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:317
+msgid "12.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:326
+msgid ""
+"Jobs now have the ability to set a :attr:`job.pre-timeout` value. This "
+"timeout limits the amount of time that pre-run playbooks may consume. This "
+"timeout counts against the normal :attr:`job.timeout` value and if :attr:"
+"`job.pre-timeout` is unset then :attr:`job.timeout` is used."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:333
+msgid ""
+"The Zuul Executor has a new governor sensor that detects when the Executor "
+"is nearing the limit on new processes. Running Zuul jobs in the Executor "
+"requires a number of process including but not limited to: Bubblewrap, "
+"Ansible, SSH, and SSH Agent. This new governor sensor helps to avoid jobs "
+"failing due to an inability to fork one of these many processes. Instead the "
+"Executor will pause its efforts until it backs away from the process limit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:343
+msgid ""
+"Live console log streaming is now available for ``win_shell` and "
+"``win_command`` tasks on Windows hosts."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:354
+msgid ""
+"When using Zuul with a MariaDB database, configure the :attr:`database."
+"dburi` setting to use the ``mariadb`` dialect with ``mariadb+pymysql://``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:360
+msgid ""
+"The `web.status_url` configuration option is no longer supported and using "
+"the `status_url`, `change` and `changes` string substitutions in pipeline "
+"reporter messages will result in an error."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:366
+msgid ""
+"Due to the addition of live console log streaming for Windows hosts, one of "
+"the following is necessary:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:369
+msgid ""
+"Add the ``zuul_win_console:`` task to the first pre-run playbook in a base "
+"job for Windows hosts, and allow connections to port 19886 on the hosts.  "
+"This will allow for automatic live log streaming in the same manner as under "
+"Posix systems."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:375
+msgid ""
+"If the above is not practical on long-lived Windows hosts, set "
+"``zuul_console_disabled: True`` for those hosts.  This will disable writing "
+"console output to spool files on the remote hosts which would otherwise not "
+"be deleted."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:380
+msgid ""
+"Note that the Posix and Windows log streaming servers operate on different "
+"ports (19885 and 19886 respectively) in order to allow both to coexist on "
+"the same host."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:392
+msgid ""
+"Job json API responses now include the :attr:`job.post-timeout` "
+"configuration value for the job."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:399
+msgid "11.3.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:408
+msgid ""
+"Individual attributes of jobs may now be marked as final so that any attempt "
+"to override that attribute will cause an error.  See :attr:`job.attribute-"
+"control`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:414
+msgid ""
+"Zuul will now run any job that is a hard dependency of a job that is set to "
+"run."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:417
+msgid ""
+"Previously if job B had a hard dependency on job A, and job A did not run "
+"due to a file matcher, Zuul would report an error.  Now it will instead "
+"ignore the file matcher on job A as long as job B is to be run."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:422
+msgid ""
+"This will allow for simpler file matchers, more intuitive behavior, and "
+"enable a new pattern for job graphs where job A might have a file matcher "
+"that never matches, but job B will cause it to run regardless."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:429
+msgid ""
+"A new options, :attr:`job.workspace-checkout` is available to disable "
+"checkouts of repositories on the Zuul executor.  This may be useful to save "
+"time or space when preparing large repositories which will be unused on the "
+"executor."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:442
+msgid ""
+"The Gerrit driver now has an additional option, :attr:`pipeline.reporter."
+"<gerrit reporter>.notify` which configures the notification handling of "
+"reviews as noted in the `Gerrit changes API Docs <https://gerrit-review."
+"googlesource.com/Documentation/rest-api-changes.html#review-input>`_. used "
+"to suppress reporting job results as review comments.  Due to the "
+"configuration syntax for Gerrit reporters, the word \"notify\" may no longer "
+"be used as a review label."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:452
+msgid ""
+"The maximum combined stdout and stderr output from a single Ansible task has "
+"been limited to 1GiB.  In the unlikely event that an existing job "
+"legitimately exceeds this limit, a new executor configuration option, :attr:"
+"`executor.output_max_bytes`, has been provided to temporarily increase the "
+"limit.  This option is likely to be removed in a future version of Zuul.  To "
+"avoid this issue, Ansible tasks with large volumes of output should be "
+"adjusted to redirect that output to a file which is separately collected and "
+"processed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:464
+msgid ""
+"Schedulers will no longer trigger a smart-reconfig after startup and with "
+"that also not pick up modifications to the local tenant config and system "
+"attributes in the zuul config file with a restart of a scheduler. This means "
+"that changes to the tenant config or the zuul config always require an "
+"explicit (smart) reconfiguration."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:474
+msgid "11.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:483
+msgid ""
+"The :attr:`project.<pipeline>.fail-fast` attribute now also applies to node "
+"failures of voting jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:488
+msgid ""
+"Jobs may now read variables from an in-repo file using the :attr:`job."
+"include-vars` job attribute.  This allows jobs with many (or frequently "
+"changing) variables to load their variables from a file in order to reduce "
+"the complexity of Zuul configuration.  Because these files are read when the "
+"job is executed, changes to their values will not cause Zuul tenant "
+"reconfigurations."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:504
+msgid ""
+"Ansible version 8 is now deprecated in Zuul since it is unmaintaned, and it "
+"will be removed from a future version of Zuul. Ansible 9 is now the default "
+"version in Zuul."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:510
+msgid "Github Enterprise versions older than 2.21 are not supported."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:514
+msgid ""
+"Include-vars behavior has changed when running on tags. Previously, the use "
+"of :attr:`job.include-vars` in a job that ran on a ref (i.e., tag or branch "
+"rather than a change) would use either the override-checkout or the project "
+"default branch to source the variables file.  In the case that the job is "
+"running on a ref of the include-vars project, it will now source the file "
+"from the ref checkout itself; this is expected to be more useful and "
+"intuitive for users.  To restore the previous behavior, the :attr:`job."
+"include-vars.use-ref` may be used."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:528
+msgid "11.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:537
+msgid ""
+"Untrusted projects may now be allowed (via explicit configuration in the "
+"tenant config file) to configure jobs that are run by certain specified "
+"other untrusted projects.  This allows a \"super-project\" to configure the "
+"jobs run by its \"sub-projects\"."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:542
+msgid ""
+"See :attr:`tenant.untrusted-projects.<project>.configure-projects` for "
+"details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:547
+msgid ""
+"Project stanzas may now include an explicit branch configuration via the :"
+"attr:`project.branches` attribute.  This enables projects that configure "
+"other projects (whether the configuring projects are trusted or untrusted) "
+"to better control what jobs run on certain branches."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:555
+msgid ""
+"The tenant configuration may now specify the maximum number of changes that "
+"should be enqueued in a pipeline in order to protect Zuul from resource "
+"exhaustion.  This is not necessary in most circumstances, so the default "
+"remains no limit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:562
+msgid ""
+"Several job attributes may now have their inheritance behavior changed "
+"through \"override control\".  This introduces two new YAML tags, ``!"
+"override`` and ``!inherit`` which may be used to explicitly specify whether "
+"certain job attributes should inherit values from parent jobs or override "
+"them."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:568
+msgid ""
+"See the general job documentation at :ref:`job` and also documentation for "
+"the following individual attributes:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:571
+msgid ":attr:`job.dependencies`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:572
+msgid ":attr:`job.extra-vars`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:573
+msgid ":attr:`job.failure-output`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:574
+msgid ":attr:`job.files`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:575
+msgid ":attr:`job.group-vars`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:576
+msgid ":attr:`job.host-vars`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:577
+msgid ":attr:`job.irrelevant-files`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:578
+msgid ":attr:`job.provides`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:579
+msgid ":attr:`job.required-projects`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:580
+msgid ":attr:`job.requires`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:581
+msgid ":attr:`job.tags`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:582
+msgid ":attr:`job.vars`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:592
+msgid ""
+"The ``status-url`` attribute of the Github and Pagure reporter is "
+"deprecated. Reporters will currently ignore this setting and automatically "
+"use the best URL for information about the item instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:604
+msgid ""
+"The zuul_return Ansible plugin will now validate the schema of the data "
+"supplied to it; particularly the data for warnings and artifacts.  "
+"Previously the behavior on incorrectly structured data was undefined and "
+"ranged from being silently ignorred to causing exceptions in pipeline "
+"processing.  Data format errors will now be detected while the job is "
+"running and will cause Ansible errors and (if not ignored) job failures."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:616
+msgid "11.0.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:625
+msgid ""
+"The recent security fix to run cleanup-run playbooks interleaved with post-"
+"run playbooks incorrectly caused jobs to retry if a cleanup playbook "
+"encountered an unreachable host.  This has been corrected and a cleanup "
+"playbook will never cause a job to retry if it encounters an unreachable "
+"host."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:635
+msgid "11.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:644
+msgid ""
+"Existing cleanup-run playbooks are now executed during the post-run phase of "
+"the job.  This is a change in behavior that will run playbooks in a "
+"different order than before.  Previously all cleanup-run playbooks would run "
+"after all post-run playbooks. Zuul will now run post-run, then cleanup-run "
+"playbooks at each level of the inheritance hierarchy (interleaving post-run "
+"and cleanup-run playbooks from different levels of the hierarchy)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:652
+msgid ""
+"Note that this may have an impact on some jobs.  In particular, be on the "
+"lookout for jobs with post-run playbooks that assume that other, more-"
+"nested, post-run playbooks always run (for example, log collection "
+"playbooks).  Ensure that log collection happens no more nested than at the "
+"job level where logs are created.  Also be aware of cleanup-run playbooks "
+"that remove artifacts required by post-run playbooks.  Since more-nested "
+"cleanup-run playbooks can now run before less-nested post-run playbooks, it "
+"may be necessary to move cleanup actions to less-nested levels."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:662
+msgid ""
+"To facilitate upgrades, Zuul will ignore the result of cleanup-run playbooks "
+"when specified using the old syntax, but once migrated to the new syntax "
+"using post-run, these playbooks may cause a POST_FAILURE just like any other "
+"post-run playbook."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:675
+msgid ""
+"The :attr:`job.cleanup-run` attribute is deprecated.  Instead, list cleanup "
+"playbooks under :attr:`job.post-run` and set the :attr:`job.post-run."
+"cleanup` flag."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:687
+msgid ""
+"A vulnerability was discovered which could potentially allow jobs with a "
+"malicious cleanup-run playbook to access the credentials of their parents or "
+"the nodepool ssh key."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:691
+msgid ""
+"To protect against this, cleanup-run playbooks are now executed during the "
+"post-run phase of the job, and Zuul will only execute the post-run playbooks "
+"corresponding to the inheritance level of previously-executed pre-run "
+"playbooks."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:700
+msgid "10.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:709
+msgid ""
+"A new job variable, :var:`zuul.build_refs`, is available to indicate for "
+"which particular refs in a circular dependency queue item a deduplicated job "
+"is being run."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:715
+msgid ""
+"The scheduler now accepts the argument ``--disable-pipelines`` which will "
+"instruct it to discard all pipeline events.  This facilitaties the creation "
+"of a system with a running Zuul config that does not start any jobs or make "
+"any reports."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:722
+msgid ""
+"The gerrit driver now supports a new synthetic trigger, :attr:`pipeline."
+"trigger.<gerrit source>.approval-change`. This is similar to `approval`, but "
+"only triggers when the value of the approval changes instead of simply being "
+"present."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:729
+msgid "gitlab driver now handles the merge request 'close' action."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:733
+msgid ""
+"The GitHub driver now supports excluding locked (read-only) branches with "
+"the `exclude-locked-branches` tenant configuration setting."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:744
+msgid ""
+"The replacement fields ``change``, ``changes``, and ``status_url`` available "
+"in some pipeline reporter configurations are deprecated. Use ``item_url``, "
+"which is automatically the best URL for information about the item instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:757
+msgid ""
+"The pseudo-file \"/COMMIT_MSG\" is not considered at all when determining "
+"whether a change matches files or irrelevant-files matchers.  It was "
+"previously not considered in most cases, but in the case of a negated "
+"regular expression in an irrelevant-files stanza, it could still have an "
+"effect.  This has been corrected and any regexes that explicitly mention \"/"
+"COMMIT_MSG\" may remove it."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:767
+msgid ""
+"The :attr:`job.files` and :attr:`job.irrelevant-files` attributes now fully "
+"support the new :ref:`regular expression <regex>` syntax, including negation."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:775 branch>:3992
+msgid "Other Notes"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:779
+msgid ""
+"Zuul now checks the submitWholeTopic setting in Gerrit when it starts.  If "
+"this setting is changed, or Gerrit is upgraded, all running Zuul schedulers "
+"should be restarted in order to see the change."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:788
+msgid "10.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:797
+msgid ""
+"The executor now monitors filesystem inode usage as well as storage usage.  "
+"The threshold for accepting jobs can be configured independenty with :attr:"
+"`executor.min_avail_inodes`.  Inode usage is also reported separately with "
+"the :stat:`zuul.executor.<executor>.pct_used_inodes` metric."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:805
+msgid ""
+"The topic of a change (if any) is now reported in the :var:`zuul.topic` job "
+"variable"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:810
+msgid ""
+"Zuul now supports substring searches on the Builds and Buildsets pages on "
+"its web UI. This is supported by placing asterisk (*) placeholders anywhere "
+"in the search term, representing any characters. This is enabled for job "
+"name, branch, project, and pipeline filters."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:817
+msgid ""
+"Information about all of the changes (refs) associated with a circular "
+"dependency queue item is now available in the :var:`zuul.buildset_refs` "
+"variable."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:823
+msgid ""
+"When a remote host in a job is found to be unreachable, Zuul will "
+"automatically add it to a new group named `zuul_unreachable` for all "
+"subsequent playbooks.  This can be used to avoid running certain post-run "
+"steps on hosts already known to be unreachable."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:836
+msgid ""
+"Specifying :attr:`pipeline.trigger.<github source>.event` as a list is "
+"deprecated.  Update any instances to specify multiple triggers each with a "
+"single associated event instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:842
+msgid ""
+"The use of :value:`pipeline.trigger.<github source>.action.requested` has "
+"been deprecated for some time already.  Its use will now produce a "
+"configuration syntax warning, and in a future version of Zuul, an error."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:849
+msgid ""
+"The use of :attr:`pipeline.trigger.<github source>.require-status` has been "
+"deprecated for some already.  Its use will now produce a configuration "
+"syntax warning, and in a future version of Zuul, an error."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:862
+msgid ""
+"Fixes a bug where Zuul would incorrectly enqueue a Gerrit change that could "
+"not be submitted due to missing labels in a dependent pipeline."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:865
+msgid ""
+"Specifically, if change had a score for any label that would provided by "
+"Zuul, all other missing labels would be incorrectly ignored."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:870
+msgid ""
+"Monitoring stats for per-branch queues are now distinct from shared-branch "
+"queues.  Shared branch queue stats are at:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:873
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.queue`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:875
+msgid "Per-branch queue stats are now at:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:877
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.queue.<queue>.branch`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:879
+msgid ""
+"Prior to this change, per-branch queue stats for one branch queue may have "
+"overwritten the stats from another queue resulting in incomplete or "
+"incorrect data."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:885
+msgid ""
+"In 10.0.0, supercedent pipelines could raise exceptions when enqueing "
+"changes that were part of a dependency cycle (regardless of whether the "
+"changes merged or not).  This has been corrected, and the documentation has "
+"been updated to clarify that circular dependencies are ignored in "
+"supercedent pipelines."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:893
+msgid ""
+"The value of :var:`zuul.items.project.src_dir` did not take into account the "
+"job's workspace scheme and was always constructed using the golang scheme.  "
+"That has been corrected so that it now reflects the job's scheme."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:902
+msgid "10.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:907 branch>:3056 branch>:3195
+#: branch>:3295 branch>:3549
+msgid "Prelude"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:911
+msgid ""
+"This release includes a significant refactoring of the internal handling of "
+"circular dependencies.  This requires some changes for consumers of Zuul "
+"output (via some reporters or the REST API) and requires special care during "
+"upgrades.  In the case of a dependency cycle between changes, Zuul pipeline "
+"queue items will now represent multiple changes rather than a single "
+"change.  This allows for more intuitive behavior and information display as "
+"well as better handling of job deduplication."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:921
+msgid ""
+"Ansible version 9 is now available.  The default Ansible version is still 8, "
+"but version 9 may be selected by using :attr:`job.ansible-version`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:933
+msgid ""
+"Support for Ansible version 6 has been removed.  Migrate any existing jobs "
+"which rely on this version to Ansible version 8 before upgrading."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:939
+msgid "Zuul can not be upgraded to this version while running.  To upgrade:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:941
+msgid ""
+"Stop all Zuul components running the previous version (stopping Nodepool is "
+"optional)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:944
+msgid ""
+"On a scheduler machine or image (with the scheduler stopped) and the new "
+"version of Zuul, run the command:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:947
+msgid "zuul-admin delete-state --keep-config-cache"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:949
+msgid ""
+"This will delete all of the pipeline state from ZooKeeper, but it will "
+"retain the configuration cache (which contains all of the project "
+"configuration from zuul.yaml files).  This will speed up the startup process."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:954
+msgid "Start all Zuul components on the new version."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:958
+msgid ""
+"The MQTT reporter now includes a job_uuid field to correlate retry builds "
+"with final builds."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:968
+msgid ""
+"The syntax of string substitution in pipeline reporter messages has "
+"changed.  Since queue items may now represent more than one change, the "
+"`{change}` substitution in messages is deprecated and will be removed in a "
+"future version.  To maintain backwards compatability, it currently refers to "
+"the arbitrary first change in the list of changes for a queue item.  Please "
+"upgrade your usage to use the new `{changes}` substitution which is a list."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:978
+msgid ""
+"The syntax of string substitution in SMTP reporter messages has changed.  "
+"Since queue items may now represent more than one change, the `{change}` "
+"substitution in messages is deprecated and will be removed in a future "
+"version.  To maintain backwards compatability, it currently refers to the "
+"arbitrary first change in the list of changes for a queue item.  Please "
+"upgrade your usage to use the new `{changes}` substitution which is a list."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:988
+msgid ""
+"The MQTT and Elasticsearch reporters now include a `changes` field which is "
+"a list of dictionaries representing the changes included in an item.  The "
+"correspending scalar fields describing what was previously the only change "
+"associated with an item remain for backwards compatability and refer to the "
+"arbitrary first change is the list of changes for a queue item.  These "
+"scalar values will be removed in a future version of Zuul.  Please upgrade "
+"yur usage to use the new `changes` entries."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:999
+msgid ""
+"The `zuul.bundle_id` variable is deprecated and will be removed in a future "
+"version.  For backwards compatability, it currently duplicates the item uuid."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1007
+msgid "9.5.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1016
+msgid ""
+"Ansible versions 6 is now deprecated in Zuul since it is unmaintaned, and it "
+"will be removed from a future version of Zuul. Ansible 8 is now the default "
+"version in Zuul."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1024
+msgid "9.4.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1033
+msgid ""
+"The Gerrit driver now supports the ``hashtags-changed`` event as a trigger "
+"as well as using hashtags as trigger or pipeline requirements."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1045
+msgid ""
+"The MQTT reporter now sets the log_url for retried builds correctly. The "
+"link to the build result page is reported in a dedicated web_url field."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1053
+msgid "9.3.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1062
+msgid ""
+"Monitoring stats for builds are now emitted for more results. Previously "
+"they were emitted for some build results such as `SUCCESS`, `FAILURE`, and "
+"`ERROR` but now include `NODE_FAILURE` and other result values."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1069
+msgid ""
+"Support for using Google Cloud Pub/Sub as an event source has been added to "
+"the Gerrit driver."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1080
+msgid ""
+"A significant SQL schema migration is included which requires extra care "
+"when upgrading."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1083
+msgid ""
+"It is recommended to make a database backup before upgrading in case of "
+"problems.  It is also recommended to test the migration with a copy of the "
+"database in a development environment first in order to ascertain expected "
+"runtime and detect any data integrity problems early."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1089
+msgid ""
+"Zuul is unable to operate as normal during the schema upgrade. The following "
+"procedure is recommended:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1092
+msgid "Perform a database backup"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1093 branch>:2517
+msgid "Stop all Zuul components"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1094
+msgid ""
+"Start one scheduler and wait for it to complete the migration and "
+"initialization"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1096
+msgid "Start the rest of Zuul"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1098
+msgid ""
+"If the migration fails and the backing database is PostgreSQL, the migration "
+"will be rolled back and Zuul may be restarted on the previous version.  If "
+"the backing database is MySQL, if the error happens early enough the "
+"migration may be rolled back (look for \"Early error in schema migration, "
+"rolling back\" in scheduler logs).  If an error happens late in the "
+"migration, manual intervention may be required."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1108
+msgid ""
+"Zuul's GitHub driver has updated the default merge mode to better align with "
+"GitHub's default behavior. This change requires Git 2.33.0 or newer unless "
+"you explicitly override Zuul's default merge mode for a project. "
+"Additionally, if you aren't overriding the merge mode then the merge "
+"algorithm chosen may change depending on your Git and GitHub versions. This "
+"is expected to provide more deterministic results."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1117
+msgid ""
+"Input data from a parent job (return data or artifacts) no longer influences "
+"whether a child job can be deduplicated or not."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1128
+msgid ""
+"Correct the behavior of the timer driver to not trigger for branches "
+"configured as always-dynamic."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1135
+msgid "9.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1144
+msgid ""
+"Gerrit and GitHub repositories will now automatically use the default branch "
+"as specified in their respective systems as the project's default branch.  "
+"This may still be overridden in zuul using the :attr:`project.default-"
+"branch` setting."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1151
+msgid ""
+"A new job configuration option, :attr:`job.failure-output`, has been added "
+"to allow users to specify regular expressions which, when seen in the "
+"streaming job output, will trigger the early failure detection in Zuul so "
+"that dependent pipeline gate resets may begin before the completion of a "
+"failed job."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1159
+msgid ""
+"Two new settings are available to protect Zuul from resource exhaustion from "
+"processing too many dependencies among changes. The Gerrit driver supports "
+"setting :attr:`<gerrit connection>.max_dependencies` to limit internal "
+"dependency processing during event processing, and a new tenant setting of :"
+"attr:`tenant.max-dependencies` is available to limit tenant processing while "
+"enqueing changes in pipelines."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1169
+msgid ""
+"Additional pipeline stats for individual project queues are available at :"
+"stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.queue`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1175
+msgid ""
+"Configuration options which accept :ref:`regular expressions <regex>` have "
+"been updated to accept a new syntax which allows specifying that the regular "
+"expression should be treated as a negative match."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1182
+msgid ""
+"An upper limit on the dependent pipeline actionable window can now be "
+"specified using the :attr:`pipeline.window-ceiling` setting. The default of "
+"no upper limit remains."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1194
+msgid ""
+"If using the GitHub driver in app mode, you should consider also generating "
+"and adding an ``api_token``.  The option is not strictly required but will "
+"increase rate limits and add functionality for projects the app is not "
+"installed in."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1207
+msgid ""
+"Regular expressions using Python syntax are deprecated in favor of RE2 "
+"syntax instead, for additional speed and safety.  Negative lookahead "
+"assertions may be replaced using the `negate` keyword. See :ref:`regex` for "
+"more information."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1212
+msgid ""
+"If Zuul detects a regular expression using Python syntax that is not "
+"supported by RE2, it will register a configuration syntax warning. These may "
+"be viewed on the configuration errors page in the web interface."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1217
+msgid ""
+"A future version of Zuul will remove Python regex support completely and "
+"these warnings will become errors."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1224
+msgid "9.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1233
+msgid ""
+"A new job attribute, `ansible-split-streams` has been added to instruct Zuul "
+"to keep stdout and stderr separate when running Ansible command tasks."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1245
+msgid ""
+"Zuul is changing the behavior of its customized Ansible command module to "
+"match the standard Ansible behavior."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1248
+msgid ""
+"The previous behavior and current default is to combine stdout and stderr "
+"streams.  In a later Zuul release, the `ansible-split-streams` default value "
+"will change from `false` to `true` in order to match the standard Ansible "
+"behavior and keep the streams separate.  A further Zuul release will remove "
+"the option altogether."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1263
+msgid ""
+"Ansible task failures in block/rescue stanzas could cause Zuul to "
+"erroneously trigger early-failure behavior for the build, which could result "
+"in inconsistent behavior in a dependent pipeline. Task failures in Ansible "
+"blocks are no longer considered for early failure detection, and if a build "
+"encounters an early failure, it will cause the build result to be reported "
+"as a failure in all cases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1275
+msgid "9.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1284
+msgid ""
+"Ansible version 8 is now available.  The default Ansible version is still 6, "
+"but version 8 may be selected by using :attr:`job.ansible-version`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1290
+msgid ""
+"Support for using AWS Kinesis as an event source has been added to the "
+"Gerrit driver."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1294
+msgid ""
+"A new job variable, `zuul.commit_id` has been added.  This provides a stable "
+"identifier for all types of pipeline queue items (changes, refs, tags, or "
+"branches) from any driver to identify the commit which triggered the queue "
+"item.  This can be used to interface with external systems which identify "
+"changes by commit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1302
+msgid ""
+"Zuul will now begin the process of aborting following jobs and re-ordering "
+"pipelines immediately after the first Ansible task fails."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1308
+msgid ""
+"Support for using Kafka as an event source has been added to the Gerrit "
+"driver."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1312
+msgid ""
+"A new tenant project configuration option, `implied-branch-matchers` has "
+"been added.  This is useful in conjunction with the branch exclusion options "
+"which may cause Zuul to change behavior as the set of load branches switches "
+"between one and more than one.  The operator can fix the appropriate "
+"behavior in the tenant config file rather than relying on the heuristic in "
+"these cases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1322
+msgid ""
+"A new Zuul job variable :var:`zuul_will_retry` available in post and cleanup "
+"playbooks, which indicates whether the current job will be retried."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1333
+msgid ""
+"Python 3.11 is now the only version of Python with which Zuul is tested."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1344
+msgid ""
+"Duplicate :attr:`queue` configuration items are now permitted on multiple "
+"branches of the same project as long as their configuration is identical.  "
+"Similar to secrets and semaphores, this can help avoid spurious "
+"configuration errors when branching a project with in-repo configuration."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1354
+msgid "8.3.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1363
+msgid ""
+"Zuul will execute bwrap with --disable-userns set if two conditions hold. 1) "
+"The version of bwrap is 0.8.0 or newer and 2) User namespaces are enabled in "
+"the zuul-executor runtime context. Doing so will prevent the zuul-executor "
+"bwrap runtimes from creating additional user namespaces which fortifies "
+"Zuul's security position."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1373
+msgid "8.3.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1382
+msgid "Added a new dark theme for the Zuul web interface."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1386
+msgid ""
+"Added theme selection for the Zuul web interface. The default theme is set "
+"to Auto which means your system/browsers preference determines if the Light "
+"or Dark theme should be used. Either can be explicitly set in the settings "
+"for the web interface by clicking the cogs in the top right."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1393
+msgid ""
+"Gerrit pipeline triggers now support embedded require and reject filters in "
+"order to match.  Any conditions set for the pipeline in require or reject "
+"filters may also be set for event trigger filters."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1398 branch>:1416
+msgid ""
+"This can be used to construct pipelines which trigger based on certain "
+"events but only if certain other conditions are met.  It is distinct from "
+"pipeline requirements in that it only affects items that are directly "
+"enqueued whereas pipeline requirements affect dependencies as well."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1406
+msgid ""
+"All Gerrit \"requires\" filters are now available as \"reject\" filters as "
+"well."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1411
+msgid ""
+"GitHub pipeline triggers now support embedded require and reject filters in "
+"order to match.  Any conditions set for the pipeline in require or reject "
+"filters may also be set for event trigger filters."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1424
+msgid ""
+"The :var:`nodepool.slot` variable has been added to host vars. This is "
+"supplied by the nodepool static and metastatic drivers starting with version "
+"8.0.0.  It may be used to avoid build directory collisions on nodes that run "
+"more than one job."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1437
+msgid ""
+"The Elasticsearch reporter now filters `zuul` data from the job returned "
+"vars. The job returned vars under the `zuul` key are meant for Zuul and may "
+"include large amount of data such as file comments."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1443
+msgid ""
+"The `require-approval` and `reject-approval` Gerrit trigger attributes are "
+"deprecated.  Use :attr:`pipeline.trigger.<gerrit source>.require` and :attr:"
+"`pipeline.trigger.<gerrit source>.reject` instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1450
+msgid ""
+"The `require-status` GitHub trigger attribute is deprecated. Use :attr:"
+"`pipeline.trigger.<github source>.require` instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1461
+msgid ""
+"The `zuul-admin prune-database` command did not completely delete expected "
+"data from the database.  It may not have deleted all of the buildsets older "
+"than the specified cutoff time, and it may have left orphaned data in "
+"ancillary tables.  This has been corrected and it should now work as "
+"expected.  Additionally, a `--batch-size` argument has been added so that it "
+"may delete data in multiple transactions which can facilitate smoother "
+"operation when run while Zuul is operational."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1470
+msgid ""
+"Users who have previously run the command may need to manually delete rows "
+"from the `zuul_build`, `zuul_build_event`, `zuul_artifact`, and "
+"`zuul_provides` tables which do not have corresponding entries in the "
+"`zuul_buildset` table."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1477
+msgid ""
+"The `cherry-pick` merge mode will now silently skip commits that have "
+"already been applied to the tree when cherry-picking, instead of failing "
+"with an error."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1481
+msgid ""
+"The exception to this is if the source of the cherry-pick is an empty "
+"commit, in which case it is always kept."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1484
+msgid ""
+"Skipping commits that have already been applied is important in a pipeline "
+"triggered by the Gerrit `change-merged` event (like the `deploy` pipeline), "
+"since the scheduler would previously try to cherry-pick the change on top of "
+"the commit that just merged and fail."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1491
+msgid ""
+"Zuul will now attempt to honor Gerrit \"submit requirements\" when "
+"determining whether to enqueue a change into a dependent (i.e., \"gate\") "
+"pipeline.  Zuul previously honored only Gerrit's older \"submit records\" "
+"feature.  The new checks will avoid enqueing changes in \"gate\" pipelines "
+"in the cases where Zuul can unambiguously determine that there is no "
+"possibility of merging, but some non-mergable changes may still be enqueued "
+"if Zuul can not be certain whether a rule should apply or be disregarded (in "
+"these cases, Gerrit will fail to merge the change and Zuul will report the "
+"buildset as a MERGE_FAILURE)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1502
+msgid ""
+"This requires Gerrit version 3.5.0 or later, and Zuul to be configured with "
+"HTTP access for Gerrit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1509
+msgid "8.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1518
+msgid ""
+"The change message (commit message, or pull request message depending on the "
+"driver) is now available in plain text form annotated with the Ansible `!"
+"unsafe` tag as :var:`zuul.change_message`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1531
+msgid ""
+"Fixes `tenant.untrusted-projects.<project>.include-branches` being lower "
+"priority than `tenant.untrusted-projects.<project>.exclude-branches` to "
+"match the documentation and expected user behavior."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1535
+msgid ""
+"This only affects projects that are using both `include-branches` and "
+"`exclude-branches` at the same time. Now, `include-branches` has priority "
+"over `exclude-branches` for any branches that match both. Practically "
+"speaking, this means that `exclude-branches` is ignored if `include-"
+"branches` is set."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1549
+msgid ""
+"The base64 encoded version of the change message available as :var:`zuul."
+"message` is deprecated and will be removed in a future version of Zuul.  "
+"Use :var:`zuul.change_message` instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1557
+msgid "8.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1566
+msgid ""
+"A new pipeline attribute, :attr:`pipeline.allow-other-connections`, has been "
+"added to ensure that only changes from connections which are mentioned in "
+"the pipeline configuration (such as triggers, reporters, or pipeline "
+"requirements) are enqueued."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1574
+msgid ""
+"Zuul now stores the pause and resume events for a build together with their "
+"timestamp and reports them to the SQL database and via MQTT."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1579
+msgid ""
+"Individual playbooks may now be wrapped by a semaphore.  Zuul will start the "
+"job and proceed up to the point of a playbook which requires a semaphore and "
+"then wait until it is able to aquire the semaphore before proceeding.  It "
+"releases the semaphore after the end of that individual playbook."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1585
+msgid ""
+"The same semaphore may be used for both jobs and playbooks, but an "
+"individual job may not use the same semaphore for both purposes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1596
+msgid ""
+"Additional syntax checking is performed on job configuration changes so that "
+"Zuul will report an error if a job inherits from a non-permitted parent "
+"(such as a final job, intermediate job when the child is not abstract, or a "
+"protected job in another project). Previously, these situations might only "
+"be discovered when freezing a job graph."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1603
+msgid ""
+"If any jobs currently in this situation exist, they will be reported as "
+"configuration errors."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1614
+msgid ""
+"Non-live items are now subject to pipeline requirements for independent "
+"pipelines."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1617
+msgid ""
+"Previously, an optimization for independent pipelines skipped checking that "
+"a change met the pipeline requirements.  If an independent pipeline is "
+"intended only to run reviewed code, this could allow running unreviewed code "
+"by updating dependent changes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1622
+msgid ""
+"Now both non-live and live items are subject to pipeline requirements in all "
+"pipeline managers."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1627
+msgid ""
+"The new `allow-other-connections` pipeline configuration option may now be "
+"used to ensure that only changes from connections which are mentioned in the "
+"pipeline configuration (such as triggers, reporters, or pipeline "
+"requirements) are enqueued.  This allows the construction of a pipeline "
+"where, for example, code review requirements are strictly enforced, even for "
+"dependencies which are not normally directly enqueued."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1639
+msgid "8.0.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1648
+msgid ""
+"An error which prevented results from appearing in the web UI on the "
+"\"Buildsets\" tab has been corrected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1655
+msgid "8.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1664
+msgid ""
+"Read-level access to tenants or the tenant list may now be restricted to "
+"authorized users using the :attr:`tenant.access-rules` and :attr:`api-root."
+"access-rules` attributes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1671
+msgid ""
+"The :value:`project.merge-mode.rebase` merge-mode is now supported for "
+"GitHub."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1682
+msgid ""
+"Support for Ansible version 5 has been removed.  Migrate any existing jobs "
+"which rely on this version to Ansible version 6 before upgrading."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1688
+msgid ""
+"In preparation for expanded access control features in the web interface, "
+"and REST API, the ``admin-rule`` tenant configuration object has been "
+"renamed to ``authorization-rule``.  When applied to a tenant, the tenant "
+"attribute is still ``admin-rules`` since it determines admin access to that "
+"tenant.  This change will allow similar rules to be applied to non-admin "
+"level access in the future."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1696
+msgid "Tenant configs should now follow this example:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1707
+msgid ""
+"The old form is still permitted for backwards compatability, but will be "
+"removed in a later version of Zuul."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1712
+msgid ""
+"The default merge mode used by Zuul for preparing git repos was previously :"
+"value:`project.merge-mode.merge-resolve` in all cases, but is now :value:"
+"`project.merge-mode.merge` for all drivers except Gerrit, where :value:"
+"`project.merge-mode.merge-resolve` is still the default.  This makes the "
+"merge operations performed by Zuul more closely match the operations that "
+"will be performed by the code review systems."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1728
+msgid ""
+"The use of implied branch matchers in jobs where `override-checkout` was "
+"specified could cause some jobs to include unintended variants.  "
+"Specifically: job variants with implied branch matchers on branches which "
+"are substring matches of a branch specified in the `override-checkout` job "
+"attribute may have been used when not intended."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1735
+msgid ""
+"This has been corrected so that the same job variant matching process "
+"happens whether the change's branch or the branch specified by override-"
+"checkout is used."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1743
+msgid "7.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1752
+msgid ""
+"The GitHub driver now supports specifying the `draft` status of a PR as a "
+"pipeline requirement. See :attr:`pipeline.require.<github source>.draft`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1758
+msgid ""
+"Details about the configuration and current usage of semaphores are now "
+"available in the web UI under the \"Semaphores\" tab."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1769
+msgid ""
+"Ansible versions 5 is now deprecated in Zuul since it is unmaintaned, and it "
+"will be removed from a future version of Zuul. Ansible 6 is now the default "
+"version in Zuul."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1777
+msgid "7.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1786
+msgid ""
+"The MQTT driver now supports including data returned from a job in its "
+"reports.  See :attr:`pipeline.<reporter>.<mqtt>.include-returned-data`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1792
+msgid ""
+"Nodesets may now express an ordered list of alternatives so that if Nodepool "
+"is unable to fulfill a request for certain labels, one or more alternative "
+"Nodesets may be attempted instead.  See :attr:`nodeset.alternatives` for "
+"details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1805
+msgid ""
+"Support for Ansible versions 2.8 and 2.9 has been removed. Migrate any "
+"existing jobs which rely on these versions to Ansible version 5 or 6 before "
+"upgrading."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1811
+msgid ""
+"The previously deprecated ``merge-failure`` and ``merge-failure-message`` "
+"pipeline configuration options have been removed.  Use ``merge-conflict`` "
+"and ``merge-conflict-message`` respectively instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1818
+msgid ""
+"The deprecated syntax of specifying project change queues on pipeline "
+"configurations has been removed.  Specify queues using the project stanza "
+"now.  See :attr:`queue` for more information."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1826
+msgid "6.4.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1835
+msgid ""
+"Ansible version 6 is now available.  The default Ansible version is still 5, "
+"but version 6 may be selected by using :attr:`job.ansible-version`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1847
+msgid ""
+"Ansible versions 2.8 and 2.9 are now deprecated in Zuul since they are both "
+"unmaintaned.  Ansible 5 is now the default version in Zuul."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1854
+msgid "6.3.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1863
+msgid ""
+"A new :attr:`pipeline.config-error` pipeline reporter is available for "
+"customizing reporter actions related to Zuul configuration errors."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1871
+msgid "6.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1880
+msgid ""
+"Added build set url to Zuul comment.  This provide a quick way for user to "
+"reach the build set page from Gerrit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1885
+msgid ""
+"Added a new :attr:`tenant.untrusted-projects.<project>.always-dynamic-"
+"branches` tenant project configuration option.  This may be used to specify "
+"branches from which Zuul should never load static configuration and instead "
+"treat every change as if it newly proposed dynamic configuration.  This is "
+"potentially useful for large numbers of rarely-used feature branches."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1895
+msgid ""
+"The new `ssh_server` option for gerrit connections may be used to specify a "
+"hostname to use for SSH connections while the normal `server` option "
+"specifies the hostname to use for HTTP connections."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1901
+msgid ""
+"Support for global (cross-tenant) semaphores has been added.  See :ref:"
+"`global_semaphore`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1906
+msgid ""
+"Pipeline timer triggers with jitter now apply the jitter to each project-"
+"branch individually (instead of to the pipeline as a whole).  This can "
+"reduce the thundering herd effect on external systems for periodic pipelines "
+"with many similar jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1913
+msgid ""
+"The scheduler now accepts an argument `--wait-for-init` which will cause it "
+"to wait until all tenants have been initialized before it begins processing "
+"pipelines.  This may help large systems with excess scheduler capacity "
+"perform a rolling restart of schedulers more quickly."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1927
+msgid ""
+"Zuul now treats job dependencies that reference undefined jobs as a "
+"configuration error.  Previously a job which depended on another job which "
+"did not exist would pass initial syntax validation and only cause a failure "
+"in freezing the job graph when Zuul attempted to run the job.  Now incorrect "
+"or missing job dependencies are detected during configuration.  This means "
+"that new config errors may be prevented from merging.  It also means that "
+"existing erroneous job or project configurations will be regarded as "
+"configuration errors at startup."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1941
+msgid "6.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1950
+msgid ""
+"The `cherry-pick` merger mode can now handle merges between branches by "
+"performing a `git merge` instead of `git cherry-pick` if the change has "
+"multiple parents. Previously, this would fail because git doesn't allow a "
+"merge to be cherry-picked."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1957
+msgid ""
+"If identical jobs are run for multiple changes in a dependency cycle, Zuul "
+"may now deduplicate them under certain circumstances. See :attr:`job."
+"deduplicate` for details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1963
+msgid ""
+"Added new tenant project configuration options attr:`tenant.untrusted-"
+"projects.<project>.include-branches` and attr:`tenant.untrusted-projects."
+"<project>.exclude-branches`. Similar to *exclude-unprotected-branches*, "
+"these may be used to reduce the set of branches from which Zuul will load "
+"configuration."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1972
+msgid ""
+"A new command, ``prune-database`` has been added to `zuul-admin` in order to "
+"remove database entries older than a certain age."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1977
+msgid ""
+"The GitHub driver now has support for using a GitHub Enterprise `repository "
+"cache <https://docs.github.com/en/enterprise-server@3.3/admin/enterprise-"
+"management/caching-repositories/about-repository-caching>`_. See :attr:"
+"`<github connection>.repo_cache` for information on how to configure it."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:1991
+msgid ""
+"A SQL schema migration is added in order to add an ``updated`` column to the "
+"buildset table which will be used by the `prune-database` command to "
+"determine which buildsets to delete. The migration will attempt to use the "
+"most recent timestamp associated with the buildset when initializing this "
+"column, however, if no timestamps are available, it will initialize it to "
+"1970-01-01.  Since this is considerably before Zuul's birthdate, this means "
+"that any buildsets without timestamp information will be pruned the first "
+"time `prune-database` is run.  It is expected that buildsets with no "
+"timestamps, even very recent ones, are typically uninteresting and therefore "
+"this should not cause a hardship.  If this is not the case for your "
+"installation, you may want to inspect the database and change the "
+"``updated`` column to a more recent value in these cases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2014
+msgid ""
+"The zuul CLI is renamed `zuul-admin`. The `zuul` command will remain usable "
+"until a future version, then will be phased out. Likewise, tenant-scoped, "
+"workflow affecting commands such as autohold, enqueue, dequeue, promote are "
+"deprecated from the zuul-admin CLI and will be phased out in a future "
+"version. They can still be performed via the `zuul-client` CLI."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2023
+msgid "6.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2032
+msgid ""
+"Ansible version 5 is now available.  The default Ansible version is still "
+"2.9, but version 5 may be selected by using :attr:`job.ansible-version`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2038
+msgid ""
+"Pipelines can now trigger on ``wip-state-changed`` and filter events on the "
+"wip state of a change with :attr:`pipeline.require.<gerrit source>.wip`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2049
+msgid ""
+"This is the first version of Ansible added to Zuul since the Ansible project "
+"began releasing the `Ansible community` package. Zuul includes the Ansible "
+"community package since it includes a wide selection of useful modules, many "
+"of which were included by default in previous versions of Ansible."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2055
+msgid ""
+"Only the major version of Ansible community is specified (e.g. ``ansible-"
+"version: 5``).  This corresponds to a single minor release of Ansible core "
+"(e.g., Ansible community 5 corresponds to Ansible core 2.12).  Ansible "
+"releases minor versions of the community package which may contain updates "
+"to the included Ansible collections as well as micro version updates of "
+"Ansible core (e.g. Ansible community 5.6 includes ansible-core 2.12.4)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2063
+msgid ""
+"Zuul does not specify the minor version of Ansible community, therefore the "
+"latest available micro-version will be installed at build-time.  If you need "
+"more control over the version of Ansible used, see the help text for ``zuul-"
+"manage-ansible``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2070
+msgid ""
+"Python 3.8 or newer is required to run Zuul. This change was necessary to "
+"support Ansible 5 and newer as Ansible's minimum python requirement is 3.8."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2076
+msgid ""
+"The built-in support for the ARA Ansible callback plugin has been removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2081
+msgid ""
+"The restricted Ansible environment used for untrusted playbooks has been "
+"relaxed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2084
+msgid ""
+"Zuul previously attempted to restrict the actions of playbooks running in "
+"the untrusted execution context on the executor so that users would not be "
+"able to load custom Ansible plugins, execute code on the executor, or use "
+"certain functions of built-in Ansible modules.  This was done in an attempt "
+"to improve the security of the Zuul executor.  However, the approach has "
+"proved laborious, prone to error, and increasingly incompatible with newer "
+"versions of Ansible."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2093
+msgid ""
+"Therefore it has been removed, and now playbooks within both the trusted and "
+"untrusted execution contexts have access to the full suite of Ansible "
+"modules.  See the :ref:`executor_security` section for information on "
+"caveats relating to executor security."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2106
+msgid ""
+"Nodepool host variables are now available even for unreachable hosts.  This "
+"is useful for network appliances which start the job in an unreachable state."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2114
+msgid "5.2.5"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2123
+msgid ""
+"Further instances of reporting NO_JOBS results to the database when not "
+"necessary have been corrected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2130
+msgid "5.2.4"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2139
+msgid ""
+"A change in 5.2.3 began reporting NO_JOBS results to the database which was "
+"unintentional.  This has been corrected and they are no longer recorded in "
+"the database."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2147
+msgid "5.2.3"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2156
+msgid ""
+"Projects and jobs on branches whose names have special characters in regular "
+"expressions could fail to match changes as intended. Implied branch matchers "
+"automatically generated from branch names are now treated as requiring exact "
+"matches.  Any user-specified branch matcher (including in :attr:`job."
+"branches` and :attr:`pragma.implied-branches`) are still treated as regular "
+"expressions."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2166
+msgid ""
+"Project name regex handling has been updated to return all possible matches. "
+"Previously if there were collisions with short names it was an error. The "
+"point of the regex system is to simplify configuration and apply configs to "
+"all projects that match. Collisions don't impact this behavior so we don't "
+"need to raise an error in these cases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2176
+msgid "5.2.2"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2185
+msgid ""
+"An issue introduced in Zuul version 5.2.0 which could cause jobs running on "
+"Windows nodes to fail with the error `Could not find imported module support "
+"code for 'Ansible.ModuleUtils.Legacy'\"` has been corrected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2194
+msgid "5.2.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2203
+msgid ""
+"The :attr:`queue.dependencies-by-topic` setting is added for Zuul users who "
+"wish to emulate the Gerrit ``submitWholeTopic`` behavior for some projects "
+"without enabling it site-wide in Gerrit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2209
+msgid ""
+"The promote administrative action now functions with all pipeline managers.  "
+"Previously it would only have an impact on dependent pipelines, but it will "
+"now re-order change queues as well as changes within any type of pipeline."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2222
+msgid ""
+"The promote administrative action will no longer restart jobs for changes "
+"which have not been re-ordered within their change queue."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2233
+msgid ""
+"Fixed an issue in the Gerrit driver introduced in 5.2.0 which could cause "
+"infinite loops while querying changes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2240
+msgid "5.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2249
+msgid ""
+"Changes in dependent queues are now automatically dequeued if they no longer "
+"meet the mergability requirements set by the upstream code review system."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2255
+msgid ""
+"Zuul now matches Gerrit's behavior when ``change.submitWholeTopic`` is set "
+"in Gerrit."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2258
+msgid ""
+"When this setting is enabled in Gerrit and a change is submitted (merged), "
+"all changes with the same topic are submitted simultaneously.  Zuul will now "
+"query for changes which are set to be submitted together by Gerrit when "
+"enqueing them and treat them as if they are a set of circular dependencies."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2264
+msgid ""
+"If the projects are not part of pipeline queues which are configured to "
+"allow circular dependencies, then Zuul will report failure on enqueue.  Be "
+"sure that the submitWholeTopic setting in Gerrit and the allow-circular-"
+"dependencies setting in Zuul match."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2269
+msgid ""
+"This functionality requires an HTTP connection to Gerrit.  If only an SSH "
+"connection is available, then changes submitted together will be ignored."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2275
+msgid ""
+"The ability to configure Microsoft Login as an OpenID Connect authentication "
+"provider has been added."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2280
+msgid "Zuul now reports total resource usage statistics."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2282
+msgid "The following statistic is emitted:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2284
+msgid "`zuul.nodepool.resources.total.tenant.{tenant}.{resource}`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2286
+msgid ""
+"Gauge with the currently used resources by tenant in total, i.e., all nodes "
+"belonging to a tenant, regardles of their state."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2291
+msgid ""
+"It is now possible for jobs to skip retries caused by failures in 'pre-run' "
+"by returning `retry: false`:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2309
+msgid "Zuul now reports total and in-use resource usage statics separately."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2311
+msgid "To distinquish those, the following statistics have been renamed:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2313
+msgid ""
+"`zuul.nodepool.resources.tenant.{tenant}.{resource}` `->` `zuul.nodepool."
+"resources.in_use.tenant.{tenant}.{resource}`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2317
+msgid ""
+"`zuul.nodepool.resources.project.{project}.{resource}`: `->` `zuul.nodepool."
+"resources.in_use.project.{tenant}.{resource}`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2329
+msgid ""
+"A vulnerability which allowed the execution of untrusted code on the "
+"executor was fixed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2332
+msgid ""
+"Zuul restricts the Ansible modules and plugins which can be used in the "
+"`untrusted` security context (i.e., untrusted projects). It also prohibits "
+"running programs on the Zuul executor in the untrusted security context."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2337
+msgid ""
+"Ansible 2.8 and later versions support referencing builtin modules using the "
+"`ansible.builtin.<name>` alias.  Playbooks which use this mechanism can "
+"bypass Zuul's security restrictions and run arbitrary local code or "
+"otherwise restricted modules."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2342
+msgid ""
+"Zuul's use of bubblewrap means that any commands executed via this "
+"vulnerability would still be contained within the restricted environment, "
+"meaning that they can not access files outside of the build directory or "
+"continue running longer than the playbook.  But they may have been able to "
+"access files within the build directory but outside of the `work/` "
+"directory, as well as potentially exploit any kernel or hypervisor privilege "
+"escalation vulnerabilities."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2351
+msgid ""
+"The Zuul team now considers the restricted Ansible environment to be "
+"ineffective as a security mechanism and is developing plans to remove the "
+"restrictions and rely entirely on bubblewrap in the future.  These changes "
+"will occur in a future release of Zuul (likely 6.0.0) and will be preceded "
+"by more details about the change."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2362
+msgid "5.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2371
+msgid ""
+"Added support for adding and removing merge request labels in the GitLab "
+"driver, as well as triggering pipelines on label removal (label addition was "
+"already supported)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2377
+msgid ""
+"A new buildset result ``MERGE_FAILURE`` is stored in the build database in "
+"the case where a buildset is unable to be merged by the upstream code review "
+"system."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2383
+msgid ""
+"The following new statsd metrics are available in order to monitor Zuul "
+"system performance:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2386
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.event_enqueue_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2387
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.merge_request_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2388
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.layout_generation_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2389
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.job_freeze_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2390
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.repo_state_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2391
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.node_request_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2392
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.job_wait_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2393
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.event_job_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2394
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.read_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2395
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.write_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2396
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.read_objects`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2397
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.write_objects`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2398
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.read_znodes`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2399
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.write_znodes`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2400
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.read_bytes`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2401
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.write_bytes`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2402
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.event_process`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2403
+msgid ":stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.handling`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2404
+msgid ":stat:`zuul.tenant.<tenant>.reconfiguration_time`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2408
+msgid ""
+"A new command ``zuul-scheduler tenant-reconfigure`` has been added.  It "
+"allows an operator to perform a reconfiguration of a single tenant.  This "
+"may be helpful in clearing up issues after connection problems with the code "
+"hosting system."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2415
+msgid "New monitoring metrics specific to zuul-web are available."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2425
+msgid ""
+"The buildset result ``MERGER_FAILURE`` has been renamed to "
+"``MERGE_CONFLICT``, and the pipeline reporter configuration ``merge-"
+"failure`` has been renamed to ``merge-conflict``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2429
+msgid ""
+"These are more descriptive of the most common errors actually reported, and "
+"so are expected to be less confusing to users.  This is also in service of a "
+"future change to support a new buildset result ``MERGE_FAILURE`` which will "
+"indicate that the change was unable to be merged in the upstream repository."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2435
+msgid ""
+"When upgrading, it is recommended to stop all schedulers briefly (i.e, when "
+"the first scheduler of the new version starts, there should be no schedulers "
+"running the old version).  The new scheduler will perform a database "
+"migration when it starts and update all existing ``MERGER_FAILURE`` buildset "
+"results to ``MERGE_CONFLICT``.  If old schedulers are running, they may "
+"continue to add ``MERGER_FAILURE`` entries which will need to be manually "
+"updated in order to be visible in the web UI or rest API."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2452
+msgid ""
+"The ``merge-failure`` and ``merge-failure-message`` pipeline configuration "
+"options have been renamed to ``merge-conflict`` and ``merge-conflict-"
+"message`` respectively.  The old settings are retained for backwards "
+"compatibility, but will be removed in a later version.  Please update your "
+"usage of them as soon as possible."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2467
+msgid ""
+"The `labels` pipeline requirement in the `gitlab` driver erroneously treated "
+"the labels as a boolean `or` but should have treated them as a boolean `and` "
+"(i.e., all listed labels are required). The behavior has been updated to "
+"match the documentation and other drivers."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2476
+msgid "5.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2485
+msgid ""
+"Zuul no longer uses gearman.  It is no longer required to run a Gearman "
+"server, and the Zuul scheduler no longer does so.  All gearman-related "
+"settings in zuul.conf files are now ignored and may be removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2490
+msgid ""
+"Commands such as `zuul enqueue` which were previously executed via Gearman "
+"may still be used by creating an authentication token and adding a "
+"`webclient` section to zuul.conf."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2496
+msgid ""
+"Support for configuring the database as a `connection` in ``zuul.conf`` was "
+"deprecated in Zuul version 4.0 and has now been removed.  Refer to :ref:"
+"`database` how to configure the database now."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2505
+msgid "4.12.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2514
+msgid ""
+"Due to a change in the ZooKeeper data format, the following upgrade "
+"procedure is required:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2518
+msgid "Run ``zuul delete-state``"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2519
+msgid "Start all Zuul components"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2523
+msgid ""
+"Zuul-web now requires access to the Zookeeper keystore.  Ensure that the :"
+"attr:`keystore.password` option is included in ``zuul.conf`` on at least the "
+"scheduler, executor, and web servers (it may be included on all components "
+"if desired)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2530
+msgid ""
+"Zuul-web requires information for all defined connections. Previously, zuul-"
+"web may have started without all of the connections fully defined in its "
+"config file, or with some requirements (such as keys used for connecting to "
+"remote services) present.  They are now required in order for zuul-web to "
+"start."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2540
+msgid "4.11.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2549
+msgid ""
+"The new variable :var:`zuul.playbook_context` as well as new variables "
+"under :var:`zuul.projects` have been added to help debug or audit the "
+"playbooks and roles used by Ansible when running jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2554
+msgid ""
+"These variables describe the repo configuration used for the playbooks and "
+"roles of each Ansible execution.  These repos may have a different state "
+"than the workspace repos."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2560
+msgid ""
+"It is now possible to disable connection pooling in the Gitlab driver with :"
+"attr:`<gitlab connection>.disable_connection_pool`. This option may be "
+"useful under adverse network conditions."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2566
+msgid ""
+"The optional prometheus service now also includes endpoints for readiness "
+"and liveness checks.  See :ref:`prometheus_liveness` for details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2572
+msgid ""
+"Allow an authorized user to dequeue changes from the Web UI's status page."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2576
+msgid ""
+"Add authentication in the web UI. Zuul's web UI can be configured to "
+"authenticate users against an Identity Provider supporting the OpenID "
+"Connect protocol."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2587
+msgid ""
+"Users upgrading from previous versions of zuul will need to run ``zuul "
+"delete-state`` to delete Zuul's ephemeral state from Zookeeper. The "
+"ephemeral state produced by older versions of zuul is not compatible with "
+"this release. This command should be run while all Zuul services are stopped "
+"to prevent writes to the Zookeeper database. More information on this "
+"command can be found in the documentation: https://zuul-ci.org/docs/zuul/"
+"reference/client.html#delete-state"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2598
+msgid ""
+"The prometheus endpoint would previously serve metrics at any URI. It now "
+"only returns metrics on the `/` and `/metrics` URI.  The latter is "
+"recommended."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2606
+msgid "4.10.4"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2615
+msgid ""
+"A fix was made to mitigate an issue where a ZooKeeper disconnect could cause "
+"too many threads to be spawned resulting in errors."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2622
+msgid "4.10.3"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2631
+msgid ""
+"A bug with the change cache cleanup routine which could have caused items to "
+"be stuck in pipelines without running jobs has been corrected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2637
+msgid ""
+"Gerrit driver: Zuul error responses could overflow the default message "
+"length with large configurations leading to Gerrit rejecting the comment "
+"(and hence no notification from Zuul on the change).  Such messages are now "
+"truncated to a safe length."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2646
+msgid "4.10.2"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2655
+msgid ""
+"A bug which prevented change cache cleanup (and therefore caused ZooKeeper "
+"usage to grow without limits) was fixed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2662
+msgid "4.10.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2671
+msgid "Add support for squashing MR with gitlab."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2675
+msgid ""
+"On the description page of a buildset in the zuul web dashboard, a user can "
+"display a timeline of the builds making up the buildset."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2686
+msgid ""
+"Fix a bug in the cleanup routine for the new Zookeeper based change cache. "
+"Previously this caused the change cache to leak entries. Note the fixed "
+"routine will clean up the leaked entries automatically once Zuul is "
+"restarted on this new version."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2693
+msgid "Fix detection of the failed merge in gitlab driver."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2699
+msgid "4.10.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2708
+msgid ""
+"Nodepool 4.3.0 is now required.  Zuul stores additional information in node "
+"records in preparation for supporting multiple schedulers."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2714
+msgid ""
+"The scheduler time database has been removed.  This was stored in the "
+"scheduler state directory, typically ``/var/lib/zuul/times``. The entire "
+"state directory on the scheduler is no longer used and may now be removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2719
+msgid ""
+"Zuul now derives its estimated build duration times from the SQL database."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2726
+msgid "4.9.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2735
+msgid ""
+"The ``zuul delete-state`` command may be used to delete all of the ephemeral "
+"state stored by Zuul in ZooKeeper.  Normally Zuul is able to detect and "
+"correct errors on its own, but in case it is unable to, this may prove a "
+"useful utility for manual recovery."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2742
+msgid ""
+"The new commands ``zuul copy-keys`` and ``zuul delete-keys`` may be useful "
+"when renaming projects in order to move the keys from the old to the new "
+"project names without service interruption."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2748
+msgid ""
+"Add new statsd gauge metrics of current open node requests exported as "
+"``zuul.nodepool.tenant.<tenant>.current_requests``. This metric tracks the "
+"currently open node requests per tenant. It drills down the overall ``zuul."
+"nodepool.current_requests`` metric."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2761
+msgid ""
+"Zuul no longer reads or writes project private key files from the "
+"scheduler's filesystem.  In order to load existing keys into ZooKeeper, run "
+"version 4.6.0 of the scheduler at least once, if you haven't already."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2766
+msgid ""
+"A new command ``zuul export-keys`` has been added to export the encrypted "
+"keys from ZooKeeper onto the filesystem for backup. Likewise, ``zuul import-"
+"keys`` will load a previously-exported backup into ZooKeeper.  It is "
+"recommended that you use these commands in system backup scripts."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2776
+msgid "4.8.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2785
+msgid ""
+"An error was found in a change related to Zuul's internal configuration "
+"cache which could cause Zuul to use cached in-repo configuration files which "
+"no longer exist.  If a ``zuul.yaml`` (or ``zuul.d/*`` or any related "
+"variant) file was deleted or renamed, Zuul would honor that change "
+"immediately, but would attempt to load both the old and new contents from "
+"its cache upon the next restart."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2793
+msgid "This error was introduced in version 4.8.0."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2795
+msgid ""
+"If upgrading from 4.8.0, run ``zuul-scheduler full-reconfigure`` in order to "
+"correctly update the cache."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2806
+msgid ""
+"Restored the job.success-message and job.failure-message functionality which "
+"was inadvertently removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2813
+msgid "4.8.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2822
+msgid ""
+"Zuul now can route live log streams via finger gateways to make it possible "
+"to distribute executors over multiple datacenters without the possibility to "
+"directly contact every executor from within zuul-web. This is typically the "
+"case in a Kubernetes based deployment."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2829
+msgid ""
+"The finger gateway and executor log streaming system now supports TLS "
+"connections."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2832
+msgid ""
+"Normally zuul-web makes a direct connection to an executor in order to "
+"stream logs.  With this new option, that connection can be encrypted if it "
+"crosses an untrusted network."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2836
+msgid ""
+"The ability to route log streaming connections through finger gateway "
+"servers was recently added; these will also use TLS if required."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2840
+msgid ""
+"The finger gateway server can also be used by end-users; in that case it may "
+"need a TLS certificate to use if it is required to connect to an encrypted "
+"executor or finger gateway to stream logs. An option to disable using TLS "
+"when acting as a server is provided for this case, since there are no TLS-"
+"enable finger clients."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2846
+msgid ""
+"See :attr:`fingergw.tls_cert` and related options to enable encrypted "
+"connections for all three components."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2853
+msgid "4.7.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2862
+msgid ""
+"The executor now honors the :attr:`executor.sigterm_method` configuration "
+"file setting to determine whether ``SIGTERM`` should be equivalent to the "
+"``graceful`` command (the default) or the ``stop`` command."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2869
+msgid ""
+"The Github driver can now use 'skipped' and 'neutral' status for :attr:"
+"`pipeline.<reporter>.<github source>.check` attribute on the Github reporter."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2881
+msgid ""
+"The default behavior when an executor receives SIGTERM has been changed from "
+"immediately stopping jobs to gracefully waiting for them to finish.  Set "
+"the :attr:`executor.sigterm_method` configuration file setting to ``stop`` "
+"to preserve the old behavior."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2888
+msgid "The `zuul.scheduler.eventqueues.result` gauge was removed"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2892
+msgid ""
+"Zuul now requires at least Nodepool version of 4.2.0 due to an internal API "
+"change."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2903
+msgid "The following attributes are now ignored:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2905
+msgid "The ``report-build-page`` tenant configuration setting."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2906
+msgid "The ``success-url`` job attribute."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2907
+msgid "The ``failure-url`` job attribute."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2909
+msgid ""
+"The URL of the build page is now always reported for every build. This is "
+"now also true for in-progress builds, which provides for a more consistent "
+"user experience."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2913
+msgid ""
+"Since the build page is always reported as the URL, the success and failure "
+"URL job attributes are no longer useful, so this functionality has also been "
+"removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2917
+msgid ""
+"Zuul's configuration syntax checker will continue to allow these settings "
+"for now (they are simply ignored) but this will be removed in version 5.0 "
+"and using them will be considered an error."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2921
+msgid ""
+"To achieve a similar result, consider returning the URL as an artifact from "
+"the job via `zuul_return`.  This will cause a link to appear in the "
+"\"Artifacts\" section of the build page."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2929
+msgid "4.6.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2938
+msgid ""
+"If sensitive data must be returned from a job in order to be provided to "
+"dependent jobs, the ``secret_data`` attribute of ``zuul_return`` attribute "
+"may now be used instead of the normal ``data`` attribute.  The data will be "
+"provided via the same mechanism as job secrets, where the data are not "
+"written to disk in the work directory.  Care must still be taken to avoid "
+"displaying or storing sensitive data within the job.  For example:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2963
+msgid ""
+"The following connection-related variables are no longer allowed to be set "
+"in job definitions, as they may be used to circumvent security measures:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2967
+msgid "ansible_connection"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2968
+msgid "ansible_host"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2969
+msgid "ansible_python_interpreter"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2970
+msgid "ansible_shell_executable"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2971
+msgid "ansible_user"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2973
+msgid "They may still be set using the corresponding settings in Nodepool."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2978
+msgid ""
+"The ability to use Ansible Jinja templates in Zuul job variables is "
+"partially restricted."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2981
+msgid ""
+"It was found that the ability to use Jinja templates in Zuul job variables "
+"could be used to expose the contents of secrets.  To remedy this, the values "
+"of Zuul job variables are frozen at the start of the job and these values "
+"are used for trusted playbooks and playbooks with secrets.  The freezing "
+"action is taken without access to any secrets so they can not be exposed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2988
+msgid ""
+"This means that Zuul job variables which reference non-secret values that "
+"are known at the start of the job (including any zuul.* variable) will "
+"continue to work as expected.  Job variables which reference secrets will "
+"not work (they will be undefined). In untrusted playbooks, job variables are "
+"still dynamically evaluated and can make use of values that are set after "
+"the start of the job."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:2996
+msgid ""
+"Additionally, `job.extra-vars` are no longer passed to Ansible using the \"-"
+"e\" command line options.  They could be used to expose secrets because they "
+"take precedence over some internal playbook variables in some "
+"circumstances.  Zuul's extra-vars are now passed as normal inventory "
+"variables, however, they retain precedence over all other Zuul job variables "
+"(`vars`, `host-vars`, and `group-vars`) except secrets."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3004
+msgid ""
+"Secrets are also now passed as inventory variables as well for the same "
+"reason.  They have the highest precedence of all Zuul job variables.  Their "
+"values are tagged with ``!unsafe`` so that Ansible will not evaluate them as "
+"Jinja expressions."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3009
+msgid ""
+"If you are certain that a value contained within a secret is safe to "
+"evaluate as a Jinja expression, you may work around this limitation using "
+"the following construct in a playbook:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3018
+msgid ""
+"This will force an explicit evaluation of the variable.  This is generally "
+"safe to do in a situation where a playbook is accessing a single secret by "
+"name, with no other secrets in scope.  Do not use this capability with more "
+"than one secret that is not under the control of the project where the "
+"playbook is defined."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3024
+msgid ""
+"Similarly, versions of all the original job variables tagged with ``!"
+"unsafe`` are available under the ``unsafe_vars`` variable hierarchy.  For "
+"example, the job variable `myvar` would be available under `unsafe_vars."
+"myvar`.  It is not recommended to evaluate ``unsafe_vars`` expressions "
+"except in the most controlled of circumstances.  They are almost impossible "
+"to render safely."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3035
+msgid "4.5.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3044
+msgid ""
+"The zuul tenant-conf-check command no longer needs a ZooKeeper connection to "
+"validate the tenants configuration file is valid."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3051
+msgid "4.5.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3060
+msgid ""
+"This is a checkpoint release. This release contains some bugfixes and other "
+"user-invisible changes, but its main purpose is to serve as a checkpoint as "
+"we move more of Zuul's functionality into ZooKeeper. This version has seen "
+"production use in OpenDev and we believe it to be stable and ready for wider "
+"use. Please do upgrade to it and report any issues to zuul-discuss. You may "
+"downgrade to the previous release if you do encounter any issues. Likewise, "
+"operators running the latest development builds may downgrade to this "
+"release in the case of issues."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3066
+msgid "4.4.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3075
+msgid ""
+"A new prometheus_port option for the services can be used to start the "
+"prometheus python client and exposes metrics."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3080
+msgid ""
+"Jobs may now request multiple semaphores and they will not start until all "
+"semaphores are acquired."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3083
+msgid "Use the new :attr:`job.semaphores` (plural) attribute to specify them."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3085
+msgid ""
+"Note that the new attribute is additive when considering inheritance and job "
+"variants.  That is to say that a job definition with a `semaphores` "
+"attribute will extend the list of semaphores supplied by its parent rather "
+"than overriding it (which is the behavior for the deprecated attribute)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3099
+msgid ""
+"The job attribute :attr:`job.semaphore` (note the singular rather than "
+"plural form) job attribute is now deprecated.  Use the plural form :attr:"
+"`job.semaphores` instead.  As with most list items in Zuul configuration, it "
+"also accepts a single item without the wrapping list, so to convert existing "
+"jobs, simply change the spelling of the attribute, no change to the value is "
+"required."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3106
+msgid "The singular form will be removed in Zuul 5.0."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3112
+msgid "4.3.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3121
+msgid ""
+"The MQTT reporter now includes artifact information along with build results."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3125
+msgid ""
+"Jobs may now specify an alternate scheme to use when preparing repositories "
+"in the workspace.  The default remains the same golang-style, but an "
+"alternate scheme called `flat` is now available.  See :attr:`job.workspace-"
+"scheme` for more details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3132
+msgid ""
+"Project secrets keys and SSH keys are now stored in Zookeeper. All private "
+"data will be encrypted at rest, which requires a new mandatory setting :attr:"
+"`keystore.password` in ``zuul.conf``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3136
+msgid ""
+"For backup purposes the secrets keys and SSH keys will still exist on the "
+"local filesystem of the scheduler as before."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3147
+msgid ""
+"The internal git repo caches maintained by the mergers and executors now use "
+"a new naming scheme in order to avoid collisions.  When existing executors "
+"and mergers are restarted, they will remove their git repo caches and re-"
+"clone repos using the new scheme.  Jobs may be slow to start until the "
+"caches are warmed again."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3156
+msgid ""
+"As project secrets keys and SSH keys are stored encrypted in Zookeeper the "
+"new :attr:`keystore.password` option in ``zuul.conf`` is required. Please "
+"add it to your configuration for both the scheduler and executor."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3169
+msgid ""
+"Zuul now correctly handles the ``rerequested`` action on check run trigger "
+"definitions (:value:`pipeline.trigger.<github source>.event.check_run`) "
+"literally. This has been ``requested`` which doesn't match the GitHub api. "
+"The value ``requested`` is now deprecated and will be removed in a later "
+"release."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3183
+msgid ""
+"Fixed a bug where multiple connections of the same type would not filter "
+"trigger events coming from the wrong connection."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3190
+msgid "4.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3199
+msgid ""
+"This is a checkpoint release.  This release contains some bugfixes and other "
+"user-invisible changes, but its main purpose is to serve as a checkpoint as "
+"we move more of Zuul's functionality into ZooKeeper.  This version has seen "
+"production use in OpenDev and we believe it to be stable and ready for wider "
+"use.  Please do upgrade to it and report any issues to zuul-discuss.  You "
+"may downgrade to the previous release if you do encounter any issues.  "
+"Likewise, operators running the latest development builds may downgrade to "
+"this release in the case of issues."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3205
+msgid "4.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3214
+msgid ""
+"Executors configured with :attr:`executor.zone` now can also be configured "
+"to also process jobs without a zone by enabling :attr:`executor."
+"allow_unzoned`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3220
+msgid ""
+"Zuul now honors the shell-type configuration from nodepool and uses it to "
+"set ansible_shell_type, a setting that is required when connecting to "
+"Windows workers over ssh."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3224
+msgid ""
+"For Linux workers, there is a long standing ansible issue with  using non-"
+"default ansible_shell_type and become, so this feature is primarily "
+"targeting Windows workers."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3230
+msgid ""
+"Projects can now configure change queues to queue per branch. See :attr:"
+"`queue` for more information."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3235
+msgid ""
+"Circular dependencies are now optionally supported (but disabled by "
+"default).  To permit dependency cycles to be enqueued, see the :attr:`queue."
+"allow-circular-dependencies` option."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3241
+msgid ""
+"A job now can leave warning messages on the change using zuul_return. See :"
+"ref:`return_values` for examples."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3246
+msgid ""
+"Zuul now supports the ``--validate-tenants`` switch which can be used to "
+"validate the complete configuration of the listed tenants."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3257
+msgid ""
+"Two sets of statsd metrics are now reported for executors: zoned and "
+"unzoned.  The existing statsd keys are now deprecated; new statsd keys are "
+"available for both zoned and unzoned executors. See :stat:`zuul.executors` "
+"for details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3270
+msgid ""
+"Shared ``queues`` should be configured per project now instead per pipeline. "
+"Specifying `project.<pipeline>.queue` is deprecated and will be removed in a "
+"future release."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3282
+msgid ""
+"If zoned executors were used with prior releases of Zuul, the reported "
+"executor statistics would only represent a single, unspecified zone.  This "
+"has now been corrected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3290
+msgid "4.0.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3299
+msgid ""
+"This is the first 4.x release of Zuul.  It requires some deployment changes "
+"by operators which have been carefully planned in order to facilitate work "
+"on Zuul version 5, which will be the first version of Zuul where every "
+"component is fault tolerant and able to scale. If you read the release notes "
+"for the last 3.x release, you may have already made all of the required "
+"changes.  If not, please do so before upgrading to version 4.  Every "
+"required change in version 4 is optionally supported in 3.19, so it is safe "
+"to make these changes and then upgrade. Please read all of the notes below, "
+"especially in the \"Upgrading\" section for details.  The primary additional "
+"requirements are:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3303 branch>:3559
+msgid "TLS ZooKeeper connections"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3304 branch>:3560
+msgid "Network connectivity from all components to ZooKeeper"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3305
+msgid "An SQL database"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3307
+msgid ""
+"With these changes in place, it is anticipated that further upgrades to Zuul "
+"made in support of the scale-out-scheduler work will be done with minimal "
+"disruption in the course of normal releases between version 4 and 5."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3317
+msgid ""
+"The action \"promote\" is now available via the tenant-scoped REST API using "
+"the zuul cli."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3322
+msgid ""
+"Builds in the SQL reporter have a \"held\" attribute set to True if the "
+"build triggered a autohold request. Builds can be filtered by held status."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3327
+msgid ""
+"Subdirectories of ``zuul.d`` or ``.zuul.d`` can be ignored when reading "
+"configuration by placing a ``.zuul.ignore`` file inside them."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3333
+msgid "The ``find`` module is now allowed to run on the executor."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3337
+msgid ""
+"Changes can now be dequeued via the Github checks API. If a github reporter "
+"is configured to use the checks API, all running checks will provide a "
+"custom \"Abort\" action."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3343
+msgid ""
+"Zuul now respects GitHub review requirements when enqueuing into gate "
+"pipelines. This works for github.com and GitHub Enterprise starting with "
+"version 2.21.0."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3349
+msgid ""
+"Jobs may specify the new ``intermediate`` flag to note they may only be "
+"inherited by abstract jobs.  This can be useful if building a job hierarchy "
+"where wish to limit where a base job is instantiated."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3353
+msgid ""
+"The builds/ and buildset/ API endpoints now include information about "
+"retried builds. They are called non-final as those are all builds that were "
+"retried at least once and thus weren't visible to the user so far."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3357
+msgid ""
+"The builds/ API can filter those retried builds and you might exclude them "
+"from API result by setting ``final=false`` in the API request."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3362
+msgid ""
+"An option to use the URL of the Zuul build page when reporting has been "
+"added.  This feature requires that all the pipelines in the tenant have a "
+"SQL reporter configured, and at least one of :attr:`tenant.web-root` or :"
+"attr:`web.root` must be defined."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3368
+msgid "See ``tenant.report-build-page``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3372
+msgid ""
+"REST API: authorizations: add a tenant-scoped endpoint at '/api/tenant/"
+"{tenant}/authorizations'. Calling the endpoint will return a list of admin "
+"tenants limited to the scoped tenant, if the user has admin privileges on it."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3379
+msgid ""
+"Host key checking is now disabled for a host in the generated Ansible "
+"inventory if ``host-key-checking`` is set to ``False`` in the corresponding "
+"nodepool config."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3391
+msgid "Support for Ansible 2.7 has been removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3395
+msgid ""
+"If using a SQL reporter, the zuul_builds table will be updated with a new "
+"'held' column. The `zuul-scheduler` and `zuul-web` services need to be "
+"restarted together for the change to take effect."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3401
+msgid ""
+"Previously the SqlReporter would record the job name in the database in "
+"place of the url if the url was empty. This has now been updated to store a "
+"null in the database for that case. Zuul will automatically run a database "
+"migration to correct old values."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3408
+msgid ""
+"The -d switch doesn't enforce foreground anymore. It only enables debug "
+"logging. To start zuul in foreground please add the -f switch instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3413
+msgid "Support for running Zuul under Python 3.5 has been dropped."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3417
+msgid ""
+"As further integration with the web interface is planned, the :attr:`web."
+"root` setting in ``zuul.conf`` is marked required and future releases may "
+"error if it is missing.  Please add it to your configuration now.  See :attr:"
+"`tenant.web-root` for additional information about whitelabel tenants."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3425
+msgid ""
+"The components zuul-scheduler and zuul-web now require database "
+"configuration. There is now only one supported database connection. If "
+"multiple sql connections have been configured only the first one will be "
+"used."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3432
+msgid ""
+"Signal based triggering of full-reconfiguration in the scheduler (deprecated "
+"since 3.3.0) has been removed.  Use ``zuul-scheduler full-reconfigure`` "
+"instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3438
+msgid ""
+"The :attr:`zookeeper` section in ``zuul.conf`` is required for all "
+"components, and all components must now be able to connect to ZooKeeper.  "
+"Additionally, TLS is now required for all ZooKeeper connections.  See :ref:"
+"`zk-encrypted-connections` for more details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3451
+msgid ""
+"Defining database connections using sql connection is now deprecated. Refer "
+"to :ref:`database` how to configure the database now."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3456
+msgid ""
+"REST API: authorizations: the /api/user/authorizations endpoint is "
+"deprecated in favor of the tenant-scoped endpoint. It will be removed next "
+"release."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3467
+msgid ""
+"Although the documentation states that the MQTT reporter reports the build's "
+"log_url, this was only true as long as ``tenant.report-build-page`` was "
+"disabled. As soon as the setting was enabled, the MQTT reporter reported the "
+"url to the build's result page in Zuul. As MQTT is meant to be consumed by "
+"machines, this broke use cases like log post processing."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3473
+msgid ""
+"This was fixed so that the :attr:`<mqtt schema>.buildset.builds.log_url` now "
+"always contains the log url, while an additional field :attr:`<mqtt schema>."
+"buildset.builds.web_url` contains the url to the build's result page if "
+"``tenant.report-build-page`` is enabled."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3482
+msgid "3.19.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3491
+msgid ""
+"A long-standing security vulnerability regarding executing code on the "
+"executor was corrected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3494
+msgid ""
+"The Zuul executor was designed to prohibit executing command or shell tasks "
+"on the executor itself (i.e., localhost in Ansible) from untrusted "
+"playbooks.  Tobias Henkel discovered that this check has been broken for "
+"some time, likely since June of 2018."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3499
+msgid ""
+"The use of bubblewrap means that any commands executed via this "
+"vulnerability would still be contained within the restricted environment, "
+"meaning that they can not access files outside of the build directory or "
+"continue running longer than the job.  However, by executing arbitrary "
+"commands, users may have been able to connect to unprotected internal "
+"network services."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3506
+msgid ""
+"Because this bug is so long-standing, it is possible, even likely, that "
+"users may have accidentally come to rely on it.  We discovered two jobs in "
+"the zuul-jobs library which did so: dco-license and promote-docker-image.  "
+"The promote-docker-image job has been altered so it no longer needs to run a "
+"command on the executor.  The dco-license job has been altered to run on a "
+"node. If you would prefer to run it on the exceutor, you can create a new "
+"job in a config-project that uses the validate-dco-license role."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3516
+msgid ""
+"You may want to look for other jobs in your system which may be affected by "
+"this.  To aid in that, we have created a script which will examine the job-"
+"output.json files created by previous builds and output any tasks it finds "
+"which are now (once again) prohibited.  This script is available here:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3522
+msgid ""
+"https://opendev.org/zuul/zuul/src/branch/master/tools/find-untrusted-exec.py"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3532
+msgid ""
+"The dependency on kazoo has been upgraded to 2.8.0 which has an important "
+"fix for using Zookeeper over TLS."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3537
+msgid ""
+"The Github access token URL has been updated in order to remove a "
+"deprecation warning."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3544
+msgid "3.19.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3553
+msgid ""
+"This is expected to be the last 3.x release of Zuul (barring any "
+"unanticipated bugfix releases)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3556
+msgid ""
+"The next release of Zuul, 4.0.0, will require the following deployment "
+"changes:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3561
+msgid "A SQL database"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3563
+msgid ""
+"These features are supported now, so it is important that you take this time "
+"to :ref:`switch your ZooKeeper connection to use TLS<zk-encrypted-"
+"connections>`, and :ref:`configure a SQL connection<database>`.  Even though "
+"only some Zuul components connect to ZooKeeper today, you should ensure that "
+"the ``[zookeeper]`` section is present in ``zuul.conf`` for all components, "
+"and that they have network connectivity to the ZooKeeper servers.  Doing so "
+"will make the upgrade to 4.0.0 seamless."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3572
+msgid ""
+"These changes are in support of ongoing work to enable multiple scheduler "
+"processes for scaling and availability.  After the 4.0.0 release, it is "
+"anticipated that further upgrades to Zuul made in support of this work will "
+"be done with minimal disruption in the course of normal releases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3586
+msgid ""
+"Zuul now supports whitelisting and configuring ansible callbacks with :attr:"
+"`ansible_callback \"<name>\"`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3591
+msgid ""
+"Pipelines now provide a :attr:`pipeline.dequeue` reporter action so that "
+"reporters may run whenever an item is dequeued. The dequeue reporters will "
+"only apply if the item wasn't a success or failure."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3597
+msgid "Support for generating dynamic :ref:`badges` has been added."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3601
+msgid ""
+"The annotation levels for the file comments reported via Github checks API "
+"are now configurable in ``zuul_return``. Each file comment entry can provide "
+"an optional ``level`` parameter ``[info|warning|error]`` that will be picked "
+"up by the Github reporter."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3606 branch>:3728
+msgid ""
+"For more details on how to provide file comments from Zuul, see the "
+"documentation of the :ref:`return_values`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3611
+msgid ""
+"The status pipeline requirements of the Github driver :attr:`pipeline."
+"require.<github source>.status` now also matches on statuses reported via "
+"the Github checks API."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3617
+msgid ""
+"The tenant configuration now supports loading a different branch than master "
+"from config projects. See :attr:`tenant.config-projects.<project>.load-"
+"branch`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3623
+msgid ""
+"Zuul now matches tag items against their containing branches. This makes it "
+"simpler to have release jobs in-tree. See :attr:`job.branches` for details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3629
+msgid ""
+"The zuul-executor now also pauses all merger related tasks when it's paused. "
+"Further the zuul-merger can also be paused by running ``zuul-merger pause``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3634
+msgid ""
+"The :value:`pipeline.manager.serial` pipeline manager has been added.  It is "
+"designed to handle serialized deployment pipelines where supercedent is "
+"unsuitable in the case that not all jobs run on every merge."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3641
+msgid "Add new timezone selector in web interface"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3645
+msgid "Zuul now supports a TLS secured connection to ZooKeeper."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3655
+msgid "Support for Ansible 2.6 has been removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3659
+msgid ""
+"Ansible 2.7 is now deprecated since it only receives security updates and "
+"will be end of life soon."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3664
+msgid "Zuul now defaults to Ansible 2.9 if no version is specified."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3668
+msgid ""
+"With GitHub the Zuul app now requires permissions to read/write check runs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3672
+msgid ""
+"The default behavior of the ``tools/encrypt_secret.py`` helper script is now "
+"to strip incoming input of leading and trailing whitespace. A new ``--no-"
+"strip`` option has been added to support people with secrets that contain "
+"valid leading or trailing whitespace."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3680
+msgid ""
+"Please configure your Zuul to use TLS secured connection. Running Zuul with "
+"an unsecured connection to ZooKeeper is deprecated and will be unsupported "
+"in a future release. See :attr:`zookeeper` for details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3693
+msgid ""
+"Zuul no longer adds environment variables starting with the ``ZUUL_`` prefix "
+"to ansibles environment which could result in secrets being exposed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3704
+msgid ""
+"In some cases (such as when an older version of kubectl is present on the "
+"executor, or the kubectl on the executor is from OpenShift), streaming logs "
+"from Kubernetes or OpenShift pods did not work. The log streaming system has "
+"been corrected to work with a wider range of kubectl versions and error "
+"logging has been improved."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3714
+msgid "3.18.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3723
+msgid ""
+"The Github driver can now report file comments via Github checks API. If a "
+"github reporter is configured to use the checks API, file comments provided "
+"via ``zuul_return`` will automatically be reported to the pull request in "
+"Github."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3739
+msgid ""
+"Kubectl and socat must now be installed on Zuul executors if using "
+"Kubernetes or OpenShift `pod` resources from Nodepool.  Additionally, "
+"Nodepool version 3.12.0 or later is required, and the \"start-zuul-console\" "
+"role from zuul-jobs should be run in the pre-playbook of your base job."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3753
+msgid ""
+"Running the zuul processes with the -d switch to enforce running in "
+"foreground is now deprecated. Switch to use -f instead for this purpose. The "
+"-d switch will change to just enable debug logging in the future."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3765
+msgid ""
+"The add_host host-vars blacklist is no longer effective for trusted playbook."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3776
+msgid ""
+"Previously, no output from shell or command tasks on pods was placed in the "
+"job output; that has been corrected and streaming output is now available."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3784
+msgid "3.17.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3793
+msgid ""
+"The Github driver now has a basic support for the Github checks API. To "
+"enable reporting build results via the checks API one can configure the the "
+"new :attr:`pipeline.<reporter>.<github source>.check` attribute on the "
+"Github reporter. It's also possible to trigger on a requested or completed :"
+"value:`pipeline.trigger.<github source>.event.check_run`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3799
+msgid ""
+"To be able to use the checks API, zuul must be authenticated as Github app. "
+"For more information about the necessary requirements, please see the :ref:"
+"`github_driver` driver documentation."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3811
+msgid ""
+"The add_host module attributes that can be used to bypass localhost command "
+"execution are now also blacklisted using extra-vars to prevent abuse through "
+"untrusted host_vars."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3819
+msgid "3.16.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3828
+msgid ""
+"When using GitHub app authentication the fallback to anonymous access was "
+"broken for repositories not having installed the zuul app."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3835
+msgid "3.16.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3844
+msgid ""
+"A new tenant option :attr:`tenant.disallowed-labels` (similar to :attr:"
+"`tenant.allowed-labels`) can be used to restrict what labels a tenant has "
+"access to."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3856
+msgid ""
+"The default for `auth_type` has changed from ``digest`` to ``basic``.  "
+"Digest authentication has not been supported in Gerrit since version 2.15."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3860
+msgid ""
+"If your Zuul connects to an older version of Gerrit via HTTP authentication, "
+"you may now need to explicitly set this value."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3871
+msgid ""
+"Authentication: the JWT driver \"RS256withJWKS\" is deprecated in favor of "
+"the \"OpenIDConnect\" driver. The \"OpenIDConnect\" driver simplifies "
+"configuration for administrators and is better aligned with OIDC "
+"configuration discovery conventions."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3880
+msgid "3.15.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3889
+msgid ""
+"Files matcher has been fixed to act like irrelevant files matcher when no "
+"files are present in the tested change, i.e. it now matches such empty "
+"changes instead of rejecting them."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3897
+msgid "3.14.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3906
+msgid ""
+"Zuul now supports triggering a smart reconfiguration by using the command "
+"``zuul-scheduler smart-reconfigure``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3917
+msgid "Zuul no longer supports Ansible 2.5 for running jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3923
+msgid "3.13.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3932
+msgid "Zuul now supports Ansible 2.9 for running jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3942
+msgid ""
+"The default version of Ansible used by Zuul jobs has been changed to 2.8. "
+"See :attr:`job.ansible-version` for more information."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3947
+msgid ""
+"As a result of switching to Ansible 2.8, it is possible for the "
+"ansible_python_interpreter version of your nodeset to change to 'auto'. This "
+"could result in your jobs now running under a different version of python "
+"than prior to this release. See :ref:`ansible-and-python-3` for additional "
+"info."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3955
+msgid ""
+"Ansible 2.6 for Zuul jobs has been marked deprecated and will be removed in "
+"a future release."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3962
+msgid "3.12.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3971
+msgid ""
+"A new executor option :attr:`executor.merge_jobs` has been added to toggle "
+"global merge operations."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3982
+msgid ""
+"The Gerrit driver now has an additional option, :attr:`pipeline.reporter."
+"<gerrit reporter>.comment` which may be used to suppress reporting job "
+"results as review comments.  Due to the configuration syntax for Gerrit "
+"reporters, the word \"comment\" may no longer be used as a review label."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:3996
+msgid ""
+"The --id option to both the autohold-delete and autohold-info zuul CLI "
+"commands has been removed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4003
+msgid "3.11.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4012
+msgid ""
+"Fixed a regression where changes with a failing job with soft dependencies "
+"would remain in the queue indefinitely."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4018
+msgid "3.11.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4027
+msgid ""
+"Added the :attr:`pipeline.enqueue` reporter action so that reporters may be "
+"run when an item is enqueued into a pipeline."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4032
+msgid ""
+"Added the :attr:`pipeline.no-jobs` reporter action so that reporters may be "
+"run when an item is dequeued into a pipeline without having run any jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4038
+msgid ""
+"A new zuul CLI command, autohold-info, has been added to retrieve full "
+"details for an existing autohold request."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4043
+msgid ""
+"Autohold requests are now stored in ZooKeeper, rather than in memory. As a "
+"result of this change, a new zuul CLI command, autohold-delete has been "
+"added to remove existing requests."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4049
+msgid ""
+"New scheduler options, max_hold_expiration and default_hold_expiration, are "
+"added to control how long nodes held for an autohold request remain "
+"available. The max_hold_expiration option defaults to 0, which means the "
+"held nodes will not automatically expire, and default_hold_expiration "
+"defaults to the value of max_hold_expiration."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4063
+msgid ""
+"The Gerrit driver will now perform query actions over HTTP if an HTTP "
+"password is configured.  In this situation, the SSH connection is now only "
+"used for receiving events.  The HTTP password is not required, but it is "
+"recommended since it provides more reporting options (including line "
+"comments)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4069
+msgid "3.10.2"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4078
+msgid ""
+"The maximum starting builds depending on cpu cores can be limited using "
+"`executor.max_starting_builds` configuration."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4089
+msgid ""
+"The synchronize rsh rsync_opts is now prohibited for security reasons as it "
+"could be used to circumvent executor host command execution restrictions."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4101
+msgid ""
+"Under specific conditions Zuul could fail to properly update git repos "
+"causing it to fall back to testing master. If jobs were meant to run against "
+"commits other than current master this lead to testing the wrong commit. "
+"Zuul now correctly updates repos and should test the correct commit in all "
+"cases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4107
+msgid ""
+"Specifically this could happen if a new branch was created off a commit in "
+"an existing branch. Then the first proposed change to this new branch would "
+"be tested against master instead."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4115
+msgid "3.10.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4124
+msgid ""
+"Fixed Zuul dashboard not loading properly due to javascript dependencies "
+"missing."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4130
+msgid "3.10.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4139
+msgid ""
+"Allow users to perform tenant-scoped, privileged actions either through zuul-"
+"web's REST API or zuul's client, based on the JWT standard. The users need a "
+"valid bearer token to perform such actions; the scope is set by matching "
+"conditions on tokens' claims; these conditions can be defined in zuul's "
+"tenant configuration file. Zuul supports token signing and validation using "
+"the HS256 or RS256 algorithms. External JWKS are also supported for token "
+"validation only. Current tenant-scoped actions are \"autohold\", \"enqueue\" "
+"and \"dequeue\"."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4150
+msgid ""
+"Config projects may now add any job to any project's pipelines, regardless "
+"of the setting of allowed-projets (including the implicit setting of allowed-"
+"projects on jobs with secrets in untrusted projects)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4157
+msgid ""
+"It is now possible to select the merge method GitHub uses to merge a Pull "
+"Request to the base branch."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4162
+msgid ""
+"A new option, :attr:`tenant.untrusted-projects.<project>.extra-config-paths` "
+"has been added to allow an admin to indicate that Zuul should load extra "
+"configuration data from a specific project in a tenant."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4167
+msgid ""
+"This feature may be useful to allow a project that primarily holds shared "
+"jobs or roles to include additional in-repo configuration for its own "
+"testing (which may not be relevant to other users of the project)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4174
+msgid "The merge-mode ``squash-merge`` is now supported for Github."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4178
+msgid ""
+"The :attr:`job.cleanup-run` attribute has been added to enable a new cleanup "
+"phase to be performed after a job execution."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4183
+msgid "Support for the Pagure code review system has been added."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4187
+msgid ""
+"Pipelines may now indicate that they supercede other pipelines with the :"
+"attr:`pipeline.supercedes` attribute."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4190
+msgid ""
+"When a change is enqueued in a pipeline which supercedes others, it will be "
+"removed from the other pipelines.  For example, a :term:`gate` pipeline may "
+"supercede a :term:`check` pipeline so that test resources are not spent "
+"running near-duplicate jobs simultaneously."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4204
+msgid ""
+"If unprotected branches are excluded on a project they now also get filtered "
+"out from jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4209
+msgid ""
+"The default value for the :attr:`executor.job_dir` configuration setting has "
+"been changed from ``/tmp`` to ``/var/lib/zuul/builds``.  It is important "
+"for :attr:`executor.job_dir` and :attr:`executor.git_dir` to be located on "
+"the same filesystem, so this change increases the chances that they end up "
+"on the same filesystem in most default configurations."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4216
+msgid ""
+"The ``builds`` subdirectory will be created if it does not exist, however, "
+"``/var/lib/zuul`` at least must exist and be writable by the Zuul user."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4222
+msgid ""
+"Jobs with file matchers will now automatically match if the configuration of "
+"the job is changed.  This means that the Zuul configuration file no longer "
+"needs to be included in the list of files to match in order for changes to "
+"job configuration to be self-testing."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4227
+msgid ""
+"To keep the old behavior, set :attr:`job.match-on-config-updates` to "
+"``False``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4234
+msgid "3.9.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4243
+msgid "Zuul now supports ansible 2.8 for running jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4247
+msgid ""
+"Zuul now supports :attr:`project.<pipeline>.fail-fast` to immediately report "
+"and cancel builds on the first failure in a buildset."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4252
+msgid ""
+"Zuul now reports resource usage statistics if they are provided by nodepool."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4254
+msgid "The following statistics are emitted:"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4256
+msgid ""
+"`zuul.nodepool.resources.tenant.{tenant}.{resource}`: Gauge with the "
+"currently used resources by tenant and counter with the summed usage by "
+"tenant. e.g. cpu seconds"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4260
+msgid ""
+"`zuul.nodepool.resources.project.{project}.{resource}`: Gauge with the "
+"currently used resources by project and counter with the summed usage by "
+"project. e.g. cpu seconds"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4268
+msgid "3.8.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4277
+msgid "Fixed a memory leak introduced in 3.8.0."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4283
+msgid "3.8.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4292
+msgid ""
+"The :ref:`artifacts <return_artifacts>` returned by parent jobs are now also "
+"available in child jobs of the same buildset."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4303
+msgid ""
+"Fixed a bug where config (trusted) layout updates could be used pre-merge as "
+"a dynamically loaded layout. This could happen if Zuul was running with "
+"config errors that originated from outside of the config (trusted) repo. A "
+"logic error allowed code to fall through and return the trusted layout in "
+"this case."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4309
+msgid "Users should upgrade."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4319
+msgid ""
+"Jobs which use the :attr:`job.requires` attribute and fail to have their "
+"requirements met are now recorded as \"FAILED\" rather than \"SKIPPED\".  "
+"This can happen if an earlier job which is expected to produce artifacts "
+"fails to do so due to an error."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4328
+msgid "3.7.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4337
+msgid "When using Ansible 2.7 the uri module crashed with a module failure."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4341
+msgid "The :attr:`scheduler.default_ansible_version` has been ignored."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4347
+msgid "3.7.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4356
+msgid ""
+"The ansible_python_interpreter variable is now whitelisted for the add_host "
+"task."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4361
+msgid "Zuul now supports ansible 2.6 for running jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4365
+msgid "Zuul now supports ansible 2.7 for running jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4369
+msgid ""
+"Jobs may now specify which ansible version is used to run them. The ansible "
+"version to use can now be specified by :attr:`job.ansible-version`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4381
+msgid ""
+"The default ansible version is now 2.7. In case this breaks any jobs this "
+"can be overridden in :attr:`job.ansible-version`, :attr:`tenant.default-"
+"ansible-version` or :attr:`scheduler.default_ansible_version`"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4388
+msgid ""
+"The ``user`` value in the ``[fingergw]`` configuration section previously "
+"defaulted to ``zuul``, but now is unset by default, which will cause "
+"fingergw not to drop privileges.  It is recommended that this value be "
+"explicitly set to an unprivileged user."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4392
+msgid ""
+"In order to support several ansible versions installed simultaneously Zuul "
+"now handles them itself in virtual environments. By default Zuul installs "
+"the needed ansible versions on startup so there is no further user action "
+"required. However it is recommended to pre-install the ansible environments "
+"during installation by invoking ``zuul-manage-ansible``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4401
+msgid ""
+"The ``hosts`` value in the ``[zookeeper]`` configuration section previously "
+"defaulted to ``localhost:2181``, but now is unset by default.  This value is "
+"required and must be explicitly set (and the documentation has always "
+"indicated this)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4407
+msgid "3.6.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4416
+msgid ""
+"The raw module had not been blocked for local tasks. This could be used to "
+"bypass protection and execute commands on the executor."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4423
+msgid "3.6.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4432
+msgid ""
+"Artifacts may now include a metadata field for storing arbitrary metadata "
+"about the artifacts in the SQL database."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4436
+msgid ""
+"The :attr:`job.run` attribute now supports a single or list of playbooks."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4440
+msgid ""
+"Support for expressing artifact or other resource dependencies between jobs "
+"running on different changes with a dependency relationship (e.g., a "
+"container image built in one project and consumed in a second project) has "
+"been added via the :attr:`job.provides` and :attr:`job.requires` job "
+"attributes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4444
+msgid ""
+"The :attr:`job.dependencies` attribute may now be used to express \"soft\" "
+"dependencies -- that is, to indicate a job should run after another "
+"completes, but only if it runs at all.  For example, a deployment job which "
+"should always run, but depends on a build job which only runs if the source "
+"code is changed."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4454
+msgid ""
+"Service Workers are now disabled by default in the Javascript dashboard. "
+"Deployers who wish to enable them need to set "
+"``REACT_APP_ENABLE_SERVICE_WORKER``"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4460
+msgid ""
+"Zuul recently added the job variable :var:`zuul.message`. This can contain "
+"jinja tags which can cause problems accessing the zuul variable in the job. "
+"Because of this the message is now base64 encoded and any job evaluating "
+"this variable needs to be changed from ``{{ zuul.message }}`` to ``{{ zuul."
+"message | b64decode }}``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4470
+msgid "3.5.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4479
+msgid ""
+"The :attr:`executor.min_avail_mem` setting now takes cgroup limits into "
+"account. There is also a new metric `zuul.executor.<executor>."
+"pct_used_ram_cgroup` available."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4485
+msgid ""
+"The :attr:`job.secrets.pass-to-parent` attribute has been added to allow "
+"secrets to be made available to playbooks in parent jobs (for example, to "
+"allow for jobs which are designed to use secrets, but leave it to child jobs "
+"to actually supply them).  See also the :ref:`secret` documentation."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4493
+msgid "The restriction on using ``known_hosts`` in playbooks has been lifted."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4497
+msgid ""
+"The executors emit a new timer :stat:`zuul.executor.<executor>."
+"starting_builds` with the time jobs spent during starting."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4509
+msgid ""
+"The zuul_return module has been converted to an Ansible action plugin. Job "
+"playbooks no longer need to use delegate_to or a localhost only play with "
+"this module as action plugin by default run on localhost."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4521
+msgid ""
+"Jobs with secrets in untrusted projects now automatically set `allowed-"
+"projects`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4524
+msgid ""
+"It is possible to circumvent the use of `allowed-projects` in untrusted "
+"projects by creating a change which `Depends-On` a change which alters a "
+"project definition.  This behavior may be unexpected, so documentation has "
+"been updated with warnings to avoid relying on it in sensitive cases."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4530
+msgid ""
+"It may have been possible to expose a secret, or use resources protected by "
+"a secret, if a job using a secret was defined in an untrusted project on a "
+"system with an independent pre-merge post-review pipeline -- that is, a "
+"pipeline with `post-review` set to true, `manager` set to `independent`, and "
+"which operated on changes before they merged."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4537
+msgid ""
+"To prevent disclosure or use in this situation, `allowed-projects` is now "
+"automatically set to the current project when a secret is used in a job "
+"defined in an untrusted project, and it can not be overridden."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4550
+msgid ""
+"Untrusted playbooks no longer see 'Adding hosts ssh with ansible_user to the "
+"inventory is prohibited' when using the add_host Ansible task on localhost."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4556
+msgid ""
+"Fixed an issue where a trailing slash on the baseurl of a git driver "
+"connection config could cause an indefinite job hang."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4563
+msgid "3.4.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4572
+msgid ""
+"Jobs may now return artifact URLs and they will be stored in the SQL "
+"database (if configured).  See :ref:`return_artifacts` for usage."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4578
+msgid ""
+"One or more zuul executors can now be added to a :attr:`executor.zone`. This "
+"is helpful if a cloud does not have any public IP addresses for nodepool "
+"nodes. Now you'll be able to have a zuul executor on the same private "
+"network as your nodepool nodes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4585
+msgid ""
+"The Ansible inventory file now includes nodepool.host_id variable if the "
+"node was launched using the OpenStack Nodepool driver."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4590
+msgid ""
+"A new scheduler option, :attr:`scheduler.relative_priority`, can be used to "
+"instruct Nodepool to fulfull requests from less-busy projects more quickly."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4602
+msgid ""
+"The `zuul.nodepool` statistics have been moved under `zuul.nodepool."
+"requests` to allow sub-stats to work correctly. For example `zuul.nodepool."
+"requested` has become `zuul.nodepool.requests.requested.total`.  The "
+"previously missing `label` and `size` counters are now available at `zuul."
+"nodepool.requests.<state>.<size|label>`.  For more info see the monitoring "
+"documentation."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4612
+msgid ""
+"The zuul-web service now requires access to ZooKeeper, as a result you may "
+"need to update your firewall allow access from the service. Additionally, "
+"zuul.conf should now contain a :attr:`zookeeper` configuration section."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4620
+msgid "3.3.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4629
+msgid ""
+"New tenant options :attr:`tenant.allowed-triggers` and :attr:`tenant.allowed-"
+"reporters` can be used to restrict what connections a tenant has access to."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4635
+msgid ""
+"A new tenant option :attr:`tenant.allowed-labels` can be used to restrict "
+"what labels a tenant has access to."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4640
+msgid ""
+"A job using a semaphore now can configure if it should acquire the it before "
+"requesting resources or just before running."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4651
+msgid ""
+"The acquiring behavior of jobs with semaphores has been changed. Up to now a "
+"job requested resources and aquired the semaphore just before it started to "
+"run. However this could lead to a high amount of resource waste. Instead "
+"jobs now acquire the semaphore before requesting the resources by default. "
+"This behavior can be overridden by jobs using job.semaphores.resources-first "
+"if some waste of resources is acceptable."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4667
+msgid ""
+"The add_host module options are restricted to a hostname, port, user and "
+"password. Previously, malicious options could be used to bypass protection "
+"and execute tasks on the executor. Only ssh and kubectl connection are "
+"authorized."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4680
+msgid ""
+"Jobs that encountered unreachable nodes are now correctly detected and "
+"retried."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4687
+msgid "3.3.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4696
+msgid ""
+"A local project key file URI (eg. ``file:///path/to/key.pub``) is now "
+"supported by the encrypt_secret.py tool. This allows encrypting secrets "
+"without directly accessing the Zuul web API to retrieve the project key."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4700
+msgid ""
+"Zuul now supports triggering a full reconfiguration by using the command "
+"``zuul-scheduler full-reconfigure``."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4705
+msgid ""
+"The Gerrit driver can now (optionally) report via HTTP instead of SSH.  In "
+"the future, this will be used to report file and line comments (the SSH API "
+"only supports review messages)."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4709
+msgid ""
+"Zuul now supports leaving file comments, though currently only when using "
+"the Gerrit driver.  See the documentation for ``zuul_return`` for details."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4714
+msgid ""
+"A job now can pause itself using :ref:`return_values` and let the child jobs "
+"run until they are finished. This can be used to serve some service which "
+"can be used by the child jobs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4720
+msgid ""
+"An SSH keypair is now generated for every project and may be used in post-"
+"review jobs to access systems which trust that project."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4725
+msgid ""
+"GitHub :attr:`<github connection>.rate_limit_logging` now can be configured. "
+"If disabled this can save some network round trip times. This can be "
+"configured per connection."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4731
+msgid "The Zuul web dashboard has been rewritten in React."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4735
+msgid "The restriction on using ``add_host`` in playbooks has been lifted."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4739
+msgid ""
+"A new Build page in the web interface enable displaying a single Build "
+"information."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4744
+msgid ""
+"A new Notification Drawer and a ConfigErrors page in the web interface "
+"enable displaying the config-errors endpoint data."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4749
+msgid ""
+"A new Job page in the web interface enable browsing through job "
+"configuration."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4754
+msgid ""
+"Client certificate locations to be used by winrm connections can be "
+"configured now."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4765
+msgid ""
+"The Zuul web dashboard is now a single index.html and static offload server "
+"needs new rewrite rules. Check the install instruction for backward "
+"compatible rewrite rules. Note that serving the web dashboard from a sub-"
+"directory requires the application to be rebuilt using the desired homepage "
+"location."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4779
+msgid ""
+"Signal based triggering of a full reconfiguration via sending `SIGHUP` to "
+"the zuul-scheduler PID is deprecated. Use the command ``zuul-scheduler full-"
+"reconfigure`` now."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4787
+msgid "3.2.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4796
+msgid ""
+"Zuul client got a new command 'tenant-conf-check'. This command validates "
+"the schema of the tenant configuration and exits -1 if errors have been "
+"detected."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4801
+msgid ""
+"A new Ansible inventory variable :var:`zuul.child_jobs` which is a list of "
+"the first level child jobs to be run after a job has finished successfully."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4807
+msgid ""
+"Jobs are now able to use the :attr:`job.extra-vars` which will use the --"
+"extra-vars flag when a job runs."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4812
+msgid ""
+"Project and project-templates may now create variables via a ``vars`` "
+"configuration entry.  Jobs can access these at runtime in the same manner as "
+"job variables."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4816
+msgid ""
+"The :value:`pipeline.manager.supercedent` pipeline manager has been added.  "
+"It is designed to make post-merge artifact build pipelines more efficient."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4822
+msgid ""
+"The `dequeue` command has been added to the Zuul CLI. It allows operators to "
+"stop a given buildset at will."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4827
+msgid ""
+"It is now possible to use zuul_return to skip child jobs. You can use the :"
+"var:`zuul.child_jobs` inventory variable to get a list of child jobs "
+"configured to run, then use zuul_return to modify the list.  Any child job "
+"not in zuul_return zuul.child_jobs will be skipped. See :ref:`return_values` "
+"for examples."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4841
+msgid ""
+"Project Templates are now branch-aware and behave more like project "
+"stanzas.  If a template is defined on a branch, it will only apply to "
+"changes to that branch."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4847
+msgid ""
+"The timer trigger does not enqueue an event for every branch of every "
+"project anymore and it now only processes projects actually using the "
+"pipeline triggered by a timer."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4855
+msgid "3.1.0"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4864
+msgid ""
+"The GitHub driver can determine the required status checks of pull requests "
+"which are needed for entering a gate pipeline. This eliminates the need to "
+"hard code required status checks in the gate pipeline and makes "
+"interoperation with other GitHub apps much more flexible."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4871
+msgid ""
+"Zuul is now ables to start with an invalid configuration. When reading "
+"configuration files from project repositories, if an issue is detected, Zuul "
+"will store the issue and skip the broken block of configuration. Issues are "
+"then reported in the scheduler log at the end of the configuration phase."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4879
+msgid ""
+"A :attr:`<mqtt connection>` driver is added to feature build report over "
+"MQTT message."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4883
+msgid ""
+"The GitHub driver now supports the :attr:`pipeline.require.<github source>."
+"merged` requirement."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4888
+msgid ""
+"The json log now also contains the role name and the uuid similar to the "
+"task entry."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4899
+msgid ""
+"Files (and irrelevant-files) matchers are now overridable.  Zuul now uses "
+"only branch matchers to collect job variants.  Once those variants are "
+"collected, they are combined, and the files and irrelevant-files attributes "
+"are inherited and overridden as any other job attribute.  The final values "
+"are used to determine whether the job should ultimately run."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4908
+msgid "Zuul now uses Ansible 2.5."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4918
+msgid ""
+"Tobias Henkel (BMW Car IT GmbH) discovered a vulnerability which is fixed in "
+"this release. If nodes become offline during the build, the no_log attribute "
+"of a task is ignored. If the unreachable error occurred in a task used with "
+"a loop variable (e.g., with_items), the contents of the loop items would be "
+"printed in the console. This could lead to accidentally leaking credentials "
+"or secrets. MITRE has assigned CVE-2018-12557 to this vulnerability."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4935
+msgid ""
+"Untrusted playbooks no longer see 'Executing local code is prohibited' when "
+"using the zuul_return Ansible task."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4942
+msgid "3.0.3"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4951
+msgid ""
+"The :attr:`project.default-branch` option is now documented.  It has been "
+"supported since version 3.0.0, but was omitted from the documentation."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4956
+msgid ""
+"Project stanzas now support regex matching of :attr:`project.name`. This can "
+"be used to apply project pipelines to many projects at once."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4967
+msgid ""
+"The ``merge-mode`` and ``default-branch`` attributes may no longer appear in "
+"a :ref:`project-template` stanza."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4978
+msgid ""
+"Configuration loading for dynamic configuration changes (i.e., changes to "
+"``zuul.yaml`` files) is now significantly more CPU and memory efficient, "
+"incurring only a slight penalty compared to normal changes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4987
+msgid "3.0.2"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:4996
+msgid ""
+"The GitHub trigger status filter :value:`pipeline.trigger.<github source>."
+"action.status` and pipeline requirements :attr:`pipeline.require.<github "
+"source>.status` now support regular expression matching."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5009
+msgid ""
+"The ``fb-re2`` python library is added as a dependency; this may required "
+"the installation of the ``re2`` library and header files in order to build."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5015
+msgid ""
+"The build start and end times are now stored as UTC in the database. Since "
+"there is no localization done on zuul web side, the zuul api also exposes "
+"these times as UTC now."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5027
+msgid ""
+"Story 2001441 is fixed. Failure by one Zuul reporter will not short circuit "
+"the reporting of other reporters. This ensures as much information as "
+"possible is reported for each change even if some failures occur. Note that "
+"the build set status is changed to 'ERROR' after the first failed reporter."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5035
+msgid ""
+"The zuul-changes.py script has been adapted to the new zuul-web api routes."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5041
+msgid "3.0.1"
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5050
+msgid ""
+"Git repositories will have a ``origin`` remote with refs pointing to the "
+"previous change in the speculative state."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5053
+msgid ""
+"This allows jobs to determine the commits that are part of a change, which "
+"was not possible before. The remote URL is set to a bogus value which won't "
+"work with git commands that need to talk to the remote repository."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5059
+msgid ""
+"PostgreSQL is now officially supported as database backend. See ``sql "
+"connection`` on how to configure database connections."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5064
+msgid ""
+"A new option for the scheduler :attr:`scheduler.tenant_config_script` can be "
+"used to tell Zuul to execute a script and read its yaml output as the "
+"tenants configuration. The option is exclusive with the :attr:`scheduler."
+"tenant_config` option."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5078
+msgid ""
+"The alembic version table is fixed to being prefixed too. This is necessary "
+"when using ``table_prefix``. However if you are already using "
+"``table_prefix`` you will need to rename the table ``alembic_version`` to "
+"``<prefix>alembic_version`` before starting Zuul. Otherwise zuul will try to "
+"create the tables again and fail. If you're not using ``table_prefix`` you "
+"can safely ignore this."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5093
+msgid "Zuul role repository checkouts now honor :attr:`job.override-checkout`."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5095
+msgid ""
+"Previously, when a Zuul role was specified for a job, Zuul would usually "
+"checkout the master branch, unless that repository appeared in the "
+"dependency chain for a patch.  It will now follow the usual procedure for "
+"determining the branch to check out, including honoring :attr:`job.override-"
+"checkout` options."
+msgstr ""
+
+#: ../../<reno.sphinxext current branch>:5101
+msgid ""
+"This may alter the behavior of currently existing jobs.  Depending on "
+"circumstances, you may need to set :attr:`job.override-checkout` or copy "
+"roles to other branches of projects."
+msgstr ""

@@ -1,0 +1,68 @@
+# Korean translations for Zuul package.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 01:27+0900\n"
+"PO-Revision-Date: 2026-02-12 01:27+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/tracing.rst:6
+msgid "Tracing"
+msgstr ""
+
+#: ../../source/tracing.rst:8
+msgid ""
+"Zuul includes support for `distributed tracing`_ as described by the "
+"OpenTelemetry project.  This allows operators (and potentially users) to "
+"visualize the progress of events and queue items through the various Zuul "
+"components as an aid to debugging."
+msgstr ""
+
+#: ../../source/tracing.rst:13
+msgid ""
+"OpenTelemetry defines several observability signals such as traces, metrics, "
+"and logs.  Zuul uses other systems for metrics and logs; only traces are "
+"exported via OpenTelemetry."
+msgstr ""
+
+#: ../../source/tracing.rst:17
+msgid ""
+"Zuul supports the OpenTelemetry Protocol (OTLP) for exporting traces. Many "
+"observability systems support receiving traces via OTLP (including Jaeger "
+"tracing)."
+msgstr ""
+
+#: ../../source/tracing.rst:22
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/tracing.rst:24
+msgid ""
+"Related configuration is in the :attr:`tracing` section of ``zuul.conf``."
+msgstr ""
+
+#: ../../source/tracing.rst:27
+msgid "Tutorial"
+msgstr ""
+
+#: ../../source/tracing.rst:29
+msgid ""
+"Here is a tutorial that shows how to enable tracing with Zuul and Jaeger."
+msgstr ""
+
+#: ../../source/tracing.rst:36
+msgid ""
+"_`distributed tracing`: https://opentelemetry.io/docs/concepts/observability-"
+"primer/#distributed-traces"
+msgstr ""

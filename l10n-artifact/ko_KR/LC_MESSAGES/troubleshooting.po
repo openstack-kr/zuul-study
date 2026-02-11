@@ -1,0 +1,50 @@
+# Korean translations for Zuul package.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 01:27+0900\n"
+"PO-Revision-Date: 2026-02-12 01:27+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/troubleshooting.rst:2
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/troubleshooting.rst:4
+msgid ""
+"In addition to inspecting :ref:`service debug logs <operation>`, some "
+"advanced troubleshooting options are provided below.  These are generally "
+"very low-level and are not normally required."
+msgstr ""
+
+#: ../../source/troubleshooting.rst:9
+msgid "Thread Dumps and Profiling"
+msgstr ""
+
+#: ../../source/troubleshooting.rst:11
+msgid ""
+"If you send a SIGUSR2 to one of the daemon processes, it will dump a stack "
+"trace for each running thread into its debug log. It is written under the "
+"log bucket ``zuul.stack_dump``.  This is useful for tracking down deadlock "
+"or otherwise slow threads::"
+msgstr ""
+
+#: ../../source/troubleshooting.rst:19
+msgid ""
+"When `yappi <https://code.google.com/p/yappi/>`_ (Yet Another Python "
+"Profiler) is available, additional functions' and threads' stats are emitted "
+"as well. The first SIGUSR2 will enable yappi, on the second SIGUSR2 it dumps "
+"the information collected, resets all yappi state and stops profiling. This "
+"is to minimize the impact of yappi on a running system."
+msgstr ""

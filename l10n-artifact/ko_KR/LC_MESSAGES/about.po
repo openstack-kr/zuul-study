@@ -1,0 +1,99 @@
+# Korean translations for Zuul package.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 01:27+0900\n"
+"PO-Revision-Date: 2026-02-12 01:27+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/about.rst:6
+msgid "About Zuul"
+msgstr ""
+
+#: ../../source/about.rst:8
+msgid ""
+"Zuul is a Project Gating System.  That's like a CI or CD system, but the "
+"focus is on testing the future state of code repositories."
+msgstr ""
+
+#: ../../source/about.rst:11
+msgid ""
+"A gating system doesn't just test a proposed change; it tests the proposed "
+"future state of multiple branches and repositories with any number of in-"
+"flight changes and their dependencies.  And the same playbooks used to test "
+"software can also be used to deploy it."
+msgstr ""
+
+#: ../../source/about.rst:16
+msgid ""
+"Zuul itself is a service which listens to events from various code review "
+"systems, executes jobs based on those events, and reports the results back "
+"to the code review system.  The primary interface for Zuul is the code "
+"review system (or systems) so that it fits seamlessly into developer "
+"workflows, and a web interface is available for inspecting the current "
+"status and browsing build results."
+msgstr ""
+
+#: ../../source/about.rst:23
+msgid ""
+"The best way to run Zuul is with a single installation serving as many "
+"projects or groups as possible.  It is a multi-tenant application that is "
+"able to provide as much or as little separation between projects as desired."
+msgstr ""
+
+#: ../../source/about.rst:28
+msgid ""
+"Zuul works with a wide range of code review systems, and can work with "
+"multiple systems (including integrating projects on different systems) "
+"simultaneously.  See :ref:`drivers` for a complete list."
+msgstr ""
+
+#: ../../source/about.rst:32
+msgid ""
+"Previous versions of Zuul required a separate component called `Nodepool`_ "
+"to provide the resources to run jobs.  Nodepool works with several cloud "
+"providers as well as statically defined nodes (again, simultaneously).  "
+"Nodepool's functionality is now incorporated into Zuul."
+msgstr ""
+
+#: ../../source/about.rst:38
+msgid ""
+"Because Zuul is designed from the ground up to run jobs in a multi-node "
+"environment (whether those nodes are bare metal machines, VMs, Kubernetes "
+"clusters, or containers), Zuul's job definition language needs to support "
+"orchestrating tasks on multiple nodes.  Zuul uses Ansible for this.  Ansible "
+"is well-known and easy to learn and use.  Some existing Ansible playbooks "
+"and roles may be able to be used directly with Zuul (but some restrictions "
+"apply, so not all will)."
+msgstr ""
+
+#: ../../source/about.rst:46
+msgid ""
+"However, knowledge or use of Ansible is not required for Zuul -- it is quite "
+"simple for Zuul's embedded Ansible to run any shell script or any other "
+"program.  Zuul's library of standard jobs even includes a job that will run "
+"a specified shell script, so it's possible to use Zuul without writing any "
+"Ansible at all."
+msgstr ""
+
+#: ../../source/about.rst:52
+msgid ""
+"Zuul is an open source project developed and maintained by a community of "
+"users.  We welcome your `support and contribution <https://zuul-ci.org/"
+"community.html>`__."
+msgstr ""
+
+#: ../../source/about.rst:62
+msgid "_`Nodepool`: https://zuul-ci.org/docs/nodepool/"
+msgstr ""

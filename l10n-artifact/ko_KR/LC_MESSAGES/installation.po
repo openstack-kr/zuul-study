@@ -1,0 +1,276 @@
+# Korean translations for Zuul package.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 01:27+0900\n"
+"PO-Revision-Date: 2026-02-12 01:27+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/installation.rst:2
+msgid "Installation"
+msgstr ""
+
+#: ../../source/installation.rst:5
+msgid "External Dependencies"
+msgstr ""
+
+#: ../../source/installation.rst:7
+msgid "Zuul interacts with several other systems described below."
+msgstr ""
+
+#: ../../source/installation.rst:10
+msgid "Nodepool"
+msgstr ""
+
+#: ../../source/installation.rst:12
+msgid ""
+"In order to run all but the simplest jobs, Zuul uses a companion program "
+"`Nodepool <https://opendev.org/zuul/nodepool>`__ to supply the nodes "
+"(whether dynamic cloud instances or static hardware) used by jobs.  Before "
+"starting Zuul, ensure you have Nodepool installed and any images you require "
+"built."
+msgstr ""
+
+#: ../../source/installation.rst:18
+msgid ""
+"Zuul must be able to log into the nodes provisioned by Nodepool with a given "
+"username and SSH private key.  Executors should also be able to talk to "
+"nodes on TCP port 19885 for log streaming; see :ref:"
+"`nodepool_console_streaming`."
+msgstr ""
+
+#: ../../source/installation.rst:24
+msgid "ZooKeeper"
+msgstr ""
+
+#: ../../source/installation.rst:28
+msgid ""
+"Zuul and Nodepool use ZooKeeper to communicate internally among their "
+"components, and also to communicate with each other.  You can run a simple "
+"single-node ZooKeeper instance, or a multi-node cluster. Ensure that all "
+"Zuul and Nodepool hosts have access to the cluster."
+msgstr ""
+
+#: ../../source/installation.rst:33
+msgid ""
+"Zuul stores all possible state within ZooKeeper so that it can be "
+"effectively shared and coordinated between instances of its component "
+"services. Most of this is ephemeral and can be recreated or is of low value "
+"if lost, but a clustered deployment will provide improved continuity and "
+"resilience in the event of an incident adversely impacting a ZooKeeper "
+"server."
+msgstr ""
+
+#: ../../source/installation.rst:40
+msgid ""
+"Zuul's keystore (project-specific keys for asymmetric encryption of job "
+"secrets and SSH access) is also stored in ZooKeeper, and unlike the other "
+"data it **cannot be recreated** if lost. As such, periodic :ref:`export and "
+"backup <backup>` of these keys is strongly recommended."
+msgstr ""
+
+#: ../../source/installation.rst:49
+msgid "Executor Deployment"
+msgstr ""
+
+#: ../../source/installation.rst:51
+msgid ""
+"The Zuul executor requires Ansible to run jobs.  There are two approaches "
+"that can be used to install Ansible for Zuul."
+msgstr ""
+
+#: ../../source/installation.rst:54
+msgid ""
+"First you may set ``manage_ansible`` to True in the executor config. If you "
+"do this Zuul will install all supported Ansible versions on zuul-executor "
+"startup. These installations end up in Zuul's state dir, ``/var/lib/zuul/"
+"ansible-bin`` if unchanged."
+msgstr ""
+
+#: ../../source/installation.rst:59
+msgid ""
+"The second option is to use ``zuul-manage-ansible`` to install the supported "
+"Ansible versions. By default this will install Ansible to "
+"``zuul_install_prefix/lib/zuul/ansible``. This method is preferable to the "
+"first because it speeds up zuul-executor start time and allows you to "
+"preinstall ansible in containers (avoids problems with bind mounted zuul "
+"state dirs)."
+msgstr ""
+
+#: ../../source/installation.rst:68
+msgid ""
+"In both cases if using a non default path you will want to set "
+"``ansible_root`` in the executor config file."
+msgstr ""
+
+#: ../../source/installation.rst:74
+msgid "Web Deployment"
+msgstr ""
+
+#: ../../source/installation.rst:76
+msgid ""
+"The ``zuul-web`` service provides a web dashboard, a REST API and a "
+"websocket log streaming service as a single holistic web application. For "
+"production use it is recommended to run it behind a reverse proxy, such as "
+"Apache or Nginx."
+msgstr ""
+
+#: ../../source/installation.rst:80
+msgid ""
+"The ``zuul-web`` service is entirely self-contained and can be run with "
+"minimal configuration, however, more advanced users may desire to do one or "
+"more of the following:"
+msgstr ""
+
+#: ../../source/installation.rst:84
+msgid "White Label"
+msgstr ""
+
+#: ../../source/installation.rst:85
+msgid ""
+"Serve the dashboard of an individual tenant at the root of its own domain. "
+"https://zuul.openstack.org is an example of a Zuul dashboard that has been "
+"white labeled for the ``openstack`` tenant of its Zuul."
+msgstr ""
+
+#: ../../source/installation.rst:89 ../../source/installation.rst:126
+msgid "Static Offload"
+msgstr ""
+
+#: ../../source/installation.rst:90
+msgid ""
+"Shift the duties of serving static files, such as HTML, Javascript, CSS or "
+"images to the reverse proxy server."
+msgstr ""
+
+#: ../../source/installation.rst:93 ../../source/installation.rst:232
+msgid "Static External"
+msgstr ""
+
+#: ../../source/installation.rst:94
+msgid ""
+"Serve the static files from a completely separate location that does not "
+"support programmatic rewrite rules such as a Swift Object Store."
+msgstr ""
+
+#: ../../source/installation.rst:97
+msgid "Sub-URL"
+msgstr ""
+
+#: ../../source/installation.rst:98
+msgid ""
+"Serve a Zuul dashboard from a location below the root URL as part of "
+"presenting integration with other application. https://softwarefactory-"
+"project.io/zuul/ is an example of a Zuul dashboard that is being served from "
+"a Sub-URL."
+msgstr ""
+
+#: ../../source/installation.rst:103
+msgid ""
+"Most deployments shouldn't need these, so the following discussion will "
+"assume that the ``zuul-web`` service is exposed via a reverse proxy. Where "
+"rewrite rule examples are given, they will be given with Apache syntax, but "
+"any other reverse proxy should work just fine."
+msgstr ""
+
+#: ../../source/installation.rst:109
+msgid "Reverse Proxy"
+msgstr ""
+
+#: ../../source/installation.rst:111
+msgid ""
+"Using Apache as the reverse proxy requires the ``mod_proxy``, "
+"``mod_proxy_http`` and ``mod_proxy_wstunnel`` modules to be installed and "
+"enabled."
+msgstr ""
+
+#: ../../source/installation.rst:115
+msgid ""
+"All of the cases require a rewrite rule for the websocket streaming, so the "
+"simplest reverse-proxy case is::"
+msgstr ""
+
+#: ../../source/installation.rst:122
+msgid ""
+"This is the recommended configuration unless one of the following features "
+"is required."
+msgstr ""
+
+#: ../../source/installation.rst:128
+msgid ""
+"To have the reverse proxy serve the static html/javascript assets instead of "
+"proxying them to the REST layer, enable the ``mod_rewrite`` Apache module, "
+"register the location where you unpacked the web application as the document "
+"root and add rewrite rules::"
+msgstr ""
+
+#: ../../source/installation.rst:154
+msgid "Sub directory serving"
+msgstr ""
+
+#: ../../source/installation.rst:156
+msgid ""
+"The web application needs to be rebuilt to update the internal location of "
+"the static files. Set the environment variable `PUBLIC_URL` to an absolute "
+"path when building. For example, to deploy the web interface through a `/"
+"zuul` sub directory:"
+msgstr ""
+
+#: ../../source/installation.rst:163
+msgid ""
+"The web dashboard source code and package.json are located in the ``web`` "
+"directory. All the yarn commands need to be executed from the ``web`` "
+"directory."
+msgstr ""
+
+#: ../../source/installation.rst:171
+msgid ""
+"Then assuming the web application is unpacked in /usr/share/zuul, enable the "
+"``mod_rewrite`` Apache module and add the following rewrite rules::"
+msgstr ""
+
+#: ../../source/installation.rst:196
+msgid "White Labeled Tenant"
+msgstr ""
+
+#: ../../source/installation.rst:198
+msgid ""
+"Running a white-labeled tenant is similar to the offload case, but adds a "
+"rule to ensure connection webhooks don't try to get put into the tenant "
+"scope."
+msgstr ""
+
+#: ../../source/installation.rst:203
+msgid ""
+"It's possible to do white-labeling without static offload, but it is more "
+"complex with no benefit."
+msgstr ""
+
+#: ../../source/installation.rst:206
+msgid ""
+"Enable the ``mod_rewrite`` Apache module, and assuming the Zuul tenant name "
+"is ``example``, the rewrite rules are::"
+msgstr ""
+
+#: ../../source/installation.rst:236
+msgid ""
+"Hosting the Zuul dashboard on an external static location that does not "
+"support dynamic url rewrite rules only works for white-labeled deployments."
+msgstr ""
+
+#: ../../source/installation.rst:240
+msgid ""
+"In order to serve the zuul dashboard code from an external static location, "
+"``REACT_APP_ZUUL_API`` must be set at javascript build time:"
+msgstr ""
