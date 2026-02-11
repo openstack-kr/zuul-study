@@ -1,0 +1,59 @@
+# Zuul project contributors, 2012-2026.
+# This file is distributed under the same license as the Zuul package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-11 10:46+0900\n"
+"PO-Revision-Date: 2026-02-11 11:00+0900\n"
+"Last-Translator: Gemini\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/about.rst:6
+msgid "About Zuul"
+msgstr "Zuul에 대하여"
+
+#: ../../source/about.rst:8
+msgid "Zuul is a Project Gating System.  That's like a CI or CD system, but the focus is on testing the future state of code repositories."
+msgstr "Zuul은 프로젝트 게이팅 시스템(Project Gating System)입니다. CI 또는 CD 시스템과 유사하지만, 코드 저장소의 미래 상태를 테스트하는 데 중점을 둡니다."
+
+#: ../../source/about.rst:11
+msgid "A gating system doesn't just test a proposed change; it tests the proposed future state of multiple branches and repositories with any number of in-flight changes and their dependencies.  And the same playbooks used to test software can also be used to deploy it."
+msgstr "게이팅 시스템은 단순히 제안된 변경 사항만 테스트하는 것이 아닙니다. 다수의 진행 중인(in-flight) 변경 사항 및 그 의존성을 포함하여, 여러 브랜치와 저장소의 제안된 미래 상태를 테스트합니다. 또한 소프트웨어를 테스트하는 데 사용된 것과 동일한 플레이북을 배포에도 사용할 수 있습니다."
+
+#: ../../source/about.rst:16
+msgid "Zuul itself is a service which listens to events from various code review systems, executes jobs based on those events, and reports the results back to the code review system.  The primary interface for Zuul is the code review system (or systems) so that it fits seamlessly into developer workflows, and a web interface is available for inspecting the current status and browsing build results."
+msgstr "Zuul은 다양한 코드 리뷰 시스템의 이벤트를 수신하고, 해당 이벤트에 따라 작업을 실행하며, 그 결과를 다시 코드 리뷰 시스템에 보고하는 서비스입니다. Zuul의 기본 인터페이스는 코드 리뷰 시스템이므로 개발자 워크플로우에 원활하게 통합되며, 현재 상태를 확인하고 빌드 결과를 탐색할 수 있는 웹 인터페이스도 제공됩니다."
+
+#: ../../source/about.rst:23
+msgid "The best way to run Zuul is with a single installation serving as many projects or groups as possible.  It is a multi-tenant application that is able to provide as much or as little separation between projects as desired."
+msgstr "Zuul을 실행하는 가장 좋은 방법은 가능한 한 많은 프로젝트나 그룹을 단일 설치본으로 서비스하는 것입니다. Zuul은 프로젝트 간의 분리 수준을 원하는 대로 조절할 수 있는 멀티 테넌트(multi-tenant) 애플리케이션입니다."
+
+#: ../../source/about.rst:28
+msgid "Zuul works with a wide range of code review systems, and can work with multiple systems (including integrating projects on different systems) simultaneously.  See :ref:`drivers` for a complete list."
+msgstr "Zuul은 광범위한 코드 리뷰 시스템과 호환되며, 여러 시스템(서로 다른 시스템의 프로젝트 통합 포함)과 동시에 작동할 수 있습니다. 전체 목록은 :ref:`drivers`를 참조하세요."
+
+#: ../../source/about.rst:32
+msgid "Previous versions of Zuul required a separate component called `Nodepool`_ to provide the resources to run jobs.  Nodepool works with several cloud providers as well as statically defined nodes (again, simultaneously).  Nodepool's functionality is now incorporated into Zuul."
+msgstr "이전 버전의 Zuul은 작업 실행에 필요한 리소스를 제공하기 위해 `Nodepool`_이라는 별도의 구성 요소가 필요했습니다. Nodepool은 여러 클라우드 제공업체 및 정적으로 정의된 노드와 동시에 작동합니다. 현재 Nodepool의 기능은 Zuul에 통합되었습니다."
+
+#: ../../source/about.rst:38
+msgid "Because Zuul is designed from the ground up to run jobs in a multi-node environment (whether those nodes are bare metal machines, VMs, Kubernetes clusters, or containers), Zuul's job definition language needs to support orchestrating tasks on multiple nodes.  Zuul uses Ansible for this.  Ansible is well-known and easy to learn and use.  Some existing Ansible playbooks and roles may be able to be used directly with Zuul (but some restrictions apply, so not all will)."
+msgstr "Zuul은 멀티 노드 환경(베어메탈, VM, 쿠버네티스 클러스터, 컨테이너 등)에서 작업을 실행하도록 처음부터 설계되었기 때문에, Zuul의 작업 정의 언어는 여러 노드에서의 작업 오케스트레이션을 지원해야 합니다. Zuul은 이를 위해 Ansible을 사용합니다. Ansible은 잘 알려져 있고 배우기 쉬우며 사용하기 편리합니다. 기존의 일부 Ansible 플레이북과 롤(role)은 Zuul에서 직접 사용할 수 있습니다(단, 일부 제한 사항이 적용될 수 있습니다)."
+
+#: ../../source/about.rst:46
+msgid "However, knowledge or use of Ansible is not required for Zuul -- it is quite simple for Zuul's embedded Ansible to run any shell script or any other program.  Zuul's library of standard jobs even includes a job that will run a specified shell script, so it's possible to use Zuul without writing any Ansible at all."
+msgstr "하지만 Zuul을 사용하기 위해 Ansible에 대한 지식이나 사용 경험이 반드시 필요한 것은 아닙니다. Zuul에 내장된 Ansible을 통해 쉘 스크립트나 다른 프로그램을 실행하는 것은 매우 간단합니다. Zuul의 표준 작업 라이브러리에는 지정된 쉘 스크립트를 실행하는 작업도 포함되어 있어, Ansible을 전혀 작성하지 않고도 Zuul을 사용할 수 있습니다."
+
+#: ../../source/about.rst:52
+msgid "Zuul is an open source project developed and maintained by a community of users.  We welcome your `support and contribution <https://zuul-ci.org/community.html>`__."
+msgstr "Zuul은 사용자 커뮤니티에 의해 개발되고 유지 관리되는 오픈 소스 프로젝트입니다. 여러분의 `지원과 기여 <https://zuul-ci.org/community.html>`__를 환영합니다."
+
+#: ../../source/about.rst:62
+msgid "_`Nodepool`: https://zuul-ci.org/docs/nodepool/"
+msgstr "_`Nodepool`: https://zuul-ci.org/docs/nodepool/"
