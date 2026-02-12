@@ -1,29 +1,30 @@
-# Korean translations for Zuul package.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012-2026, Zuul project contributors
 # This file is distributed under the same license as the Zuul package.
-# Automatically generated, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Zuul latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-12 01:27+0900\n"
-"PO-Revision-Date: 2026-02-12 01:27+0900\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2026-02-08 13:08+0900\n"
+"PO-Revision-Date: 2026-02-08 13:38+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ../../source/upgrading.rst:2
 msgid "Upgrading"
-msgstr ""
+msgstr "업그레이드"
 
 #: ../../source/upgrading.rst:5
 msgid "Rolling Upgrades"
-msgstr ""
+msgstr "롤링 업그레이드(무중단 업그레이드)"
 
 #: ../../source/upgrading.rst:7
 msgid ""
@@ -36,6 +37,15 @@ msgid ""
 "to appear as soon as the first component is upgraded.  Be sure not to begin "
 "using or rely on new behaviors until all components are upgraded."
 msgstr ""
+"만약 시스템에 각 Zuul 컴포넌트가 하나 이상 존재한다면, Zuul은 롤링 업그레이드"
+"를 수행함으로써 다운타임(중단 시간) 없이 업그레이드될 수 있습니다. 롤링 업그"
+"레이드 동안에는, 모든 컴포넌트가 업그레이드 완료될 때까지 컴포넌트들이 한 번"
+"에 하나씩 중지되었다가 다시 시작됩니다. 만약 업그레이드 도중 동작(behavior)"
+"의 변경이 있다면, Zuul은 일반적으로 모든 컴포넌트가 업그레이드될 때까지 동작"
+"을 변경하는 것을 기다릴 것입니다. 하지만 안전하다고 간주되는 일부 경우에는, "
+"첫 번째 컴포넌트가 업그레이드되자마자 새로운 동작들이 나타나기 시작할 수도 있"
+"습니다. 모든 컴포넌트가 업그레이드될 때까지는 새로운 동작을 사용하기 시작하거"
+"나 그것에 의존하지 않도록 확실히 주의하십시오."
 
 #: ../../source/upgrading.rst:17
 msgid ""
@@ -44,28 +54,34 @@ msgid ""
 "produce the least disruption and delay the use of new behaviors until closer "
 "to the end of the process:"
 msgstr ""
+"릴리스 노트에 명시되지 않는 한, 어떤 컴포넌트들이 먼저 업그레이드되어야 하는"
+"지에 대한 구체적인 순서는 없습니다. 그러나 다음의 순서는 혼란(disruption)을 "
+"최소화하고, 프로세스가 거의 끝날 때까지 새로운 동작의 사용을 지연시킬 가능성"
+"이 높습니다:"
 
 #: ../../source/upgrading.rst:22
 msgid ""
 "Gracefully restart executors (one at a time, or as many as a system's over-"
 "allocation of resources will allow)."
 msgstr ""
+"익스큐터(Executor)들을 정상적으로(gracefully) 재시작합니다 (한 번에 하나씩, "
+"또는 시스템의 자원 초과 할당이 허용하는 만큼)."
 
 #: ../../source/upgrading.rst:24
 msgid "Gracefully restart mergers."
-msgstr ""
+msgstr "머저(Merger)들을 정상적으로 재시작합니다."
 
 #: ../../source/upgrading.rst:25
 msgid "Restart schedulers."
-msgstr ""
+msgstr "스케줄러(Scheduler)들을 재시작합니다."
 
 #: ../../source/upgrading.rst:26
 msgid "Restart web and finger gateways."
-msgstr ""
+msgstr "웹(Web) 및 핑거(Finger) 게이트웨이들을 재시작합니다."
 
 #: ../../source/upgrading.rst:29
 msgid "Skipping Versions"
-msgstr ""
+msgstr "버전 건너뛰기"
 
 #: ../../source/upgrading.rst:31
 msgid ""
@@ -76,6 +92,13 @@ msgid ""
 "example, an upgrade from 5.x.y to 7.0.0 should include at least an upgrade "
 "to 6.4.0 (the latest 6.x release) before proceeding to 7.0.0."
 msgstr ""
+"Zuul 버전들은 major.minor.micro(메이저.마이너.마이크로) 형식으로 지정됩니다. "
+"일반적으로, 업그레이드 도중 마이너(minor) 또는 마이크로(micro) 버전을 건너뛰"
+"는 것은 안전한 것으로 간주됩니다. 메이저(major) 버전을 건너뛰는 것은 권장되"
+"지 않습니다. 왜냐하면 오래된 시스템을 위한 하위 호환성 코드가 메이저 업그레이"
+"드 도중에 제거될 수 있기 때문입니다. 이것은 예를 들어, 5.x.y 버전에서 7.0.0 "
+"버전으로의 업그레이드는 7.0.0으로 진행하기 전에 적어도 6.4.0(가장 최신 6.x 릴"
+"리스)으로의 업그레이드를 포함해야 함을 의미합니다."
 
 #: ../../source/upgrading.rst:39
 msgid ""
@@ -83,9 +106,14 @@ msgid ""
 "possible, and Zuul should be completely stopped, and the ``zuul-admin delete-"
 "state`` command should be run before restarting on the new version."
 msgstr ""
+"만약 메이저 버전을 건너뛰는 것이 요구된다면, 롤링 업그레이드는 불가능하며, "
+"Zuul은 완전히 중지되어야 하고, 새로운 버전에서 재시작하기 전에 zuul-admin "
+"delete-state 명령어가 실행되어야만 합니다."
 
 #: ../../source/upgrading.rst:44
 msgid ""
 "Some versions may have unique upgrade requirements.  See release notes for "
 "additional information about specific version upgrades."
 msgstr ""
+"일부 버전들은 고유한 업그레이드 요구 사항들을 가질 수 있습니다. 특정 버전 업"
+"그레이드에 대한 추가 정보는 릴리스 노트를 참조하십시오."
