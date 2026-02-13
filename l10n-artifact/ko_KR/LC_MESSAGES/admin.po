@@ -19,4 +19,4 @@ msgstr ""
 
 #: ../../source/admin.rst:2
 msgid "Service Administration"
-msgstr ""
+msgstr "서비스 관리 (Service Administration)"
