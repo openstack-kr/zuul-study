@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/troubleshooting.rst:2
 msgid "Troubleshooting"
-msgstr ""
+msgstr "문제 해결 (Troubleshooting)"
 
 #: ../../source/troubleshooting.rst:4
 msgid ""
@@ -27,10 +27,13 @@ msgid ""
 "advanced troubleshooting options are provided below.  These are generally "
 "very low-level and are not normally required."
 msgstr ""
+":ref:`서비스 디버그 로그 <operation>` 를 검사하는 것 외에도, 아래에 몇 가지 "
+"고급 문제 해결 옵션이 제공됩니다. 이들은 일반적으로 매우 로우 레벨(low-level)"
+"이며 평상시에는 필요하지 않습니다."
 
 #: ../../source/troubleshooting.rst:9
 msgid "Thread Dumps and Profiling"
-msgstr ""
+msgstr "스레드 덤프 및 프로파일링"
 
 #: ../../source/troubleshooting.rst:11
 msgid ""
@@ -39,6 +42,10 @@ msgid ""
 "log bucket ``zuul.stack_dump``.  This is useful for tracking down deadlock "
 "or otherwise slow threads::"
 msgstr ""
+"데몬 프로세스 중 하나에 SIGUSR2를 보내면, 실행 중인 각 스레드에 대한 스택 "
+"트레이스를 디버그 로그에 덤프합니다. 이는 ``zuul.stack_dump`` 로그 버킷 "
+"아래에 기록됩니다. 교착 상태(deadlock)나 그 외 느린 스레드를 추적하는 데 "
+"유용합니다::"
 
 #: ../../source/troubleshooting.rst:19
 msgid ""
@@ -48,3 +55,8 @@ msgid ""
 "the information collected, resets all yappi state and stops profiling. This "
 "is to minimize the impact of yappi on a running system."
 msgstr ""
+"`yappi <https://code.google.com/p/yappi/>`_ (Yet Another Python Profiler)를 "
+"사용할 수 있는 경우, 추가적인 함수 및 스레드 통계도 함께 생성됩니다. 첫 번째 "
+"SIGUSR2는 yappi를 활성화하고, 두 번째 SIGUSR2에서 수집된 정보를 덤프한 후 "
+"모든 yappi 상태를 재설정하고 프로파일링을 중지합니다. 이는 실행 중인 "
+"시스템에 미치는 yappi의 영향을 최소화하기 위함입니다."

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/tracing.rst:6
 msgid "Tracing"
-msgstr ""
+msgstr "트레이싱 (Tracing)"
 
 #: ../../source/tracing.rst:8
 msgid ""
@@ -28,6 +28,10 @@ msgid ""
 "visualize the progress of events and queue items through the various Zuul "
 "components as an aid to debugging."
 msgstr ""
+"Zuul은 OpenTelemetry 프로젝트에서 설명하는 `distributed tracing`_ (분산 트레이싱) "
+"지원을 포함합니다. 이를 통해 운영자(및 잠재적으로 사용자)는 디버깅을 돕기 위해 "
+"다양한 Zuul 구성 요소를 통과하는 이벤트 및 큐 항목의 진행 상황을 시각화할 수 "
+"있습니다."
 
 #: ../../source/tracing.rst:13
 msgid ""
@@ -35,6 +39,9 @@ msgid ""
 "and logs.  Zuul uses other systems for metrics and logs; only traces are "
 "exported via OpenTelemetry."
 msgstr ""
+"OpenTelemetry는 트레이스, 메트릭, 로그와 같은 여러 관찰 가능성(observability) "
+"신호를 정의합니다. Zuul은 메트릭과 로그에 다른 시스템을 사용하며, 트레이스만 "
+"OpenTelemetry를 통해 내보냅니다."
 
 #: ../../source/tracing.rst:17
 msgid ""
@@ -42,27 +49,35 @@ msgid ""
 "observability systems support receiving traces via OTLP (including Jaeger "
 "tracing)."
 msgstr ""
+"Zuul은 트레이스를 내보내기 위해 OTLP(OpenTelemetry Protocol)를 지원합니다. "
+"많은 관찰 가능성 시스템이 OTLP를 통한 트레이스 수신을 지원합니다(Jaeger "
+"트레이싱 포함)."
 
 #: ../../source/tracing.rst:22
 msgid "Configuration"
-msgstr ""
+msgstr "설정"
 
 #: ../../source/tracing.rst:24
 msgid ""
 "Related configuration is in the :attr:`tracing` section of ``zuul.conf``."
 msgstr ""
+"관련 설정은 ``zuul.conf`` 의 :attr:`tracing` 섹션에 있습니다."
 
 #: ../../source/tracing.rst:27
 msgid "Tutorial"
-msgstr ""
+msgstr "튜토리얼"
 
 #: ../../source/tracing.rst:29
 msgid ""
 "Here is a tutorial that shows how to enable tracing with Zuul and Jaeger."
 msgstr ""
+"다음은 Zuul 및 Jaeger를 사용하여 트레이싱을 활성화하는 방법을 보여주는 "
+"튜토리얼입니다."
 
 #: ../../source/tracing.rst:36
 msgid ""
 "_`distributed tracing`: https://opentelemetry.io/docs/concepts/observability-"
 "primer/#distributed-traces"
 msgstr ""
+"_`distributed tracing`: https://opentelemetry.io/docs/concepts/observability-"
+"primer/#distributed-traces"

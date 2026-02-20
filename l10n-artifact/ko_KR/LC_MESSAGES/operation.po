@@ -21,7 +21,7 @@ msgstr ""
 #: ../../source/operation.rst:162 ../../source/operation.rst:180
 #: ../../source/operation.rst:333 ../../source/operation.rst:343
 msgid "Operation"
-msgstr ""
+msgstr "운영"
 
 #: ../../source/operation.rst:8
 msgid ""
@@ -31,10 +31,15 @@ msgid ""
 "option to engage verbose debug logging, but be careful in busy deployments "
 "as this can generate very large logs."
 msgstr ""
+"모든 Zuul 프로세스는 **-f** 옵션을 사용하여 데몬화하지 않고 포그라운드에 "
+"유지하며 터미널에 로그를 남기도록 실행할 수 있습니다. 이는 처음 구성상의 "
+"문제를 확인할 때 유용합니다. 또한 상세 디버그 로깅을 활성화하는 **-d** 옵션도 "
+"있지만, 바쁜 배포 환경에서는 매우 큰 로그가 생성될 수 있으므로 주의해야 "
+"합니다."
 
 #: ../../source/operation.rst:14
 msgid "To start, simply run::"
-msgstr ""
+msgstr "시작하려면 다음을 실행하십시오::"
 
 #: ../../source/operation.rst:18
 msgid ""
@@ -42,26 +47,33 @@ msgid ""
 "which is in the git repositories that Zuul operates on.  Start an executor "
 "to allow zuul to do that::"
 msgstr ""
+"Zuul이 작업을 실행하려면 먼저 구성을 로드해야 하는데, 대부분의 구성은 Zuul이 "
+"운영하는 git 저장소에 있습니다. Zuul이 이를 수행할 수 있도록 실행기(executor)"
+"를 시작하십시오::"
 
 #: ../../source/operation.rst:24
 msgid ""
 "Zuul should now be able to read its configuration from the configured repo "
 "and process any jobs defined therein."
 msgstr ""
+"이제 Zuul은 구성된 저장소에서 설정을 읽고 그 안에 정의된 모든 작업을 처리할 "
+"수 있습니다."
 
 #: ../../source/operation.rst:28
 msgid "Scheduler"
-msgstr ""
+msgstr "스케줄러 (Scheduler)"
 
 #: ../../source/operation.rst:33
 msgid ""
 "To start the scheduler, run ``zuul-scheduler``.  To stop it, run ``zuul-"
 "scheduler stop``."
 msgstr ""
+"스케줄러를 시작하려면 ``zuul-scheduler`` 를 실행하십시오. 중지하려면 ``zuul-"
+"scheduler stop`` 을 실행하십시오."
 
 #: ../../source/operation.rst:39
 msgid "Reconfiguration"
-msgstr ""
+msgstr "재구성 (Reconfiguration)"
 
 #: ../../source/operation.rst:41
 msgid ""
@@ -70,6 +82,10 @@ msgid ""
 "notified of changes to the tenant config file, since it is not read from a "
 "git repository. Zuul supports two kinds of reconfigurations."
 msgstr ""
+"Zuul 구성의 대부분은 해당 구성을 포함하는 저장소의 변경 사항이 병합될 때 "
+"자동으로 업데이트됩니다. 그러나 테넌트 설정 파일은 git 저장소에서 읽지 않으므로 "
+"변경 시 Zuul에 명시적으로 알려야 합니다. Zuul은 두 가지 종류의 재구성을 "
+"지원합니다."
 
 #: ../../source/operation.rst:46
 msgid ""
@@ -78,6 +94,10 @@ msgid ""
 "can be used to fix eventual configuration inconsistencies after connection "
 "problems with the code hosting system."
 msgstr ""
+"전체 재구성(full reconfiguration)은 모든 테넌트의 구성을 다시 가져오고 다시 "
+"로드합니다. 이를 실행하려면 ``zuul-scheduler full-reconfigure`` 를 "
+"사용하십시오. 예를 들어, 코드 호스팅 시스템과의 연결 문제 후 발생할 수 있는 "
+"구성 불일치를 수정하는 데 사용할 수 있습니다."
 
 #: ../../source/operation.rst:51
 msgid ""
@@ -85,6 +105,9 @@ msgid ""
 "tenant, use ``zuul-scheduler tenant-reconfigure TENANT`` (where ``TENANT`` "
 "is the name of the tenant to reconfigure)."
 msgstr ""
+"단일 테넌트에 대해 전체 재구성(full reconfiguration)과 동일한 작업을 수행하려면 "
+"``zuul-scheduler tenant-reconfigure TENANT`` 를 사용하십시오 (여기서 "
+"``TENANT`` 는 재구성할 테넌트의 이름입니다)."
 
 #: ../../source/operation.rst:55
 msgid ""
@@ -94,6 +117,11 @@ msgid ""
 "the full reconfiguration so it is recommended to use the smart "
 "reconfiguration after changing the tenant configuration file."
 msgstr ""
+"스마트 재구성(smart reconfiguration)은 테넌트 설정 파일에서 구성이 변경된 "
+"테넌트만 다시 로드합니다. 이를 실행하려면 ``zuul-scheduler smart-"
+"reconfigure`` 를 사용하십시오. 다중 테넌트 시스템에서는 이것이 전체 재구성보다 "
+"훨씬 빠를 수 있으므로, 테넌트 설정 파일을 변경한 후에는 스마트 재구성을 "
+"사용하는 것이 좋습니다."
 
 #: ../../source/operation.rst:62
 msgid ""
@@ -102,16 +130,21 @@ msgid ""
 "configuration stored in ZooKeeper and automatically update their "
 "configuration in the background without interrupting processing."
 msgstr ""
+"``tenant-reconfigure`` 및 ``smart-reconfigure`` 명령은 단일 스케줄러에서만 "
+"실행해야 합니다. 다른 스케줄러들은 주키퍼(ZooKeeper)에 저장된 구성 변경 "
+"사항을 감지하고 처리 중단 없이 백그라운드에서 자동으로 구성을 업데이트합니다."
 
 #: ../../source/operation.rst:69
 msgid "Advanced Options"
-msgstr ""
+msgstr "고급 옵션"
 
 #: ../../source/operation.rst:71
 msgid ""
 "These options are not necessary under normal conditions, but may be useful "
 "in some complex environments."
 msgstr ""
+"이 옵션들은 일반적인 상황에서는 필요하지 않지만, 일부 복잡한 환경에서는 "
+"유용할 수 있습니다."
 
 #: ../../source/operation.rst:74
 msgid ""
@@ -121,6 +154,11 @@ msgid ""
 "systems with excess scheduler capacity perform a rolling restart of "
 "schedulers more quickly."
 msgstr ""
+"``--wait-for-init`` 옵션(또는 ``ZUUL_WAIT_FOR_INIT`` 환경 변수)을 사용하면 "
+"스케줄러가 파이프라인 처리를 시작하기 전에 모든 테넌트가 초기화될 때까지 "
+"기다리게 됩니다. 이는 스케줄러 용량에 여유가 있는 대규모 시스템에서 "
+"스케줄러의 롤링 재시작(rolling restart)을 더 빠르게 수행하는 데 도움이 될 수 "
+"있습니다."
 
 #: ../../source/operation.rst:80
 msgid ""
@@ -130,6 +168,10 @@ msgid ""
 "all of the configuration of a running system without running any jobs or "
 "making any reports."
 msgstr ""
+"``--disable-pipelines`` 옵션(또는 ``ZUUL_DISABLE_PIPELINES`` 환경 변수)을 "
+"사용하면 스케줄러가 모든 파이프라인 관련 이벤트를 조용히 폐기하게 됩니다. "
+"이를 통해 스케줄러는 작업을 실행하거나 보고서를 작성하지 않고도 실행 중인 "
+"시스템의 모든 구성을 생성하고 유지 관리할 수 있습니다."
 
 #: ../../source/operation.rst:86
 msgid ""
@@ -140,10 +182,16 @@ msgid ""
 "should not set this option on any schedulers.  To use this option on a "
 "standby or testing cluster, set it on all schedulers."
 msgstr ""
+"이 옵션은 일반적인 용도가 아니며 특정 테스트 및 백업 관련 활동에만 "
+"유용합니다. 주키퍼(ZooKeeper)에 연결된 모든 스케줄러가 이벤트를 처리할 수 "
+"있으므로, 이 옵션 값을 섞어서 사용하는 것은 의미가 없습니다. 이벤트를 처리할 "
+"목적의 일반적인 프로덕션 Zuul 시스템은 어떤 스케줄러에서도 이 옵션을 "
+"설정해서는 안 됩니다. 대기(standby) 또는 테스트 클러스터에서 이 옵션을 "
+"사용하려면 모든 스케줄러에 설정하십시오."
 
 #: ../../source/operation.rst:95
 msgid "Managing Event Processing"
-msgstr ""
+msgstr "이벤트 처리 관리"
 
 #: ../../source/operation.rst:97
 msgid ""
@@ -151,12 +199,17 @@ msgid ""
 "may suspend event processing until the issue is resolved. Three options are "
 "available:"
 msgstr ""
+"외부 시스템의 문제로 인해 Zuul에 영향이 있는 경우, 테넌트 관리자는 문제가 "
+"해결될 때까지 이벤트 처리를 중단할 수 있습니다. 세 가지 옵션을 사용할 수 "
+"있습니다:"
 
 #: ../../source/operation.rst:101
 msgid ""
 "Pausing trigger event queue processing to prevent Zuul from adding new items "
 "into pipelines until the queue is unpaused"
 msgstr ""
+"트리거 이벤트 큐 처리를 일시 중지하여, 큐의 일시 중지가 해제될 때까지 Zuul이 "
+"파이프라인에 새 항목을 추가하지 못하도록 합니다."
 
 #: ../../source/operation.rst:104
 msgid ""
@@ -165,12 +218,18 @@ msgid ""
 "pipelines until it is unpaused.  This may include merging changes in the "
 "case of a :term:`gate` pipeline."
 msgstr ""
+"트리거 및 결과 큐 처리를 일시 중지하여, 일시 중지가 해제될 때까지 Zuul이 "
+"파이프라인에 새 항목을 추가하거나 기존 파이프라인에 있는 항목을 보고하지 "
+"못하도록 합니다. :term:`gate` 파이프라인의 경우 변경 사항 병합이 포함될 수 "
+"있습니다."
 
 #: ../../source/operation.rst:109
 msgid ""
 "Discarding trigger events to cause Zuul to disregard trigger events (with no "
 "processing of the backlog) until further notice."
 msgstr ""
+"트리거 이벤트를 폐기하여, 추후 공지가 있을 때까지 Zuul이 트리거 이벤트를 "
+"무시(백로그 처리 없음)하도록 합니다."
 
 #: ../../source/operation.rst:112
 msgid ""
@@ -178,6 +237,8 @@ msgid ""
 "displayed on the status page indicating that queue processing is paused, and "
 "including a reason (if any was supplied)."
 msgstr ""
+"위 설정 중 하나라도 테넌트에 대해 활성화되면, 상태 페이지에 큐 처리가 일시 "
+"중지되었음을 알리는 배너가 표시되며 이유(제공된 경우)가 포함됩니다."
 
 #: ../../source/operation.rst:116
 msgid ""
@@ -187,10 +248,15 @@ msgid ""
 "that and fill out the form.  The second is using the ``zuul-client tenant-"
 "state`` command."
 msgstr ""
+"테넌트의 큐 처리를 관리하는 방법에는 두 가지가 있습니다. 첫 번째는 웹 "
+"인터페이스를 사용하는 것입니다. 테넌트 관리자로 인증하면 상태 페이지 상단에 "
+"\"Manage Queues(큐 관리)\" 버튼이 나타납니다. 이를 클릭하고 양식을 "
+"작성하십시오. 두 번째는 ``zuul-client tenant-state`` 명령을 사용하는 "
+"것입니다."
 
 #: ../../source/operation.rst:125
 msgid "Backup and Restoration"
-msgstr ""
+msgstr "백업 및 복원"
 
 #: ../../source/operation.rst:127
 msgid ""
@@ -203,6 +269,14 @@ msgid ""
 "provides an administrative tool to :ref:`export <export-keys>` these keys to "
 "and :ref:`import <import-keys>` them from a local directory."
 msgstr ""
+"Zuul의 모든 컴포넌트 서비스는 탄력적인 액티브-액티브 클러스터 배포로 실행되도록 "
+"설계되었지만, 좋은 재해 복구 계획에는 중요 데이터 백업이 포함되어야 합니다. "
+"최소한 작업 비밀(job secrets) 암호화 및 SSH 액세스에 사용되는 무작위로 생성된 "
+"프로젝트 키는 백업해야 합니다. 이 키들은 분실 시 **재생성할 수 없기** "
+"때문입니다. Zuul은 이 키들을 주키퍼(ZooKeeper) 내의 키 저장소(keystore)에 "
+"저장하는데, 이를 직접 백업하기는 불편합니다. 하지만 이 키들을 로컬 디렉터리로 "
+":ref:`내보내기(export) <export-keys>` 하거나 로컬 디렉터리에서 "
+":ref:`가져오기(import) <import-keys>` 할 수 있는 관리 도구를 제공합니다."
 
 #: ../../source/operation.rst:137
 msgid ""
@@ -214,6 +288,13 @@ msgid ""
 "anyone who gains access to them could decrypt job secrets or access "
 "protected systems which have been instructed to trust those keys."
 msgstr ""
+"모든 주키퍼(ZooKeeper) 콘텐츠가 손실되는 재해 상황에 대비하여, 안전한 위치"
+"(예: 각 Zuul 스케줄러의 파일 시스템)로 내보내기 덤프를 수행하는 주기적 "
+"자동화를 설정하는 것이 강력히 권장됩니다. 선택한 도구를 사용하여 이 파일들의 "
+"안전한 원격 백업 구성을 고려할 수도 있지만, 이 파일들은 잠재적으로 민감한 "
+"정보임을 인지해야 합니다. 이 파일에 접근할 수 있는 사람은 누구나 작업 비밀을 "
+"복호화하거나 해당 키를 신뢰하도록 설정된 보호된 시스템에 접근할 수 있기 "
+"때문입니다."
 
 #: ../../source/operation.rst:146
 msgid ""
@@ -228,14 +309,22 @@ msgid ""
 "likely want to make sure you keep a secured copy of it somewhere as well in "
 "the event your server configuration is lost."
 msgstr ""
+"내보내진 키들은 주키퍼(ZooKeeper) 내의 사본을 암호화하고 복호화하는 데 "
+"사용되는 것과 동일한 :ref:`keystore.password <keystore-password>` 로 대칭 "
+"암호화되어 있다는 점에 유의하십시오. 이는 암호화된 버전의 키가 내보내지고 "
+"가져와지기 때문입니다. 키에 접근할 수 있는 사람은 Zuul 구성에 있는 "
+"keystore.password의 사본도 필요하므로, 보안에 민감한 환경에서는 이들을 함께 "
+"백업하지 않는 것이 좋습니다. 반대로, keystore.password를 잃어버리면 키 "
+"저장소에 있는 프로젝트 키와 내보낸 키 모두를 사용할 수 없게 되므로, 서버 "
+"구성이 손실될 경우를 대비해 안전한 사본을 어딘가에 보관해 두어야 합니다."
 
 #: ../../source/operation.rst:159
 msgid "Merger"
-msgstr ""
+msgstr "병합기 (Merger)"
 
 #: ../../source/operation.rst:164
 msgid "To start the merger, run ``zuul-merger``."
-msgstr ""
+msgstr "병합기를 시작하려면 ``zuul-merger`` 를 실행하십시오."
 
 #: ../../source/operation.rst:166
 msgid ""
@@ -243,6 +332,9 @@ msgid ""
 "pause and wait for all currently running tasks to finish before stopping it. "
 "To do so run ``zuul-merger pause``."
 msgstr ""
+"병합기를 중지할 때, 일반적인 상황에서는 현재 실행 중인 모든 작업이 완료될 "
+"때까지 일시 중지하고 기다리는 것이 가장 좋습니다. 그렇게 하려면 ``zuul-merger "
+"pause`` 를 실행하십시오."
 
 #: ../../source/operation.rst:170
 msgid ""
@@ -251,26 +343,34 @@ msgid ""
 "always a graceful way to stop the merger. ``zuul-merger graceful`` is an "
 "alias for ``zuul-merger stop`` to make this consistent with the executor."
 msgstr ""
+"병합기를 중지하려면 ``zuul-merger stop`` 을 실행하십시오. 이는 현재 실행 중인 "
+"병합 작업이 완료될 때까지 기다린 후 종료합니다. 따라서 이것은 항상 병합기를 "
+"중지하는 정상적인(graceful) 방법입니다. ``zuul-merger graceful`` 은 "
+"실행기와의 일관성을 위해 ``zuul-merger stop`` 의 별칭으로 제공됩니다."
 
 #: ../../source/operation.rst:177
 msgid "Executor"
-msgstr ""
+msgstr "실행기 (Executor)"
 
 #: ../../source/operation.rst:182
 msgid "To start the executor, run ``zuul-executor``."
-msgstr ""
+msgstr "실행기를 시작하려면 ``zuul-executor`` 를 실행하십시오."
 
 #: ../../source/operation.rst:184
 msgid ""
 "There are several commands which can be run to control the executor's "
 "behavior once it is running."
 msgstr ""
+"실행기가 실행 중일 때 동작을 제어하기 위해 실행할 수 있는 몇 가지 명령이 "
+"있습니다."
 
 #: ../../source/operation.rst:187
 msgid ""
 "To pause the executor and prevent it from running new jobs you can run "
 "``zuul-executor pause``."
 msgstr ""
+"실행기를 일시 중지하고 새 작업을 실행하지 못하게 하려면 ``zuul-executor "
+"pause`` 를 실행할 수 있습니다."
 
 #: ../../source/operation.rst:190
 msgid ""
@@ -278,12 +378,17 @@ msgid ""
 "jobs have finished you can run ``zuul-executor graceful``. Under most "
 "circumstances this will be the best way to stop Zuul."
 msgstr ""
+"실행기가 새 작업을 수락하지 않게 하고 실행 중인 모든 작업이 완료되면 종료하게 "
+"하려면 ``zuul-executor graceful`` 을 실행할 수 있습니다. 대부분의 상황에서 "
+"이것이 Zuul을 중지하는 가장 좋은 방법입니다."
 
 #: ../../source/operation.rst:194
 msgid ""
 "To stop the executor immediately, run ``zuul-executor stop``. Jobs that were "
 "running on the stopped executor will be rescheduled on other executors."
 msgstr ""
+"실행기를 즉시 중지하려면 ``zuul-executor stop`` 을 실행하십시오. 중지된 "
+"실행기에서 실행 중이던 작업은 다른 실행기에서 다시 스케줄링됩니다."
 
 #: ../../source/operation.rst:197
 msgid ""
@@ -291,6 +396,9 @@ msgid ""
 "the ``graceful`` command, however you can change this behavior to match "
 "``stop`` with the :attr:`executor.sigterm_method` setting."
 msgstr ""
+"실행기는 일반적으로 ``graceful`` 명령과 동일한 방식으로 ``SIGTERM`` 신호에 "
+"응답하지만, :attr:`executor.sigterm_method` 설정을 통해 ``stop`` 과 일치하도록 "
+"이 동작을 변경할 수 있습니다."
 
 #: ../../source/operation.rst:201
 msgid ""
@@ -298,10 +406,13 @@ msgid ""
 "argument to ansible-playbook) run ``zuul-executor verbose`` and ``zuul-"
 "executor unverbose``."
 msgstr ""
+"Ansible을 상세 모드(ansible-playbook에 ``-vvv`` 인자 사용)로 실행하는 것을 "
+"활성화하거나 비활성화하려면 ``zuul-executor verbose`` 및 ``zuul-executor "
+"unverbose`` 를 실행하십시오."
 
 #: ../../source/operation.rst:208
 msgid "Ansible and Python 3"
-msgstr ""
+msgstr "Ansible과 Python 3"
 
 #: ../../source/operation.rst:210
 msgid ""
@@ -315,6 +426,15 @@ msgid ""
 "distributions may only provide Python 3 (and then others like RHEL8 may even "
 "have separate \"system\" Python versions to add to confusion!)."
 msgstr ""
+"위에서 언급했듯이, 실행기는 작업에 할당된 원격 노드에 대해 Ansible "
+"플레이북을 실행합니다. 원격 호스트에서 플레이북을 실행하는 과정의 일부는 "
+"Python 스크립트를 실행하는 것이므로, Ansible은 원격 호스트에서 어떤 Python "
+"인터프리터를 사용할지 알아야 합니다. 오래된 배포판에서는 ``/usr/bin/"
+"python2`` 가 일반적으로 합리적인 선택이었습니다. 그러나 시간이 지남에 따라 "
+"이질적인 Python 생태계가 발전하여, 오래된 배포판은 Python 2만 제공할 수 "
+"있고, 대부분은 2/3 혼합 환경을 제공하며, 최신 배포판은 Python 3만 제공할 수 "
+"있게 되었습니다(RHEL8과 같은 일부는 혼란을 가중시키기 위해 별도의 "
+"\"시스템\" Python 버전을 갖기도 합니다!)."
 
 #: ../../source/operation.rst:221
 msgid ""
@@ -324,6 +444,10 @@ msgid ""
 "the `nodepool configuration documentation <https://zuul-ci.org/docs/nodepool/"
 "configuration.html>`__."
 msgstr ""
+"Ansible의 ``ansible_python_interpreter`` 변수는 플레이북 실행 중에 사용할 "
+"원격 Python 인터프리터의 경로를 구성합니다. 이 값은 Nodepool에 의해 노드에 "
+"지정된 ``python-path`` 로부터 Zuul이 설정합니다. `nodepool 구성 문서 "
+"<https://zuul-ci.org/docs/nodepool/configuration.html>`__ 를 참조하십시오."
 
 #: ../../source/operation.rst:227
 msgid ""
@@ -333,6 +457,10 @@ msgid ""
 "default of ``/usr/bin/python2`` when configured to use older Ansible "
 "versions."
 msgstr ""
+"이 값은 기본적으로 ``auto`` 이며, 이 경우 Ansible은 원격 호스트에서 사용 "
+"가능한 인터프리터를 자동으로 찾습니다. 그러나 이 설정은 Ansible 2.8 이상에서만 "
+"사용 가능하므로, Zuul은 더 오래된 Ansible 버전을 사용하도록 구성된 경우 "
+"``auto`` 를 이전 기본값인 ``/usr/bin/python2`` 로 변환합니다."
 
 #: ../../source/operation.rst:233
 msgid ""
@@ -341,6 +469,10 @@ msgid ""
 "versions you may need to explicitly set the ``python-path`` if ``/usr/bin/"
 "python2`` is not available on the node."
 msgstr ""
+"따라서 최신 Python 3 전용 호스트의 경우 Ansible 2.8 이상(예: Fedora, Bionic "
+"이후)을 사용할 때 추가 구성이 필요하지 않습니다. 이전 Ansible 버전을 사용하는 "
+"경우, 노드에서 ``/usr/bin/python2`` 를 사용할 수 없다면 ``python-path`` 를 "
+"명시적으로 설정해야 할 수도 있습니다."
 
 #: ../../source/operation.rst:238
 msgid ""
@@ -349,16 +481,22 @@ msgid ""
 "Ansible `Python 3 support page <https://docs.ansible.com/ansible/latest/"
 "reference_appendices/python_3_support.html>`__."
 msgstr ""
+"Python 코드를 포함하는 Ansible 역할/모듈은 이제 일반적으로 Python 3에서 "
+"안전하지만, 여전히 호환되지 않을 가능성이 약간 있습니다. Ansible `Python 3 "
+"지원 페이지 <https://docs.ansible.com/ansible/latest/reference_appendices/"
+"python_3_support.html>`__ 도 참조하십시오."
 
 #: ../../source/operation.rst:246
 msgid "Log Streaming"
-msgstr ""
+msgstr "로그 스트리밍 (Log Streaming)"
 
 #: ../../source/operation.rst:248
 msgid ""
 "The log streaming service enables Zuul to show the live status of long-"
 "running ``shell``, ``command``, ``win_shell``, or ``win_command`` tasks."
 msgstr ""
+"로그 스트리밍 서비스를 통해 Zuul은 장기 실행되는 ``shell``, ``command``, "
+"``win_shell`` 또는 ``win_command`` 작업의 실시간 상태를 표시할 수 있습니다."
 
 #: ../../source/operation.rst:252
 msgid ""
@@ -367,6 +505,10 @@ msgid ""
 "compatible, and in the case where a Windows host runs Windows Subsystem for "
 "Linux (WSL), they may operate at the same time."
 msgstr ""
+"로그 스트리밍은 포직스(Posix) 및 윈도우(Windows) 기반 호스트 모두에서 사용할 "
+"수 있습니다. 두 시스템은 몇 가지 사소한 차이점을 제외하고는 동일한 방식으로 "
+"작동합니다. 이들은 호환되며, 윈도우 호스트가 Linux용 Windows 하위 시스템"
+"(WSL)을 실행하는 경우 동시에 작동할 수도 있습니다."
 
 #: ../../source/operation.rst:257
 msgid ""
@@ -376,10 +518,15 @@ msgid ""
 "the Kubernetes user is not bound to a role that has authorization for port-"
 "forwarding, this will prevent connection to the daemon."
 msgstr ""
+"쿠버네티스(Kubernetes) 기반 작업 노드의 경우, 실행기에서 로그 스트리밍 "
+"데몬으로의 연결은 ``kubectl port-forward`` 를 사용하여 로컬 포트를 작업 "
+"노드가 포함된 파드(pod)의 적절한 포트로 포워딩함으로써 수립됩니다. 쿠버네티스 "
+"사용자가 포트 포워딩 권한이 있는 역할에 바인딩되어 있지 않으면 데몬 연결이 "
+"차단됩니다."
 
 #: ../../source/operation.rst:265
 msgid "Posix Log Streaming"
-msgstr ""
+msgstr "포직스 로그 스트리밍"
 
 #: ../../source/operation.rst:267
 msgid ""
@@ -389,6 +536,10 @@ msgid ""
 "to communicate with this server on the job nodes via port ``19885`` for this "
 "to work."
 msgstr ""
+"포직스 로그 스트리밍 서비스는 ``shell`` 및 ``command`` 작업의 출력을 "
+"처리합니다. 서버 측은 Zuul의 Ansible 설치에 내장된 ``zuul_console:`` 작업에 "
+"의해 설정됩니다. 이것이 작동하려면 실행기가 포트 ``19885`` 를 통해 작업 "
+"노드의 이 서버와 통신할 수 있어야 합니다."
 
 #: ../../source/operation.rst:273
 msgid ""
@@ -396,6 +547,9 @@ msgid ""
 "the format ``/tmp/console-<uuid>-<task_id>-<host>.log``.  By default, it "
 "will clean these files up automatically."
 msgstr ""
+"로그 스트리밍 서비스는 작업 노드의 파일에 ``/tmp/console-<uuid>-<task_id>-"
+"<host>.log`` 형식으로 명령 출력을 스풀링(spool)합니다. 기본적으로 이 파일들은 "
+"자동으로 정리됩니다."
 
 #: ../../source/operation.rst:277
 msgid ""
@@ -403,6 +557,8 @@ msgid ""
 "may be safely removed after a short period of inactivity with a command such "
 "as"
 msgstr ""
+"작업이 중단되면 스트리밍 파일이 남을 수 있습니다. 이러한 파일은 짧은 비활동 "
+"기간 후에 다음과 같은 명령으로 안전하게 제거할 수 있습니다."
 
 #: ../../source/operation.rst:285
 msgid ""
@@ -412,6 +568,11 @@ msgid ""
 "and they may be left behind; on an ephemeral node this is not usually a "
 "problem, but on a static node these files will persist."
 msgstr ""
+"실행기가 포트 ``19885`` 에 도달할 수 없거나(예: 방화벽 규칙으로 인해), 다른 "
+"이유로 ``zuul_console`` 데몬을 실행할 수 없는 경우, 이 스풀 파일들을 "
+"정리하는 명령이 처리되지 않아 파일이 남을 수 있습니다. 임시(ephemeral) "
+"노드에서는 보통 문제가 되지 않지만, 정적 노드에서는 이 파일들이 지속적으로 "
+"남게 됩니다."
 
 #: ../../source/operation.rst:291 ../../source/operation.rst:321
 msgid ""
@@ -421,10 +582,15 @@ msgid ""
 "inventory).  Live streaming of these tasks will of course be unavailable in "
 "this case, but no spool files will be created."
 msgstr ""
+"이러한 상황에서는 ``zuul_console_disabled: True`` 를 설정하여(보통 인벤토리의 "
+"전역 호스트 변수를 통해) Zuul이 ``shell``, ``command``, ``win_shell`` 또는 "
+"``win_command`` 작업에 대해 스풀 파일을 생성하지 않도록 지시할 수 있습니다. "
+"이 경우 해당 작업의 라이브 스트리밍은 당연히 사용할 수 없지만, 스풀 파일은 "
+"생성되지 않습니다."
 
 #: ../../source/operation.rst:299
 msgid "Windows Log Streaming"
-msgstr ""
+msgstr "윈도우 로그 스트리밍"
 
 #: ../../source/operation.rst:301
 msgid ""
@@ -434,6 +600,10 @@ msgid ""
 "ability to communicate with this server on the job nodes via port ``19886`` "
 "for this to work."
 msgstr ""
+"윈도우 로그 스트리밍 서비스는 ``win_shell`` 및 ``win_command`` 작업의 출력을 "
+"처리합니다. 서버 측은 Zuul의 Ansible 설치에 내장된 ``win_zuul_console:`` "
+"작업에 의해 설정됩니다. 이것이 작동하려면 실행기가 포트 ``19886`` 을 통해 "
+"작업 노드의 이 서버와 통신할 수 있어야 합니다."
 
 #: ../../source/operation.rst:307
 msgid ""
@@ -441,12 +611,17 @@ msgid ""
 "the format ``C:/Users/All Users/Zuul/console-console-<uuid>-<task_id>-<host>."
 "log``.  By default, it will clean these files up automatically."
 msgstr ""
+"로그 스트리밍 서비스는 작업 노드의 파일에 ``C:/Users/All Users/Zuul/console-"
+"console-<uuid>-<task_id>-<host>.log`` 형식으로 명령 출력을 스풀링합니다. "
+"기본적으로 이 파일들은 자동으로 정리됩니다."
 
 #: ../../source/operation.rst:312
 msgid ""
 "Occasionally, a streaming file may be left if a job is interrupted. These "
 "may be safely removed after a short period of inactivity."
 msgstr ""
+"작업이 중단되면 스트리밍 파일이 남을 수 있습니다. 이러한 파일은 짧은 비활동 "
+"기간 후에 안전하게 제거할 수 있습니다."
 
 #: ../../source/operation.rst:315
 msgid ""
@@ -456,23 +631,32 @@ msgid ""
 "and they may be left behind; on an ephemeral node this is not usually a "
 "problem, but on a static node these files will persist."
 msgstr ""
+"실행기가 포트 ``19886`` 에 도달할 수 없거나(예: 방화벽 규칙으로 인해), 다른 "
+"이유로 ``win_zuul_console`` 데몬을 실행할 수 없는 경우, 이 스풀 파일들을 "
+"정리하는 명령이 처리되지 않아 파일이 남을 수 있습니다. 임시(ephemeral) "
+"노드에서는 보통 문제가 되지 않지만, 정적 노드에서는 이 파일들이 지속적으로 "
+"남게 됩니다."
 
 #: ../../source/operation.rst:330
 msgid "Web Server"
-msgstr ""
+msgstr "웹 서버 (Web Server)"
 
 #: ../../source/operation.rst:335
 msgid ""
 "To start the web server, run ``zuul-web``.  To stop it, kill the PID which "
 "was saved in the pidfile specified in the configuration."
 msgstr ""
+"웹 서버를 시작하려면 ``zuul-web`` 을 실행하십시오. 중지하려면 구성에 지정된 "
+"pidfile에 저장된 PID를 kill 하십시오."
 
 #: ../../source/operation.rst:339
 msgid "Finger Gateway"
-msgstr ""
+msgstr "핑거 게이트웨이 (Finger Gateway)"
 
 #: ../../source/operation.rst:345
 msgid ""
 "To start the finger gateway, run ``zuul-fingergw``.  To stop it, kill the "
 "PID which was saved in the pidfile specified in the configuration."
 msgstr ""
+"핑거 게이트웨이를 시작하려면 ``zuul-fingergw`` 를 실행하십시오. 중지하려면 "
+"구성에 지정된 pidfile에 저장된 PID를 kill 하십시오."

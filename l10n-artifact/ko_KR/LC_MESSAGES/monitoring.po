@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/monitoring.rst:4
 msgid "Monitoring"
-msgstr ""
+msgstr "모니터링"
 
 #: ../../source/monitoring.rst:9
 msgid "Statsd reporting"
-msgstr ""
+msgstr "Statsd 리포팅"
 
 #: ../../source/monitoring.rst:11
 msgid ""
@@ -31,50 +31,61 @@ msgid ""
 "(see below), the Zuul scheduler will emit raw metrics to a statsd receiver "
 "which let you in turn generate nice graphics."
 msgstr ""
+"Zuul은 statsd 프로토콜을 지원하며, 활성화 및 구성이 완료되면(아래 참조) "
+"Zuul 스케줄러가 원시 메트릭을 statsd 수신기로 전송하여 멋진 그래프를 생성할 "
+"수 있게 해줍니다."
 
 #: ../../source/monitoring.rst:16 ../../source/monitoring.rst:856
 msgid "Configuration"
-msgstr ""
+msgstr "설정"
 
 #: ../../source/monitoring.rst:18
 msgid ""
 "Statsd support uses the ``statsd`` python module.  Note that support is "
 "optional and Zuul will start without the statsd python module present."
 msgstr ""
+"Statsd 지원은 ``statsd`` 파이썬 모듈을 사용합니다. 이 지원은 선택 사항이며 "
+"Zuul은 statsd 파이썬 모듈 없이도 시작될 수 있습니다."
 
 #: ../../source/monitoring.rst:22
 msgid "Configuration is in the :attr:`statsd` section of ``zuul.conf``."
-msgstr ""
+msgstr "설정은 ``zuul.conf`` 의 :attr:`statsd` 섹션에 있습니다."
 
 #: ../../source/monitoring.rst:25 ../../source/monitoring.rst:865
 msgid "Metrics"
-msgstr ""
+msgstr "메트릭"
 
 #: ../../source/monitoring.rst:27
 msgid "These metrics are emitted by the Zuul :ref:`scheduler`:"
-msgstr ""
+msgstr "다음 메트릭들은 Zuul :ref:`scheduler` 에 의해 생성됩니다:"
 
 #: ../../source/monitoring.rst:32
 msgid ""
 "Zuul will report counters for each type of event it receives from each of "
 "its configured drivers."
 msgstr ""
+"Zuul은 구성된 각 드라이버로부터 수신하는 각 이벤트 유형에 대한 카운터를 "
+"보고합니다."
 
 #: ../../source/monitoring.rst:37
 msgid "Holds metrics specific to connections. This hierarchy includes:"
-msgstr ""
+msgstr "연결과 관련된 메트릭을 보관합니다. 이 계층 구조는 다음을 포함합니다:"
 
 #: ../../source/monitoring.rst:42
 msgid ""
 "The number of bytes stored in ZooKeeper for all items in this connection's "
 "change cache."
 msgstr ""
+"이 연결의 변경 캐시에 있는 모든 항목에 대해 주키퍼(ZooKeeper)에 저장된 "
+"바이트 수입니다."
 
 #: ../../source/monitoring.rst:48
 msgid ""
 "The number of bytes required to for the change cache (the decompressed value "
 "of ``data_size_compressed``)."
 msgstr ""
+"변경 캐시에 필요한 바이트 수입니다(``data_size_compressed`` 의 압축 해제된 "
+"값)."
 
 #: ../../source/monitoring.rst:54
 msgid ""
@@ -82,6 +93,9 @@ msgid ""
 "event from a driver until the corresponding item is enqueued in a pipeline.  "
 "This measures the performance of the scheduler in dispatching events."
 msgstr ""
+"스케줄러가 드라이버로부터 트리거 이벤트를 수신한 시점부터 해당 항목이 "
+"파이프라인 큐에 추가될 때까지의 시간을 보고하는 타이머 메트릭입니다. 이것은 "
+"이벤트를 발송하는 스케줄러의 성능을 측정합니다."
 
 #: ../../source/monitoring.rst:62
 msgid ""
@@ -91,10 +105,14 @@ msgid ""
 "event_enqueue_processing_time` and any driver-specific pre-processing of the "
 "event."
 msgstr ""
+"원격 시스템에서 트리거 이벤트가 수신된 시점부터 해당 항목이 파이프라인 큐에 "
+"추가될 때까지의 시간을 보고하는 타이머 메트릭입니다. 여기에는 :stat:`zuul."
+"tenant.<tenant>.event_enqueue_processing_time` 및 이벤트에 대한 드라이버별 "
+"전처리가 포함됩니다."
 
 #: ../../source/monitoring.rst:71
 msgid "The size of the tenant's management event queue."
-msgstr ""
+msgstr "테넌트의 관리 이벤트 큐 크기입니다."
 
 #: ../../source/monitoring.rst:76
 msgid ""
@@ -103,6 +121,10 @@ msgid ""
 "received.  During this time, all processing of that tenant's pipelines are "
 "halted.  This measures that time."
 msgstr ""
+"테넌트를 재구성하는 데 걸린 시간을 보고하는 타이머 메트릭입니다. 이는 테넌트 "
+"재구성 이벤트를 수신한 후 하나의 스케줄러에 의해 수행됩니다. 이 시간 동안 "
+"해당 테넌트 파이프라인의 모든 처리가 중단됩니다. 이 메트릭은 그 시간을 "
+"측정합니다."
 
 #: ../../source/monitoring.rst:81
 msgid ""
@@ -110,24 +132,30 @@ msgid ""
 "schedulers may update their layout in the background without interrupting "
 "processing.  That is not reported in this metric."
 msgstr ""
+"첫 번째 스케줄러가 테넌트 재구성을 완료하면, 다른 스케줄러들은 처리 중단 "
+"없이 백그라운드에서 레이아웃을 업데이트할 수 있습니다. 해당 시간은 이 "
+"메트릭에 보고되지 않습니다."
 
 #: ../../source/monitoring.rst:88
 msgid "The size of the tenant's trigger event queue."
-msgstr ""
+msgstr "테넌트의 트리거 이벤트 큐 크기입니다."
 
 #: ../../source/monitoring.rst:92
 msgid "Holds metrics specific to jobs. This hierarchy includes:"
-msgstr ""
+msgstr "작업(job)과 관련된 메트릭을 보관합니다. 이 계층 구조는 다음을 포함합니다:"
 
 #: ../../source/monitoring.rst:96
 msgid "A set of metrics for each pipeline named as defined in the Zuul config."
 msgstr ""
+"Zuul 구성에 정의된 이름대로 각 파이프라인에 대한 메트릭 집합입니다."
 
 #: ../../source/monitoring.rst:102
 msgid ""
 "The time elapsed from when a trigger event was received from the remote "
 "system to when the corresponding item is enqueued in a pipeline."
 msgstr ""
+"원격 시스템에서 트리거 이벤트가 수신된 시점부터 해당 항목이 파이프라인 큐에 "
+"추가될 때까지 경과된 시간입니다."
 
 #: ../../source/monitoring.rst:109
 msgid ""
@@ -138,6 +166,12 @@ msgid ""
 "<tenant>.pipeline.<pipeline>.merger_merge_op_time` and :stat:`zuul.tenant."
 "<tenant>.pipeline.<pipeline>.merger_files_changes_op_time`."
 msgstr ""
+"초기 병합 작업을 기다리는 데 소비된 시간입니다. 여기에는 항상 변경 사항을 "
+"투기적으로 병합(speculatively merge)하기 위한 Zuul 병합기(Merger)로의 요청이 "
+"포함되지만, 변경에 의해 수정된 파일을 식별하기 위해 병렬로 제출된 두 번째 "
+"요청도 포함될 수 있습니다. :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>."
+"merger_merge_op_time` 및 :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>."
+"merger_files_changes_op_time` 을 포함합니다."
 
 #: ../../source/monitoring.rst:121
 msgid ""
@@ -145,6 +179,8 @@ msgid ""
 "not include any of the round-trip time from the scheduler to the merger, or "
 "any other merge operations."
 msgstr ""
+"병합기가 병합 작업을 수행하는 데 소비한 시간입니다. 스케줄러에서 병합기까지의 "
+"왕복 시간이나 다른 병합 작업 시간은 포함되지 않습니다."
 
 #: ../../source/monitoring.rst:129
 msgid ""
@@ -153,16 +189,21 @@ msgid ""
 "provide this information). This does not include any of the round-trip time "
 "from the scheduler to the merger, or any other merge operations."
 msgstr ""
+"병합기가 변경된 파일을 감지하기 위해 파일 변경 확인 작업을 수행하는 데 "
+"소비한 시간입니다(소스가 이 정보를 제공하지 않을 경우 때때로 수행됨). "
+"스케줄러에서 병합기까지의 왕복 시간이나 다른 병합 작업 시간은 포함되지 "
+"않습니다."
 
 #: ../../source/monitoring.rst:138
 msgid "The amount of time spent generating a dynamic configuration layout."
-msgstr ""
+msgstr "동적 구성 레이아웃을 생성하는 데 소비된 시간입니다."
 
 #: ../../source/monitoring.rst:143
 msgid ""
 "The amount of time spent freezing the inheritance hierarchy and parameters "
 "of a job."
 msgstr ""
+"작업의 상속 계층 구조 및 매개변수를 동결(freezing)하는 데 소비된 시간입니다."
 
 #: ../../source/monitoring.rst:149
 msgid ""
@@ -170,6 +211,9 @@ msgid ""
 "additional information about the repo state of required projects.  Includes :"
 "stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.merger_repo_state_op_time`."
 msgstr ""
+"필요한 프로젝트의 저장소 상태에 대한 추가 정보를 수집하기 위해 보조 Zuul "
+"병합기 작업을 기다리는 시간입니다. :stat:`zuul.tenant.<tenant>.pipeline."
+"<pipeline>.merger_repo_state_op_time`을 포함합니다."
 
 #: ../../source/monitoring.rst:157
 msgid ""
@@ -178,16 +222,21 @@ msgid ""
 "This does not include any of the round-trip time from the scheduler to the "
 "merger, or any other merge operations."
 msgstr ""
+"병합기가 필요한 프로젝트의 저장소 상태에 대한 추가 정보를 수집하기 위해 "
+"저장소 상태 작업을 수행하는 데 소비한 시간입니다. 스케줄러에서 병합기까지의 "
+"왕복 시간이나 다른 병합 작업 시간은 포함되지 않습니다."
 
 #: ../../source/monitoring.rst:166
 msgid "The amount of time spent waiting for each node request to be fulfilled."
-msgstr ""
+msgstr "각 노드 요청이 충족되기를 기다리는 데 소비된 시간입니다."
 
 #: ../../source/monitoring.rst:172
 msgid ""
 "How long a job waited for an executor to start running it after the build "
 "was requested."
 msgstr ""
+"빌드가 요청된 후 작업이 실행기(executor)에서 실행을 시작하기까지 기다린 "
+"시간입니다."
 
 #: ../../source/monitoring.rst:178
 msgid ""
@@ -196,14 +245,17 @@ msgid ""
 "once per queue item, even if its buildset is reset due to a speculative "
 "execution failure."
 msgstr ""
+"원격 시스템에서 트리거 이벤트가 수신된 시점부터 항목의 첫 번째 작업이 "
+"실행될 때까지 경과된 총 시간입니다. 이는 투기적 실행 실패로 인해 빌드셋이 "
+"재설정되더라도 큐 항목당 한 번만 생성됩니다."
 
 #: ../../source/monitoring.rst:187
 msgid "Number of jobs triggered by the pipeline."
-msgstr ""
+msgstr "파이프라인에 의해 트리거된 작업 수입니다."
 
 #: ../../source/monitoring.rst:192
 msgid "The number of items currently being processed by this pipeline."
-msgstr ""
+msgstr "현재 이 파이프라인에서 처리 중인 항목 수입니다."
 
 #: ../../source/monitoring.rst:198
 msgid ""
@@ -212,6 +264,9 @@ msgid ""
 "queue`, and as changes in that queue succeed or fail, that queue's window "
 "will adjust."
 msgstr ""
+"파이프라인에 대해 구성된 윈도우 크기입니다. 이 값은 작동 중에는 변경되지 "
+"않습니다. 이 값은 각 :term:`project queue` 를 초기화하는 데 사용되며, 해당 "
+"큐의 변경 사항이 성공하거나 실패함에 따라 큐의 윈도우가 조정됩니다."
 
 #: ../../source/monitoring.rst:206
 msgid ""
@@ -219,36 +274,48 @@ msgid ""
 "every time a scheduler examines a pipeline regardless of whether it takes "
 "any actions."
 msgstr ""
+"파이프라인을 새로 고침하고 처리하는 데 걸린 총 시간입니다. 이는 조치를 "
+"취하는지 여부와 관계없이 스케줄러가 파이프라인을 검사할 때마다 생성됩니다."
 
 #: ../../source/monitoring.rst:213
 msgid ""
 "The time taken to process the event queues for the pipeline. This is emitted "
 "only if there are events to process."
 msgstr ""
+"파이프라인의 이벤트 큐를 처리하는 데 걸린 시간입니다. 이는 처리할 이벤트가 "
+"있는 경우에만 생성됩니다."
 
 #: ../../source/monitoring.rst:219
 msgid ""
 "The time taken to process the pipeline.  This is emitted only if there were "
 "events to process."
 msgstr ""
+"파이프라인을 처리하는 데 걸린 시간입니다. 이는 처리할 이벤트가 있었던 "
+"경우에만 생성됩니다."
 
 #: ../../source/monitoring.rst:225
 msgid ""
 "The number of bytes stored in ZooKeeper to represent the serialized state of "
 "the pipeline."
 msgstr ""
+"파이프라인의 직렬화된 상태를 나타내기 위해 주키퍼(ZooKeeper)에 저장된 "
+"바이트 수입니다."
 
 #: ../../source/monitoring.rst:231
 msgid ""
 "The number of bytes required to represent the serialized state of the "
 "pipeline (the decompressed value of ``data_size_compressed``)."
 msgstr ""
+"파이프라인의 직렬화된 상태를 나타내는 데 필요한 바이트 수입니다(``data_"
+"size_compressed`` 의 압축 해제된 값)."
 
 #: ../../source/monitoring.rst:237
 msgid ""
 "This hierarchy holds more specific metrics for each :term:`project queue` in "
 "the pipeline."
 msgstr ""
+"이 계층 구조는 파이프라인의 각 :term:`project queue`에 대한 더 구체적인 "
+"메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:242
 msgid ""
@@ -256,6 +323,9 @@ msgid ""
 "project, the name of the project is used by default.  Embedded ``.`` "
 "characters will be translated to ``_``, and ``/`` to ``.``."
 msgstr ""
+"큐의 이름입니다. 단일 프로젝트에 대해 큐가 자동으로 생성되는 경우 기본적으로 "
+"프로젝트 이름이 사용됩니다. 포함된 ``.`` 문자는 ``_`` 로, ``/`` 는 ``.`` 로 "
+"변환됩니다."
 
 #: ../../source/monitoring.rst:247
 msgid ""
@@ -263,72 +333,88 @@ msgid ""
 "instead found under :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.queue."
 "<queue>.branch`."
 msgstr ""
+"큐가 브랜치별(per-branch)로 구성된 경우, 아래 메트릭은 생략되고 대신 :stat:"
+"`zuul.tenant.<tenant>.pipeline.<pipeline>.queue.<queue>.branch` 아래에서 "
+"찾을 수 있습니다."
 
 #: ../../source/monitoring.rst:254
 msgid "The number of items currently in this queue."
-msgstr ""
+msgstr "현재 이 큐에 있는 항목 수입니다."
 
 #: ../../source/monitoring.rst:259
 msgid ""
 "The window size for the queue.  This will change as individual changes in "
 "the queue succeed or fail."
 msgstr ""
+"큐의 윈도우 크기입니다. 이 값은 큐 내의 개별 변경 사항이 성공하거나 실패함에 "
+"따라 변경됩니다."
 
 #: ../../source/monitoring.rst:265
 msgid "A timer metric reporting how long each item has been in the queue."
-msgstr ""
+msgstr "각 항목이 큐에 얼마나 오래 있었는지 보고하는 타이머 메트릭입니다."
 
 #: ../../source/monitoring.rst:271
 msgid "The number of changes processed by the queue."
-msgstr ""
+msgstr "큐에서 처리된 변경 사항의 수입니다."
 
 #: ../../source/monitoring.rst:275
 msgid ""
 "If the queue is configured as per-branch, this hierarchy will be present and "
 "will hold stats for each branch seen."
 msgstr ""
+"큐가 브랜치별(per-branch)로 구성된 경우, 이 계층 구조가 존재하며 확인된 각 "
+"브랜치에 대한 통계를 보유합니다."
 
 #: ../../source/monitoring.rst:281
 msgid ""
 "The name of the branch.  Embedded ``.`` characters will be translated to "
 "``_``, and ``/`` to ``.``."
 msgstr ""
+"브랜치의 이름입니다. 포함된 ``.`` 문자는 ``_`` 로, ``/`` 는 ``.`` 로 변환됩니다."
 
 #: ../../source/monitoring.rst:284
 msgid "Underneath this key are per-branch values of the metrics above."
-msgstr ""
+msgstr "이 키 아래에는 위 메트릭의 브랜치별 값이 있습니다."
 
 #: ../../source/monitoring.rst:289
 msgid ""
 "This hierarchy holds more specific metrics for each project participating in "
 "the pipeline."
 msgstr ""
+"이 계층 구조는 파이프라인에 참여하는 각 프로젝트에 대한 더 구체적인 메트릭을 "
+"보관합니다."
 
 #: ../../source/monitoring.rst:294
 msgid ""
 "The canonical hostname for the triggering project. Embedded ``.`` characters "
 "will be translated to ``_``."
 msgstr ""
+"트리거한 프로젝트의 정식 호스트 이름입니다. 포함된 ``.`` 문자는 ``_`` 로 "
+"변환됩니다."
 
 #: ../../source/monitoring.rst:299
 msgid ""
 "The name of the triggering project.  Embedded ``/`` or ``.`` characters will "
 "be translated to ``_``."
 msgstr ""
+"트리거한 프로젝트의 이름입니다. 포함된 ``/`` 또는 ``.`` 문자는 ``_`` 로 "
+"변환됩니다."
 
 #: ../../source/monitoring.rst:304
 msgid ""
 "The name of the triggering branch.  Embedded ``/`` or ``.`` characters will "
 "be translated to ``_``."
 msgstr ""
+"트리거한 브랜치의 이름입니다. 포함된 ``/`` 또는 ``.`` 문자는 ``_`` 로 "
+"변환됩니다."
 
 #: ../../source/monitoring.rst:309
 msgid "Subtree detailing per-project job statistics:"
-msgstr ""
+msgstr "프로젝트별 작업 통계를 자세히 보여주는 하위 트리:"
 
 #: ../../source/monitoring.rst:313
 msgid "The triggered job name."
-msgstr ""
+msgstr "트리거된 작업 이름입니다."
 
 #: ../../source/monitoring.rst:318
 msgid ""
@@ -336,106 +422,128 @@ msgid ""
 "``ERROR``, etc.) for the job.  If the result is ``SUCCESS`` or ``FAILURE``, "
 "Zuul will additionally report the duration of the build as a timer."
 msgstr ""
+"작업에 대한 각 결과 유형(예: ``SUCCESS``, ``FAILURE``, ``ERROR`` 등)의 "
+"카운터입니다. 결과가 ``SUCCESS`` 또는 ``FAILURE`` 인 경우, Zuul은 빌드 기간을 "
+"타이머로 추가 보고합니다."
 
 #: ../../source/monitoring.rst:327
 msgid ""
 "How long the job waited for an executor to start running it after the build "
 "was requested."
 msgstr ""
+"빌드가 요청된 후 작업이 실행기(executor)에서 실행을 시작하기까지 기다린 "
+"시간입니다."
 
 #: ../../source/monitoring.rst:333
 msgid ""
 "The number of items of this project currently being processed by this "
 "pipeline."
-msgstr ""
+msgstr "현재 이 파이프라인에서 처리 중인 이 프로젝트의 항목 수입니다."
 
 #: ../../source/monitoring.rst:339
 msgid ""
 "A timer metric reporting how long each item for this project has been in the "
 "pipeline."
 msgstr ""
+"이 프로젝트의 각 항목이 파이프라인에 얼마나 오래 있었는지 보고하는 타이머 "
+"메트릭입니다."
 
 #: ../../source/monitoring.rst:345
 msgid "The number of changes for this project processed by the pipeline."
-msgstr ""
+msgstr "파이프라인에서 처리된 이 프로젝트의 변경 사항 수입니다."
 
 #: ../../source/monitoring.rst:351
 msgid ""
 "The time spent reading data from ZooKeeper during a single pipeline "
 "processing run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에서 데이터를 읽는 데 소비된 "
+"시간입니다."
 
 #: ../../source/monitoring.rst:357
 msgid ""
 "The number of ZNodes read from ZooKeeper during a single pipeline processing "
 "run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에서 읽은 ZNode의 수입니다."
 
 #: ../../source/monitoring.rst:363
 msgid ""
 "The number of Zuul data model objects read from ZooKeeper during a single "
 "pipeline processing run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에서 읽은 Zuul 데이터 모델 "
+"객체의 수입니다."
 
 #: ../../source/monitoring.rst:369
 msgid ""
 "The amount of data read from ZooKeeper during a single pipeline processing "
 "run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에서 읽은 데이터의 양입니다."
 
 #: ../../source/monitoring.rst:375
 msgid "The time taken to refresh the state from ZooKeeper."
-msgstr ""
+msgstr "주키퍼(ZooKeeper)에서 상태를 새로 고침하는 데 걸린 시간입니다."
 
 #: ../../source/monitoring.rst:380
 msgid "A timer metric reporting how long each item has been in the pipeline."
 msgstr ""
+"각 항목이 파이프라인에 얼마나 오래 있었는지 보고하는 타이머 메트릭입니다."
 
 #: ../../source/monitoring.rst:386
 msgid "The number of changes processed by the pipeline."
-msgstr ""
+msgstr "파이프라인에서 처리된 변경 사항의 수입니다."
 
 #: ../../source/monitoring.rst:391
 msgid "The size of the pipeline's trigger event queue."
-msgstr ""
+msgstr "파이프라인의 트리거 이벤트 큐 크기입니다."
 
 #: ../../source/monitoring.rst:396
 msgid "The size of the pipeline's result event queue."
-msgstr ""
+msgstr "파이프라인의 결과 이벤트 큐 크기입니다."
 
 #: ../../source/monitoring.rst:401
 msgid "The size of the pipeline's management event queue."
-msgstr ""
+msgstr "파이프라인의 관리 이벤트 큐 크기입니다."
 
 #: ../../source/monitoring.rst:406
 msgid ""
 "The time spent writing data to ZooKeeper during a single pipeline processing "
 "run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에 데이터를 쓰는 데 소비된 "
+"시간입니다."
 
 #: ../../source/monitoring.rst:412
 msgid ""
 "The number of ZNodes written to ZooKeeper during a single pipeline "
 "processing run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에 기록된 ZNode의 수입니다."
 
 #: ../../source/monitoring.rst:418
 msgid ""
 "The number of Zuul data model objects written to ZooKeeper during a single "
 "pipeline processing run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에 기록된 Zuul 데이터 모델 "
+"객체의 수입니다."
 
 #: ../../source/monitoring.rst:424
 msgid ""
 "The amount of data written to ZooKeeper during a single pipeline processing "
 "run."
 msgstr ""
+"단일 파이프라인 처리 실행 중 주키퍼(ZooKeeper)에 기록된 데이터의 양입니다."
 
 #: ../../source/monitoring.rst:429
 msgid ""
 "Holds metrics emitted by individual executors.  The ``<executor>`` component "
 "of the key will be replaced with the hostname of the executor."
 msgstr ""
+"개별 실행기(executor)가 생성한 메트릭을 보관합니다. 키의 ``<executor>`` "
+"구성 요소는 실행기의 호스트 이름으로 대체됩니다."
 
 #: ../../source/monitoring.rst:436
 msgid ""
@@ -444,10 +552,13 @@ msgid ""
 "operation which would be accounted for as a ``FAILURE`` is what ends up "
 "being returned by Zuul as a ``MERGE_CONFLICT``."
 msgstr ""
+"Zuul 실행기의 병합 작업 상태를 나타내기 위해 증가합니다. ``<result>`` 는 "
+"``SUCCESS`` 또는 ``FAILURE`` 일 수 있습니다. ``FAILURE`` 로 처리되는 실패한 "
+"병합 작업은 Zuul에 의해 ``MERGE_CONFLICT`` 로 반환됩니다."
 
 #: ../../source/monitoring.rst:444
 msgid "Incremented each time the executor starts a build."
-msgstr ""
+msgstr "실행기가 빌드를 시작할 때마다 증가합니다."
 
 #: ../../source/monitoring.rst:449
 msgid ""
@@ -455,6 +566,8 @@ msgid ""
 "long jobs were in this state. These are builds which have not yet begun "
 "their first pre-playbook."
 msgstr ""
+"이 실행기에서 시작되는 빌드 수와 작업이 이 상태에 있었던 시간을 포함하는 "
+"타이머입니다. 이들은 아직 첫 번째 pre-playbook을 시작하지 않은 빌드들입니다."
 
 #: ../../source/monitoring.rst:453
 msgid ""
@@ -469,20 +582,30 @@ msgid ""
 "feature) and as such the starting jobs timers (aggregated over a large "
 "enough interval) should not differ much."
 msgstr ""
+"이 타이머는 모든 작업을 집계하므로 해석할 때 특별한 주의가 필요합니다. 장기간"
+"(아마도 하루)에 걸쳐 집계할 때 유용할 수 있는데, 그래프가 빠르게 상승한다면 "
+"예를 들어 실행기가 실행 중인 머신의 IO 문제를 나타낼 수 있습니다. 하지만 "
+"상승하는 그래프는 더 많은 필수 프로젝트를 사용하는 복잡한 작업의 사용량이 "
+"높다는 것을 나타낼 수도 있음에 유의해야 합니다. 또한 여러 실행기를 비교할 때 "
+"그래프가 서로 많이 다르다면 통찰력을 얻을 수 있습니다. 일반적으로 작업은 모든 "
+"실행기에 균등하게 분산되므로(존 기능을 사용할 경우 동일한 존 내에서), 시작 "
+"작업 타이머(충분히 큰 간격으로 집계된 경우)는 큰 차이가 없어야 합니다."
 
 #: ../../source/monitoring.rst:467
 msgid ""
 "The number of builds currently running on this executor.  This includes "
 "starting builds."
 msgstr ""
+"이 실행기에서 현재 실행 중인 빌드 수입니다. 여기에는 시작 중인 빌드가 "
+"포함됩니다."
 
 #: ../../source/monitoring.rst:473
 msgid "The number of currently paused builds on this executor."
-msgstr ""
+msgstr "이 실행기에서 현재 일시 중지된 빌드 수입니다."
 
 #: ../../source/monitoring.rst:477
 msgid "Subtree detailing per-phase execution statistics:"
-msgstr ""
+msgstr "단계별 실행 통계를 자세히 보여주는 하위 트리:"
 
 #: ../../source/monitoring.rst:481
 msgid ""
@@ -490,6 +613,9 @@ msgid ""
 "*internal* phase (such as ``setup`` or ``cleanup``) as well as *job* phases "
 "such as ``pre``, ``run`` or ``post``."
 msgstr ""
+"``<phase>`` 는 작업 실행의 단계를 나타냅니다. 이는 *내부* 단계(``setup`` "
+"또는 ``cleanup`` 등)일 수도 있고, ``pre``, ``run`` 또는 ``post`` 와 같은 "
+"*작업* 단계일 수도 있습니다."
 
 #: ../../source/monitoring.rst:488
 msgid ""
@@ -497,88 +623,97 @@ msgid ""
 "determine the status of a build but are indicators of the exit status "
 "provided by Ansible for the execution of a particular phase."
 msgstr ""
+"각 결과 유형에 대한 카운터입니다. 이 결과들 자체로 빌드 상태가 결정되는 것은 "
+"아니지만, 특정 단계의 실행에 대해 Ansible이 제공한 종료 상태의 지표가 됩니다."
 
 #: ../../source/monitoring.rst:493
 msgid ""
 "Example of possible counters for each phase are: ``RESULT_NORMAL``, "
 "``RESULT_TIMED_OUT``, ``RESULT_UNREACHABLE``, ``RESULT_ABORTED``."
 msgstr ""
+"각 단계에 대한 가능한 카운터의 예는 다음과 같습니다: ``RESULT_NORMAL``, "
+"``RESULT_TIMED_OUT``, ``RESULT_UNREACHABLE``, ``RESULT_ABORTED``."
 
 #: ../../source/monitoring.rst:499
 msgid "The one-minute load average of this executor, multiplied by 100."
-msgstr ""
+msgstr "이 실행기의 1분 부하 평균에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:504
 msgid "Indicates if the executor is paused. 1 means paused else 0."
 msgstr ""
+"실행기가 일시 중지되었는지 나타냅니다. 1은 일시 중지됨, 0은 그렇지 않음을 "
+"의미합니다."
 
 #: ../../source/monitoring.rst:509
 msgid "The used disk on this executor, as a percentage multiplied by 100."
-msgstr ""
+msgstr "이 실행기의 디스크 사용량이며, 백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:514
 msgid "The used inodes on this executor, as a percentage multiplied by 100."
-msgstr ""
+msgstr "이 실행기의 inode 사용량이며, 백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:519
 msgid ""
 "The used RAM (excluding buffers and cache) on this executor, as a percentage "
 "multiplied by 100."
 msgstr ""
+"이 실행기의 RAM 사용량(버퍼 및 캐시 제외)이며, 백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:525
 msgid ""
 "The used RAM (excluding buffers and cache) on this executor allowed by the "
 "cgroup, as percentage multiplied by 100."
 msgstr ""
+"cgroup에 의해 허용된 이 실행기의 RAM 사용량(버퍼 및 캐시 제외)이며, "
+"백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:531
 msgid "The maximum amount of processes that can be running on this executor."
-msgstr ""
+msgstr "이 실행기에서 실행될 수 있는 프로세스의 최대 수입니다."
 
 #: ../../source/monitoring.rst:536
 msgid "The current amount of running processes on this executor."
-msgstr ""
+msgstr "이 실행기에서 현재 실행 중인 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:540
 msgid "Holds metrics related to Zuul requests and responses from Nodepool."
-msgstr ""
+msgstr "Nodepool에 대한 Zuul 요청 및 응답과 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:542
 msgid "States are one of:"
-msgstr ""
+msgstr "상태는 다음 중 하나입니다:"
 
 #: ../../source/monitoring.rst:544
 msgid "*requested*"
-msgstr ""
+msgstr "*requested* (요청됨)"
 
 #: ../../source/monitoring.rst:545
 msgid "Node request submitted by Zuul to Nodepool"
-msgstr ""
+msgstr "Zuul이 Nodepool에 제출한 노드 요청"
 
 #: ../../source/monitoring.rst:546
 msgid "*canceled*"
-msgstr ""
+msgstr "*canceled* (취소됨)"
 
 #: ../../source/monitoring.rst:547
 msgid "Node request was canceled by Zuul"
-msgstr ""
+msgstr "Zuul에 의해 노드 요청이 취소됨"
 
 #: ../../source/monitoring.rst:548
 msgid "*failed*"
-msgstr ""
+msgstr "*failed* (실패함)"
 
 #: ../../source/monitoring.rst:549
 msgid "Nodepool failed to fulfill a node request"
-msgstr ""
+msgstr "Nodepool이 노드 요청을 충족하지 못함"
 
 #: ../../source/monitoring.rst:550
 msgid "*fulfilled*"
-msgstr ""
+msgstr "*fulfilled* (완료됨)"
 
 #: ../../source/monitoring.rst:551
 msgid "Nodes were assigned by Nodepool"
-msgstr ""
+msgstr "Nodepool에 의해 노드가 할당됨"
 
 #: ../../source/monitoring.rst:556
 msgid ""
@@ -587,18 +722,25 @@ msgid ""
 "give the average time for all fulfilled requests within each ``statsd`` "
 "flush interval."
 msgstr ""
+"`failed` 및 `fulfilled` 상태에 대해 요청부터 완료까지 경과된 시간을 "
+"기록합니다. 예를 들어, ``zuul.nodepool.request.fulfilled.mean`` 은 각 "
+"``statsd`` 플러시 간격 내의 모든 완료된(fulfilled) 요청에 대한 평균 시간을 "
+"제공합니다."
 
 #: ../../source/monitoring.rst:562
 msgid ""
 "A lower value for `fulfilled` requests is better.  Ideally, there will be no "
 "`failed` requests."
 msgstr ""
+"`fulfilled` 요청의 값이 낮을수록 좋습니다. 이상적으로는 `failed` 요청이 "
+"없어야 합니다."
 
 #: ../../source/monitoring.rst:568
 msgid ""
 "Incremented when nodes are assigned or removed as described in the states "
 "above."
 msgstr ""
+"위에 설명된 상태에 따라 노드가 할당되거나 제거될 때 증가합니다."
 
 #: ../../source/monitoring.rst:574
 msgid ""
@@ -607,6 +749,9 @@ msgid ""
 "fulfillment of 3 node requests can be tracked with ``zuul.nodepool.requests."
 "fulfilled.size.3``."
 msgstr ""
+"각 요청의 노드 수에 대해 증가합니다. 예를 들어, 3개의 노드에 대한 요청은 "
+"``zuul.nodepool.requests.requested.size.3`` 키를 사용하고, 3개의 노드 요청 "
+"완료는 ``zuul.nodepool.requests.fulfilled.size.3`` 으로 추적할 수 있습니다."
 
 #: ../../source/monitoring.rst:580
 msgid ""
@@ -616,6 +761,10 @@ msgid ""
 "interval.  A lower value for `fulfilled` requests is better. Ideally, there "
 "will be no `failed` requests."
 msgstr ""
+"타이머는 ``fulfilled`` 및 ``failed`` 요청에 대해 구현됩니다. 예를 들어, "
+"타이머 ``zuul.nodepool.requests.failed.size.3.mean`` 은 ``statsd`` 플러시 "
+"간격 내에서 3개 노드 실패 요청의 평균 시간을 제공합니다. `fulfilled` 요청의 "
+"값이 낮을수록 좋습니다. 이상적으로는 `failed` 요청이 없어야 합니다."
 
 #: ../../source/monitoring.rst:590
 msgid ""
@@ -623,6 +772,8 @@ msgid ""
 "`centos7` nodes could be tracked with ``zuul.nodepool.requests.requested."
 "centos7``."
 msgstr ""
+"각 요청의 라벨에 대해 증가합니다. 예를 들어, `centos7` 노드에 대한 요청은 "
+"``zuul.nodepool.requests.requested.centos7`` 로 추적할 수 있습니다."
 
 #: ../../source/monitoring.rst:594
 msgid ""
@@ -632,6 +783,11 @@ msgid ""
 "``statsd`` flush interval.  A lower value for `fulfilled` requests is "
 "better.  Ideally, there will be no `failed` requests."
 msgstr ""
+"타이머는 ``fulfilled`` 및 ``failed`` 요청에 대해 구현됩니다. 예를 들어, "
+"타이머 ``zuul.nodepool.requests.fulfilled.label.centos7.mean`` 은 "
+"``statsd`` 플러시 간격 내에서 ``centos7`` 완료(fulfilled) 요청의 평균 "
+"시간을 제공합니다. `fulfilled` 요청의 값이 낮을수록 좋습니다. 이상적으로는 "
+"`failed` 요청이 없어야 합니다."
 
 #: ../../source/monitoring.rst:607
 msgid ""
@@ -639,6 +795,9 @@ msgid ""
 "at zero, meaning all requests are fulfilled. Persistently high values "
 "indicate more testing node resources would be helpful."
 msgstr ""
+"Zuul에서 처리되지 않은(outstanding) Nodepool 요청 수입니다. 이상적으로는 "
+"모든 요청이 충족되어 0이어야 합니다. 지속적으로 높은 값은 더 많은 테스트 "
+"노드 리소스가 도움이 됨을 나타냅니다."
 
 #: ../../source/monitoring.rst:615
 msgid ""
@@ -646,36 +805,45 @@ msgid ""
 "<tenant>. If a tenant for a node request cannot be determined, it is "
 "reported as ``unknown``. This relates to ``zuul.nodepool.current_requests``."
 msgstr ""
+"Zuul에서 처리되지 않은 Nodepool 요청 수를 <tenant>별로 세분화한 것입니다. "
+"노드 요청에 대한 테넌트를 확인할 수 없는 경우 ``unknown`` 으로 보고됩니다. "
+"이는 ``zuul.nodepool.current_requests`` 와 관련이 있습니다."
 
 #: ../../source/monitoring.rst:622
 msgid ""
 "Holds metrics about resource usage by tenant or project if resources of "
 "nodes are reported by nodepool."
 msgstr ""
+"노드의 리소스가 Nodepool에 의해 보고되는 경우 테넌트 또는 프로젝트별 리소스 "
+"사용량에 대한 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:627
 msgid "Holds metrics about resources currently in use by a build."
-msgstr ""
+msgstr "빌드에서 현재 사용 중인 리소스에 대한 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:631 ../../source/monitoring.rst:657
 msgid "Holds resource usage metrics by tenant."
-msgstr ""
+msgstr "테넌트별 리소스 사용량 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:636
 msgid ""
 "Counter with the summed usage by tenant as <resource> seconds and gauge with "
 "the currently in use resources by tenant."
 msgstr ""
+"테넌트별 사용량 합계를 <resource> 초 단위로 나타내는 카운터와 현재 "
+"테넌트가 사용 중인 리소스를 나타내는 게이지입니다."
 
 #: ../../source/monitoring.rst:641
 msgid "Holds resource usage metrics by project."
-msgstr ""
+msgstr "프로젝트별 리소스 사용량 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:646
 msgid ""
 "Counter with the summed usage by project as <resource> seconds and gauge "
 "with the currently used resources by project."
 msgstr ""
+"프로젝트별 사용량 합계를 <resource> 초 단위로 나타내는 카운터와 현재 "
+"프로젝트가 사용 중인 리소스를 나타내는 게이지입니다."
 
 #: ../../source/monitoring.rst:651
 msgid ""
@@ -683,56 +851,64 @@ msgid ""
 "that are currently in use, allocated but not yet in use, and scheduled to be "
 "deleted."
 msgstr ""
+"총 할당된 리소스에 대한 메트릭을 보관합니다. 여기에는 현재 사용 중인 리소스, "
+"할당되었지만 아직 사용되지 않는 리소스, 삭제될 예정인 리소스가 포함됩니다."
 
 #: ../../source/monitoring.rst:662
 msgid "Gauge with the currently used resources by tenant."
-msgstr ""
+msgstr "현재 테넌트가 사용 중인 리소스를 나타내는 게이지입니다."
 
 #: ../../source/monitoring.rst:667
 msgid "Holds metrics related to Zuul mergers."
-msgstr ""
+msgstr "Zuul 병합기(Merger)와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:672
 msgid "The number of Zuul merger processes online."
-msgstr ""
+msgstr "온라인 상태인 Zuul 병합기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:677
 msgid "The number of merge jobs running."
-msgstr ""
+msgstr "실행 중인 병합 작업의 수입니다."
 
 #: ../../source/monitoring.rst:682
 msgid ""
 "The number of merge jobs waiting for a merger.  This should ideally be zero; "
 "persistent higher values indicate more merger resources would be useful."
 msgstr ""
+"병합기를 기다리는 병합 작업의 수입니다. 이상적으로는 0이어야 합니다. "
+"지속적으로 높은 값은 더 많은 병합기 리소스가 유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:688 ../../source/monitoring.rst:721
 msgid "Holds metrics related to unzoned executors."
-msgstr ""
+msgstr "영역이 지정되지 않은(unzoned) 실행기와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:690
 msgid ""
 "This is a copy of :stat:`zuul.executors.unzoned`.  It does not include "
 "information about zoned executors."
 msgstr ""
+"이것은 :stat:`zuul.executors.unzoned`의 사본입니다. 영역이 지정된(zoned) "
+"실행기에 대한 정보는 포함하지 않습니다."
 
 #: ../../source/monitoring.rst:693
 msgid ""
 "The metrics at this location are deprecated and will be removed in a future "
 "version.  Please begin using :stat:`zuul.executors.unzoned` instead."
 msgstr ""
+"이 위치의 메트릭은 더 이상 사용되지 않으며(deprecated) 향후 버전에서 제거될 "
+"예정입니다. 대신 :stat:`zuul.executors.unzoned`를 사용하십시오."
 
 #: ../../source/monitoring.rst:700
 msgid "The number of Zuul executor processes online."
-msgstr ""
+msgstr "온라인 상태인 Zuul 실행기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:705
 msgid "The number of Zuul executor processes accepting new jobs."
-msgstr ""
+msgstr "새 작업을 수락하는 Zuul 실행기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:710
 msgid "The number of executor jobs running."
-msgstr ""
+msgstr "실행 중인 실행기 작업의 수입니다."
 
 #: ../../source/monitoring.rst:715
 msgid ""
@@ -740,18 +916,23 @@ msgid ""
 "run on.  This should ideally be at zero; persistent higher values indicate "
 "more executor resources would be useful."
 msgstr ""
+"노드는 할당되었지만 실행기를 기다리며 큐에 대기 중인 작업의 수입니다. "
+"이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 실행기 리소스가 "
+"유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:726
 msgid "The number of unzoned Zuul executor processes online."
 msgstr ""
+"온라인 상태인 영역이 지정되지 않은(unzoned) Zuul 실행기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:731
 msgid "The number of unzoned Zuul executor processes accepting new jobs."
 msgstr ""
+"새 작업을 수락하는 영역이 지정되지 않은 Zuul 실행기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:737
 msgid "The number of unzoned executor jobs running."
-msgstr ""
+msgstr "실행 중인 영역이 지정되지 않은 실행기 작업의 수입니다."
 
 #: ../../source/monitoring.rst:742
 msgid ""
@@ -759,22 +940,25 @@ msgid ""
 "executor to run on.  This should ideally be at zero; persistent higher "
 "values indicate more executor resources would be useful."
 msgstr ""
+"노드는 할당되었지만 영역이 지정되지 않은 실행기를 기다리며 큐에 대기 중인 "
+"작업의 수입니다. 이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 "
+"실행기 리소스가 유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:749
 msgid "Holds metrics related to zoned executors."
-msgstr ""
+msgstr "영역이 지정된(zoned) 실행기와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:754
 msgid "The number of Zuul executor processes online in this zone."
-msgstr ""
+msgstr "이 영역(zone)에서 온라인 상태인 Zuul 실행기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:759
 msgid "The number of Zuul executor processes accepting new jobs in this zone."
-msgstr ""
+msgstr "이 영역에서 새 작업을 수락하는 Zuul 실행기 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:765
 msgid "The number of executor jobs running in this zone."
-msgstr ""
+msgstr "이 영역에서 실행 중인 실행기 작업의 수입니다."
 
 #: ../../source/monitoring.rst:770
 msgid ""
@@ -782,28 +966,33 @@ msgid ""
 "this zone to run on.  This should ideally be at zero; persistent higher "
 "values indicate more executor resources would be useful."
 msgstr ""
+"노드는 할당되었지만 이 영역의 실행기를 기다리며 큐에 대기 중인 작업의 "
+"수입니다. 이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 실행기 "
+"리소스가 유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:777
 msgid "Holds metrics related to the Zuul scheduler."
-msgstr ""
+msgstr "Zuul 스케줄러와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:781
 msgid "Holds metrics about the event queue lengths in the Zuul scheduler."
-msgstr ""
+msgstr "Zuul 스케줄러의 이벤트 큐 길이에 대한 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:786
 msgid "The size of the current reconfiguration event queue."
-msgstr ""
+msgstr "현재 재구성 이벤트 큐의 크기입니다."
 
 #: ../../source/monitoring.rst:791
 msgid "The size of the current connection event queue."
-msgstr ""
+msgstr "현재 연결 이벤트 큐의 크기입니다."
 
 #: ../../source/monitoring.rst:796
 msgid ""
 "A timer metric reporting the time taken for one scheduler run handler "
 "iteration."
 msgstr ""
+"한 번의 스케줄러 실행 핸들러 반복(iteration)에 걸린 시간을 보고하는 타이머 "
+"메트릭입니다."
 
 #: ../../source/monitoring.rst:802
 msgid ""
@@ -812,30 +1001,34 @@ msgid ""
 "duration of the query.  Note this is a performance metric of how long the "
 "SQL query takes; it is not the estimated time value itself."
 msgstr ""
+"스케줄러가 작업의 예상 시간을 결정하기 위해 SQL 데이터베이스에 쿼리를 수행할 "
+"때마다 쿼리 지속 시간에 대한 이 타이머를 생성합니다. 이것은 SQL 쿼리가 얼마나 "
+"걸리는지에 대한 성능 메트릭이며, 예상 시간 값 자체는 아니라는 점에 "
+"유의하십시오."
 
 #: ../../source/monitoring.rst:810
 msgid "Holds metrics related to the Zuul web component."
-msgstr ""
+msgstr "Zuul 웹 구성 요소와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:814
 msgid "Holds metrics from a specific zuul-web server."
-msgstr ""
+msgstr "특정 zuul-web 서버의 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:818
 msgid "Metrics related to the web server thread pool."
-msgstr ""
+msgstr "웹 서버 스레드 풀과 관련된 메트릭입니다."
 
 #: ../../source/monitoring.rst:823
 msgid "The number of idle workers."
-msgstr ""
+msgstr "유휴(idle) 워커의 수입니다."
 
 #: ../../source/monitoring.rst:828
 msgid "The number of requests queued for workers."
-msgstr ""
+msgstr "워커를 위해 큐에 대기 중인 요청 수입니다."
 
 #: ../../source/monitoring.rst:833 ../../source/monitoring.rst:899
 msgid "The number of log streamers currently in operation."
-msgstr ""
+msgstr "현재 작동 중인 로그 스트리머의 수입니다."
 
 #: ../../source/monitoring.rst:836
 msgid ""
@@ -843,32 +1036,42 @@ msgid ""
 "to `myproject` on the `master` branch in the `gate` pipeline which took 40 "
 "seconds to build, the Zuul scheduler will emit the following statsd events:"
 msgstr ""
+"예를 들어, `mytenant`의 `myjob`이라는 작업이 `myproject`의 `master` "
+"브랜치 변경으로 인해 `gate` 파이프라인에서 트리거되어 빌드하는 데 40초가 "
+"걸렸다면, Zuul 스케줄러는 다음 statsd 이벤트를 생성합니다:"
 
 #: ../../source/monitoring.rst:841
 msgid ""
 "``zuul.tenant.mytenant.pipeline.gate.project.example_com.myproject.master."
 "job.myjob.SUCCESS`` +1"
 msgstr ""
+"``zuul.tenant.mytenant.pipeline.gate.project.example_com.myproject.master."
+"job.myjob.SUCCESS`` +1"
 
 #: ../../source/monitoring.rst:842
 msgid ""
 "``zuul.tenant.mytenant.pipeline.gate.project.example_com.myproject.master."
 "job.myjob.SUCCESS``  40 seconds"
 msgstr ""
+"``zuul.tenant.mytenant.pipeline.gate.project.example_com.myproject.master."
+"job.myjob.SUCCESS``  40초"
 
 #: ../../source/monitoring.rst:843
 msgid "``zuul.tenant.mytenant.pipeline.gate.all_jobs`` +1"
 msgstr ""
+"``zuul.tenant.mytenant.pipeline.gate.all_jobs`` +1"
 
 #: ../../source/monitoring.rst:847
 msgid "Prometheus monitoring"
-msgstr ""
+msgstr "프로메테우스(Prometheus) 모니터링"
 
 #: ../../source/monitoring.rst:849
 msgid ""
 "Zuul comes with support to start a prometheus_ metric server to be added as "
 "prometheus's target."
 msgstr ""
+"Zuul은 프로메테우스의 타겟으로 추가될 수 있는 prometheus_ 메트릭 서버 시작 "
+"지원을 포함합니다."
 
 #: ../../source/monitoring.rst:858
 msgid ""
@@ -877,36 +1080,42 @@ msgid ""
 "starts a HTTP server to expose metrics to a prometheus services at: http://"
 "scheduler:9091/metrics"
 msgstr ""
+"이 서비스를 활성화하려면 ``zuul.conf`` 의 서비스 섹션에 "
+"``prometheus_port`` 를 설정하십시오. 예를 들어 :attr:`scheduler."
+"prometheus_port` 를 9091로 설정하면 http://scheduler:9091/metrics 에서 "
+"프로메테우스 서비스에 메트릭을 노출하는 HTTP 서버가 시작됩니다."
 
 #: ../../source/monitoring.rst:867
 msgid "These metrics are exposed by default:"
-msgstr ""
+msgstr "다음 메트릭들은 기본적으로 노출됩니다:"
 
 #: ../../source/monitoring.rst:884
 msgid "On web servers the following additional metrics are exposed:"
-msgstr ""
+msgstr "웹 서버에서는 다음과 같은 추가 메트릭이 노출됩니다:"
 
 #: ../../source/monitoring.rst:889
 msgid "The number of idle workers in the thread pool."
-msgstr ""
+msgstr "스레드 풀의 유휴(idle) 워커 수입니다."
 
 #: ../../source/monitoring.rst:894
 msgid "The number of requests queued for thread pool workers."
-msgstr ""
+msgstr "스레드 풀 워커를 위해 큐에 대기 중인 요청 수입니다."
 
 #: ../../source/monitoring.rst:904
 msgid "Liveness Probes"
-msgstr ""
+msgstr "활성 상태 프로브(Liveness Probes)"
 
 #: ../../source/monitoring.rst:906
 msgid ""
 "The Prometheus server also supports liveness and ready probes at the "
 "following URIS:"
 msgstr ""
+"프로메테우스 서버는 또한 다음 URI에서 활성 상태(liveness) 및 준비 "
+"상태(ready) 프로브를 지원합니다:"
 
 #: ../../source/monitoring.rst:911
 msgid "Returns 200 as long as the process is running."
-msgstr ""
+msgstr "프로세스가 실행 중인 한 200을 반환합니다."
 
 #: ../../source/monitoring.rst:915
 msgid ""
@@ -915,9 +1124,14 @@ msgid ""
 "used to determine when a component has completely finished loading "
 "configuration."
 msgstr ""
+"프로세스가 `RUNNING` 또는 `PAUSED` 상태이면 200을 반환합니다. 그렇지 않으면 "
+"503을 반환합니다. `INITIALIZED` 상태에 대해서는 503이 반환되므로, 이를 통해 "
+"구성 요소가 설정 로드를 완전히 마쳤는지 확인할 수 있습니다."
 
 #: ../../source/monitoring.rst:922
 msgid ""
 "This always returns 200, but includes the component status as the text body "
 "of the response."
 msgstr ""
+"이것은 항상 200을 반환하지만, 응답의 본문 텍스트로 구성 요소 상태를 "
+"포함합니다."

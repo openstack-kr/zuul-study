@@ -19,19 +19,19 @@ msgstr ""
 
 #: ../../source/installation.rst:2
 msgid "Installation"
-msgstr ""
+msgstr "설치"
 
 #: ../../source/installation.rst:5
 msgid "External Dependencies"
-msgstr ""
+msgstr "외부 종속성"
 
 #: ../../source/installation.rst:7
 msgid "Zuul interacts with several other systems described below."
-msgstr ""
+msgstr "Zuul은 아래에 설명된 몇 가지 다른 시스템과 상호 작용합니다."
 
 #: ../../source/installation.rst:10
 msgid "Nodepool"
-msgstr ""
+msgstr "노드풀 (Nodepool)"
 
 #: ../../source/installation.rst:12
 msgid ""
@@ -41,6 +41,10 @@ msgid ""
 "starting Zuul, ensure you have Nodepool installed and any images you require "
 "built."
 msgstr ""
+"가장 단순한 작업을 제외한 모든 작업을 실행하기 위해 Zuul은 작업에 사용되는 "
+"노드(동적 클라우드 인스턴스 또는 정적 하드웨어)를 공급하는 보조 프로그램인 "
+"`Nodepool <https://opendev.org/zuul/nodepool>`__ 을 사용합니다. Zuul을 시작하기 "
+"전에 Nodepool이 설치되어 있고 필요한 이미지가 빌드되어 있는지 확인하십시오."
 
 #: ../../source/installation.rst:18
 msgid ""
@@ -49,10 +53,14 @@ msgid ""
 "nodes on TCP port 19885 for log streaming; see :ref:"
 "`nodepool_console_streaming`."
 msgstr ""
+"Zuul은 Nodepool에서 프로비저닝한 노드에 지정된 사용자 이름과 SSH 개인 키로 "
+"로그인할 수 있어야 합니다. 또한 실행기(Executor)는 로그 스트리밍을 위해 TCP 포트 "
+"19885에서 노드와 통신할 수 있어야 합니다. :ref:`nodepool_console_streaming` 을 "
+"참조하십시오."
 
 #: ../../source/installation.rst:24
 msgid "ZooKeeper"
-msgstr ""
+msgstr "주키퍼 (ZooKeeper)"
 
 #: ../../source/installation.rst:28
 msgid ""
@@ -61,6 +69,10 @@ msgid ""
 "single-node ZooKeeper instance, or a multi-node cluster. Ensure that all "
 "Zuul and Nodepool hosts have access to the cluster."
 msgstr ""
+"Zuul과 Nodepool은 구성 요소 간에 내부적으로 통신하고 또한 서로 통신하기 위해 "
+"ZooKeeper를 사용합니다. 간단한 단일 노드 ZooKeeper 인스턴스를 실행하거나 다중 "
+"노드 클러스터를 실행할 수 있습니다. 모든 Zuul 및 Nodepool 호스트가 클러스터에 "
+"접근할 수 있는지 확인하십시오."
 
 #: ../../source/installation.rst:33
 msgid ""
@@ -71,6 +83,10 @@ msgid ""
 "resilience in the event of an incident adversely impacting a ZooKeeper "
 "server."
 msgstr ""
+"Zuul은 구성 요소 서비스의 인스턴스 간에 효과적으로 공유하고 조정할 수 있도록 "
+"가능한 모든 상태를 ZooKeeper 내에 저장합니다. 이 중 대부분은 일시적이며 다시 "
+"만들 수 있거나 손실되어도 가치가 낮지만, 클러스터링된 배포는 ZooKeeper 서버에 "
+"악영향을 미치는 장애 발생 시 향상된 연속성과 복원력을 제공합니다."
 
 #: ../../source/installation.rst:40
 msgid ""
@@ -79,16 +95,22 @@ msgid ""
 "data it **cannot be recreated** if lost. As such, periodic :ref:`export and "
 "backup <backup>` of these keys is strongly recommended."
 msgstr ""
+"Zuul의 키 저장소(작업 비밀 및 SSH 접근의 비대칭 암호화를 위한 프로젝트별 키)도 "
+"ZooKeeper에 저장되며, 다른 데이터와 달리 손실될 경우 **다시 만들 수 없습니다**. "
+"따라서 이 키들을 주기적으로 :ref:`export and backup <backup>` 하는 것을 강력히 "
+"권장합니다."
 
 #: ../../source/installation.rst:49
 msgid "Executor Deployment"
-msgstr ""
+msgstr "실행기 (Executor) 배포"
 
 #: ../../source/installation.rst:51
 msgid ""
 "The Zuul executor requires Ansible to run jobs.  There are two approaches "
 "that can be used to install Ansible for Zuul."
 msgstr ""
+"Zuul 실행기가 작업을 실행하려면 Ansible이 필요합니다. Zuul용 Ansible을 설치하는 "
+"데 사용할 수 있는 두 가지 접근 방식이 있습니다."
 
 #: ../../source/installation.rst:54
 msgid ""
@@ -97,6 +119,10 @@ msgid ""
 "startup. These installations end up in Zuul's state dir, ``/var/lib/zuul/"
 "ansible-bin`` if unchanged."
 msgstr ""
+"첫 번째로 실행기 구성에서 ``manage_ansible`` 을 True로 설정할 수 있습니다. "
+"이렇게 하면 Zuul은 zuul-executor 시작 시 지원되는 모든 Ansible 버전을 설치합니다. "
+"경로를 변경하지 않으면 이 설치 파일들은 Zuul의 상태 디렉터리인 "
+"``/var/lib/zuul/ansible-bin`` 에 생성됩니다."
 
 #: ../../source/installation.rst:59
 msgid ""
@@ -107,16 +133,23 @@ msgid ""
 "preinstall ansible in containers (avoids problems with bind mounted zuul "
 "state dirs)."
 msgstr ""
+"두 번째 옵션은 ``zuul-manage-ansible`` 을 사용하여 지원되는 Ansible 버전을 "
+"설치하는 것입니다. 기본적으로 이것은 Ansible을 ``zuul_install_prefix/lib/zuul/ansible`` 에 "
+"설치합니다. 이 방법은 zuul-executor 시작 시간을 단축하고 컨테이너에 ansible을 "
+"미리 설치할 수 있도록 해주므로(바인드 마운트된 zuul 상태 디렉터리 문제를 방지함) "
+"첫 번째 방법보다 권장됩니다."
 
 #: ../../source/installation.rst:68
 msgid ""
 "In both cases if using a non default path you will want to set "
 "``ansible_root`` in the executor config file."
 msgstr ""
+"두 경우 모두 기본값이 아닌 경로를 사용하는 경우 실행기 구성 파일에서 "
+"``ansible_root`` 를 설정해야 합니다."
 
 #: ../../source/installation.rst:74
 msgid "Web Deployment"
-msgstr ""
+msgstr "웹 (Web) 배포"
 
 #: ../../source/installation.rst:76
 msgid ""
@@ -125,6 +158,9 @@ msgid ""
 "production use it is recommended to run it behind a reverse proxy, such as "
 "Apache or Nginx."
 msgstr ""
+"``zuul-web`` 서비스는 웹 대시보드, REST API 및 웹소켓 로그 스트리밍 서비스를 "
+"단일 전체 웹 애플리케이션으로 제공합니다. 프로덕션 용도로는 Apache 또는 "
+"Nginx와 같은 리버스 프록시 뒤에서 실행하는 것이 좋습니다."
 
 #: ../../source/installation.rst:80
 msgid ""
@@ -132,41 +168,50 @@ msgid ""
 "minimal configuration, however, more advanced users may desire to do one or "
 "more of the following:"
 msgstr ""
+"``zuul-web`` 서비스는 완전히 독립적이며 최소한의 구성으로 실행할 수 있지만, "
+"고급 사용자는 다음 중 하나 이상을 수행하기를 원할 수 있습니다:"
 
 #: ../../source/installation.rst:84
 msgid "White Label"
-msgstr ""
+msgstr "화이트 라벨 (White Label)"
 
 #: ../../source/installation.rst:85
 msgid ""
 "Serve the dashboard of an individual tenant at the root of its own domain. "
-"https://zuul.openstack.org is an example of a Zuul dashboard that has been "
+"[https://zuul.openstack.org](https://zuul.openstack.org) is an example of a Zuul dashboard that has been "
 "white labeled for the ``openstack`` tenant of its Zuul."
 msgstr ""
+"개별 테넌트의 대시보드를 자체 도메인의 루트에서 제공합니다. "
+"[https://zuul.openstack.org](https://zuul.openstack.org) 는 해당 Zuul의 ``openstack`` 테넌트를 위해 화이트 "
+"라벨링된 Zuul 대시보드의 예입니다."
 
 #: ../../source/installation.rst:89 ../../source/installation.rst:126
 msgid "Static Offload"
-msgstr ""
+msgstr "정적 오프로드 (Static Offload)"
 
 #: ../../source/installation.rst:90
 msgid ""
 "Shift the duties of serving static files, such as HTML, Javascript, CSS or "
 "images to the reverse proxy server."
 msgstr ""
+"HTML, Javascript, CSS 또는 이미지와 같은 정적 파일 제공 작업을 리버스 프록시 "
+"서버로 넘깁니다."
 
 #: ../../source/installation.rst:93 ../../source/installation.rst:232
 msgid "Static External"
-msgstr ""
+msgstr "정적 외부 (Static External)"
 
 #: ../../source/installation.rst:94
 msgid ""
 "Serve the static files from a completely separate location that does not "
 "support programmatic rewrite rules such as a Swift Object Store."
 msgstr ""
+"Swift 객체 저장소(Object Store)와 같이 프로그래밍 방식의 재작성(rewrite) 규칙을 "
+"지원하지 않는 완전히 분리된 위치에서 정적 파일을 제공합니다."
 
 #: ../../source/installation.rst:97
 msgid "Sub-URL"
-msgstr ""
+msgstr "하위 URL (Sub-URL)"
 
 #: ../../source/installation.rst:98
 msgid ""
@@ -175,6 +220,9 @@ msgid ""
 "project.io/zuul/ is an example of a Zuul dashboard that is being served from "
 "a Sub-URL."
 msgstr ""
+"다른 애플리케이션과의 통합을 제공하는 일환으로 루트 URL 아래의 위치에서 Zuul "
+"대시보드를 제공합니다. [https://softwarefactory-project.io/zuul/](https://softwarefactory-project.io/zuul/) 은 하위 URL에서 "
+"제공되는 Zuul 대시보드의 예입니다."
 
 #: ../../source/installation.rst:103
 msgid ""
@@ -183,10 +231,13 @@ msgid ""
 "rewrite rule examples are given, they will be given with Apache syntax, but "
 "any other reverse proxy should work just fine."
 msgstr ""
+"대부분의 배포에서는 이것들이 필요하지 않으므로, 다음 설명에서는 ``zuul-web`` "
+"서비스가 리버스 프록시를 통해 노출된다고 가정합니다. 재작성 규칙 예제가 제공되는 "
+"경우 Apache 구문으로 제공되지만 다른 리버스 프록시도 잘 작동할 것입니다."
 
 #: ../../source/installation.rst:109
 msgid "Reverse Proxy"
-msgstr ""
+msgstr "리버스 프록시 (Reverse Proxy)"
 
 #: ../../source/installation.rst:111
 msgid ""
@@ -194,18 +245,23 @@ msgid ""
 "``mod_proxy_http`` and ``mod_proxy_wstunnel`` modules to be installed and "
 "enabled."
 msgstr ""
+"Apache를 리버스 프록시로 사용하려면 ``mod_proxy``, ``mod_proxy_http`` 및 "
+"``mod_proxy_wstunnel`` 모듈을 설치하고 활성화해야 합니다."
 
 #: ../../source/installation.rst:115
 msgid ""
 "All of the cases require a rewrite rule for the websocket streaming, so the "
 "simplest reverse-proxy case is::"
 msgstr ""
+"모든 경우에 웹소켓 스트리밍을 위한 재작성 규칙이 필요하므로 가장 단순한 리버스 "
+"프록시 사례는 다음과 같습니다::"
 
 #: ../../source/installation.rst:122
 msgid ""
 "This is the recommended configuration unless one of the following features "
 "is required."
 msgstr ""
+"다음 기능 중 하나가 필요한 경우가 아니면 이 구성을 권장합니다."
 
 #: ../../source/installation.rst:128
 msgid ""
@@ -214,10 +270,13 @@ msgid ""
 "register the location where you unpacked the web application as the document "
 "root and add rewrite rules::"
 msgstr ""
+"리버스 프록시가 정적 html/javascript 자산을 REST 계층으로 프록시하는 대신 "
+"직접 제공하도록 하려면 ``mod_rewrite`` Apache 모듈을 활성화하고 웹 애플리케이션의 "
+"압축을 푼 위치를 문서 루트로 등록한 다음 재작성 규칙을 추가하십시오::"
 
 #: ../../source/installation.rst:154
 msgid "Sub directory serving"
-msgstr ""
+msgstr "하위 디렉터리 제공"
 
 #: ../../source/installation.rst:156
 msgid ""
@@ -226,6 +285,9 @@ msgid ""
 "path when building. For example, to deploy the web interface through a `/"
 "zuul` sub directory:"
 msgstr ""
+"정적 파일의 내부 위치를 업데이트하려면 웹 애플리케이션을 다시 빌드해야 합니다. "
+"빌드 시 환경 변수 `PUBLIC_URL` 을 절대 경로로 설정하십시오. 예를 들어 웹 "
+"인터페이스를 `/zuul` 하위 디렉터리를 통해 배포하려면 다음과 같이 하십시오:"
 
 #: ../../source/installation.rst:163
 msgid ""
@@ -233,16 +295,20 @@ msgid ""
 "directory. All the yarn commands need to be executed from the ``web`` "
 "directory."
 msgstr ""
+"웹 대시보드 소스 코드와 package.json은 ``web`` 디렉터리에 있습니다. 모든 yarn "
+"명령은 ``web`` 디렉터리에서 실행해야 합니다."
 
 #: ../../source/installation.rst:171
 msgid ""
 "Then assuming the web application is unpacked in /usr/share/zuul, enable the "
 "``mod_rewrite`` Apache module and add the following rewrite rules::"
 msgstr ""
+"그런 다음 웹 애플리케이션이 /usr/share/zuul에 풀려 있다고 가정하고 "
+"``mod_rewrite`` Apache 모듈을 활성화한 후 다음 재작성 규칙을 추가하십시오::"
 
 #: ../../source/installation.rst:196
 msgid "White Labeled Tenant"
-msgstr ""
+msgstr "화이트 라벨 테넌트"
 
 #: ../../source/installation.rst:198
 msgid ""
@@ -250,27 +316,36 @@ msgid ""
 "rule to ensure connection webhooks don't try to get put into the tenant "
 "scope."
 msgstr ""
+"화이트 라벨 테넌트를 실행하는 것은 오프로드 사례와 유사하지만, 연결 웹훅(webhook)이 "
+"테넌트 범위에 포함되지 않도록 하는 규칙을 추가합니다."
 
 #: ../../source/installation.rst:203
 msgid ""
 "It's possible to do white-labeling without static offload, but it is more "
 "complex with no benefit."
 msgstr ""
+"정적 오프로드 없이 화이트 라벨링을 수행할 수도 있지만, 이점 없이 더 복잡하기만 합니다."
 
 #: ../../source/installation.rst:206
 msgid ""
 "Enable the ``mod_rewrite`` Apache module, and assuming the Zuul tenant name "
 "is ``example``, the rewrite rules are::"
 msgstr ""
+"``mod_rewrite`` Apache 모듈을 활성화하고 Zuul 테넌트 이름이 ``example`` 이라고 "
+"가정할 때, 재작성 규칙은 다음과 같습니다::"
 
 #: ../../source/installation.rst:236
 msgid ""
 "Hosting the Zuul dashboard on an external static location that does not "
 "support dynamic url rewrite rules only works for white-labeled deployments."
 msgstr ""
+"동적 url 재작성 규칙을 지원하지 않는 외부 정적 위치에 Zuul 대시보드를 호스팅하는 "
+"것은 화이트 라벨링된 배포에서만 작동합니다."
 
 #: ../../source/installation.rst:240
 msgid ""
 "In order to serve the zuul dashboard code from an external static location, "
 "``REACT_APP_ZUUL_API`` must be set at javascript build time:"
 msgstr ""
+"외부 정적 위치에서 zuul 대시보드 코드를 제공하려면 자바스크립트 빌드 시 "
+"``REACT_APP_ZUUL_API`` 를 설정해야 합니다:"
