@@ -20,4 +20,4 @@ msgstr ""
 #: ../../source/_templates/versions.html:2
 #: ../../source/_templates/versions.html:4
 msgid "Versions"
-msgstr ""
+msgstr "버전 (Versions)"
