@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/authentication.rst:6
 msgid "Authenticated Access"
-msgstr ""
+msgstr "인증된 액세스 (Authenticated Access)"
 
 #: ../../source/authentication.rst:8
 msgid ""
@@ -29,6 +29,11 @@ msgid ""
 "users.  Additionally, individual tenants or the entire system may have read-"
 "level access restricted to authorized users."
 msgstr ""
+"Zuul의 REST API와 웹 인터페이스에 대한 접근은 선택적으로 제한할 수 있습니다. "
+"기본적으로, 모든 테넌트(tenant)에 대한 익명 읽기 액세스가 허용됩니다. 선택적"
+"으로, 일부 관리 작업을 활성화하여 승인된 사용자로 제한할 수도 있습니다. 또"
+"한, 개별 테넌트나 전체 시스템에 대해 읽기 수준(read-level) 액세스를 승인된 사"
+"용자로 제한할 수도 있습니다."
 
 #: ../../source/authentication.rst:15
 msgid ""
@@ -36,6 +41,8 @@ msgid ""
 "ref**, **dequeue/dequeue-ref** and **promote**. These are similar to the "
 "ones available through Zuul's CLI."
 msgstr ""
+"지원되는 관리 작업은 autohold, enqueue/enqueue-ref, dequeue/dequeue-ref, 그리"
+"고 promote입니다. 이들은 Zuul CLI를 통해 사용할 수 있는 것들과 유사합니다."
 
 #: ../../source/authentication.rst:20
 msgid ""
@@ -44,10 +51,13 @@ msgid ""
 "follow the JWT standard as established in this `RFC <https://tools.ietf.org/"
 "html/rfc7519>`_."
 msgstr ""
+"보호된 엔드포인트는 베어러 토큰(bearer token)을 요구하며, 이는 요청의 "
+"Authorization 헤더로 Zuul 웹 서버에 전달됩니다. 토큰과 이 워크플로는 `RFC "
+"<https://tools.ietf.org/html/rfc7519>`_ 에 확립된 JWT 표준을 따릅니다."
 
 #: ../../source/authentication.rst:26
 msgid "Important Security Considerations"
-msgstr ""
+msgstr "중요 보안 고려 사항 (Important Security Considerations)"
 
 #: ../../source/authentication.rst:28
 msgid ""
@@ -55,6 +65,9 @@ msgid ""
 "exposed through the REST API. Furthermore revoking tokens, especially when "
 "manually issued, is not trivial."
 msgstr ""
+"유효한 관리자 토큰을 가진 사람은 누구든 REST API를 통해 노출된 특권 작업"
+"(privileged actions)을 수행할 수 있습니다. 게다가 토큰을 취소(revoking)하는 "
+"것은, 특히 수동으로 발급된 경우 간단하지 않습니다."
 
 #: ../../source/authentication.rst:32
 msgid ""
@@ -64,6 +77,10 @@ msgid ""
 "as possible (one tenant only) to reduce the surface of attack should the "
 "token be compromised."
 msgstr ""
+"이를 완화하기 위해, 토큰은 10분 이하와 같이 짧은 수명(time to live)을 가지도"
+"록 생성해야 합니다. 만약 토큰이 인가 정보(아래 zuul.admin 클레임 참조)를 포함"
+"하고 있다면, 토큰이 탈취되었을 경우의 공격 표면을 줄이기 위해 가능한 한 최소"
+"한의 범위(예: 단일 테넌트)로 생성해야 합니다."
 
 #: ../../source/authentication.rst:38
 msgid ""
@@ -74,28 +91,39 @@ msgid ""
 "comes great responsibility\" and tokens should be handed over with "
 "discernment."
 msgstr ""
+"관리 작업을 노출하면 빌드 결과(빌드셋 dequeue)에 영향을 줄 수 있으며, "
+"autohold 기능이 남용될 경우 상당수의 노드가 장기간 \"hold\" 상태로 남아 잠재"
+"적인 리소스 문제를 일으킬 수 있습니다. 언제나 그렇듯, \"큰 힘에는 큰 책임이 "
+"따르며(with great power comes great responsibility)\", 토큰은 신중하게 전달되"
+"어야 합니다."
 
 #: ../../source/authentication.rst:45
 msgid "Configuration"
-msgstr ""
+msgstr "구성 (Configuration)"
 
 #: ../../source/authentication.rst:47
 msgid ""
 "In order to use restricted commands in the zuul command line interface, at "
 "least one HS256 authenticator should be configured."
 msgstr ""
+"Zuul 명령줄 인터페이스(CLI)에서 제한된 명령을 사용하려면, 적어도 하나의 "
+"HS256 인증자(authenticator)가 구성되어 있어야 합니다."
 
 #: ../../source/authentication.rst:51
 msgid ""
 "To enable tenant-scoped access to privileged actions or restrict read-level "
 "access, see the Zuul Web Server component's section."
 msgstr ""
+"특권 작업에 대한 테넌트 범위(tenant-scoped) 액세스를 활성화하거나 읽기 수준 "
+"액세스를 제한하려면, Zuul 웹 서버 컴포넌트 섹션을 참조하세요."
 
 #: ../../source/authentication.rst:54
 msgid ""
 "To set access rules for a tenant, see :ref:`the documentation about tenant "
 "definition <authz_rule_definition>`."
 msgstr ""
+"테넌트에 대한 액세스 규칙을 설정하려면, :ref:`테넌트 정의에 관한 문서 "
+"<authz_rule_definition>` 를 참조하세요."
 
 #: ../../source/authentication.rst:57
 msgid ""
@@ -104,6 +132,9 @@ msgid ""
 "provider service like dex, auth0, keycloak or others. It can be useful "
 "however to add another authenticator similar to this one:"
 msgstr ""
+"대부분의 경우, Zuul 구성에는 하나의 인증자만 필요합니다. 즉, dex, auth0, "
+"keycloak 등과 같은 타사 ID 제공자 서비스와 일치하는 구성입니다. 하지만 이와 "
+"유사한 다른 인증자를 추가하는 것이 유용할 때가 있습니다."
 
 #: ../../source/authentication.rst:72
 msgid ""
@@ -112,38 +143,46 @@ msgid ""
 "these tokens with Zuul's CLI to perform protected actions on a tenant "
 "temporarily, without having to modify a tenant's access rules."
 msgstr ""
+"이러한 인증자가 있으면, Zuul 운영자는 필요할 경우 Zuul CLI를 사용하여 테넌트"
+"의 액세스 규칙을 재정의(override)하는 토큰을 발급할 수 있습니다. 그러면 사용"
+"자는 테넌트의 액세스 규칙을 수정할 필요 없이, 이 토큰을 Zuul CLI와 함께 사용"
+"하여 해당 테넌트에서 일시적으로 보호된 작업을 수행할 수 있습니다."
 
 #: ../../source/authentication.rst:80
 msgid "JWT Format"
-msgstr ""
+msgstr "JWT 형식 (JWT Format)"
 
 #: ../../source/authentication.rst:82
 msgid "Zuul can consume JWTs with the following minimal set of claims:"
 msgstr ""
+"Zuul은 다음과 같은 최소한의 클레임(claims) 집합을 가진 JWT를 사용할 수 있습니"
+"다."
 
 #: ../../source/authentication.rst:94
 msgid ""
 "**iss** is the issuer of the token. It can be used to filter Identity "
 "Providers."
 msgstr ""
+"iss: 토큰 발급자(issuer)입니다. ID 제공자를 필터링하는 데 사용할 수 있습니다."
 
 #: ../../source/authentication.rst:96
 msgid ""
 "**aud**, as the intended audience, is usually the client id as registered on "
 "the Identity Provider."
 msgstr ""
+"aud: 의도된 수신자(audience)로, 보통 ID 제공자에 등록된 클라이언트 ID입니다."
 
 #: ../../source/authentication.rst:98
 msgid "**exp** is the token's expiry timestamp."
-msgstr ""
+msgstr "exp: 토큰 만료 타임스탬프입니다."
 
 #: ../../source/authentication.rst:99
 msgid "**iat** is the token's date of issuance timestamp."
-msgstr ""
+msgstr "iat: 토큰 발급 날짜 타임스탬프입니다."
 
 #: ../../source/authentication.rst:100
 msgid "**sub** is the default, unique identifier of the user."
-msgstr ""
+msgstr "sub: 사용자의 기본 고유 식별자(identifier)입니다."
 
 #: ../../source/authentication.rst:102
 msgid ""
@@ -152,63 +191,78 @@ msgid ""
 "set to True in the authenticator's configuration. This claim has the "
 "following format:"
 msgstr ""
+"JWT는 다른 클레임으로 임의 확장될 수 있습니다. 하지만 인증자 구성에서 "
+"allow_authz_override 옵션이 True로 설정된 경우, Zuul은 특정 zuul 클레임을 찾"
+"을 수 있습니다. 이 클레임은 다음과 같은 형식을 가집니다."
 
 #: ../../source/authentication.rst:114
 msgid ""
 "The **admin** field is a list of tenants on which the token's bearer is "
 "granted the right to perform privileged actions."
 msgstr ""
+"admin 필드는 토큰 소유자가 특권 작업을 수행할 권한을 부여받은 테넌트들의 목록"
+"입니다."
 
 #: ../../source/authentication.rst:118
 msgid "Manually Generating a JWT"
-msgstr ""
+msgstr "JWT 수동 생성 (Manually Generating a JWT)"
 
 #: ../../source/authentication.rst:120
 msgid ""
 "An operator can generate a JWT by using the settings of a configured "
 "authenticator in ``zuul.conf``."
 msgstr ""
+"운영자는 zuul.conf에 구성된 인증자의 설정을 사용하여 JWT를 생성할 수 있습니"
+"다."
 
 #: ../../source/authentication.rst:123
 msgid ""
 "For example, in Python, and for an authenticator using the ``HS256`` "
 "algorithm:"
 msgstr ""
+"예를 들어, Python에서 HS256 알고리즘을 사용하는 인증자의 경우 다음과 같습니"
+"다."
 
 #: ../../source/authentication.rst:140
 msgid ""
 "Online resources like https://jwt.io are also available to generate, decode "
 "and debug JWTs."
 msgstr ""
+"https://jwt.io 와 같은 온라인 리소스를 통해서도 JWT를 생성, 디코딩 및 디버깅"
+"할 수 있습니다."
 
 #: ../../source/authentication.rst:144
 msgid "Debugging"
-msgstr ""
+msgstr "디버깅 (Debugging)"
 
 #: ../../source/authentication.rst:146
 msgid "If problems appear:"
-msgstr ""
+msgstr "문제가 발생할 경우:"
 
 #: ../../source/authentication.rst:148
 msgid "Make sure your configuration is correct, especially callback URIs."
-msgstr ""
+msgstr "구성이 올바른지, 특히 콜백 URI(callback URIs)를 확인하세요."
 
 #: ../../source/authentication.rst:149
 msgid "More information can be found in Zuul's web service logs."
-msgstr ""
+msgstr "더 많은 정보는 Zuul 웹 서비스 로그에서 찾을 수 있습니다."
 
 #: ../../source/authentication.rst:150
 msgid ""
 "From the user's side, activating the web console in the browser can be "
 "helpful to debug API calls."
 msgstr ""
+"사용자 측면에서는, 브라우저의 웹 콘솔을 활성화하는 것이 API 호출을 디버깅하"
+"는 데 도움이 될 수 있습니다."
 
 #: ../../source/authentication.rst:154
 msgid "Interfacing with Other Systems"
-msgstr ""
+msgstr "다른 시스템과의 연동 (Interfacing with Other Systems)"
 
 #: ../../source/authentication.rst:156
 msgid ""
 "Here are some how-tos to help administrators enable OpenID Connect "
 "authentication in Zuul and Zuul's Web UI."
 msgstr ""
+"다음은 관리자가 Zuul 및 Zuul 웹 UI에서 OpenID Connect 인증을 활성화하는 데 도"
+"움이 되는 몇 가지 방법(how-tos)입니다."
