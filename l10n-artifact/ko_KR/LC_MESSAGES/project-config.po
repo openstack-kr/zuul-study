@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/project-config.rst:6
 msgid "Project Configuration"
-msgstr ""
+msgstr "프로젝트 구성 (Project Configuration)"
 
 #: ../../source/project-config.rst:8
 msgid ""
@@ -27,10 +27,12 @@ msgid ""
 "of what follows is found within files inside of the repositories that Zuul "
 "manages."
 msgstr ""
+"다음 섹션에서는 Zuul 구성의 주요 부분을 설명합니다. 아래의 모든 내용은 Zuul"
+"이 관리하는 저장소 내부의 파일에서 찾을 수 있습니다."
 
 #: ../../source/project-config.rst:13
 msgid "Security Contexts"
-msgstr ""
+msgstr "보안 컨텍스트 (Security Contexts)"
 
 #: ../../source/project-config.rst:15
 msgid ""
@@ -43,6 +45,13 @@ msgid ""
 "config-projects.  It is expected that changes to config-projects will "
 "undergo careful scrutiny before being merged."
 msgstr ""
+"시스템 관리자가 프로젝트에서 작동하도록 Zuul을 구성할 때, 해당 프로젝트에 대"
+"한 두 가지 보안 컨텍스트 중 하나를 지정합니다. *config-project*는 주로 Zuul"
+"에 대한 구성 정보와 작업(job) 콘텐츠를 보관하는 임무를 맡은 프로젝트입니다. "
+"config-project에 정의된 작업은 상승된 권한(elevated privileges)으로 실행되며 "
+"모든 Zuul 구성 항목을 사용할 수 있습니다. 베이스 작업(즉, 부모가 없는 작업)"
+"은 config-project에서만 정의될 수 있습니다. config-project에 대한 변경 사항"
+"은 병합되기 전에 세심한 검토를 거칠 것으로 예상됩니다."
 
 #: ../../source/project-config.rst:25
 msgid ""
@@ -53,23 +62,37 @@ msgid ""
 "these projects run in a restricted execution environment since they may be "
 "operating on changes which have not yet undergone review."
 msgstr ""
+"*untrusted-project*는 주된 초점이 Zuul을 운영하는 것이 아니라 테스트되거나 배"
+"포되는 프로젝트 중 하나인 프로젝트입니다. 이러한 프로젝트에서 사용할 수 있는 "
+"Zuul 구성 언어는 (아래 개별 섹션에 자세히 설명된 대로) 다소 제한되어 있으며, "
+"이러한 프로젝트에 정의된 작업은 아직 리뷰를 거치지 않은 변경 사항에 대해 작동"
+"할 수 있으므로 제한된 실행 환경에서 실행됩니다."
 
 #: ../../source/project-config.rst:34
 msgid "Configuration Loading"
-msgstr ""
+msgstr "구성 로딩 (Configuration Loading)"
 
 #: ../../source/project-config.rst:36
 msgid ""
 "When Zuul starts, it examines all of the git repositories which are "
 "specified by the system administrator in :ref:`tenant-config` and searches "
 "for files in the root of each repository. Zuul looks first for a file named "
-"``zuul.yaml`` or a directory named ``zuul.d``, and if they are not found, ``."
-"zuul.yaml`` or ``.zuul.d`` (with a leading dot). In the case of an :term:"
-"`untrusted-project`, the configuration from every branch is included, "
-"however, in the case of a :term:`config-project`, only a single branch is "
-"examined. The config project branch can be configured with the tenant "
-"configuration :attr:`tenant.config-projects.<project>.load-branch` attribute."
+"``zuul.yaml`` or a directory named ``zuul.d``, and if they are not found, "
+"``.zuul.yaml`` or ``.zuul.d`` (with a leading dot). In the case of "
+"an :term:`untrusted-project`, the configuration from every branch is "
+"included, however, in the case of a :term:`config-project`, only a single "
+"branch is examined. The config project branch can be configured with the "
+"tenant configuration :attr:`tenant.config-projects.<project>.load-branch` "
+"attribute."
 msgstr ""
+"Zuul이 시작되면 시스템 관리자가 :ref:`tenant-config` 에 지정한 모든 git 저장"
+"소를 검사하고 각 저장소의 루트에서 파일을 검색합니다. Zuul은 먼저 "
+"``zuul.yaml`` 이라는 파일이나 ``zuul.d`` 라는 디렉터리를 찾고, 발견되지 않으"
+"면 (앞에 점이 있는 형태인) ``.zuul.yaml`` 또는 ``.zuul.d`` 를 찾습니"
+"다. :term:`untrusted-project` 의 경우 모든 브랜치의 구성이 포함되지"
+"만, :term:`config-project` 의 경우 단일 브랜치만 검사됩니다. config 프로젝트 "
+"브랜치는 테넌트 구성의 :attr:`tenant.config-projects.<project>.load-branch` "
+"속성으로 구성할 수 있습니다."
 
 #: ../../source/project-config.rst:47
 msgid ""
@@ -83,16 +106,26 @@ msgid ""
 "change. This is because configuration in config-projects is able to access "
 "elevated privileges and should always be reviewed before being merged."
 msgstr ""
+"untrusted-project의 이러한 파일 중 하나에 대한 변경이 제안되면, 제안된 구성"
+"이 실행 중인 구성에 병합되어 Zuul 구성에 대한 모든 변경 사항이 해당 변경의 일"
+"부로서 자체 테스트(self-testing)되도록 합니다. 구성 오류가 있는 경우 어떤 작"
+"업도 실행되지 않으며 해당되는 모든 파이프라인에서 오류를 보고합니다. config-"
+"project에 대한 변경의 경우, 새로운 구성을 파싱하여 오류를 검사하지만 새로운 "
+"구성이 변경 사항 테스트에 사용되지는 않습니다. 이는 config-project의 구성이 "
+"상승된 권한에 액세스할 수 있으며 병합되기 전에 항상 리뷰를 거쳐야 하기 때문입"
+"니다."
 
 #: ../../source/project-config.rst:58
 msgid ""
 "As soon as a change containing a Zuul configuration change merges to any "
 "Zuul-managed repository, the new configuration takes effect immediately."
 msgstr ""
+"Zuul 구성 변경을 포함하는 변경 사항이 Zuul 관리 저장소에 병합되는 즉시 새로"
+"운 구성이 적용됩니다."
 
 #: ../../source/project-config.rst:65
 msgid "Regular Expressions"
-msgstr ""
+msgstr "정규 표현식 (Regular Expressions)"
 
 #: ../../source/project-config.rst:67
 msgid ""
@@ -101,36 +134,46 @@ msgid ""
 "there were an implicit ``^`` at the start of the regular expression. To "
 "match at an arbitrary position, prepend ``.*`` to the regular expression."
 msgstr ""
+"많은 옵션이 리터럴 문자열이나 정규 표현식을 허용합니다. 이 경우, 정규 표현식 "
+"일치는 마치 정규 표현식의 시작 부분에 암묵적인 ``^``가 있는 것처럼 문자열의 "
+"시작 부분부터 일치를 시작합니다. 임의의 위치에서 일치시키려면 정규 표현식 앞"
+"에 ``.*``를 추가하세요."
 
 #: ../../source/project-config.rst:73
 msgid ""
 "Zuul uses the `RE2 library <https://github.com/google/re2/wiki/Syntax>`_ "
 "which has a restricted regular expression syntax compared to PCRE."
 msgstr ""
+"Zuul은 PCRE에 비해 제한된 정규 표현식 문법을 가진 `RE2 라이브러리 <https://"
+"github.com/google/re2/wiki/Syntax>`_ 를 사용합니다."
 
 #: ../../source/project-config.rst:76
 msgid ""
 "Some options may be specified for regular expressions.  To do so, use a "
 "dictionary to specify the regular expression in the YAML configuration."
 msgstr ""
+"정규 표현식에 대해 일부 옵션을 지정할 수 있습니다. 이를 위해 딕셔너리를 사용"
+"하여 YAML 구성에 정규 표현식을 지정하세요."
 
 #: ../../source/project-config.rst:80
 msgid ""
 "For example, the following are all valid values for the :attr:`job.branches` "
 "attribute, and will all match the branch \"devel\":"
 msgstr ""
+"예를 들어, 다음은 모두 :attr:`job.branches` 속성에 대한 유효한 값들이며, 모"
+"두 \"devel\" 브랜치와 일치합니다:"
 
 #: ../../source/project-config.rst:106
 msgid "The pattern for the regular expression.  This uses the RE2 syntax."
-msgstr ""
+msgstr "정규 표현식의 패턴입니다. RE2 문법을 사용합니다."
 
 #: ../../source/project-config.rst:112
 msgid "Whether to negate the match."
-msgstr ""
+msgstr "일치 여부를 부정(negate)할지 결정합니다."
 
 #: ../../source/project-config.rst:117
 msgid "Encryption"
-msgstr ""
+msgstr "암호화 (Encryption)"
 
 #: ../../source/project-config.rst:119
 msgid ""
@@ -139,6 +182,10 @@ msgid ""
 "information in order to run (e.g., credentials to interact with a third-"
 "party service) those credentials can be stored along with the job definition."
 msgstr ""
+"Zuul은 작동 중인 프로젝트의 git 저장소에 직접 암호화된 데이터를 저장하는 것"
+"을 지원합니다. 실행하기 위해 비공개 정보(예: 타사 서비스와 상호 작용하기 위"
+"한 자격 증명)가 필요한 작업이 있는 경우, 이러한 자격 증명을 작업 정의와 함께 "
+"저장할 수 있습니다."
 
 #: ../../source/project-config.rst:125
 msgid ""
@@ -149,6 +196,12 @@ msgid ""
 "where ``<project>`` is the canonical name of a project and ``<tenant>`` is "
 "the name of a tenant with that project."
 msgstr ""
+"Zuul의 각 프로젝트에는 자동으로 생성된 고유한 RSA 키 페어가 있으며, 이 키를 "
+"사용해 누구나 시크릿을 암호화할 수 있고 Zuul만이 이를 복호화할 수 있습니다. "
+"Zuul은 내장 웹 서버를 사용하여 각 프로젝트의 공개 키를 제공합니다. 이 키들은 "
+"``/api/tenant/<tenant>/key/<project>.pub`` 경로에서 가져올 수 있으며, 여기서 "
+"``<project>`` 는 프로젝트의 정규 이름(canonical name)이고 ``<tenant>`` 는 해"
+"당 프로젝트가 속한 테넌트의 이름입니다."
 
 #: ../../source/project-config.rst:133
 msgid ""
@@ -159,6 +212,11 @@ msgid ""
 "length of the plaintext version of the data, except to know that it is not "
 "longer than 3760 bits (or some multiple thereof)."
 msgstr ""
+"Zuul은 현재 단일 암호화 체계인 PKCS#1 with OAEP를 지원하며, 이는 3760비트"
+"(4096비트의 키 길이에서 오버헤드 336비트를 뺀 값)보다 긴 시크릿을 저장할 수 "
+"없습니다. 이 체계에서 사용하는 패딩은 암호화된 데이터를 검사하는 사람이 해당 "
+"데이터의 길이가 3760비트(또는 그 배수)를 넘지 않는다는 것 외에는 평문 버전의 "
+"데이터 길이를 알아낼 수 없도록 보장합니다."
 
 #: ../../source/project-config.rst:140
 msgid ""
@@ -167,28 +225,38 @@ msgid ""
 "later.  To specify a secret, use the ``!encrypted/pkcs1-oaep`` YAML tag "
 "along with the base64 encoded value.  For example:"
 msgstr ""
+"구성 파일 자체에서 Zuul은 시크릿에 사용되는 암호화 체계를 지정하는 확장 가능"
+"한 방법을 사용하여 향후 다른 체계를 추가할 수 있도록 합니다. 시크릿을 지정하"
+"려면 base64로 인코딩된 값과 함께 ``!encrypted/pkcs1-oaep`` YAML 태그를 사용하"
+"세요. 예를 들면 다음과 같습니다:"
 
 #: ../../source/project-config.rst:155
 msgid ""
 "To support secrets longer than 3760 bits, the value after the encryption tag "
 "may be a list rather than a scalar.  For example:"
 msgstr ""
+"3760비트보다 긴 시크릿을 지원하기 위해, 암호화 태그 뒤의 값은 스칼라(scalar) "
+"대신 리스트(list) 형태일 수 있습니다. 예를 들면 다음과 같습니다:"
 
 #: ../../source/project-config.rst:169
 msgid ""
 "The `zuul-client utility <https://zuul-ci.org/docs/zuul-client/>`_ provides "
 "a simple way to encrypt secrets for a Zuul project:"
 msgstr ""
+"`zuul-client 유틸리티 <https://zuul-ci.org/docs/zuul-client/>`_ 는 Zuul 프로"
+"젝트의 시크릿을 암호화하는 간단한 방법을 제공합니다:"
 
 #: ../../source/project-config.rst:177
 msgid "Configuration Items"
-msgstr ""
+msgstr "구성 항목 (Configuration Items)"
 
 #: ../../source/project-config.rst:179
 msgid ""
 "The ``zuul.yaml`` and ``.zuul.yaml`` configuration files are YAML-formatted "
 "and are structured as a series of items, each of which is referenced below."
 msgstr ""
+"``zuul.yaml`` 및 ``.zuul.yaml`` 구성 파일은 YAML 형식이며 일련의 항목들로 구"
+"성되어 있고, 각각은 아래에서 참조됩니다."
 
 #: ../../source/project-config.rst:183
 msgid ""
@@ -198,19 +266,28 @@ msgid ""
 "it needs to be loaded after the main entries, for example using number "
 "prefixes in file's names::"
 msgstr ""
+"``zuul.d`` (또는 ``.zuul.d`` ) 디렉터리의 경우, Zuul은 디렉터리를 재귀적으로 "
+"순회하고 정렬된 경로 순서에 따라 모든 .yaml 파일을 사용하여 구성을 확장합니"
+"다. 예를 들어, 작업의 변형(variants)을 별도의 파일에 보관하려면 메인 항목 뒤"
+"에 로드되어야 하므로 파일 이름에 숫자 접두사를 사용하는 식으로 할 수 있습니"
+"다::"
 
 #: ../../source/project-config.rst:194
 msgid ""
-"Note subdirectories are traversed.  Any subdirectories with a ``.zuul."
-"ignore`` file will be pruned and ignored (this is facilitates keeping "
-"playbooks or roles in the config directory, if required)."
+"Note subdirectories are traversed.  Any subdirectories with a "
+"``.zuul.ignore`` file will be pruned and ignored (this is facilitates "
+"keeping playbooks or roles in the config directory, if required)."
 msgstr ""
+"하위 디렉터리도 순회된다는 점에 유의하세요. ``.zuul.ignore`` 파일이 있는 하"
+"위 디렉터리는 잘려나가 무시됩니다(이는 필요한 경우 구성 디렉터리에 플레이북이"
+"나 역할(roles)을 유지하기 쉽게 해줍니다)."
 
 #: ../../source/project-config.rst:198
 msgid ""
 "Below are references to the different configuration items you may use within "
 "the YAML files:"
 msgstr ""
+"아래는 YAML 파일 내에서 사용할 수 있는 다양한 구성 항목에 대한 참조입니다:"
 
 #: ../../source/project-config.rst:213
 msgid ""
@@ -218,3 +295,6 @@ msgid ""
 "items related to provider config.  See :ref:`build_nodes` for more "
 "information about these:"
 msgstr ""
+"프로젝트에 공급자 구성(provider config)과 관련된 항목을 로드할 권한이 있는 경"
+"우 몇 가지 추가 항목을 사용할 수 있습니다. 이에 대한 자세한 내용"
+"은 :ref:`build_nodes` 를 참조하세요:"
