@@ -17,9 +17,29 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2026, Zuul project contributors
+# This file is distributed under the same license as the Zuul package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zuul latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 09:30+0900\n"
+"PO-Revision-Date: 2026-02-19 16:23+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
 #: ../../source/gating.rst:6
 msgid "Project Gating"
-msgstr ""
+msgstr "프로젝트 게이팅 (Project Gating)"
 
 #: ../../source/gating.rst:8
 msgid ""
@@ -31,6 +51,12 @@ msgid ""
 "cause lost productivity, particularly so when the number of contributors or "
 "contributions is large."
 msgstr ""
+"전통적으로 많은 소프트웨어 개발 프로젝트는 개발자의 변경 사항을 저장소에 병합"
+"(merge)한 다음, 해당 변경 사항으로 인해 발생하는 회귀(regressions)를 식별하고"
+"(아마도 지속적 통합 시스템으로 테스트 스위트를 실행하여), 그 버그들을 수정하"
+"기 위해 더 많은 패치를 후속으로 적용합니다. 개발 메인라인(mainline)이 손상되"
+"면 개발자들에게 매우 좌절감을 줄 수 있으며, 특히 기여자나 기여 건수가 많을 "
+"때 생산성 저하를 초래할 수 있습니다."
 
 #: ../../source/gating.rst:17
 msgid ""
@@ -39,6 +65,10 @@ msgid ""
 "for all developers, and only when a change is confirmed to work without "
 "disruption is it merged."
 msgstr ""
+"게이팅(gating) 프로세스는 회귀를 유발하는 변경 사항이 병합되는 것을 방지하고"
+"자 합니다. 이를 통해 개발 메인라인을 열어두고 모든 개발자가 정상적으로 작업"
+"할 수 있도록 유지하며, 변경 사항이 문제없이 작동하는 것으로 확인되었을 때만 "
+"병합합니다."
 
 #: ../../source/gating.rst:22
 msgid ""
@@ -49,10 +79,17 @@ msgid ""
 "developer's time.  Zuul can help automate this process, with a particular "
 "emphasis on ensuring large numbers of changes are tested correctly."
 msgstr ""
+"많은 프로젝트에서 메인라인 커밋 권한을 가진 개발자가 변경 사항을 병합하기 전"
+"에 테스트 스위트가 실행되도록 보장하는 비공식적인 게이팅 방식을 실행합니다. "
+"하지만 개발자가 늘어나고, 변경 사항이 많아지며, 테스트 스위트가 더 포괄적이"
+"게 되면 이러한 방식은 제대로 확장(scale)되지 않으며 개발자의 시간을 가장 효율"
+"적으로 사용하는 방법도 아닙니다. Zuul은 대량의 변경 사항이 올바르게 테스트되"
+"도록 보장하는 데 특별히 중점을 두어 이 프로세스를 자동화하는 데 도움을 줄 수 "
+"있습니다."
 
 #: ../../source/gating.rst:31
 msgid "Testing in parallel"
-msgstr ""
+msgstr "병렬 테스트 (Testing in parallel)"
 
 #: ../../source/gating.rst:33
 msgid ""
@@ -66,6 +103,15 @@ msgid ""
 "it is easy for developers to create changes at a rate faster than they can "
 "be tested and merged."
 msgstr ""
+"Zuul이 특별히 초점을 맞추는 부분은 변경 사항들을 병렬로, 올바른 순서대로 테스"
+"트하도록 보장하는 것입니다. 게이팅 시스템은 항상 브랜치의 끝(tip)에 적용되는 "
+"각 변경 사항을 병합될 상태 그대로 정확하게 테스트해야 합니다. 이를 위한 간단"
+"한 방법은 한 번에 하나의 변경 사항만 테스트하고, 테스트를 통과했을 때만 병합"
+"하는 것입니다. 이 방법은 매우 잘 작동하지만, 변경 사항을 테스트하는 데 오랜 "
+"시간이 걸린다면 개발자들은 자신의 변경 사항이 저장소에 반영될 때까지 긴 시간"
+"을 기다려야 할 수도 있습니다. 일부 프로젝트에서는 변경 사항을 테스트하는 데 "
+"몇 시간이 걸릴 수 있으며, 개발자들이 테스트되고 병합되는 속도보다 더 빠르게 "
+"변경 사항을 만들어내기 쉽습니다."
 
 #: ../../source/gating.rst:44
 msgid ""
@@ -81,16 +127,31 @@ msgid ""
 "tested one at a time (as each subsequent change fails, changes behind it "
 "start again)."
 msgstr ""
+"Zuul의 :value:`dependent pipeline manager<pipeline.manager.dependent>` 는 게"
+"이팅을 위한 테스트 작업의 병렬 실행을 허용하면서도, 마치 한 번에 하나씩 테스"
+"트한 것과 똑같이 변경 사항이 올바르게 테스트되도록 보장합니다. 이는 테스트 작"
+"업의 투기적 실행(speculative execution)을 수행함으로써 이루어집니다. 즉, 모"
+"든 작업이 성공할 것이라고 가정하고 그에 따라 병렬로 테스트합니다. 만약 모두 "
+"성공한다면 전부 병합될 수 있습니다. 하지만 하나라도 실패하면, 해당 작업의 성"
+"공을 기대하고 있던 후속 변경 사항들은 실패한 변경 사항을 제외하고 다시 테스트"
+"됩니다. 최상의 경우, 사용 가능한 실행 컨텍스트 수만큼 많은 변경 사항이 병렬"
+"로 테스트되고 한 번에 병합될 수 있습니다. 최악의 경우, 변경 사항은 한 번에 하"
+"나씩 테스트됩니다(후속 변경 사항이 각각 실패함에 따라 그 뒤에 있는 변경 사항"
+"들이 다시 시작되기 때문입니다)."
 
 #: ../../source/gating.rst:56
 msgid "For example, if a reviewer approves five changes in rapid succession::"
 msgstr ""
+"예를 들어, 리뷰어가 5개의 변경 사항을 빠르게 연달아 승인한다고 가정해 보겠습"
+"니다::"
 
 #: ../../source/gating.rst:60
 msgid ""
 "Zuul queues those changes in the order they were approved, and notes that "
 "each subsequent change depends on the one ahead of it merging:"
 msgstr ""
+"Zuul은 승인된 순서대로 해당 변경 사항들을 대기열에 추가하고, 각 후속 변경 사"
+"항이 그보다 앞선 변경 사항의 병합에 의존한다는 점을 기록합니다:"
 
 #: ../../source/gating.rst:74
 msgid ""
@@ -99,37 +160,52 @@ msgid ""
 "include the changes ahead of it, with the assumption they pass.  That means "
 "jobs testing change *B* include change *A* as well::"
 msgstr ""
+"그런 다음 Zuul은 즉시 모든 변경 사항을 병렬로 테스트하기 시작합니다. 하지만 "
+"다른 변경 사항에 의존하는 변경 사항의 경우, 앞선 변경 사항들이 통과할 것이라"
+"는 가정하에 이를 포함하도록 테스트 시스템에 지시합니다. 즉, 변경 사항 B를 테"
+"스트하는 작업에는 변경 사항 A도 포함됩니다::"
 
 #: ../../source/gating.rst:86
 msgid "Hence jobs triggered to tests A will only test A and ignore B, C, D:"
 msgstr ""
+"따라서 변경 사항 A를 테스트하도록 트리거된 작업은 A만 테스트하고 B, C, D는 무"
+"시합니다:"
 
 #: ../../source/gating.rst:115
 msgid ""
 "The jobs for E would include the whole dependency chain: A, B, C, D, and E. "
 "E will be tested assuming A, B, C, and D passed:"
 msgstr ""
+"변경 사항 E에 대한 작업은 A, B, C, D, E라는 전체 종속성 체인(dependency "
+"chain)을 포함하게 됩니다. E는 A, B, C, D가 통과했다는 가정하에 테스트됩니다:"
 
 #: ../../source/gating.rst:135
 msgid ""
 "If changes *A* and *B* pass tests (green), and *C*, *D*, and *E* fail (red):"
 msgstr ""
+"만약 변경 사항 A와 B가 테스트를 통과하고(녹색), C, D, E가 실패한다면(빨간색):"
 
 #: ../../source/gating.rst:153
 msgid "Zuul will merge change *A* followed by change *B*, leaving this queue:"
 msgstr ""
+"Zuul은 변경 사항 A를 병합한 뒤에 변경 사항 B를 병합하며, 대기열은 다음과 같"
+"이 남습니다:"
 
 #: ../../source/gating.rst:169
 msgid ""
 "Since *D* was dependent on *C*, it is not clear whether *D*'s failure is the "
 "result of a defect in *D* or *C*:"
 msgstr ""
+"D는 C에 의존하고 있었으므로, D의 실패가 D 자체의 결함 때문인지 아니면 C의 결"
+"함 때문인지 명확하지 않습니다:"
 
 #: ../../source/gating.rst:186
 msgid ""
 "Since *C* failed, Zuul will report its failure and drop *C* from the queue, "
 "keeping D and E:"
 msgstr ""
+"C가 실패했기 때문에 Zuul은 그 실패를 보고하고 대기열에서 C를 제외(drop)하며, "
+"D와 E는 유지합니다:"
 
 #: ../../source/gating.rst:202
 msgid ""
@@ -137,20 +213,29 @@ msgid ""
 "starts the process again testing *D* against the tip of the branch, and *E* "
 "against *D*:"
 msgstr ""
+"이 대기열은 방금 2개의 새로운 변경 사항이 도착한 것과 동일한 상태이므로, Zuul"
+"은 브랜치의 끝(tip)을 기준으로 D를, D를 기준으로 E를 테스트하는 프로세스를 다"
+"시 시작합니다:"
 
 #: ../../source/gating.rst:253
 msgid "Pipeline Window"
-msgstr ""
+msgstr "파이프라인 윈도우 (Pipeline Window)"
 
 #: ../../source/gating.rst:255
 msgid ""
-"Zuul allows for some control over this process.  Pipelines have a :term:"
-"`window` which is portion of the pipeline where jobs are permitted to run.  "
-"The window is the number of changes at the head of the queue where Zuul will "
-"start jobs.  Any changes beyond this number are held in the queue without "
-"running jobs.  As changes exit the head of the queue, the changes outside "
-"the window will move up and eventually start their jobs."
+"Zuul allows for some control over this process.  Pipelines have "
+"a :term:`window` which is portion of the pipeline where jobs are permitted "
+"to run.  The window is the number of changes at the head of the queue where "
+"Zuul will start jobs.  Any changes beyond this number are held in the queue "
+"without running jobs.  As changes exit the head of the queue, the changes "
+"outside the window will move up and eventually start their jobs."
 msgstr ""
+"Zuul은 이 프로세스에 대한 어느 정도의 제어를 허용합니다. 파이프라인에는 작업"
+"(jobs) 실행이 허용되는 파이프라인의 일부인 :term:`window` 가 있습니다. 윈도우"
+"는 Zuul이 작업을 시작할 대기열(queue)의 선두에 있는 변경 사항의 개수입니다. "
+"이 개수를 초과하는 변경 사항은 작업이 실행되지 않은 채 대기열에 보류됩니다. "
+"변경 사항이 대기열의 선두를 빠져나가면, 윈도우 밖에 있던 변경 사항이 위로 이"
+"동하여 최종적으로 작업을 시작하게 됩니다."
 
 #: ../../source/gating.rst:291
 msgid ""
@@ -163,6 +248,13 @@ msgid ""
 "throughput, and if they frequently fail, it should be small in order to "
 "minimize waste."
 msgstr ""
+"윈도우는 병렬 테스트에 사용되는 리소스의 양을 제어하도록 설계되었습니다. 앞"
+"서 설명한 것처럼, 종속 파이프라인(dependent pipeline)에서 변경 사항이 테스트"
+"에 실패하면 빌드 결과는 폐기되고 실패한 변경 사항을 제외한 새로운 빌드가 시작"
+"됩니다. 이런 일이 자주 발생하면 Zuul은 거의 이득 없이 점점 더 많은 양의 테스"
+"트 리소스를 사용하게 될 수 있습니다. 이상적으로는 빌드가 자주 성공할 경우 처"
+"리량을 극대화하기 위해 윈도우를 크게 설정하고, 자주 실패할 경우 낭비를 최소화"
+"하기 위해 윈도우를 작게 설정해야 합니다."
 
 #: ../../source/gating.rst:300
 msgid ""
@@ -176,12 +268,23 @@ msgid ""
 "parallel testing, and a ceiling may be set to prevent a wildly successful "
 "pipeline from starving others of resources."
 msgstr ""
+"기본적으로 Zuul은 TCP(전송 제어 프로토콜)의 흐름 제어(flow control)에서 영감"
+"을 받은 알고리즘을 사용하여 윈도우 크기를 결정합니다. 윈도우를 특정 값(기본"
+"값 20개 변경 사항)으로 설정하여 시작합니다. 변경 사항이 성공적으로 병합될 때"
+"마다 윈도우가 1씩 증가합니다. 변경 사항이 실패할 때마다 윈도우는 반으로 줄어"
+"듭니다. 이를 통해 변경 사항이 실패하기 시작하면 윈도우가 빠르게 줄어들고, 성"
+"공하면 천천히 회복될 수 있습니다. (기본적으로) 항상 최소한의 병렬 테스트가 이"
+"루어지도록 하한선(floor)이 설정되며, 매우 성공적인 파이프라인이 다른 파이프라"
+"인의 리소스를 고갈시키는 것을 방지하기 위해 상한선(ceiling)을 설정할 수 있습"
+"니다."
 
 #: ../../source/gating.rst:311
 msgid ""
 "All of the parameters above can be customized to match local needs, but the "
 "defaults are a good starting point.  See :attr:`pipeline.window` for details."
 msgstr ""
+"위의 모든 매개변수는 로컬 요구 사항에 맞게 사용자 정의할 수 있지만, 기본값이 "
+"좋은 출발점입니다. 자세한 내용은 :attr:`pipeline.window` 를 참조하세요."
 
 #: ../../source/gating.rst:315
 msgid ""
@@ -189,17 +292,27 @@ msgid ""
 "queue` within that pipeline maintains its own window so that unreliable "
 "tests in one project queue don't affect the window of other project queues."
 msgstr ""
+"윈도우 매개변수는 파이프라인에 설정되지만, 해당 파이프라인 내의 "
+"각 :term:`project queue` 는 자체 윈도우를 유지하므로 한 프로젝트 대기열의 신"
+"뢰할 수 없는 테스트가 다른 프로젝트 대기열의 윈도우에 영향을 미치지 않습니다."
 
 #: ../../source/gating.rst:320
 msgid ""
-"While every pipeline has a window, only pipelines using the :value:"
-"`dependent <pipeline.manager.dependent>` pipeline manager allow "
+"While every pipeline has a window, only pipelines using "
+"the :value:`dependent <pipeline.manager.dependent>` pipeline manager allow "
 "configuration of the window.  Other pipeline managers use fixed values to "
 "implement their particular behaviors.  For example, :value:`independent "
 "<pipeline.manager.independent>` pipelines always have unlimited windows, "
 "and :value:`serial <pipeline.manager.serial>` pipelines have a fixed window "
 "size of 1."
 msgstr ""
+"모든 파이프라인에는 윈도우가 있지만, :value:`dependent "
+"<pipeline.manager.dependent>` 파이프라인 관리자를 사용하는 파이프라인만 윈도"
+"우 구성을 허용합니다. 다른 파이프라인 관리자들은 특정한 동작을 구현하기 위해 "
+"고정된 값을 사용합니다. 예를 들어, :value:`independent "
+"<pipeline.manager.independent>` 파이프라인은 항상 무제한 윈도우를 가지"
+"며, :value:`serial <pipeline.manager.serial>` 파이프라인은 고정된 윈도우 크"
+"기 1을 가집니다."
 
 #: ../../source/gating.rst:328
 msgid ""
@@ -208,10 +321,14 @@ msgid ""
 "hourglass icon and the mouseover text will indicate that jobs will start "
 "when the change moves closer to the head of the queue."
 msgstr ""
+"윈도우는 웹 인터페이스에서 변경 사항의 왼쪽에 있는 아이콘을 검사하여 시각적으"
+"로 확인할 수 있습니다. 변경 사항이 윈도우 밖에 있는 경우 모래시계 아이콘이 표"
+"시되며, 마우스를 올리면 표시되는 텍스트(mouseover text)는 변경 사항이 대기열"
+"의 선두에 가까워지면 작업이 시작될 것임을 알려줍니다."
 
 #: ../../source/gating.rst:335
 msgid "Cross Project Testing"
-msgstr ""
+msgstr "크로스 프로젝트 테스트 (Cross Project Testing)"
 
 #: ../../source/gating.rst:337
 msgid ""
@@ -220,6 +337,10 @@ msgid ""
 "projects currently enqueued in the gate (since they will eventually be "
 "merged and might introduce breaking features)."
 msgstr ""
+"프로젝트들이 서로 밀접하게 결합되어 있는 경우, 게이트(gate)에 들어오는 변경 "
+"사항이 현재 게이트 대기열에 있는 다른 프로젝트의 버전과 함께 테스트되도록 보"
+"장하고 싶을 것입니다 (이들은 결국 병합될 것이며 이전 버전과 호환되지 않는 기"
+"능 고장(breaking features)을 도입할 수 있기 때문입니다)."
 
 #: ../../source/gating.rst:342
 msgid ""
@@ -230,20 +351,31 @@ msgid ""
 "present in the jobs for the changes behind them.  See :ref:`project` for "
 "more details."
 msgstr ""
+"이러한 관계는 종속 파이프라인 내의 공유 대기열(shared queue)에 프로젝트들을 "
+"배치함으로써 Zuul 구성에서 정의할 수 있습니다. 프로젝트의 변경 사항이 이러한 "
+"공유 대기열이 있는 파이프라인에 들어갈 때마다, 대기열에서 앞서 있는 변경 사항"
+"의 커밋이 그 뒤에 있는 변경 사항의 작업에 자동으로 포함되도록 이들은 함께 테"
+"스트됩니다. 자세한 내용은 :ref:project 를 참조하세요."
 
 #: ../../source/gating.rst:349
 msgid ""
 "A given dependent pipeline may have as many shared change queues as "
 "necessary, so groups of related projects may share a change queue without "
-"interfering with unrelated projects. :value:`Independent pipelines <pipeline."
-"manager.independent>` do not use shared change queues, however, they may "
-"still be used to test changes across projects using cross-project "
+"interfering with unrelated projects. :value:`Independent pipelines "
+"<pipeline.manager.independent>` do not use shared change queues, however, "
+"they may still be used to test changes across projects using cross-project "
 "dependencies."
 msgstr ""
+"주어진 종속 파이프라인은 필요한 만큼 많은 공유 변경 대기열(shared change "
+"queues)을 가질 수 있으므로, 관련 프로젝트 그룹이 관련 없는 프로젝트에 영향을 "
+"주지 않고 변경 대기열을 공유할 수 있습니다. :value:`Independent pipelines "
+"<pipeline.manager.independent>` 은 공유 변경 대기열을 사용하지 않지만, 크로"
+"스 프로젝트 종속성(cross-project dependencies)을 사용하여 프로젝트 전반에 걸"
+"친 변경 사항을 테스트하는 데 여전히 사용될 수 있습니다."
 
 #: ../../source/gating.rst:359
 msgid "Cross-Project Dependencies"
-msgstr ""
+msgstr "크로스 프로젝트 종속성 (Cross-Project Dependencies)"
 
 #: ../../source/gating.rst:361
 msgid ""
@@ -253,6 +385,11 @@ msgid ""
 "added to the git commit message.  In GitHub based projects this footer must "
 "be added to the pull request description."
 msgstr ""
+"Zuul은 사용자가 프로젝트 전반에 걸친 종속성(dependencies)을 지정할 수 있도록 "
+"허용합니다. 사용자는 특수한 푸터(footer)를 사용하여 변경 사항이 Zuul에 알려"
+"진 다른 저장소의 변경 사항에 의존함을 지정할 수 있습니다. Gerrit 기반 프로젝"
+"트의 경우 이 푸터는 git 커밋 메시지에 추가되어야 합니다. GitHub 기반 프로젝트"
+"의 경우 이 푸터는 풀 리퀘스트(pull request) 설명에 추가되어야 합니다."
 
 #: ../../source/gating.rst:367
 msgid ""
@@ -261,6 +398,10 @@ msgid ""
 "between changes in different git repositories.  Change A may depend on B, "
 "but B may not depend on A."
 msgstr ""
+"Zuul의 크로스 프로젝트 종속성은 서로 다른 git 저장소의 변경 사항 간의 단방향 "
+"종속성 관계를 나타내기 위해 git 자체와 마찬가지로 방향성 비순환 그래프(DAG, "
+"Directed Acyclic Graph)처럼 동작합니다.  변경 사항 A가 B에 의존할 수는 있지"
+"만, B가 A에 의존할 수는 없습니다."
 
 #: ../../source/gating.rst:372
 msgid ""
@@ -268,34 +409,47 @@ msgid ""
 "message or pull request.  For example, a change which depends on a GitHub "
 "pull request (PR #4) might have the following footer::"
 msgstr ""
+"이를 사용하려면 커밋 메시지나 풀 리퀘스트의 푸터에 ``Depends-On: <change-"
+"url>`` 을 포함하세요. 예를 들어, GitHub 풀 리퀘스트(PR #4)에 의존하는 변경 사"
+"항은 다음과 같은 푸터를 가질 수 있습니다::"
 
 #: ../../source/gating.rst:380
 msgid ""
 "For Github the ``Depends-On:`` footer must be in the *Pull Request* "
-"description, which is separate and often different to the commit message (i."
-"e. the text submitted with ``git commit``).  This is in contrast to Gerrit "
-"where the change description is always the commit message."
+"description, which is separate and often different to the commit message "
+"(i.e. the text submitted with ``git commit``).  This is in contrast to "
+"Gerrit where the change description is always the commit message."
 msgstr ""
+"GitHub의 경우 Depends-On: 푸터는 풀 리퀘스트(Pull Request) 설명(description) "
+"안에 있어야 하며, 이는 커밋 메시지(즉, git commit과 함께 제출된 텍스트)와 분"
+"리되어 있고 종종 다릅니다. 이는 변경 사항 설명이 항상 커밋 메시지인 Gerrit과"
+"는 대조적입니다."
 
 #: ../../source/gating.rst:386
 msgid "A change which depends on a Gerrit change (change number 3)::"
-msgstr ""
+msgstr "Gerrit 변경 사항(변경 번호 3)에 의존하는 변경 사항::"
 
 #: ../../source/gating.rst:390
 msgid ""
 "Changes may depend on changes in any other project, even projects not on the "
 "same system (i.e., a Gerrit change may depend on a GitHub pull request)."
 msgstr ""
+"변경 사항은 다른 어떤 프로젝트의 변경 사항에도 의존할 수 있으며, 심지어 동일"
+"한 시스템에 있지 않은 프로젝트에도 의존할 수 있습니다(즉, Gerrit 변경 사항이 "
+"GitHub 풀 리퀘스트에 의존할 수 있습니다)."
 
 #: ../../source/gating.rst:396
 msgid ""
 "An older syntax of specifying dependencies using Gerrit change-ids is still "
 "supported, however it is deprecated and will be removed in a future version."
 msgstr ""
+"Gerrit change-id를 사용하여 종속성을 지정하는 이전 문법(syntax)도 여전히 지원"
+"되지만, 이는 더 이상 권장되지 않으며(deprecated) 향후 버전에서 제거될 예정입"
+"니다."
 
 #: ../../source/gating.rst:401
 msgid "Dependent Pipeline"
-msgstr ""
+msgstr "종속 파이프라인 (Dependent Pipeline)"
 
 #: ../../source/gating.rst:403
 msgid ""
@@ -304,12 +458,18 @@ msgid ""
 "change A depends on B, then when they are added to a dependent pipeline, B "
 "will appear first and A will follow:"
 msgstr ""
+"Zuul이 크로스 프로젝트 종속성이 있는 변경 사항을 발견하면, 파이프라인 대기열"
+"에 추가(enqueuing)할 때 일반적인 방식으로 직렬화(serialize)합니다. 즉, 변경 "
+"사항 A가 B에 의존하는 경우, 이들이 종속 파이프라인(dependent pipeline)에 추가"
+"될 때 B가 먼저 나타나고 A가 그 뒤를 따릅니다:"
 
 #: ../../source/gating.rst:422
 msgid ""
 "If tests for B fail, both B and A will be removed from the pipeline, and it "
 "will not be possible for A to merge until B does."
 msgstr ""
+"만약 B에 대한 테스트가 실패하면, B와 A 모두 파이프라인에서 제거되며, B가 병합"
+"될 때까지 A는 병합될 수 없습니다."
 
 #: ../../source/gating.rst:428
 msgid ""
@@ -320,10 +480,17 @@ msgid ""
 "automatically enqueue the second change, requiring a new approval event to "
 "enqueue it after the first change merges."
 msgstr ""
+"크로스 프로젝트 종속성이 있는 변경 사항들이 변경 대기열(change queue)을 공유"
+"하지 않으면 Zuul은 이들을 함께 대기열에 추가할 수 없으며, 두 번째 변경 사항"
+"이 대기열에 추가되기 전에 첫 번째 변경 사항이 먼저 병합되어야 합니다. 첫 번"
+"째 변경 사항이 병합되기 전에 두 번째 변경 사항이 승인(approved)되면, Zuul은 "
+"해당 승인에 대해 조치를 취할 수 없어 두 번째 변경 사항을 자동으로 대기열에 추"
+"가하지 않으며, 첫 번째 변경 사항이 병합된 후 이를 대기열에 추가하기 위한 새로"
+"운 승인 이벤트가 필요합니다."
 
 #: ../../source/gating.rst:437
 msgid "Independent Pipeline"
-msgstr ""
+msgstr "독립 파이프라인 (Independent Pipeline)"
 
 #: ../../source/gating.rst:439
 msgid ""
@@ -335,6 +502,12 @@ msgid ""
 "unable to be fully tested until a related change landed in a different "
 "repository may now be tested together from the start."
 msgstr ""
+"변경 사항이 독립 파이프라인(independent pipeline) 대기열에 추가되면, 종속 파"
+"이프라인에서와 마찬가지로 모든 관련 종속성(상위 커밋에서 오는 일반적인 git 종"
+"속성과 크로스 프로젝트 종속성 모두)이 종속성 그래프에 나타납니다. 즉, 독립 파"
+"이프라인에서도 변경 사항은 그 종속성들과 함께 테스트됩니다. 이전에는 관련된 "
+"변경 사항이 다른 저장소에 반영(land)될 때까지 완전히 테스트될 수 없었던 변경 "
+"사항들도 이제 처음부터 함께 테스트될 수 있습니다."
 
 #: ../../source/gating.rst:448
 msgid ""
@@ -343,6 +516,10 @@ msgid ""
 "change tested, all of its dependencies are visually connected to it, and "
 "they are used to construct the git repositories that Zuul uses when testing."
 msgstr ""
+"모든 변경 사항은 여전히 독립적이지만(종속 파이프라인처럼 전체 파이프라인이 단"
+"일 그래프를 공유하지 않는다는 점에 유의하세요), 테스트되는 각 변경 사항에 대"
+"해 모든 종속성이 시각적으로 연결되어 표시되며, 이는 Zuul이 테스트 시 사용할 "
+"git 저장소를 구성하는 데 사용됩니다."
 
 #: ../../source/gating.rst:454
 msgid ""
@@ -350,6 +527,9 @@ msgid ""
 "dependencies show up as grey dots, while the actual change tested shows up "
 "as red or green (depending on the jobs results):"
 msgstr ""
+"상태 페이지(status page)에서 이 그래프를 보면, 종속성은 회색 점으로 나타나는 "
+"반면 실제로 테스트된 변경 사항은 (작업 결과에 따라) 빨간색 또는 초록색으로 나"
+"타납니다:"
 
 #: ../../source/gating.rst:472
 msgid ""
@@ -358,10 +538,13 @@ msgid ""
 "show up as a grey dot when used as a dependency, but separately and "
 "additionally will appear as its own red or green dot for its test."
 msgstr ""
+"이는 회색 변경 사항이 오직 종속성을 설정하기 위해 존재함을 나타냅니다. 종속"
+"성 중 하나가 테스트되고 있더라도, 종속성으로 사용될 때는 회색 점으로 표시되지"
+"만, 해당 테스트에 대해서는 별도로 빨간색 또는 초록색 점으로 추가 표시됩니다."
 
 #: ../../source/gating.rst:479
 msgid "Multiple Changes"
-msgstr ""
+msgstr "다중 변경 사항 (Multiple Changes)"
 
 #: ../../source/gating.rst:481
 msgid ""
@@ -369,21 +552,29 @@ msgid ""
 "On:`` lines to the commit message footer.  It is possible for a change in "
 "project A to depend on a change in project B and a change in project C."
 msgstr ""
+"변경 사항은 커밋 메시지 푸터에 더 많은 ''Depends-On:'' 줄을 추가하는 것만으"
+"로 두 개 이상의 종속성을 나열할 수 있습니다. 프로젝트 A의 변경 사항이 프로젝"
+"트 B의 변경 사항과 프로젝트 C의 변경 사항에 모두 의존하는 것도 가능합니다."
 
 #: ../../source/gating.rst:521
 msgid "Cycles"
-msgstr ""
+msgstr "순환 (Cycles)"
 
 #: ../../source/gating.rst:523
 msgid ""
 "Zuul supports cycles that are created by use of cross-project dependencies. "
-"However this feature is opt-in and can be configured on the queue. See :attr:"
-"`queue.allow-circular-dependencies` for information on how to configure this."
+"However this feature is opt-in and can be configured on the queue. "
+"See :attr:`queue.allow-circular-dependencies` for information on how to "
+"configure this."
 msgstr ""
+"Zuul은 크로스 프로젝트 종속성 사용으로 인해 생성되는 순환(cycles)을 지원합니"
+"다. 하지만 이 기능은 선택 사항(opt-in)이며 대기열에서 구성할 수 있습니다. 구"
+"성 방법에 대한 정보는 :attr:`queue.allow-circular-dependencies` 를 참조하세"
+"요."
 
 #: ../../source/gating.rst:531
 msgid "Global Repo State"
-msgstr ""
+msgstr "전역 저장소 상태 (Global Repo State)"
 
 #: ../../source/gating.rst:533
 msgid ""
@@ -395,3 +586,11 @@ msgid ""
 "on the same queue item have a consistent view of all involved git repos, "
 "even if one job starts running much later than another."
 msgstr ""
+"git 저장소가 대기열 항목의 작업 중 최소 하나에서 사용되는 경우, Zuul은 저장"
+"소 상태(즉, 브랜치 헤드(heads)와 태그)를 고정(freeze)하고 해당 대기열 항목에 "
+"대해 실행되는 모든 작업에 동일한 상태를 사용합니다. 모든 작업이 모든 저장소"
+"의 git 저장소 체크아웃(checkout)을 가져오는 것은 아니지만, 체크아웃된 모든 저"
+"장소는 동일한 상태를 갖게 됩니다. 이 때문에 작성자는 하나의 작업이 다른 작업"
+"보다 훨씬 나중에 실행을 시작하더라도, 동일한 대기열 항목에서 실행되는 작업들"
+"이 관련된 모든 git 저장소에 대해 일관된 뷰(view)를 가진다고 확신할 수 있습니"
+"다."
