@@ -178,11 +178,11 @@ msgstr "화이트 라벨 (White Label)"
 #: ../../source/installation.rst:85
 msgid ""
 "Serve the dashboard of an individual tenant at the root of its own domain. "
-"[https://zuul.openstack.org](https://zuul.openstack.org) is an example of a Zuul dashboard that has been "
+"https://zuul.openstack.org is an example of a Zuul dashboard that has been "
 "white labeled for the ``openstack`` tenant of its Zuul."
 msgstr ""
 "개별 테넌트의 대시보드를 자체 도메인의 루트에서 제공합니다. "
-"[https://zuul.openstack.org](https://zuul.openstack.org) 는 해당 Zuul의 ``openstack`` 테넌트를 위해 화이트 "
+"https://zuul.openstack.org 는 해당 Zuul의 ``openstack`` 테넌트를 위해 화이트 "
 "라벨링된 Zuul 대시보드의 예입니다."
 
 #: ../../source/installation.rst:89 ../../source/installation.rst:126
@@ -221,7 +221,7 @@ msgid ""
 "a Sub-URL."
 msgstr ""
 "다른 애플리케이션과의 통합을 제공하는 일환으로 루트 URL 아래의 위치에서 Zuul "
-"대시보드를 제공합니다. [https://softwarefactory-project.io/zuul/](https://softwarefactory-project.io/zuul/) 은 하위 URL에서 "
+"대시보드를 제공합니다. https://softwarefactory-project.io/zuul/은 하위 URL에서 "
 "제공되는 Zuul 대시보드의 예입니다."
 
 #: ../../source/installation.rst:103
