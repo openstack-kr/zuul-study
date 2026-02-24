@@ -3,3 +3,11 @@
 
 ## 스터디 개요 
 ### zuul study
+
+
+## 번역 역할 분담
+신우석 - about, index, concepts, components, governance, vulnerabilities
+현규환 - installation, operation, monitoring, admin, troubleshooting, tracing
+최우형 - configuration, upgradiing, releasenotes
+김주형 - job-contest, tenants, build-nodes
+노성은 - project-config, gating, client, authentication, rest-api, glossary, sphinx
