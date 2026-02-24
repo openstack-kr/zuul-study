@@ -1,25 +1,26 @@
-# Korean translations for Zuul package.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012-2026, Zuul project contributors
 # This file is distributed under the same license as the Zuul package.
-# Automatically generated, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Zuul latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-12 01:27+0900\n"
-"PO-Revision-Date: 2026-02-12 01:27+0900\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2026-02-02 09:55+0900\n"
+"PO-Revision-Date: 2026-02-24 11:39+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ../../source/governance.rst:2
 msgid "Zuul Project Governance"
-msgstr ""
+msgstr "Zuul 프로젝트 거버넌스"
 
 #: ../../source/governance.rst:4
 msgid ""
@@ -28,14 +29,18 @@ msgid ""
 "Review votes from the Maintainers before merging.  They should only be "
 "approved by the Project Lead."
 msgstr ""
+"Zuul 프로젝트의 거버넌스는 아래와 같습니다.  이 페이지에 대한 변경 사항은 일"
+"주일 동안 공개되어야 하며, 병합하기 전 메인테이너로부터 부정적인 Code-Review "
+"투표보다 많은 긍정적인 코드 리뷰 투표를 받아야 합니다.  또한 프로젝트 리드"
+"(Project Lead)에 의해서만 승인되어야 합니다."
 
 #: ../../source/governance.rst:10
 msgid "Zuul Maintainers"
-msgstr ""
+msgstr "Zuul 메인테이너"
 
 #: ../../source/governance.rst:12
 msgid "The Zuul project is self-governed."
-msgstr ""
+msgstr "Zuul 프로젝트는 자율적으로 운영됩니다."
 
 #: ../../source/governance.rst:14
 msgid ""
@@ -45,6 +50,10 @@ msgid ""
 "changes to the codebase, as well as make other decisions regarding the "
 "project."
 msgstr ""
+"프로젝트와 관한 의사 결정은 Zuul 메인테이너들에 의해 이루어집니다. 이들은 프"
+"로젝트 전반에 익숙하며 프로젝트의 관리자 역할을 수행하는 팀입니다.  인들은 코"
+"드베이스에 제안된 변경 사항을 승인하거나 거부할 권한이 있으며, 프로젝트와 관"
+"한 다른 의사 결정도 내릴 수 있습니다."
 
 #: ../../source/governance.rst:20
 msgid ""
@@ -53,6 +62,9 @@ msgid ""
 "capacity as Maintainers, they are expected to consider not only their own "
 "needs, but those of the entire community."
 msgstr ""
+"메인테이너는 Zuul 프로젝트의 모든 부분의 소스 코드, 설계, 운영 및 사용법에 익"
+"숙해야 합니다. 메인테이너로서 활동할 때는 자신의 필요뿐 아니라 커뮤니티 전체"
+"의 이익을 고려해야 합니다."
 
 #: ../../source/governance.rst:25
 msgid ""
@@ -67,6 +79,14 @@ msgid ""
 "outright, but this is expected to be used sparingly in favor of (or in the "
 "process of) redirecting effort toward efforts which can achieve consensus."
 msgstr ""
+"버전 관리 저장소에 보관된 코드, 문서, 웹사이트 및 기타 프로젝트 리소스에 대"
+"한 변경 사항은 메인테이너가 리뷰하고 승인합니다.  일반적으로 변경 사항을 병합"
+"하기 전 최소 두 명의 메인테이너로부터 승인을 얻어야 하지만, 변경 사항에 따라 "
+"더 적거나 많은 검토가 필요할 수 있습니다.  리뷰 시 고려해야 할 요소는 변경 사"
+"항의 복잡성, 프로젝트 설계와의 일치 여부, 그리고 특정 분야의 전문성을 가진 추"
+"가 참여자의 리뷰 필요성 등입니다. 메인테이너는 변경 사항을 즉시 거부할 수도 "
+"있으나, 이는 가급적 자제해야 하며 대신 합의(consensus)를 이끌어낼 수 있는 방"
+"향으로 노력을 유도하는 과정에서 사용해야 합니다."
 
 #: ../../source/governance.rst:37
 msgid ""
@@ -78,6 +98,11 @@ msgid ""
 "contributors are aware of the changes to the project.  In a distributed "
 "environment, reviews are an important part of our collaborative process."
 msgstr ""
+"이 리뷰 프로세스의 목적은 두 가지입니다. 첫째, 프로젝트의 변경 사항이 충분히 "
+"높은 수준을 충족하여 프로젝트를 개선하고 목표 달성에 기여하며, 기능 퇴보를 일"
+"으키거나 향후 지원을 어렵게 만들지 않도록 보장하는 것입니다.  둘째로 이에 못"
+"지않게 중요한 기여자들이 프로젝트 변경 사항을 인지하도록 보장하는 것입니다.  "
+"분산 환경에서 리뷰는 협업 프로세스의 핵심적인 부분입니다."
 
 #: ../../source/governance.rst:46
 msgid ""
@@ -87,6 +112,10 @@ msgid ""
 "As the authority, Maintainers should strive to achieve consensus on any such "
 "decisions."
 msgstr ""
+"온라인 리뷰와 관련되지 않은 결정 사항은 프로젝트 메일링 리스트에서 논의됩니"
+"다. 더 넓은 커뮤니티의 의견을 수렴하기 위헤 누구나 이러한 논의에 참여하는 것"
+"을 환영하고 권장합니다. 권한을 가진 메인테이너들은 이러한 결정에 대해 합의를 "
+"도출하기 위해 노력해야 합니다."
 
 #: ../../source/governance.rst:52
 msgid ""
@@ -95,6 +124,9 @@ msgid ""
 "should occur via private communication among the maintainers under the "
 "direction of the Project Lead."
 msgstr ""
+"메인테이너 구성원의 변경은 기존 메인테이너들의 합의에 의해 결정됩니다. 다만, "
+"사안의 민감성을 고려하여 이러한 논의는 프로젝트 리드의 지침에 따라 메인테이"
+"너 간의 비공개 통신을 통해 이루어져야 합니다."
 
 #: ../../source/governance.rst:57
 msgid ""
@@ -105,98 +137,103 @@ msgid ""
 "artificial limits of the number of Maintainers.  The Project Lead will "
 "assist any contributor who wishes for guidance in becoming a Maintainer."
 msgstr ""
+"대규모 메인테이너 그룹은 프로젝트 건전성에 중요합니다. 따라서 기여자들이 메인"
+"테이너가 되는 과정의 일환으로 프로젝트 유지 관리의 모든 측면에 참여하도록 권"
+"장됩니다.  기존 메인테이너들은 새로운 멤버를 독려해야 합니다.  메인테이너 수"
+"에 인위적인 제한은 없습니다.  프로젝트 리드는 메인테이너가 되기 위한 안내를 "
+"원하는 기여자를 도울 것입니다."
 
 #: ../../source/governance.rst:65
 msgid "Current Zuul Maintainers:"
-msgstr ""
+msgstr "현재 Zuul 메인테이너:"
 
 #: ../../source/governance.rst:68 ../../source/governance.rst:125
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: ../../source/governance.rst:68 ../../source/governance.rst:125
 msgid "Matrix ID"
-msgstr ""
+msgstr "Matrix ID"
 
 #: ../../source/governance.rst:70
 msgid "Clark Boylan"
-msgstr ""
+msgstr "Clark Boylan"
 
 #: ../../source/governance.rst:70
 msgid "Clark (@clarkb:matrix.org)"
-msgstr ""
+msgstr "Clark (@clarkb:matrix.org)"
 
 #: ../../source/governance.rst:71
 msgid "Felix Edel"
-msgstr ""
+msgstr "Felix Edel"
 
 #: ../../source/governance.rst:71
 msgid "felixedel (@felixedel:matrix.org)"
-msgstr ""
+msgstr "felixedel (@felixedel:matrix.org)"
 
 #: ../../source/governance.rst:72
 msgid "Ian Wienand"
-msgstr ""
+msgstr "Ian Wienand"
 
 #: ../../source/governance.rst:72
 msgid "ianw (@iwienand:matrix.org)"
-msgstr ""
+msgstr "ianw (@iwienand:matrix.org)"
 
 #: ../../source/governance.rst:73
 msgid "James E. Blair"
-msgstr ""
+msgstr "James E. Blair"
 
 #: ../../source/governance.rst:73
 msgid "corvus (@jim:acmegating.com)"
-msgstr ""
+msgstr "corvus (@jim:acmegating.com)"
 
 #: ../../source/governance.rst:74
 msgid "Jens Harbott"
-msgstr ""
+msgstr "Jens Harbott"
 
 #: ../../source/governance.rst:75
 msgid "Jeremy Stanley"
-msgstr ""
+msgstr "Jeremy Stanley"
 
 #: ../../source/governance.rst:75
 msgid "fungi (@fungicide:matrix.org)"
-msgstr ""
+msgstr "fungi (@fungicide:matrix.org)"
 
 #: ../../source/governance.rst:76
 msgid "Monty Taylor"
-msgstr ""
+msgstr "Monty Taylor"
 
 #: ../../source/governance.rst:76
 msgid "mordred (@mordred:inaugust.com)"
-msgstr ""
+msgstr "mordred (@mordred:inaugust.com)"
 
 #: ../../source/governance.rst:77
 msgid "Simon Westphahl"
-msgstr ""
+msgstr "Simon Westphahl"
 
 #: ../../source/governance.rst:77
 msgid "swest (@westphahl:matrix.org)"
-msgstr ""
+msgstr "swest (@westphahl:matrix.org)"
 
 #: ../../source/governance.rst:78
 msgid "Tobias Henkel"
-msgstr ""
+msgstr "Tobias Henkel"
 
 #: ../../source/governance.rst:78
 msgid "tobiash (@tobias.henkel:matrix.org)"
-msgstr ""
+msgstr "tobiash (@tobias.henkel:matrix.org)"
 
 #: ../../source/governance.rst:79
 msgid "Tristan Cacqueray"
-msgstr ""
+msgstr "Tristan Cacqueray"
 
 #: ../../source/governance.rst:79
 msgid "tristanC (@tristanc_:matrix.org)"
-msgstr ""
+msgstr "tristanC (@tristanc_:matrix.org)"
 
 #: ../../source/governance.rst:83
 msgid "Zuul Project Lead"
-msgstr ""
+msgstr "Zuul 프로젝트 리드"
 
 #: ../../source/governance.rst:85
 msgid ""
@@ -208,6 +245,12 @@ msgid ""
 "project, ensure that Maintainers and other contributors are familiar with "
 "that design, and facilitate achieving consensus on difficult issues."
 msgstr ""
+"메인테이너들은 프로젝트의 전반적인 방향을 제시하고 다양한 영역과 측면 간의 일"
+"관성을 증진하기 위해 프로젝트 리드를 선출합니다.  프로젝트 리드는 메인테이너 "
+"이상의 특별한 권한을 갖지는 않지만, 추가적인 책임을 집니다. 프로젝트 리드는 "
+"프로젝트의 전반적인 설계와 방향에 특별한 주의를 기울여야 하며, 메인테이너와 "
+"다른 기여자들이 해당 설계를 숙지하도록 보장하고 어려운 문제에 대해 합의를 도"
+"출할 수 있도록 조력해야 합니다."
 
 #: ../../source/governance.rst:94
 msgid ""
@@ -215,6 +258,9 @@ msgid ""
 "may poll the Maintainers on the issue, and in the case of a tie, the vote of "
 "the Project Lead will be the tie-breaker."
 msgstr ""
+"만약 프로젝트가 특정 사안에 대해 합의에 도달하지 못한 경우, 프로젝트 리드는 "
+"헤당 사안에 대해 메인테이너들을 대상으로 투표를 실시할 수 있으며, 동점인 경"
+"우 프로젝트 리드의 투표가 결정권(tie-breaker)을 갖습니다."
 
 #: ../../source/governance.rst:98
 msgid ""
@@ -222,14 +268,16 @@ msgid ""
 "shall be a Condorcet election and the candidates shall be self-nominated "
 "from among the existing Maintainers."
 msgstr ""
+"프로젝트 리드의 임기는 1년입니다.  선출 프로세스는 콩도르세(Condorcet) 투표 "
+"방식을 따르며, 후보자는 기존 메인테이너 중에서 자원하여 출마합니다."
 
 #: ../../source/governance.rst:102
 msgid "The Project Lead is James E. Blair (term expires 2027-01-16)."
-msgstr ""
+msgstr "현재 프로젝트 리더는 James E. Blair입니다(임기 만료일: 2027-01-16)."
 
 #: ../../source/governance.rst:105
 msgid "Zuul-Jobs Maintainers"
-msgstr ""
+msgstr "Zuul-Jobs 메인테이너"
 
 #: ../../source/governance.rst:107
 msgid ""
@@ -237,6 +285,8 @@ msgid ""
 "reusable job components which are designed to be used in a wide variety of "
 "situations."
 msgstr ""
+"Zuul-jobs 및 Zuul-base-jobs 저장소에는 다양한 상황에서 사용할 수 있도록 설계"
+"된 재사용 가능한 잡 컴포넌트 표준 라이브러리가 포함되어 있습니다."
 
 #: ../../source/governance.rst:111
 msgid ""
@@ -250,23 +300,30 @@ msgid ""
 "the Zuul-Jobs Maintainers group are undertaken with consensus of the wider "
 "Zuul-Jobs group (not merely the Zuul Maintainers)."
 msgstr ""
+"이 저장소들의 변경 사항은 해당 잡이 사용될 수 있는 다양한 환경에 대한 고려와 "
+"컴포넌트의 일관성 및 안정성을 높이는 정책이 필요하지만, 반드시 Zuul 개발 전"
+"체 범위까지 고려할 필요는 없습니다. 이를 위해 이 저장소의 변경 사항에 대한 승"
+"인 권한은 Zuul 메인테이너와 'Zuul-Jobs 메인테이너'라고 불리는 추가 그룹 모두"
+"에게 부여됩니다. 검토 프로세스는 프로젝트의 다른 부분과 동일하며, Zuul-Jobs "
+"메인테이너 그룹의 구성원 변경은 (단순히 Zuul 메인테이너만이 아닌) 더 넓은 "
+"Zuul-Jobs 그룹의 합의를 통해 이루어집니다."
 
 #: ../../source/governance.rst:122
 msgid "Current Zuul-Jobs Maintainers (in addition to Zuul Maintainers):"
-msgstr ""
+msgstr "현재 Zuul-Jobs 메인테이너(Zuul 메인테이너 외 추가 구성원):"
 
 #: ../../source/governance.rst:127
 msgid "Andreas Jaeger"
-msgstr ""
+msgstr "Andreas Jaeger"
 
 #: ../../source/governance.rst:128
 msgid "Mohammed Naser"
-msgstr ""
+msgstr "Mohammed Naser"
 
 #: ../../source/governance.rst:129
 msgid "Albin Vass"
-msgstr ""
+msgstr "Albin Vass"
 
 #: ../../source/governance.rst:129
 msgid "avass (@avass:vassast.org)"
-msgstr ""
+msgstr "avass (@avass:vassast.org)"

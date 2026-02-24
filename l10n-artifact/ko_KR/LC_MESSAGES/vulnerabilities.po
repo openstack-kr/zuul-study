@@ -1,25 +1,26 @@
-# Korean translations for Zuul package.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012-2026, Zuul project contributors
 # This file is distributed under the same license as the Zuul package.
-# Automatically generated, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Zuul latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-12 01:27+0900\n"
-"PO-Revision-Date: 2026-02-12 01:27+0900\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2026-02-02 09:55+0900\n"
+"PO-Revision-Date: 2026-02-24 11:39+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ../../source/vulnerabilities.rst:6
 msgid "Vulnerability Reporting"
-msgstr ""
+msgstr "취약점 보고"
 
 #: ../../source/vulnerabilities.rst:8
 msgid ""
@@ -28,6 +29,10 @@ msgid ""
 "reviewed popular libraries for its cryptographic needs. Still, bugs are "
 "inevitable and security bugs are no exception to that rule."
 msgstr ""
+"Zuul은 신뢰할 수 없는 코드가 실행되는 곳에 계층적 심층 방어(defense-in-"
+"depth) 접근 방식을 구현하고, 암호화 요구 사항에 대해 충분히 검증된 대중적인 "
+"라이브러리를 활용함으로써 최대한의 보안을 유지하기 위해 노력합니다. 그럼에도 "
+"불구하고 버그는 불가피하며, 보안 버그 역시 예외는 아닙니다."
 
 #: ../../source/vulnerabilities.rst:14
 msgid ""
@@ -36,18 +41,21 @@ msgid ""
 "discuss the details before any suspected vulnerability is made public. There "
 "are a couple possible ways you can bring security bugs to our attention:"
 msgstr ""
+"만약 Zuul에서 버그를 발견했고 그것이 시스템 일부의 보안을 해칠 수 있다고 의심"
+"되는 경우, 해당 취약점이 공개되기 전에 비공개로 세부 사항을 논의할 기회를 주"
+"시면 감사하겠습니다. 보안 버그를 저희에게 알리는 방법은 다음과 같습니다:"
 
 #: ../../source/vulnerabilities.rst:21
 msgid "Create a Private Story in StoryBoard"
-msgstr ""
+msgstr "StoryBoard에서 비공개 스토리 생성"
 
 #: ../../source/vulnerabilities.rst:23
 msgid "You can create a private story at the following URL:"
-msgstr ""
+msgstr "다음 URL에서 비공개 스토리를 생성할 수 있습니다:"
 
 #: ../../source/vulnerabilities.rst:25
 msgid "`<https://storyboard.openstack.org/#!/story/new?force_private=true>`_"
-msgstr ""
+msgstr "`<https://storyboard.openstack.org/#!/story/new?force_private=true>`_"
 
 #: ../../source/vulnerabilities.rst:27
 msgid ""
@@ -56,6 +64,9 @@ msgid ""
 "this from a normal story creation workflow instead, please make sure to set "
 "this checkbox first."
 msgstr ""
+"이 특정 보고용 URL을 사용하면 저장하기 전 새 스토리 UI에서 ``Private`` 체크박"
+"스를 설정하는 것을 잊어버리는 것을 방지할 수 있습니다. 대신 일반적인 스토리 "
+"생성 워크플로를 따르는 경우, 먼저 이 체크박스를 설정했는지 확인합니다."
 
 #: ../../source/vulnerabilities.rst:32
 msgid ""
@@ -71,10 +82,19 @@ msgid ""
 "``Private`` setting, and instead wait for one of the zuul-security reviewers "
 "to do this once it's deemed safe."
 msgstr ""
+"취약점 보고를 위해 짧지만 기억하기 쉬운 제목을 입력하고, 설명란에 위험성, 우"
+"려 사항 또는 기타 관련 세부 정보를 제공해 주십시오. 이 스토리를 볼 수 있는 팀"
+"과 사용자 목록에 ``zuul-security`` 팀을 추가하여 그들이 심사 작업을 할 수 있"
+"도록 하십시오. 초기 태스크에는 해당 이슈가 발생하는 특정 프로젝트(예: ``zuul/"
+"zuul`` 또는 ``zuul/nodepool``)를 선택하고, 다른 프로젝트와도 관련이 있다면 각"
+"각의 프로젝트에 대해 추가 태스크를 생성하고 적절한 제목을 붙여주십시오. 모든 "
+"세부 정보와 태스크를 포함했다면 새 스토리를 저장하고 평소처럼 댓글로 소통하"
+"면 됩니다. ``Private`` 설정을 임의로 해제하지 마시고 Zuul 보안 검토자가 안전"
+"하다고 판단하여 해제할 때까지 기다려 주시기 바랍니다."
 
 #: ../../source/vulnerabilities.rst:47
 msgid "Report via Encrypted E-mail"
-msgstr ""
+msgstr "암호화된 이메일로 보고"
 
 #: ../../source/vulnerabilities.rst:49
 msgid ""
@@ -84,17 +104,27 @@ msgid ""
 "OpenPGP keys, which can be found linked below and also on the keyserver "
 "network with the following fingerprints:"
 msgstr ""
+"사안이 극도로 민감하거나 태스크 트래커를 직접 사용할 수 없는 상황이라면, "
+"Zuul 보안 팀의 멤버 중 한 명 이상에게 이메일 메시지를 보내주시기 바랍니다. 아"
+"래 링크나 키 서버 네트워크에서 다음 fingerprint로 찾을 수 있는 OpenPGP 키를 "
+"사용하여 메시지를 암호화할 것을 권장합니다:"
 
 #: ../../source/vulnerabilities.rst:58
 msgid ""
 "Jeremy Stanley <fungi@yuggoth.org>: `key "
-"0x97ae496fc02dec9fc353b2e748f9961143495829 "
-"<_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt>`_"
+"0x97ae496fc02dec9fc353b2e748f9961143495829 <_static/"
+"0x97ae496fc02dec9fc353b2e748f9961143495829.txt>`_"
 msgstr ""
+"Jeremy Stanley <fungi@yuggoth.org>: `key "
+"0x97ae496fc02dec9fc353b2e748f9961143495829 <_static/"
+"0x97ae496fc02dec9fc353b2e748f9961143495829.txt>`_"
 
 #: ../../source/vulnerabilities.rst:62
 msgid ""
 "Tobias Henkel <tobias.henkel@bmw.de>: `key "
-"0xfb2ee15b2f0f12662b68ed9603750dec158e5fa2 "
-"<_static/0xfb2ee15b2f0f12662b68ed9603750dec158e5fa2.txt>`_"
+"0xfb2ee15b2f0f12662b68ed9603750dec158e5fa2 <_static/"
+"0xfb2ee15b2f0f12662b68ed9603750dec158e5fa2.txt>`_"
 msgstr ""
+"Tobias Henkel <tobias.henkel@bmw.de>: `key "
+"0xfb2ee15b2f0f12662b68ed9603750dec158e5fa2 <_static/"
+"0xfb2ee15b2f0f12662b68ed9603750dec158e5fa2.txt>`_"
