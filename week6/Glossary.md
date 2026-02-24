@@ -251,7 +251,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **smart reconfiguration** -> 스마트 재구성
 * **Smart-reconfig** -> smart-reconfig
 * **Snapshot** -> 스냅샷
-* **Speculative execution** -> 투기적 실행
+* **Speculative execution** -> 추측 기반 실행
 * **Speculative merge** -> 추측 기반 병합
 * **spool** -> 스풀링
 * **spool file** -> 스풀 파일
