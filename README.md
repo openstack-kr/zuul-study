@@ -6,10 +6,10 @@
 
 
 ## zuul 번역 역할 분담
-신우석 - index, concepts, components, governance, vulnerabilities  
+신우석 - about, index, concepts, components, governance, vulnerabilities  
 리뷰어 - 노성은
 
-현규환 - about, installation, operation, monitoring, admin, troubleshooting, tracing  
+현규환 - installation, operation, monitoring, admin, troubleshooting, tracing  
 리뷰어 - 신우석
 
 최우형 - configuration, upgradiing, releasenotes  
