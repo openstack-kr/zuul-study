@@ -1,36 +1,41 @@
-# Korean translations for Zuul package.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2012-2026, Zuul project contributors
 # This file is distributed under the same license as the Zuul package.
-# Automatically generated, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Zuul latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-12 01:27+0900\n"
-"PO-Revision-Date: 2026-02-12 01:27+0900\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2026-02-02 09:55+0900\n"
+"PO-Revision-Date: 2026-02-24 11:33+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ../../source/components.rst:4
 msgid "Component Overview"
-msgstr ""
+msgstr "컴포넌트 개요"
 
 #: ../../source/components.rst:8
 msgid ""
 "Zuul is a distributed system consisting of several components, each of which "
 "is described below."
 msgstr ""
+"Zuul은 여러 컴포넌트로 구성된 분산 시스템이며, 각각에 대한 설명은 아래와 같습"
+"니다."
 
 #: ../../source/components.rst:54
 msgid ""
 "Each of the Zuul processes may run on the same host, or different hosts."
 msgstr ""
+"각 Zuul 프로세스는 동일한 호스트 또는 서로 다른 호스트에서 실행될 수 있습니"
+"다."
 
 #: ../../source/components.rst:57
 msgid ""
@@ -38,6 +43,8 @@ msgid ""
 "installations should use Zuul's internal resource management and not "
 "Nodepool."
 msgstr ""
+"이전 버전의 Zuul은 빌드 노드를 제공하기 위해 Nodepool을 사용했습니다. 신규 설"
+"치 시에는 Nodepool 대신 Zuul의 내부 리소스 관리 기능을 사용해야 합니다."
 
 #: ../../source/components.rst:61
 msgid ""
@@ -46,6 +53,9 @@ msgid ""
 "connect to the hosts in that cluster on a TLS-encrypted TCP port, typically "
 "2281."
 msgstr ""
+"Zuul은 최소 버전 3.5.1 이상이 실행되는 외부 ZooKeeper 클러스터가 필요하며, 모"
+"든 Zuul 및 Nodepool 컴포넌트는 해당 클러스터 내 호스트의 TLS로 암호화된 TCP "
+"포트(통상 2281)를 통해 연결할 수 있어야 합니다."
 
 #: ../../source/components.rst:66
 msgid ""
@@ -54,6 +64,9 @@ msgid ""
 "on private networks, the executors will need to be able to route traffic to "
 "them."
 msgstr ""
+"Nodepool(또는 Zuul) 런처와 Zuul 익스큐터 모두 Nodepool(또는 Zuul)이 제공하는 "
+"호스트와 통신할 수 있어야 합니다. 이들이 사설 네트워크에 있는 경우, 익스큐터"
+"는 해당 호스트로 트래픽을 라우팅할 수 있어야 합니다."
 
 #: ../../source/components.rst:71
 msgid ""
@@ -61,12 +74,17 @@ msgid ""
 "never do. Executors should be accessible on TCP port 7900 by fingergw and "
 "web."
 msgstr ""
+"오직 Zuul 핑거 게이트웨이와 Zuul 웹만 외부에서 접근 가능하면 되며, 익스큐터"
+"는 그럴 필요가 없습니다. 익스큐터는 fingergw와 웹에서 TCP 포트 7900을 통헤 접"
+"근 가능해야 합니다."
 
 #: ../../source/components.rst:75
 msgid ""
 "A database is required and configured in ``database`` section of ``/etc/zuul/"
 "zuul.conf``. Both Zuul scheduler and Zuul web will need access to it."
 msgstr ""
+"데이타베이스가 필요하며, ``/etc/zuul/zuul.conf``의 ``database`` 섹션에서 설정"
+"합니다. Zuul 스케줄러와 Zuul 웹 모두 이 데이터베이스에 접근해야 합니다."
 
 #: ../../source/components.rst:79
 msgid ""
@@ -75,6 +93,10 @@ msgid ""
 "data, or services may emit to a centralized statsd collector. Statsd listens "
 "on UDP port 8125 by default."
 msgstr ""
+"Statsd가 활성화된 경우, 익스큐터와 스케줄러는 stated로 데이터를 보낼 수 있어"
+"야 합니다.  statsd는 각 호스트에서 실행되어 데이터를 전달하도록 설정하거나, "
+"서비스가 중앙 집중식 statsd 수집기로 데이터를 보내도록 할 수 있습니다. statsd"
+"는 기본적으로 UDP 포트 8125에서 대기합니다."
 
 #: ../../source/components.rst:84
 msgid ""
@@ -83,3 +105,7 @@ msgid ""
 "multiple schedulers, executors and mergers, with each component running on a "
 "dedicated host."
 msgstr ""
+"최소 규모의 Zuul 시스템은 동일한 호스트에서 실행되는 :ref:`scheduler` "
+"와 :ref:`executor` 로 구성될 수 있습니다. 규모가 큰 설치 환경에서는 각 컴포넌"
+"트를 전용 호스트에서 실행하며 여러 개의 스케줄러, 익스큐터 및 머저를 운영하"
+"는 것을 고려해야 한다."
