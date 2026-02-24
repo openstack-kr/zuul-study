@@ -95,7 +95,7 @@ msgid ""
 msgstr ""
 "스케줄러가 드라이버로부터 트리거 이벤트를 수신한 시점부터 해당 항목이 "
 "파이프라인 큐에 추가될 때까지의 시간을 보고하는 타이머 메트릭입니다. 이것은 "
-"이벤트를 발송하는 스케줄러의 성능을 측정합니다."
+"이벤트를 디스패치하는 스케줄러의 성능을 측정합니다."
 
 #: ../../source/monitoring.rst:62
 msgid ""
@@ -246,7 +246,7 @@ msgid ""
 "execution failure."
 msgstr ""
 "원격 시스템에서 트리거 이벤트가 수신된 시점부터 항목의 첫 번째 잡이 "
-"실행될 때까지 경과된 총 시간입니다. 이는 투기적 실행 실패로 인해 빌드셋이 "
+"실행될 때까지 경과된 총 시간입니다. 이는 추측 기반 실행 실패로 인해 빌드셋이 "
 "재설정되더라도 큐 항목당 한 번만 생성됩니다."
 
 #: ../../source/monitoring.rst:187
@@ -887,7 +887,7 @@ msgid ""
 "This is a copy of :stat:`zuul.executors.unzoned`.  It does not include "
 "information about zoned executors."
 msgstr ""
-"이것은 :stat:`zuul.executors.unzoned`의 사본입니다. 영역이 지정된(zoned) "
+"이것은 :stat:`zuul.executors.unzoned` 의 사본입니다. 영역이 지정된(zoned) "
 "익스큐터에 대한 정보는 포함하지 않습니다."
 
 #: ../../source/monitoring.rst:693
@@ -1036,7 +1036,7 @@ msgid ""
 "to `myproject` on the `master` branch in the `gate` pipeline which took 40 "
 "seconds to build, the Zuul scheduler will emit the following statsd events:"
 msgstr ""
-"예를 들어, `mytenant`의 `myjob`이라는 잡이 `myproject`의 `master` "
+"예를 들어, `mytenant`의 `myjob` 이라는 잡이 `myproject` 의 `master` "
 "브랜치 변경으로 인해 `gate` 파이프라인에서 트리거되어 빌드하는 데 40초가 "
 "걸렸다면, Zuul 스케줄러는 다음 statsd 이벤트를 생성합니다:"
 

@@ -23,7 +23,7 @@ msgstr "설치"
 
 #: ../../source/installation.rst:5
 msgid "External Dependencies"
-msgstr "외부 종속성"
+msgstr "외부 의존성"
 
 #: ../../source/installation.rst:7
 msgid "Zuul interacts with several other systems described below."
@@ -206,7 +206,7 @@ msgid ""
 "Serve the static files from a completely separate location that does not "
 "support programmatic rewrite rules such as a Swift Object Store."
 msgstr ""
-"Swift 객체 저장소(Object Store)와 같이 프로그래밍 방식의 재작성(rewrite) 규칙을 "
+"Swift 오브젝트 스토어(Object Store)와 같이 프로그래밍 방식의 재작성(rewrite) 규칙을 "
 "지원하지 않는 완전히 분리된 위치에서 정적 파일을 제공합니다."
 
 #: ../../source/installation.rst:97
@@ -270,7 +270,7 @@ msgid ""
 "register the location where you unpacked the web application as the document "
 "root and add rewrite rules::"
 msgstr ""
-"리버스 프록시가 정적 html/javascript 자산을 REST 계층으로 프록시하는 대신 "
+"리버스 프록시가 정적 html/javascript 에셋을 REST 레이어로 프록시하는 대신 "
 "직접 제공하도록 하려면 ``mod_rewrite`` Apache 모듈을 활성화하고 웹 애플리케이션의 "
 "압축을 푼 위치를 문서 루트로 등록한 다음 재작성 규칙을 추가하십시오::"
 
@@ -303,7 +303,7 @@ msgid ""
 "Then assuming the web application is unpacked in /usr/share/zuul, enable the "
 "``mod_rewrite`` Apache module and add the following rewrite rules::"
 msgstr ""
-"그런 다음 웹 애플리케이션이 /usr/share/zuul에 풀려 있다고 가정하고 "
+"그런 다음 웹 애플리케이션이 /usr/share/zuul에 설치되었다고 가정하고 "
 "``mod_rewrite`` Apache 모듈을 활성화한 후 다음 재작성 규칙을 추가하십시오::"
 
 #: ../../source/installation.rst:196
