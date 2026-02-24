@@ -54,6 +54,21 @@ msgstr ""
 "및 :attr:`job.exclude-projects` 속성을 사용하여 해당 잡에 필요하지 않은 "
 "프로젝트의 워크스페이스 준비를 Zuul 에게 건너뛰도록 지시할 수 있습니다."
 
+#: ../../<reno.sphinxext current branch>:18
+msgid ""
+"A new component, the Zuul Launcher, is available. Zuul-launcher is "
+"responsible for managing images and build nodes, and replaces Nodepool. Zuul "
+"supports both systems simultaneously for transitional purposes.\n"
+"\n"
+"See :doc:`build-nodes` for an overview of the new system and information "
+"about migrating."
+msgstr ""
+"새로운 컴포넌트인 Zuul 런처(Launcher)를 사용할 수 있습니다. Zuul-launcher 는 "
+"이미지와 빌드 노드를 관리하며 Nodepool 을 대체합니다. 전환 목적으로 Zuul 은 "
+"두 시스템을 동시에 지원합니다.\n"
+"\n"
+"새 시스템 개요 및 마이그레이션 정보는 :doc:`build-nodes` 를 참조하십시오."
+
 #: ../../<reno.sphinxext current branch>:22
 msgid ""
 "A new type of job, a \"reporter\" job is available.  It allows users to "
