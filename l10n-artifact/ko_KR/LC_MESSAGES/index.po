@@ -57,7 +57,7 @@ msgid ""
 "sections: :ref:`project-configuration` and :ref:`job-content`."
 msgstr ""
 "타인이 운영하는 Zuul 시스템에 접근할 권한이 있다면, :ref:`about-zuul` 및 다"
-"음 참조 섹션인 :ref:`project-configuration` 와 :ref:`job-content` 가 유용할 "
+"음 참조 섹션인 :ref:`project-configuration` 과 :ref:`job-content` 가 유용할 "
 "수 있습니다."
 
 #: ../../source/index.rst:24
