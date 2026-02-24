@@ -37,7 +37,7 @@ msgstr ""
 
 #: ../../source/monitoring.rst:16 ../../source/monitoring.rst:856
 msgid "Configuration"
-msgstr "설정"
+msgstr "구성"
 
 #: ../../source/monitoring.rst:18
 msgid ""
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../source/monitoring.rst:22
 msgid "Configuration is in the :attr:`statsd` section of ``zuul.conf``."
-msgstr "설정은 ``zuul.conf`` 의 :attr:`statsd` 섹션에 있습니다."
+msgstr "구성은 ``zuul.conf`` 의 :attr:`statsd` 섹션에 있습니다."
 
 #: ../../source/monitoring.rst:25 ../../source/monitoring.rst:865
 msgid "Metrics"
@@ -142,7 +142,7 @@ msgstr "테넌트의 트리거 이벤트 큐 크기입니다."
 
 #: ../../source/monitoring.rst:92
 msgid "Holds metrics specific to jobs. This hierarchy includes:"
-msgstr "작업(job)과 관련된 메트릭을 보관합니다. 이 계층 구조는 다음을 포함합니다:"
+msgstr "잡과 관련된 메트릭을 보관합니다. 이 계층 구조는 다음을 포함합니다:"
 
 #: ../../source/monitoring.rst:96
 msgid "A set of metrics for each pipeline named as defined in the Zuul config."
@@ -167,8 +167,8 @@ msgid ""
 "<tenant>.pipeline.<pipeline>.merger_files_changes_op_time`."
 msgstr ""
 "초기 병합 작업을 기다리는 데 소비된 시간입니다. 여기에는 항상 변경 사항을 "
-"투기적으로 병합(speculatively merge)하기 위한 Zuul 병합기(Merger)로의 요청이 "
-"포함되지만, 변경에 의해 수정된 파일을 식별하기 위해 병렬로 제출된 두 번째 "
+"추측 기반으로 병합하기 위한 Zuul 머저로의 요청이 "
+"포함되지만, 변경 사항에 의해 수정된 파일을 식별하기 위해 병렬로 제출된 두 번째 "
 "요청도 포함될 수 있습니다. :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>."
 "merger_merge_op_time` 및 :stat:`zuul.tenant.<tenant>.pipeline.<pipeline>."
 "merger_files_changes_op_time` 을 포함합니다."
@@ -179,7 +179,7 @@ msgid ""
 "not include any of the round-trip time from the scheduler to the merger, or "
 "any other merge operations."
 msgstr ""
-"병합기가 병합 작업을 수행하는 데 소비한 시간입니다. 스케줄러에서 병합기까지의 "
+"머저가 병합 작업을 수행하는 데 소비한 시간입니다. 스케줄러에서 머저까지의 "
 "왕복 시간이나 다른 병합 작업 시간은 포함되지 않습니다."
 
 #: ../../source/monitoring.rst:129
@@ -189,9 +189,9 @@ msgid ""
 "provide this information). This does not include any of the round-trip time "
 "from the scheduler to the merger, or any other merge operations."
 msgstr ""
-"병합기가 변경된 파일을 감지하기 위해 파일 변경 확인 작업을 수행하는 데 "
+"머저가 변경된 파일을 감지하기 위해 파일 변경 확인 작업을 수행하는 데 "
 "소비한 시간입니다(소스가 이 정보를 제공하지 않을 경우 때때로 수행됨). "
-"스케줄러에서 병합기까지의 왕복 시간이나 다른 병합 작업 시간은 포함되지 "
+"스케줄러에서 머저까지의 왕복 시간이나 다른 병합 작업 시간은 포함되지 "
 "않습니다."
 
 #: ../../source/monitoring.rst:138
@@ -203,7 +203,7 @@ msgid ""
 "The amount of time spent freezing the inheritance hierarchy and parameters "
 "of a job."
 msgstr ""
-"작업의 상속 계층 구조 및 매개변수를 동결(freezing)하는 데 소비된 시간입니다."
+"잡의 상속 계층 구조 및 매개변수를 동결(freezing)하는 데 소비된 시간입니다."
 
 #: ../../source/monitoring.rst:149
 msgid ""
@@ -212,7 +212,7 @@ msgid ""
 "stat:`zuul.tenant.<tenant>.pipeline.<pipeline>.merger_repo_state_op_time`."
 msgstr ""
 "필요한 프로젝트의 저장소 상태에 대한 추가 정보를 수집하기 위해 보조 Zuul "
-"병합기 작업을 기다리는 시간입니다. :stat:`zuul.tenant.<tenant>.pipeline."
+"머저 작업을 기다리는 시간입니다. :stat:`zuul.tenant.<tenant>.pipeline."
 "<pipeline>.merger_repo_state_op_time`을 포함합니다."
 
 #: ../../source/monitoring.rst:157
@@ -222,8 +222,8 @@ msgid ""
 "This does not include any of the round-trip time from the scheduler to the "
 "merger, or any other merge operations."
 msgstr ""
-"병합기가 필요한 프로젝트의 저장소 상태에 대한 추가 정보를 수집하기 위해 "
-"저장소 상태 작업을 수행하는 데 소비한 시간입니다. 스케줄러에서 병합기까지의 "
+"머저가 필요한 프로젝트의 저장소 상태에 대한 추가 정보를 수집하기 위해 "
+"저장소 상태 작업을 수행하는 데 소비한 시간입니다. 스케줄러에서 머저까지의 "
 "왕복 시간이나 다른 병합 작업 시간은 포함되지 않습니다."
 
 #: ../../source/monitoring.rst:166
@@ -235,7 +235,7 @@ msgid ""
 "How long a job waited for an executor to start running it after the build "
 "was requested."
 msgstr ""
-"빌드가 요청된 후 작업이 실행기(executor)에서 실행을 시작하기까지 기다린 "
+"빌드가 요청된 후 잡이 익스큐터에서 실행을 시작하기까지 기다린 "
 "시간입니다."
 
 #: ../../source/monitoring.rst:178
@@ -245,13 +245,13 @@ msgid ""
 "once per queue item, even if its buildset is reset due to a speculative "
 "execution failure."
 msgstr ""
-"원격 시스템에서 트리거 이벤트가 수신된 시점부터 항목의 첫 번째 작업이 "
+"원격 시스템에서 트리거 이벤트가 수신된 시점부터 항목의 첫 번째 잡이 "
 "실행될 때까지 경과된 총 시간입니다. 이는 투기적 실행 실패로 인해 빌드셋이 "
 "재설정되더라도 큐 항목당 한 번만 생성됩니다."
 
 #: ../../source/monitoring.rst:187
 msgid "Number of jobs triggered by the pipeline."
-msgstr "파이프라인에 의해 트리거된 작업 수입니다."
+msgstr "파이프라인에 의해 트리거된 잡 수입니다."
 
 #: ../../source/monitoring.rst:192
 msgid "The number of items currently being processed by this pipeline."
@@ -389,7 +389,7 @@ msgid ""
 "The canonical hostname for the triggering project. Embedded ``.`` characters "
 "will be translated to ``_``."
 msgstr ""
-"트리거한 프로젝트의 정식 호스트 이름입니다. 포함된 ``.`` 문자는 ``_`` 로 "
+"트리거한 프로젝트의 정규 호스트 이름입니다. 포함된 ``.`` 문자는 ``_`` 로 "
 "변환됩니다."
 
 #: ../../source/monitoring.rst:299
@@ -410,11 +410,11 @@ msgstr ""
 
 #: ../../source/monitoring.rst:309
 msgid "Subtree detailing per-project job statistics:"
-msgstr "프로젝트별 작업 통계를 자세히 보여주는 하위 트리:"
+msgstr "프로젝트별 잡 통계를 자세히 보여주는 하위 트리:"
 
 #: ../../source/monitoring.rst:313
 msgid "The triggered job name."
-msgstr "트리거된 작업 이름입니다."
+msgstr "트리거된 잡 이름입니다."
 
 #: ../../source/monitoring.rst:318
 msgid ""
@@ -422,7 +422,7 @@ msgid ""
 "``ERROR``, etc.) for the job.  If the result is ``SUCCESS`` or ``FAILURE``, "
 "Zuul will additionally report the duration of the build as a timer."
 msgstr ""
-"작업에 대한 각 결과 유형(예: ``SUCCESS``, ``FAILURE``, ``ERROR`` 등)의 "
+"잡에 대한 각 결과 유형(예: ``SUCCESS``, ``FAILURE``, ``ERROR`` 등)의 "
 "카운터입니다. 결과가 ``SUCCESS`` 또는 ``FAILURE`` 인 경우, Zuul은 빌드 기간을 "
 "타이머로 추가 보고합니다."
 
@@ -431,7 +431,7 @@ msgid ""
 "How long the job waited for an executor to start running it after the build "
 "was requested."
 msgstr ""
-"빌드가 요청된 후 작업이 실행기(executor)에서 실행을 시작하기까지 기다린 "
+"빌드가 요청된 후 잡이 익스큐터에서 실행을 시작하기까지 기다린 "
 "시간입니다."
 
 #: ../../source/monitoring.rst:333
@@ -542,8 +542,8 @@ msgid ""
 "Holds metrics emitted by individual executors.  The ``<executor>`` component "
 "of the key will be replaced with the hostname of the executor."
 msgstr ""
-"개별 실행기(executor)가 생성한 메트릭을 보관합니다. 키의 ``<executor>`` "
-"구성 요소는 실행기의 호스트 이름으로 대체됩니다."
+"개별 익스큐터가 생성한 메트릭을 보관합니다. 키의 ``<executor>`` "
+"컴포넌트는 익스큐터의 호스트 이름으로 대체됩니다."
 
 #: ../../source/monitoring.rst:436
 msgid ""
@@ -552,13 +552,13 @@ msgid ""
 "operation which would be accounted for as a ``FAILURE`` is what ends up "
 "being returned by Zuul as a ``MERGE_CONFLICT``."
 msgstr ""
-"Zuul 실행기의 병합 작업 상태를 나타내기 위해 증가합니다. ``<result>`` 는 "
+"Zuul 익스큐터의 머저 작업 상태를 나타내기 위해 증가합니다. ``<result>`` 는 "
 "``SUCCESS`` 또는 ``FAILURE`` 일 수 있습니다. ``FAILURE`` 로 처리되는 실패한 "
 "병합 작업은 Zuul에 의해 ``MERGE_CONFLICT`` 로 반환됩니다."
 
 #: ../../source/monitoring.rst:444
 msgid "Incremented each time the executor starts a build."
-msgstr "실행기가 빌드를 시작할 때마다 증가합니다."
+msgstr "익스큐터가 빌드를 시작할 때마다 증가합니다."
 
 #: ../../source/monitoring.rst:449
 msgid ""
@@ -566,7 +566,7 @@ msgid ""
 "long jobs were in this state. These are builds which have not yet begun "
 "their first pre-playbook."
 msgstr ""
-"이 실행기에서 시작되는 빌드 수와 작업이 이 상태에 있었던 시간을 포함하는 "
+"이 익스큐터에서 시작되는 빌드 수와 잡이 이 상태에 있었던 시간을 포함하는 "
 "타이머입니다. 이들은 아직 첫 번째 pre-playbook을 시작하지 않은 빌드들입니다."
 
 #: ../../source/monitoring.rst:453
@@ -582,26 +582,26 @@ msgid ""
 "feature) and as such the starting jobs timers (aggregated over a large "
 "enough interval) should not differ much."
 msgstr ""
-"이 타이머는 모든 작업을 집계하므로 해석할 때 특별한 주의가 필요합니다. 장기간"
+"이 타이머는 모든 잡을 집계하므로 해석할 때 특별한 주의가 필요합니다. 장기간"
 "(아마도 하루)에 걸쳐 집계할 때 유용할 수 있는데, 그래프가 빠르게 상승한다면 "
-"예를 들어 실행기가 실행 중인 머신의 IO 문제를 나타낼 수 있습니다. 하지만 "
-"상승하는 그래프는 더 많은 필수 프로젝트를 사용하는 복잡한 작업의 사용량이 "
-"높다는 것을 나타낼 수도 있음에 유의해야 합니다. 또한 여러 실행기를 비교할 때 "
-"그래프가 서로 많이 다르다면 통찰력을 얻을 수 있습니다. 일반적으로 작업은 모든 "
-"실행기에 균등하게 분산되므로(존 기능을 사용할 경우 동일한 존 내에서), 시작 "
-"작업 타이머(충분히 큰 간격으로 집계된 경우)는 큰 차이가 없어야 합니다."
+"예를 들어 익스큐터가 실행 중인 머신의 IO 문제를 나타낼 수 있습니다. 하지만 "
+"상승하는 그래프는 더 많은 필수 프로젝트를 사용하는 복잡한 잡의 사용량이 "
+"높다는 것을 나타낼 수도 있음에 유의해야 합니다. 또한 여러 익스큐터를 비교할 때 "
+"그래프가 서로 많이 다르다면 통찰력을 얻을 수 있습니다. 일반적으로 잡은 모든 "
+"익스큐터에 균등하게 분산되므로(존 기능을 사용할 경우 동일한 존 내에서), 시작 "
+"잡 타이머(충분히 큰 간격으로 집계된 경우)는 큰 차이가 없어야 합니다."
 
 #: ../../source/monitoring.rst:467
 msgid ""
 "The number of builds currently running on this executor.  This includes "
 "starting builds."
 msgstr ""
-"이 실행기에서 현재 실행 중인 빌드 수입니다. 여기에는 시작 중인 빌드가 "
+"이 익스큐터에서 현재 실행 중인 빌드 수입니다. 여기에는 시작 중인 빌드가 "
 "포함됩니다."
 
 #: ../../source/monitoring.rst:473
 msgid "The number of currently paused builds on this executor."
-msgstr "이 실행기에서 현재 일시 중지된 빌드 수입니다."
+msgstr "이 익스큐터에서 현재 일시 중지된 빌드 수입니다."
 
 #: ../../source/monitoring.rst:477
 msgid "Subtree detailing per-phase execution statistics:"
@@ -613,9 +613,9 @@ msgid ""
 "*internal* phase (such as ``setup`` or ``cleanup``) as well as *job* phases "
 "such as ``pre``, ``run`` or ``post``."
 msgstr ""
-"``<phase>`` 는 작업 실행의 단계를 나타냅니다. 이는 *내부* 단계(``setup`` "
+"``<phase>`` 는 잡 실행의 단계를 나타냅니다. 이는 *내부* 단계(``setup`` "
 "또는 ``cleanup`` 등)일 수도 있고, ``pre``, ``run`` 또는 ``post`` 와 같은 "
-"*작업* 단계일 수도 있습니다."
+"*잡* 단계일 수도 있습니다."
 
 #: ../../source/monitoring.rst:488
 msgid ""
@@ -636,44 +636,44 @@ msgstr ""
 
 #: ../../source/monitoring.rst:499
 msgid "The one-minute load average of this executor, multiplied by 100."
-msgstr "이 실행기의 1분 부하 평균에 100을 곱한 값입니다."
+msgstr "이 익스큐터의 1분 부하 평균에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:504
 msgid "Indicates if the executor is paused. 1 means paused else 0."
 msgstr ""
-"실행기가 일시 중지되었는지 나타냅니다. 1은 일시 중지됨, 0은 그렇지 않음을 "
+"익스큐터가 일시 중지되었는지 나타냅니다. 1은 일시 중지됨, 0은 그렇지 않음을 "
 "의미합니다."
 
 #: ../../source/monitoring.rst:509
 msgid "The used disk on this executor, as a percentage multiplied by 100."
-msgstr "이 실행기의 디스크 사용량이며, 백분율에 100을 곱한 값입니다."
+msgstr "이 익스큐터의 디스크 사용량이며, 백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:514
 msgid "The used inodes on this executor, as a percentage multiplied by 100."
-msgstr "이 실행기의 inode 사용량이며, 백분율에 100을 곱한 값입니다."
+msgstr "이 익스큐터의 inode 사용량이며, 백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:519
 msgid ""
 "The used RAM (excluding buffers and cache) on this executor, as a percentage "
 "multiplied by 100."
 msgstr ""
-"이 실행기의 RAM 사용량(버퍼 및 캐시 제외)이며, 백분율에 100을 곱한 값입니다."
+"이 익스큐터의 RAM 사용량(버퍼 및 캐시 제외)이며, 백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:525
 msgid ""
 "The used RAM (excluding buffers and cache) on this executor allowed by the "
 "cgroup, as percentage multiplied by 100."
 msgstr ""
-"cgroup에 의해 허용된 이 실행기의 RAM 사용량(버퍼 및 캐시 제외)이며, "
+"cgroup에 의해 허용된 이 익스큐터의 RAM 사용량(버퍼 및 캐시 제외)이며, "
 "백분율에 100을 곱한 값입니다."
 
 #: ../../source/monitoring.rst:531
 msgid "The maximum amount of processes that can be running on this executor."
-msgstr "이 실행기에서 실행될 수 있는 프로세스의 최대 수입니다."
+msgstr "이 익스큐터에서 실행될 수 있는 프로세스의 최대 수입니다."
 
 #: ../../source/monitoring.rst:536
 msgid "The current amount of running processes on this executor."
-msgstr "이 실행기에서 현재 실행 중인 프로세스의 수입니다."
+msgstr "이 익스큐터에서 현재 실행 중인 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:540
 msgid "Holds metrics related to Zuul requests and responses from Nodepool."
@@ -860,27 +860,27 @@ msgstr "현재 테넌트가 사용 중인 리소스를 나타내는 게이지입
 
 #: ../../source/monitoring.rst:667
 msgid "Holds metrics related to Zuul mergers."
-msgstr "Zuul 병합기(Merger)와 관련된 메트릭을 보관합니다."
+msgstr "Zuul 머저와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:672
 msgid "The number of Zuul merger processes online."
-msgstr "온라인 상태인 Zuul 병합기 프로세스의 수입니다."
+msgstr "온라인 상태인 Zuul 머저 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:677
 msgid "The number of merge jobs running."
-msgstr "실행 중인 병합 작업의 수입니다."
+msgstr "실행 중인 병합 잡의 수입니다."
 
 #: ../../source/monitoring.rst:682
 msgid ""
 "The number of merge jobs waiting for a merger.  This should ideally be zero; "
 "persistent higher values indicate more merger resources would be useful."
 msgstr ""
-"병합기를 기다리는 병합 작업의 수입니다. 이상적으로는 0이어야 합니다. "
-"지속적으로 높은 값은 더 많은 병합기 리소스가 유용함을 나타냅니다."
+"머저를 기다리는 병합 잡의 수입니다. 이상적으로는 0이어야 합니다. "
+"지속적으로 높은 값은 더 많은 머저 리소스가 유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:688 ../../source/monitoring.rst:721
 msgid "Holds metrics related to unzoned executors."
-msgstr "영역이 지정되지 않은(unzoned) 실행기와 관련된 메트릭을 보관합니다."
+msgstr "영역이 지정되지 않은(unzoned) 익스큐터와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:690
 msgid ""
@@ -888,27 +888,27 @@ msgid ""
 "information about zoned executors."
 msgstr ""
 "이것은 :stat:`zuul.executors.unzoned`의 사본입니다. 영역이 지정된(zoned) "
-"실행기에 대한 정보는 포함하지 않습니다."
+"익스큐터에 대한 정보는 포함하지 않습니다."
 
 #: ../../source/monitoring.rst:693
 msgid ""
 "The metrics at this location are deprecated and will be removed in a future "
 "version.  Please begin using :stat:`zuul.executors.unzoned` instead."
 msgstr ""
-"이 위치의 메트릭은 더 이상 사용되지 않으며(deprecated) 향후 버전에서 제거될 "
+"이 위치의 메트릭은 사용 중단되었으며 향후 버전에서 제거될 "
 "예정입니다. 대신 :stat:`zuul.executors.unzoned`를 사용하십시오."
 
 #: ../../source/monitoring.rst:700
 msgid "The number of Zuul executor processes online."
-msgstr "온라인 상태인 Zuul 실행기 프로세스의 수입니다."
+msgstr "온라인 상태인 Zuul 익스큐터 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:705
 msgid "The number of Zuul executor processes accepting new jobs."
-msgstr "새 작업을 수락하는 Zuul 실행기 프로세스의 수입니다."
+msgstr "새 잡을 수락하는 Zuul 익스큐터 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:710
 msgid "The number of executor jobs running."
-msgstr "실행 중인 실행기 작업의 수입니다."
+msgstr "실행 중인 익스큐터 잡의 수입니다."
 
 #: ../../source/monitoring.rst:715
 msgid ""
@@ -916,23 +916,23 @@ msgid ""
 "run on.  This should ideally be at zero; persistent higher values indicate "
 "more executor resources would be useful."
 msgstr ""
-"노드는 할당되었지만 실행기를 기다리며 큐에 대기 중인 작업의 수입니다. "
-"이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 실행기 리소스가 "
+"노드는 할당되었지만 익스큐터를 기다리며 큐에 대기 중인 잡의 수입니다. "
+"이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 익스큐터 리소스가 "
 "유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:726
 msgid "The number of unzoned Zuul executor processes online."
 msgstr ""
-"온라인 상태인 영역이 지정되지 않은(unzoned) Zuul 실행기 프로세스의 수입니다."
+"온라인 상태인 영역이 지정되지 않은(unzoned) Zuul 익스큐터 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:731
 msgid "The number of unzoned Zuul executor processes accepting new jobs."
 msgstr ""
-"새 작업을 수락하는 영역이 지정되지 않은 Zuul 실행기 프로세스의 수입니다."
+"새 잡을 수락하는 영역이 지정되지 않은 Zuul 익스큐터 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:737
 msgid "The number of unzoned executor jobs running."
-msgstr "실행 중인 영역이 지정되지 않은 실행기 작업의 수입니다."
+msgstr "실행 중인 영역이 지정되지 않은 익스큐터 잡의 수입니다."
 
 #: ../../source/monitoring.rst:742
 msgid ""
@@ -940,25 +940,25 @@ msgid ""
 "executor to run on.  This should ideally be at zero; persistent higher "
 "values indicate more executor resources would be useful."
 msgstr ""
-"노드는 할당되었지만 영역이 지정되지 않은 실행기를 기다리며 큐에 대기 중인 "
-"작업의 수입니다. 이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 "
-"실행기 리소스가 유용함을 나타냅니다."
+"노드는 할당되었지만 영역이 지정되지 않은 익스큐터를 기다리며 큐에 대기 중인 "
+"잡의 수입니다. 이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 "
+"익스큐터 리소스가 유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:749
 msgid "Holds metrics related to zoned executors."
-msgstr "영역이 지정된(zoned) 실행기와 관련된 메트릭을 보관합니다."
+msgstr "영역이 지정된(zoned) 익스큐터와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:754
 msgid "The number of Zuul executor processes online in this zone."
-msgstr "이 영역(zone)에서 온라인 상태인 Zuul 실행기 프로세스의 수입니다."
+msgstr "이 영역(zone)에서 온라인 상태인 Zuul 익스큐터 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:759
 msgid "The number of Zuul executor processes accepting new jobs in this zone."
-msgstr "이 영역에서 새 작업을 수락하는 Zuul 실행기 프로세스의 수입니다."
+msgstr "이 영역에서 새 잡을 수락하는 Zuul 익스큐터 프로세스의 수입니다."
 
 #: ../../source/monitoring.rst:765
 msgid "The number of executor jobs running in this zone."
-msgstr "이 영역에서 실행 중인 실행기 작업의 수입니다."
+msgstr "이 영역에서 실행 중인 익스큐터 잡의 수입니다."
 
 #: ../../source/monitoring.rst:770
 msgid ""
@@ -966,8 +966,8 @@ msgid ""
 "this zone to run on.  This should ideally be at zero; persistent higher "
 "values indicate more executor resources would be useful."
 msgstr ""
-"노드는 할당되었지만 이 영역의 실행기를 기다리며 큐에 대기 중인 작업의 "
-"수입니다. 이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 실행기 "
+"노드는 할당되었지만 이 영역의 익스큐터를 기다리며 큐에 대기 중인 잡의 "
+"수입니다. 이상적으로는 0이어야 합니다. 지속적으로 높은 값은 더 많은 익스큐터 "
 "리소스가 유용함을 나타냅니다."
 
 #: ../../source/monitoring.rst:777
@@ -1001,14 +1001,14 @@ msgid ""
 "duration of the query.  Note this is a performance metric of how long the "
 "SQL query takes; it is not the estimated time value itself."
 msgstr ""
-"스케줄러가 작업의 예상 시간을 결정하기 위해 SQL 데이터베이스에 쿼리를 수행할 "
+"스케줄러가 잡의 예상 시간을 결정하기 위해 SQL 데이터베이스에 쿼리를 수행할 "
 "때마다 쿼리 지속 시간에 대한 이 타이머를 생성합니다. 이것은 SQL 쿼리가 얼마나 "
 "걸리는지에 대한 성능 메트릭이며, 예상 시간 값 자체는 아니라는 점에 "
 "유의하십시오."
 
 #: ../../source/monitoring.rst:810
 msgid "Holds metrics related to the Zuul web component."
-msgstr "Zuul 웹 구성 요소와 관련된 메트릭을 보관합니다."
+msgstr "Zuul 웹 컴포넌트와 관련된 메트릭을 보관합니다."
 
 #: ../../source/monitoring.rst:814
 msgid "Holds metrics from a specific zuul-web server."
@@ -1036,7 +1036,7 @@ msgid ""
 "to `myproject` on the `master` branch in the `gate` pipeline which took 40 "
 "seconds to build, the Zuul scheduler will emit the following statsd events:"
 msgstr ""
-"예를 들어, `mytenant`의 `myjob`이라는 작업이 `myproject`의 `master` "
+"예를 들어, `mytenant`의 `myjob`이라는 잡이 `myproject`의 `master` "
 "브랜치 변경으로 인해 `gate` 파이프라인에서 트리거되어 빌드하는 데 40초가 "
 "걸렸다면, Zuul 스케줄러는 다음 statsd 이벤트를 생성합니다:"
 
@@ -1063,7 +1063,7 @@ msgstr ""
 
 #: ../../source/monitoring.rst:847
 msgid "Prometheus monitoring"
-msgstr "프로메테우스(Prometheus) 모니터링"
+msgstr "프로메테우스 모니터링"
 
 #: ../../source/monitoring.rst:849
 msgid ""
@@ -1126,12 +1126,12 @@ msgid ""
 msgstr ""
 "프로세스가 `RUNNING` 또는 `PAUSED` 상태이면 200을 반환합니다. 그렇지 않으면 "
 "503을 반환합니다. `INITIALIZED` 상태에 대해서는 503이 반환되므로, 이를 통해 "
-"구성 요소가 설정 로드를 완전히 마쳤는지 확인할 수 있습니다."
+"컴포넌트가 구성 로드를 완전히 마쳤는지 확인할 수 있습니다."
 
 #: ../../source/monitoring.rst:922
 msgid ""
 "This always returns 200, but includes the component status as the text body "
 "of the response."
 msgstr ""
-"이것은 항상 200을 반환하지만, 응답의 본문 텍스트로 구성 요소 상태를 "
+"이것은 항상 200을 반환하지만, 응답의 본문 텍스트로 컴포넌트 상태를 "
 "포함합니다."

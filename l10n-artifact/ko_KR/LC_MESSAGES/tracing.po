@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/tracing.rst:6
 msgid "Tracing"
-msgstr "트레이싱 (Tracing)"
+msgstr "트레이싱"
 
 #: ../../source/tracing.rst:8
 msgid ""
@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Zuul은 OpenTelemetry 프로젝트에서 설명하는 `distributed tracing`_ (분산 트레이싱) "
 "지원을 포함합니다. 이를 통해 운영자(및 잠재적으로 사용자)는 디버깅을 돕기 위해 "
-"다양한 Zuul 구성 요소를 통과하는 이벤트 및 큐 항목의 진행 상황을 시각화할 수 "
+"다양한 Zuul 컴포넌트를 통과하는 이벤트 및 큐 항목의 진행 상황을 시각화할 수 "
 "있습니다."
 
 #: ../../source/tracing.rst:13
@@ -55,13 +55,13 @@ msgstr ""
 
 #: ../../source/tracing.rst:22
 msgid "Configuration"
-msgstr "설정"
+msgstr "구성"
 
 #: ../../source/tracing.rst:24
 msgid ""
 "Related configuration is in the :attr:`tracing` section of ``zuul.conf``."
 msgstr ""
-"관련 설정은 ``zuul.conf`` 의 :attr:`tracing` 섹션에 있습니다."
+"관련 구성은 ``zuul.conf`` 의 :attr:`tracing` 섹션에 있습니다."
 
 #: ../../source/tracing.rst:27
 msgid "Tutorial"
