@@ -45,7 +45,8 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Change** -> 변경 사항
 * **change cache** -> 변경 캐시
 * **Checkout** -> 체크아웃
-* **child job** -> 하위 잡
+* **child** -> 자식
+* **child job** -> 자식 잡
 * **Claim** -> 클레임
 * **Clone** -> 클론
 * **Cluster** -> 클러스터
@@ -177,7 +178,8 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Operation** -> 운영
 * **orchestration** -> 오케스트레이션
 * **Override-checkout** -> override-checkout
-* **parent job** -> 상위 잡
+* **parent** -> 부모
+* **parent job** -> 부모 잡
 * **patchset** -> 패치셋
 * **Path** -> 경로
 * **Pipeline** -> 파이프라인
