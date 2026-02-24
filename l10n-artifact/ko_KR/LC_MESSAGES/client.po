@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../source/client.rst:12
 msgid "Configuration"
-msgstr "설정 (Configuration)"
+msgstr "구성 (Configuration)"
 
 #: ../../source/client.rst:14
 msgid ""
@@ -147,7 +147,7 @@ msgstr "prune-database"
 
 #: ../../source/client.rst:144
 msgid "Deprecated commands"
-msgstr "지원 중단된 명령 (Deprecated commands)"
+msgstr "사용 중단된 명령 (Deprecated commands)"
 
 #: ../../source/client.rst:146
 msgid ""
@@ -157,7 +157,7 @@ msgid ""
 "CLI. Please refer to `zuul-client's documentation <https://zuul-ci.org/docs/"
 "zuul-client/>`__ for more details."
 msgstr ""
-"다음 명령들은 zuul-admin CLI에서 더 이상 지원되지 않으며(deprecated), 현재 "
+"다음 명령들은 zuul-admin CLI에서 사용이 중단되었으며(deprecated), 현재 "
 "Zuul 버전에서 완벽하게 지원되지 않을 수 있습니다. 향후 Zuul 릴리스에서 제거"
 "될 예정입니다. 해당 작업은 zuul-client CLI를 통해 여전히 수행할 수 있습니다. "
 "자세한 내용은 `zuul-client 문서 <https://zuul-ci.org/docs/zuul-client/>`__ "
@@ -283,7 +283,7 @@ msgstr ""
 "거는 \"프로젝트의 refs/heads/master를 oldrev에서 newrev로 리셋\"(여기서 "
 "newrev는 커밋된 변경 사항)하는 것을 의미합니다. 따라서 이벤트를 재생하려면, "
 "프로젝트에서 git log를 확인하여 현재 HEAD와 이전 변경 사항을 가져온 다음 이벤"
-"트를 enqueue 할 수 있습니다::"
+"트를 큐에 추가 할 수 있습니다::"
 
 #: ../../source/client.rst:258
 msgid ""
