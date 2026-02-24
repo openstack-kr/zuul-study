@@ -292,7 +292,7 @@ msgid ""
 "[                        \"string\"                    ],                    \"parent\": "
 "\"string\"                }            ]        }    ]"
 msgstr ""
-"작업(jobs) 목록을 반환합니다  **응답 예시:** .. sourcecode:: http     HTTP/1.1 200 OK    Content-"
+"잡(jobs) 목록을 반환합니다  **응답 예시:** .. sourcecode:: http     HTTP/1.1 200 OK    Content-"
 "Type: application/json     [        {            \"description\": \"string\",            \"name\": "
 "\"string\",            \"tags\": [                \"string\"            ],            \"variants\": "
 "[                {                    \"branches\": "
@@ -301,7 +301,7 @@ msgstr ""
 
 #: ../../<openapi>:1
 msgid "Returns the list of jobs"
-msgstr "작업 목록을 반환합니다"
+msgstr "잡 목록을 반환합니다"
 
 #: ../../<openapi>:1
 msgid ""
@@ -327,13 +327,13 @@ msgid ""
 "sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     ssh-rsa "
 "AAAAB3NzaC1yc2EAAAADAQABAAACA"
 msgstr ""
-"실행기가 SSH 에이전트에 추가하는 프로젝트 공개 키를 반환합니다  **응답 예시:** .. "
+"익스큐터가 SSH 에이전트에 추가하는 프로젝트 공개 키를 반환합니다  **응답 예시:** .. "
 "sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     ssh-rsa "
 "AAAAB3NzaC1yc2EAAAADAQABAAACA"
 
 #: ../../<openapi>:1
 msgid "Returns the project public key that executor adds to SSH agent"
-msgstr "실행기가 SSH 에이전트에 추가하는 프로젝트 공개 키를 반환합니다"
+msgstr "익스큐터가 SSH 에이전트에 추가하는 프로젝트 공개 키를 반환합니다"
 
 #: ../../<openapi>:1
 msgid ""
@@ -369,7 +369,7 @@ msgid ""
 "[                {                    \"canonical_name\": \"string\",                    \"name\": "
 "\"string\"                }            ],            \"name\": \"string\"        }    ]"
 msgstr ""
-"공급자(providers) 목록을 반환합니다  **응답 예시:** .. sourcecode:: http     HTTP/1.1 200 OK    "
+"제공자(providers) 목록을 반환합니다  **응답 예시:** .. sourcecode:: http     HTTP/1.1 200 OK    "
 "Content-Type: application/json     [        {            \"canonical_name\": \"string\",            "
 "\"flavors\": [                {                    \"canonical_name\": "
 "\"string\",                    \"name\": \"string\"                }            ],            "
@@ -403,7 +403,7 @@ msgstr ""
 
 #: ../../<openapi>:1
 msgid "Returns the list of providers"
-msgstr "공급자 목록을 반환합니다"
+msgstr "제공자 목록을 반환합니다"
 
 #: ../../<openapi>:1
 msgid "Returns the list of semaphores"
@@ -447,13 +447,13 @@ msgid ""
 "sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     ssh-rsa "
 "AAAAB3NzaC1yc2EAAAADAQABAAACA"
 msgstr ""
-"실행기가 SSH 에이전트에 추가하는 테넌트 공개 키를 반환합니다  **응답 예시:** .. "
+"익스큐터가 SSH 에이전트에 추가하는 테넌트 공개 키를 반환합니다  **응답 예시:** .. "
 "sourcecode:: http     HTTP/1.1 200 OK    Content-Type: text/plain     ssh-rsa "
 "AAAAB3NzaC1yc2EAAAADAQABAAACA"
 
 #: ../../<openapi>:1
 msgid "Returns the tenant public key that executor adds to SSH agent"
-msgstr "실행기가 SSH 에이전트에 추가하는 테넌트 공개 키를 반환합니다"
+msgstr "익스큐터가 SSH 에이전트에 추가하는 테넌트 공개 키를 반환합니다"
 
 #: ../../<openapi>:1
 msgid ""
