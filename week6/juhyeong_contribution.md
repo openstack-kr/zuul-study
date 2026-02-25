@@ -254,4 +254,3 @@ pm.startnodeCleanup(node)
 ```
 4.  node: Used → DELETING 상태 전이
 5.  리소스 제거
-
