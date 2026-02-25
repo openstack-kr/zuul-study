@@ -416,7 +416,7 @@ msgstr ""
 
 #: ../../source/glossary.rst:201
 msgid "pipeline manager"
-msgstr "pipeline manager (파이프라인 관리자)"
+msgstr "파이프라인 관리자 (pipeline manager)"
 
 #: ../../source/glossary.rst:204
 msgid ""
@@ -717,7 +717,7 @@ msgstr ""
 
 #: ../../source/glossary.rst:357
 msgid "token secret"
-msgstr "token secret (토큰 시크릿)"
+msgstr "토큰 시크릿 (token secret)"
 
 #: ../../source/glossary.rst:360
 msgid ""
