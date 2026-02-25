@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "테넌트 구성 파일은 ``zuul.conf`` 의 :attr:`scheduler.tenant_config` 설정으로 "
 "지정합니다. 이 파일은 YAML 형식이며, 다른 Zuul 구성 파일과 마찬가지로 구성 "
-"객체의 목록으로 이루어진다. 단, 여기서는 아래에 설명된 일부 유형의 객체만 "
-"지원합니다."
+"객체의 목록으로 이루어집니다. 단, 여기서는 아래에 설명된 일부 유형의 객체만 "
+"지원합니다 ."
 
 #: ../../source/tenants.rst:28
 msgid ""
@@ -178,7 +178,7 @@ msgid ""
 msgstr ""
 "이 테넌트에서 :term:`config projects <config-project>` 로 처리될 프로젝트의 "
 "목록입니다. config 프로젝트의 잡은 신뢰할 수 있는 실행 컨텍스트에서 실행되며, 추가 "
-"권한을 가진다. 제안된 변경에 대해 구성이 동적으로 로드되지 않으며, Zuul 구성 "
+"권한을 가집니다. 제안된 변경에 대해 구성이 동적으로 로드되지 않으며, Zuul 구성 "
 "파일은 ``master`` 브랜치에서만 검색됩니다."
 
 #: ../../source/tenants.rst:137
@@ -186,7 +186,7 @@ msgid ""
 "The items in the list follow the same format described in **untrusted-"
 "projects**."
 msgstr ""
-"목록의 항목은 **untrusted-projects** 에서 설명한 것과 동일한 형식을 따른다."
+"목록의 항목은 **untrusted-projects** 에서 설명한 것과 동일한 형식을 따릅니다."
 
 #: ../../source/tenants.rst:142
 msgid ""
