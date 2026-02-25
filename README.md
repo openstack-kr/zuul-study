@@ -7,7 +7,7 @@
 
 ## zuul 번역 역할 분담
 신우석 - about, index, concepts, components, governance, vulnerabilities  
-[Zuul 문서 번역을 위한 Ansible module](/week6/신우석_컨트리뷰션.md)  
+[Zuul의 추측 기반 병합과 크로싱 프로젝트](/week6/신우석_컨트리뷰션.md)  
 리뷰어 - 노성은 [리뷰 문서](/week6/review/노성은_컨트리뷰션_리뷰.md)  
 
 현규환 - installation, operation, monitoring, admin, troubleshooting, tracing  
