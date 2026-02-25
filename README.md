@@ -10,13 +10,16 @@
 리뷰어 - 노성은
 
 현규환 - installation, operation, monitoring, admin, troubleshooting, tracing  
+[Zuul 문서 번역을 위한 Ansible module](/week6/contribution_gyuhwan.md)  
 리뷰어 - 신우석
 
 최우형 - configuration, upgradiing, releasenotes  
+[Zuul 프로덕션 환경에서의 무중단 업그레이드 전략](/week6/uhyung_contribution.md)  
 리뷰어 - 현규환
 
 김주형 - job-contest, tenants, build-nodes  
 리뷰어 - 최우형
 
 노성은 - project-config, gating, client, authentication, rest-api, glossary, sphinx  
+[Zuul 문서 빌드 시스템 분석]()  
 리뷰어 - 김주형
