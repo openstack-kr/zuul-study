@@ -284,7 +284,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Trigger** -> 트리거
 * **trusted execution context** -> 신뢰할 수 있는 실행 컨텍스트
 * **untrusted execution context** -> 신뢰할 수 없는 실행 컨텍스트
-* **untrusted-project** -> untrusted-project
+* **untrusted-project** -> 비신뢰 프로젝트
 * **untrusted-projects** -> 비신뢰 프로젝트
 * **unzoned** -> 영역이 지정되지 않은(unzoned)
 * **Upgrading** -> 업그레이드
