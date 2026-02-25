@@ -156,7 +156,7 @@ synchronize모듈을 사용합니다.
             artifacts:
               - name: "Korean Documentation (HTML)"
                 url: "html_docs/index.html"
-
+  ```
 
 zuul_return 모듈은 Zuul 환경에서 사용되는 전용 ansible 모듈입니다.
 
