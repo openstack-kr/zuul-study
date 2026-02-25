@@ -49,13 +49,13 @@ msgstr ""
 "새로운 레이블 속성인 :attr:`label.max-nodes` 를 사용하여 해당 레이블이 "
 "표시되는 각 테넌트에서 사용할 수 있는 노드 수를 제한할 수 있습니다."
 
-#: ../../<reno.sphinxext current branch>:12
+#: ../../<reno.sphinxext current branch>:13
 msgid ""
 "The *min-ready* setting on labels is now only available for top-level label objects and may not "
 "be set within a provider or section stanza."
 msgstr ""
 "레이블의 *min-ready* 설정은 이제 최상위 레이블 객체에서만 사용할 수 있으며, "
-"제공자(provider)나 섹션 스탠자 내에서는 설정할 수 없습니다."
+"제공자나 섹션 스탠자 내에서는 설정할 수 없습니다."
 
 #: ../../<reno.sphinxext current branch>:14
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 "및 :attr:`job.exclude-projects` 속성을 사용하여 해당 잡에 필요하지 않은 "
 "프로젝트의 워크스페이스 준비를 Zuul 에게 건너뛰도록 지시할 수 있습니다."
 
-#: ../../<reno.sphinxext current branch>:22
+#: ../../<reno.sphinxext current branch>:21
 msgid ""
 "A new component, the Zuul :ref:`launcher`, is available. Zuul-launcher is responsible "
 "for managing images and build nodes, and replaces Nodepool. Zuul supports both "
