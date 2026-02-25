@@ -18,6 +18,7 @@
 리뷰어 - 현규환
 
 김주형 - job-contest, tenants, build-nodes  
+[Zuul Pipeline의 실행 흐름과 Build Node lifecycle](/week6/juhyeong_conrtribution.md)  
 리뷰어 - 최우형
 
 노성은 - project-config, gating, client, authentication, rest-api, glossary, sphinx  
