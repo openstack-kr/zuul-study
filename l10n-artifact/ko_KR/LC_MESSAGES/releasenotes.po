@@ -41,6 +41,22 @@ msgstr "개발 중"
 msgid "New Features"
 msgstr "새로운 기능"
 
+#: ../../<reno.sphinxext current branch>:12
+msgid ""
+"A new label attribute, :attr:`label.max-nodes` is available to limit the number of nodes of that label "
+"available in each tenant in which it appears."
+msgstr ""
+"새로운 레이블 속성인 :attr:`label.max-nodes` 를 사용하여 해당 레이블이 "
+"표시되는 각 테넌트에서 사용할 수 있는 노드 수를 제한할 수 있습니다."
+
+#: ../../<reno.sphinxext current branch>:12
+msgid ""
+"The *min-ready* setting on labels is now only available for top-level label objects and may not "
+"be set within a provider or section stanza."
+msgstr ""
+"레이블의 *min-ready* 설정은 이제 최상위 레이블 객체에서만 사용할 수 있으며, "
+"제공자(provider)나 섹션 스탠자 내에서는 설정할 수 없습니다."
+
 #: ../../<reno.sphinxext current branch>:14
 msgid ""
 "Jobs may now filter the non-required projects for their workspace. If a job "
@@ -56,17 +72,19 @@ msgstr ""
 
 #: ../../<reno.sphinxext current branch>:22
 msgid ""
-"A new component, the Zuul Launcher, is available. Zuul-launcher is responsible "
+"A new component, the Zuul :ref:`launcher`, is available. Zuul-launcher is responsible "
 "for managing images and build nodes, and replaces Nodepool. Zuul supports both "
-"systems simultaneously for transitional purposes.\n"
-"\n"
-"See :ref:`build-nodes` for an overview of the new system and information about "
+"systems simultaneously for transitional purposes."
+msgstr ""
+"새로운 컴포넌트인 Zuul :ref:`launcher` 를 사용할 수 있습니다. Zuul 런처는 "
+"이미지와 빌드 노드를 관리하며 Nodepool 을 대체합니다. 전환 목적으로 Zuul 은 "
+"두 시스템을 동시에 지원합니다."
+
+#: ../../<reno.sphinxext current branch>:22
+msgid ""
+"See :ref:`Build Nodes` for an overview of the new system and information about "
 "migrating."
 msgstr ""
-"새로운 컴포넌트인 Zuul 런처를 사용할 수 있습니다. Zuul 런처는 "
-"이미지와 빌드 노드를 관리하며 Nodepool 을 대체합니다. 전환 목적으로 Zuul 은 "
-"두 시스템을 동시에 지원합니다.\n"
-"\n"
 "새 시스템 개요 및 마이그레이션 정보는 :ref:`build-nodes` 를 참조하십시오."
 
 #: ../../<reno.sphinxext current branch>:32
