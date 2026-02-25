@@ -91,7 +91,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Emitter** -> 발급기
 * **encryption** -> 암호화
 * **Endpoint** -> 엔드포인트
-* **Enqueue** -> 큐에 추가
+* **Enqueue** -> 큐에 추가 (명령어인 경우 -> enqueue)
 * **enqueuing** -> 큐에 추가
 * **ephemeral** -> 임시
 * **Event** -> 이벤트
@@ -201,7 +201,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **project queue** -> 프로젝트 큐
 * **project template** -> 프로젝트 템플릿
 * **Prometheus** -> 프로메테우스
-* **promote** -> 승격
+* **promote** -> 승격 (명령어인 경우 -> promote)
 * **protocol** -> 프로토콜
 * **provided artifact** -> 제공된 아티팩트
 * **Provider** -> 제공자
