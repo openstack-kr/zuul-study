@@ -21,5 +21,5 @@
 리뷰어 - 최우형
 
 노성은 - project-config, gating, client, authentication, rest-api, glossary, sphinx  
-[Zuul 문서 빌드 시스템 분석]()  
+[Zuul 문서 빌드 시스템 분석](week6/노성은_컨트리뷰션.md)  
 리뷰어 - 김주형
