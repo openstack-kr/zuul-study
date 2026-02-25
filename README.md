@@ -7,20 +7,21 @@
 
 ## zuul 번역 역할 분담
 신우석 - about, index, concepts, components, governance, vulnerabilities  
-리뷰어 - 노성은
+[Zuul 문서 번역을 위한 Ansible module](/week6/신우석_컨트리뷰션.md)  
+리뷰어 - 노성은 [리뷰 문서](/week6/review/노성은_컨트리뷰션_리뷰.md)  
 
 현규환 - installation, operation, monitoring, admin, troubleshooting, tracing  
-[Zuul 문서 번역을 위한 Ansible module](/week6/contribution_gyuhwan.md)  
-리뷰어 - 신우석
+[Zuul 문서 번역을 위한 Ansible module](/week6/현규환_컨트리뷰션.md)  
+리뷰어 - 신우석 [리뷰 문서](/week6/review/신우석_컨트리뷰션_리뷰.md)  
 
 최우형 - configuration, upgradiing, releasenotes  
-[Zuul 프로덕션 환경에서의 무중단 업그레이드 전략](/week6/uhyung_contribution.md)  
-리뷰어 - 현규환
+[Zuul 프로덕션 환경에서의 무중단 업그레이드 전략](/week6/최우형_컨트리뷰션.md)  
+리뷰어 - 현규환 [리뷰 문서](/week6/review/현규환_컨트리뷰션_리뷰.md)  
 
 김주형 - job-contest, tenants, build-nodes  
-[Zuul Pipeline의 실행 흐름과 Build Node lifecycle](/week6/juhyeong_contribution.md)  
-리뷰어 - 최우형
+[Zuul Pipeline의 실행 흐름과 Build Node lifecycle](/week6/김주형_컨트리뷰션.md)  
+리뷰어 - 최우형 [리뷰 문서](/week6/review/최우형_컨트리뷰션_리뷰.md)  
 
 노성은 - project-config, gating, client, authentication, rest-api, glossary, sphinx  
 [Zuul 문서 빌드 시스템 분석](/week6/노성은_컨트리뷰션.md)  
-리뷰어 - 김주형
+리뷰어 - 김주형 [리뷰 문서](/week6/review/김주형_컨트리뷰션_리뷰.md)  
