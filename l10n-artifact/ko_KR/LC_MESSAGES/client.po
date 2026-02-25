@@ -296,7 +296,7 @@ msgstr ""
 
 #: ../../source/client.rst:264
 msgid "Promote"
-msgstr "Promote (승격)"
+msgstr "Promote"
 
 #: ../../source/client.rst:272
 msgid "Note that the format of changes id is <number>,<patchset>."
