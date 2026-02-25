@@ -4891,7 +4891,7 @@ msgid ""
 "could be used to circumvent executor host command execution restrictions."
 msgstr ""
 "보안상 synchronize 의 rsh rsync_opts 가 금지되었습니다. 익스큐터 호스트 명령 "
-"동작 제한을 우회하는 데 사용될 수 있었기 때문입니다."
+"동작 제한을 우회하는 데에 사용될 수 있었기 때문입니다."
 
 #: ../../<reno.sphinxext current branch>:4101
 msgid ""
