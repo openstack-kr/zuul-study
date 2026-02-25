@@ -234,7 +234,7 @@ msgstr ""
 
 #: ../../source/client.rst:223
 msgid "Manual enqueue examples"
-msgstr "수동 Enqueue 예제 (Manual enqueue examples)"
+msgstr "수동 큐 추가 예제 (Manual enqueue examples)"
 
 #: ../../source/client.rst:225
 msgid ""
