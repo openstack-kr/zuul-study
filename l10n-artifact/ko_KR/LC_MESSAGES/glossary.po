@@ -258,7 +258,7 @@ msgstr ""
 "빌드를 생성하기 위해 샌드박스 처리된 Ansible 프로세스의 실행을 담당하는 Zuul"
 "의 컴포넌트입니다. 잡이 적절하게 구성된 경우 일부 빌드는 익스큐터(executor)"
 "가 제공하는 작업 공간(workspace) 내에서 전적으로 실행될 수 있으며, 또는 더 복"
-"잡하고 위험한 작업을 위해 실행ㄱ가 원격 노드에 연결해야 할 수도 있습니다."
+"잡하고 위험한 작업을 위해 실행기가 원격 노드에 연결해야 할 수도 있습니다."
 
 #: ../../source/glossary.rst:127
 msgid "final job"
@@ -416,7 +416,7 @@ msgstr ""
 
 #: ../../source/glossary.rst:201
 msgid "pipeline manager"
-msgstr "pipeline manager (파이프라인 관리자)"
+msgstr "파이프라인 관리자 (pipeline manager)"
 
 #: ../../source/glossary.rst:204
 msgid ""
@@ -717,7 +717,7 @@ msgstr ""
 
 #: ../../source/glossary.rst:357
 msgid "token secret"
-msgstr "token secret (토큰 시크릿)"
+msgstr "토큰 시크릿 (token secret)"
 
 #: ../../source/glossary.rst:360
 msgid ""

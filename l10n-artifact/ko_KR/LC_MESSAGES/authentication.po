@@ -241,7 +241,7 @@ msgstr "문제가 발생할 경우:"
 
 #: ../../source/authentication.rst:148
 msgid "Make sure your configuration is correct, especially callback URIs."
-msgstr "구성이 올바른지, 특히 콜백 URI(callback URIs)를 확인하세요."
+msgstr "구성이 올바른지, 특히 콜백(callback) URI를 확인하세요."
 
 #: ../../source/authentication.rst:149
 msgid "More information can be found in Zuul's web service logs."
