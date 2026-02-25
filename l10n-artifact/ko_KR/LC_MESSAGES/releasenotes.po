@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/releasenotes.rst:2
 msgid "Release Notes"
-msgstr "릴리즈 노드"
+msgstr "릴리즈 노트"
 
 #: ../../<reno.sphinxext current branch>:5
 msgid "In Development"
