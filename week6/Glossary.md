@@ -13,7 +13,6 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 이외 다른 충돌은 조원들 간 토의로 해결합니다.
 
 
-* **about.po** -> about.po
 * **abstract job** -> 추상 잡
 * **Ansible** -> Ansible
 * **application** -> 애플리케이션
@@ -27,7 +26,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **badge** -> 배지
 * **bare metal** -> Bare Metal
 * **base job** -> 베이스 잡
-* **base URL** -> 기본 URL
+* **base URL** -> 베이스 URL
 * **Bearer token** -> 베어러 토큰
 * **Bind mount** -> 바인드 마운트
 * **Branch** -> 브랜치
@@ -58,9 +57,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Commit** -> 커밋
 * **community** -> 커뮤니티
 * **Component** -> 컴포넌트
-* **components.po** -> components.po
-* **concepts.po** -> concepts.po
-* **Condorcet** -> 콩도르세(Condorcet)
+* **Condorcet** -> 콩도르세
 * **config-project** -> config-project
 * **Configuration** -> 구성
 * **configuration object** -> 구성 객체
@@ -81,7 +78,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Dependency cycle** -> 순환 의존성
 * **dependent job** -> 종속 잡
 * **dependent pipeline** -> 종속 파이프라인
-* **deploy** -> 디플로이 (deploy)
+* **deploy** -> 디플로이 
 * **Deprecated** -> 사용 중단
 * **design** -> 설계
 * **Dictionary** -> 딕셔너리
@@ -114,7 +111,6 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Gerrit** -> Gerrit
 * **Global merge job** -> 전역 병합 잡
 * **governance** -> 거버넌스
-* **governance.po** -> governance.po
 * **graceful** -> 정상적인
 * **group** -> 그룹
 * **Host** -> 호스트
@@ -125,7 +121,6 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Image** -> 이미지
 * **import** -> 가져오기
 * **independent pipeline** -> 독립 파이프라인
-* **index.po** -> index.po
 * **Instance** -> 인스턴스
 * **Inventory** -> 인벤토리
 * **issuer** -> 발급자
@@ -157,7 +152,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **manual** -> 메뉴얼
 * **membership** -> 구성원
 * **Merge** -> 병합
-* **Merge conflict** -> merge-conflict
+* **Merge conflict** -> Merge conflict
 * **Merge request** -> Merge request
 * **Merger** -> 머저
 * **Metric** -> 메트릭
@@ -188,7 +183,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **pod** -> 파드
 * **Posix** -> 포직스
 * **Posix Log Streaming** -> 포직스 로그 스트리밍
-* **post** -> 사후
+* **post** -> 사후 (명령어인 경우 -> post)
 * **pre** -> 사전
 * **Private key** -> 개인 키
 * **privileged actions** -> 특권 작업
@@ -291,7 +286,6 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **urgent fix** -> 긴급 수정 사항
 * **Validation** -> 검증
 * **Virtual machine(VM)** -> 가상 머신
-* **vulnerabilities.po** -> vulnerabilities.po
 * **Web** -> 웹
 * **Web Server** -> 웹 서버
 * **webhook** -> 웹훅
