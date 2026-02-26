@@ -3,7 +3,12 @@
 
 ## 스터디 개요 
 ### zuul study
+Zuul CI 시스템 스터디, 실습 및 한글화 프로젝트 
 
+참여 인원 : 신우석, 현규환, 최우형, 김주형, 노성은
+멘토 : 최영락, 조성수
+
+Zuul 공식 문서 한글화 페이지: [zuul_docs](https://openstack-kr.github.io/zuul-study/index.html)
 
 ## zuul 번역 역할 분담
 신우석 - about, index, concepts, components, governance, vulnerabilities  
