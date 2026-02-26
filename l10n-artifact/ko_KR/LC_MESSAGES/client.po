@@ -175,7 +175,7 @@ msgid ""
 "the ``--zuul-url`` option to specify the base URL of the Zuul web server."
 msgstr ""
 "또한, 구성 파일 없이 zuul-admin 클라이언트를 실행할 수도 있습니다. 이 경우 --"
-"zuul-url 옵션을 사용하여 Zuul 웹 서버의 기본 URL(base URL)을 지정해야 합니다."
+"zuul-url 옵션을 사용하여 Zuul 웹 서버의 베이스 URL(base URL)을 지정해야 합니다."
 
 #: ../../source/client.rst:157
 msgid "Autohold"
