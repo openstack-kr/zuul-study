@@ -125,7 +125,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Inventory** -> 인벤토리
 * **issuer** -> 발급자
 * **Item** -> 항목
-* **iteration** -> 반복(iteration)
+* **iteration** -> 반복
 * **Jaeger** -> Jaeger
 * **Job** -> 잡
 * **job dependency** -> 잡 의존성
@@ -142,8 +142,8 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Layout** -> 레이아웃
 * **Lifecycle** -> 수명 주기
 * **Linux** -> Linux
-* **liveness** -> 활성 상태(liveness)
-* **Liveness Probes** -> 활성 상태 프로브(Liveness Probes)
+* **liveness** -> 활성 상태
+* **Liveness Probes** -> 활성 상태 프로브
 * **Log Streaming** -> 로그 스트리밍
 * **Log url** -> 로그 URL
 * **low-level** -> 로우 레벨
@@ -159,7 +159,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **module** -> 모듈
 * **Monitoring** -> 모니터링
 * **mouseover text** -> 마우스를 올리면 표시되는 텍스트
-* **multi-tenant** -> 멀티 테넌트(multi-teant)
+* **multi-tenant** -> 멀티 테넌트
 * **Multi-zone** -> 멀티 존
 * **Namespace** -> 네임스페이스
 * **negate** -> 부정
@@ -167,7 +167,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Nodepool** -> Nodepool
 * **Nodeset** -> 노드셋
 * **Object Store** -> 객체 저장소
-* **observability** -> 관찰 가능성(observability)
+* **observability** -> 관찰 가능성
 * **OIDC** -> OIDC
 * **OpenTelemetry** -> OpenTelemetry
 * **Operation** -> 운영
@@ -204,7 +204,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **query parameter** -> 쿼리 매개변수
 * **Queue** -> 큐
 * **Queue item** -> 큐 항목
-* **ready** -> 준비 상태(ready)
+* **ready** -> 준비 상태
 * **Realm** -> 인증 영역
 * **receiver** -> 수신기
 * **Reconfiguration** -> 재구성
@@ -281,7 +281,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **untrusted execution context** -> 신뢰할 수 없는 실행 컨텍스트
 * **untrusted-project** -> 비신뢰 프로젝트
 * **untrusted-projects** -> 비신뢰 프로젝트
-* **unzoned** -> 영역이 지정되지 않은(unzoned)
+* **unzoned** -> 영역이 지정되지 않은
 * **Upgrading** -> 업그레이드
 * **urgent fix** -> 긴급 수정 사항
 * **Validation** -> 검증
@@ -300,7 +300,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **workflow** -> 워크플로
 * **Workspace** -> 작업 공간
 * **zone** -> 영역
-* **Zoned** -> 영역이 지정된(zoned)
+* **Zoned** -> 영역이 지정된
 * **Zoned / Unzoned** -> 영역 지정 / 영역 미지정
 * **ZooKeeper** -> ZooKeeper
 * **Zuul** -> Zuul
