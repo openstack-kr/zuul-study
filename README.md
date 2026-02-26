@@ -18,7 +18,7 @@
 [Zuul 프로덕션 환경에서의 무중단 업그레이드 전략](/week6/최우형_컨트리뷰션.md)  
 리뷰어 - 현규환 [리뷰 문서](/week6/review/현규환_컨트리뷰션_리뷰.md)  
 
-김주형 - job-contest, tenants, build-nodes  
+김주형 - job-content, tenants, build-nodes  
 [Zuul Pipeline의 실행 흐름과 Build Node lifecycle](/week6/김주형_컨트리뷰션.md)  
 리뷰어 - 최우형 [리뷰 문서](/week6/review/최우형_컨트리뷰션_리뷰.md)  
 
