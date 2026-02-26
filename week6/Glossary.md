@@ -163,7 +163,7 @@ rst의 링크나 강조표시가 깨지는 경우를 공백(스페이스) 한칸
 * **Metric** -> 메트릭
 * **module** -> 모듈
 * **Monitoring** -> 모니터링
-* **mouover text** -> 마우스를 올리면 표시되는 텍스트
+* **mouseover text** -> 마우스를 올리면 표시되는 텍스트
 * **multi-tenant** -> 멀티 테넌트(multi-teant)
 * **Multi-zone** -> 멀티 존
 * **Namespace** -> 네임스페이스
